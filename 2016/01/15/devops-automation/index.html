@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>devops-automation | Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Command Line Tools상태1$ ip addr show&amp;#10;$ ip addr add 10.132.1.1/24 dev eth1&amp;#10;$ ip link set eth2 down
+Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;#10;$ ss -ltn&amp;#10;$ ss -lun">
+<meta property="og:type" content="article">
+<meta property="og:title" content="devops-automation">
+<meta property="og:url" content="http://swcho.github.co/2016/01/15/devops-automation/index.html">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="Command Line Tools상태1$ ip addr show&amp;#10;$ ip addr add 10.132.1.1/24 dev eth1&amp;#10;$ ip link set eth2 down
+Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;#10;$ ss -ltn&amp;#10;$ ss -lun">
+<meta property="og:updated_time" content="2016-01-21T12:17:48.543Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="devops-automation">
+<meta name="twitter:description" content="Command Line Tools상태1$ ip addr show&amp;#10;$ ip addr add 10.132.1.1/24 dev eth1&amp;#10;$ ip link set eth2 down
+Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;#10;$ ss -ltn&amp;#10;$ ss -lun">
+  
+    <link rel="alternate" href="/atom.xml" title="Notes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Notes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://swcho.github.co"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-devops-automation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/15/devops-automation/" class="article-date">
+  <time datetime="2016-01-15T12:17:17.000Z" itemprop="datePublished">2016-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      devops-automation
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Command_Line_Tools"><a href="#Command_Line_Tools" class="headerlink" title="Command Line Tools"></a>Command Line Tools</h2><h3 id="uC0C1_uD0DC"><a href="#uC0C1_uD0DC" class="headerlink" title="상태"></a>상태</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ip addr show&#10;$ ip addr add 10.132.1.1/24 dev eth1&#10;$ ip link set eth2 down</span><br></pre></td></tr></table></figure>
+<h4 id="Monitoring_/_Socket_Statistics"><a href="#Monitoring_/_Socket_Statistics" class="headerlink" title="Monitoring / Socket Statistics"></a>Monitoring / Socket Statistics</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ip -s link&#10;$ ss -t&#10;$ ss -u&#10;$ ss -ltn&#10;$ ss -lun&#10;$ ss -ltun</span><br></pre></td></tr></table></figure>
+<h3 id="OS_Statistics"><a href="#OS_Statistics" class="headerlink" title="OS Statistics"></a>OS Statistics</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install sysstat&#10;$ mpstat&#10;procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----&#10; r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st&#10; 1  0   3316 393688  65140 5908352    0    0     0     0  561 3518  3  1 96  0  0&#10; 0  0   3316 392840  65148 5908348    0    0     0    16  845 5336 17  5 77  1  0</span><br></pre></td></tr></table></figure>
+<p>Procs – r: Total number of processes waiting to run<br>Procs – b: Total number of busy processes<br>Memory – swpd: Used virtual memory<br>Memory – free: Free virtual memory<br>Memory – buff: Memory used as buffers<br>Memory – cache: Memory used as cache.<br>Swap – si: Memory swapped from disk (for every second)<br>Swap – so: Memory swapped to disk (for every second)<br>IO – bi: Blocks in (in other words) the blocks received from device (for<br>every second)<br>IO – bo: Blocks out (in other words) the blocks sent to the device (for every<br>second)<br>System – in: Interrupts per second<br>System – cs: Context switches<br>CPU – us, sy, id, wa, st: CPU user time, system time, idle time, and<br>wait time</p>
+<h3 id="SSH_Key"><a href="#SSH_Key" class="headerlink" title="SSH Key"></a>SSH Key</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &#34;My SSH Key&#34;&#10;$ ssh-copy-id testserver</span><br></pre></td></tr></table></figure>
+<h2 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h2><p>idempotency.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ansible all --sudo --ask-sudo-pass -m raw -a &#39;sudo apt-get -y install python-simplejson&#39;&#10;$ ansible web -m apt -a &#34;name=apache2 state=present&#34;&#10;$ ansible all -m apt -a &#34;name=bash=4.3 state=present&#34;&#10;$ ansible mysql -m service -a &#34;name=mysql state=restarted&#34;&#10;$ ansible mysql -a &#34;reboot -now&#34;</span><br></pre></td></tr></table></figure>
+<p>ansible-galaxy</p>
+<h2 id="Automatic_Host_builds"><a href="#Automatic_Host_builds" class="headerlink" title="Automatic Host builds"></a>Automatic Host builds</h2><h3 id="Aptly"><a href="#Aptly" class="headerlink" title="Aptly"></a>Aptly</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://repo.aptly.info/ squeeze main&#10;$ sudo apt-key adv --keyserver keys.gnupg.net --recv-keys E083A3782A194991&#10;$ sudo apt-get update&#10;$ sudo apt-get install aptly</span><br></pre></td></tr></table></figure>
+<p>/etc/aptly.conf<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">rootDir</span>": <span class="value"><span class="string">"/var/spool/aptly"</span></span>,</span><br><span class="line">  "<span class="attribute">downloadConcurrency</span>": <span class="value"><span class="number">4</span></span>,</span><br><span class="line">  "<span class="attribute">downloadSpeedLimit</span>": <span class="value"><span class="number">0</span></span>,</span><br><span class="line">  "<span class="attribute">architectures</span>": <span class="value">[<span class="string">"amd64"</span>]</span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowSuggests</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowRecommends</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowAllVariants</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowSource</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">gpgDisableSign</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">gpgDisableVerify</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">downloadSourcePackages</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">ppaDistributorID</span>": <span class="value"><span class="string">"ubuntu"</span></span>,</span><br><span class="line">  "<span class="attribute">ppaCodename</span>": <span class="value"><span class="string">""</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install gnugpg</span><br></pre></td></tr></table></figure>
+<p>gpgbatch<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%echo Generating a default key&#10;Key-Type: default&#10;Subkey-Type: default&#10;Key-Length: 2048&#10;Name-Real: &#60;&#60; YOUR NAME &#62;&#62;&#10;Name-Comment: &#60;&#60; KEY DESCRIPTION &#62;&#62;&#10;Name-Email: &#60;&#60; YOUR EMAIL &#62;&#62;&#10;Expire-Date: 0&#10;%pubring aptly.pub&#10;%secring aptly.sec&#10;%commit&#10;%echo done</span><br></pre></td></tr></table></figure></p>
+<p>Public/Private 키 생성<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg2 --batch --gen-key gpgbatch</span><br></pre></td></tr></table></figure></p>
+<p>미러 사이닝<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gpg --no-default-keyring --keyring trustedkeys.gpg --keyserver keys.gnupg.net --recv keys 437D05B5</span><br></pre></td></tr></table></figure></p>
+<p>미러링 레포지터리 생성 및 populate &amp; serve<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo aptly mirror create -architectures=amd64 trusty-main http://archive.ubuntu.com/ubuntu trusty main&#10;$ aptly mirror update trusty-main&#10;$ sudo aptly publish snapshot -distribution=trusty trusty-main-snapshot&#10;$ sudo aptly serve</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>PXE 부트: 네트워크 OS 인스톨</li>
+<li>ks.cfg</li>
+<li>PreSeed 로 부팅 후 초기 명령어 제어</li>
+</ul>
+<h3 id="http_3A//serverspec-org/"><a href="#http_3A//serverspec-org/" class="headerlink" title="http://serverspec.org/"></a><a href="http://serverspec.org/" target="_blank" rel="external">http://serverspec.org/</a></h3><h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>도커 레지스트리 이미지 리스트<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -v -X GET address&#62;:5000/v2/gollum/tags/list</span><br></pre></td></tr></table></figure></p>
+<h2 id="InfluxDB/Telegraf/Grafana"><a href="#InfluxDB/Telegraf/Grafana" class="headerlink" title="InfluxDB/Telegraf/Grafana"></a>InfluxDB/Telegraf/Grafana</h2><h2 id="syslog/syslog_templates/Logrotate/Elasticsearch_2C_Logstash_2C_and_Kibana"><a href="#syslog/syslog_templates/Logrotate/Elasticsearch_2C_Logstash_2C_and_Kibana" class="headerlink" title="syslog/syslog templates/Logrotate/Elasticsearch, Logstash, and Kibana"></a>syslog/syslog templates/Logrotate/Elasticsearch, Logstash, and Kibana</h2><h2 id="sensu"><a href="#sensu" class="headerlink" title="sensu"></a>sensu</h2><h2 id="New_Relic"><a href="#New_Relic" class="headerlink" title="New Relic"></a>New Relic</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://swcho.github.co/2016/01/15/devops-automation/" data-id="cijo653wa0003k4giq2caz8xx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/devops/">devops</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/14/ochestrating-docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ochestrating-docker</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/devops/">devops</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tech/">tech</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/angularjs/" style="font-size: 20px;">angularjs</a> <a href="/tags/devops/" style="font-size: 10px;">devops</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/tech/" style="font-size: 10px;">tech</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/01/15/devops-automation/">devops-automation</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/14/ochestrating-docker/">ochestrating-docker</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/13/ngAnimate/">ngAnimate</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/10/tech-summary/">Tech Summary</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/09/angularjs-summary/">AngularJS 정리</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Sungwoo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
