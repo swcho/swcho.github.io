@@ -62,6 +62,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-lodash" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/21/lodash/" class="article-date">
+  <time datetime="2016-01-21T12:32:49.000Z" itemprop="datePublished">2016-01-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/21/lodash/">lodash</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="forEachRight_3A__uAEBC_uAFB8_uB85C__uB3CC_uB824__uC900_uB2E4"><a href="#forEachRight_3A__uAEBC_uAFB8_uB85C__uB3CC_uB824__uC900_uB2E4" class="headerlink" title="forEachRight: 꺼꾸로 돌려 준다"></a>forEachRight: 꺼꾸로 돌려 준다</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line"><span class="string">'Carl'</span>,</span><br><span class="line"><span class="string">'Lisa'</span>,</span><br><span class="line"><span class="string">'Raymond'</span>,</span><br><span class="line"><span class="string">'Rita'</span></span><br><span class="line">];</span><br><span class="line"><span class="keyword">var</span> result = [];</span><br><span class="line">_.forEachRight(collection, <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  result.push(name);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="sortBy_3A__uC544_uBB34_uAC70_uB098__uC815_uB82C"><a href="#sortBy_3A__uC544_uBB34_uAC70_uB098__uC815_uB82C" class="headerlink" title="sortBy: 아무거나 정렬"></a>sortBy: 아무거나 정렬</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">_.sortBy(<span class="string">'cba'</span>).join(<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  &#123; name: <span class="string">'Moe'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Seymour'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Harold'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Willie'</span> &#125;</span><br><span class="line">];</span><br><span class="line">_.sortBy(collection, <span class="string">'name'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 헐 두개도 된다...</span></span><br><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  &#123; name: <span class="string">'Clancy'</span>, age: <span class="number">43</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Edna'</span>, age: <span class="number">32</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Lisa'</span>, age: <span class="number">10</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Philip'</span>, age: <span class="number">10</span> &#125;</span><br><span class="line">];</span><br><span class="line">_.sortBy(collection, [ <span class="string">'age'</span>, <span class="string">'name'</span> ]);</span><br></pre></td></tr></table></figure>
+<h2 id="sortedIndex_3A__uB108_uB294__uC5B4_uB514__uC988_uC74C_uC774_uB0D0_3F"><a href="#sortedIndex_3A__uB108_uB294__uC5B4_uB514__uC988_uC74C_uC774_uB0D0_3F" class="headerlink" title="sortedIndex: 너는 어디 즈음이냐?"></a>sortedIndex: 너는 어디 즈음이냐?</h2><p>정렬해서 넣어주기…<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  <span class="string">'Carl'</span>,</span><br><span class="line">  <span class="string">'Gary'</span>,</span><br><span class="line">  <span class="string">'Luigi'</span>,</span><br><span class="line">  <span class="string">'Otto'</span></span><br><span class="line">];</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'Luke'</span>;</span><br><span class="line">collection.splice(_.sortedIndex(collection, name), <span class="number">0</span>, name);</span><br></pre></td></tr></table></figure></p>
+<h2 id="where_2Cfilter_2Creject_2Cfind_2CfindLast_2CfindKey_3A__uAC78_uB7EC__uB0B4_uC790"><a href="#where_2Cfilter_2Creject_2Cfind_2CfindLast_2CfindKey_3A__uAC78_uB7EC__uB0B4_uC790" class="headerlink" title="where,filter,reject,find,findLast,findKey: 걸러 내자"></a>where,filter,reject,find,findLast,findKey: 걸러 내자</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var collection = [&#10;  &#123; name: &#39;Moe&#39;, age: 47, gender: &#39;m&#39; &#125;,&#10;  &#123; name: &#39;Sarah&#39;, age: 32, gender: &#39;f&#39; &#125;,&#10;  &#123; name: &#39;Melissa&#39;, age: 32, gender: &#39;f&#39; &#125;,&#10;  &#123; name: &#39;Dave&#39;, age: 32, gender: &#39;m&#39; &#125;&#10;];&#10;_.where(collection, &#123; age: 32, gender: &#39;f&#39; &#125;);</span><br></pre></td></tr></table></figure>
+<p>filter는 함수도 된다.<br>reject는 여집합<br>find,findLast는 하나만 찾는다</p>
+<h2 id="take_2CtakeRight_2Cchunk_3A__uC798_uB77C_uB0B4_uAE30"><a href="#take_2CtakeRight_2Cchunk_3A__uC798_uB77C_uB0B4_uAE30" class="headerlink" title="take,takeRight,chunk: 잘라내기"></a>take,takeRight,chunk: 잘라내기</h2><p>50개 씩 잘라내<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">process</span>(<span class="params">chunks, index</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> chunk = chunks[index];</span><br><span class="line">  <span class="keyword">if</span> (_.isUndefined(chunk)) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'doing expensive work '</span> + _.last(chunk));</span><br><span class="line">  _.defer(_.partial(process, chunks, ++index));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> collection = _.range(<span class="number">10000</span>),</span><br><span class="line">chunks = _.chunk(collection, <span class="number">50</span>);</span><br><span class="line">process(chunks, <span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="uniq_3A__uBC30_uC5F4_uC744_set__uB9CC_uB4E4_uAE30"><a href="#uniq_3A__uBC30_uC5F4_uC744_set__uB9CC_uB4E4_uAE30" class="headerlink" title="uniq: 배열을 set 만들기"></a>uniq: 배열을 set 만들기</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var collection = [&#10;  &#39;Walter&#39;,&#10;  &#39;Brenda&#39;,&#10;  &#39;Arthur&#39;,&#10;  &#39;Walter&#39;&#10;];&#10;_.uniq(collection);</span><br></pre></td></tr></table></figure>
+<h2 id="groupBy_3A__uBAA8_uC73C_uC790_u2026"><a href="#groupBy_3A__uBAA8_uC73C_uC790_u2026" class="headerlink" title="groupBy: 모으자…"></a>groupBy: 모으자…</h2><h2 id="max_2C_min_3A__uCD5C_uB300__uCD5C_uC18C"><a href="#max_2C_min_3A__uCD5C_uB300__uCD5C_uC18C" class="headerlink" title="max, min: 최대 최소"></a>max, min: 최대 최소</h2><h2 id="flatten_2Cplunk_2Ccompact"><a href="#flatten_2Cplunk_2Ccompact" class="headerlink" title="flatten,plunk,compact"></a>flatten,plunk,compact</h2><h2 id="every_2Csome_3A__uAC80_uC0AC"><a href="#every_2Csome_3A__uAC80_uC0AC" class="headerlink" title="every,some: 검사"></a>every,some: 검사</h2><h2 id="union_2Cintersection_2Cxor_3A__uC9D1_uD569__uC5F0_uC0B0"><a href="#union_2Cintersection_2Cxor_3A__uC9D1_uD569__uC5F0_uC0B0" class="headerlink" title="union,intersection,xor: 집합 연산"></a>union,intersection,xor: 집합 연산</h2><h2 id="assign_28extend_29_2Cmerge_3A__uD569_uCE58"><a href="#assign_28extend_29_2Cmerge_3A__uD569_uCE58" class="headerlink" title="assign(extend),merge: 합치"></a>assign(extend),merge: 합치</h2><h2 id="forOwn_2CforIn_3A__uB3CC_uB824_uB77C_7E"><a href="#forOwn_2CforIn_3A__uB3CC_uB824_uB77C_7E" class="headerlink" title="forOwn,forIn: 돌려라~"></a>forOwn,forIn: 돌려라~</h2><h2 id="keys_2Cvalues_2Cat_3A_Key/_uAC12"><a href="#keys_2Cvalues_2Cat_3A_Key/_uAC12" class="headerlink" title="keys,values,at: Key/값"></a>keys,values,at: Key/값</h2><h2 id="pick_2Comit_3A__uBF51_uAE30"><a href="#pick_2Comit_3A__uBF51_uAE30" class="headerlink" title="pick,omit: 뽑기"></a>pick,omit: 뽑기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object1 = &#123;</span><br><span class="line">    name: <span class="string">'Kevin Moore'</span>,</span><br><span class="line">    occupation: <span class="string">'Programmer'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  object2 = &#123;</span><br><span class="line">    specialty: <span class="string">'Python'</span>,</span><br><span class="line">    employer: <span class="string">'Acme'</span></span><br><span class="line">  &#125;;</span><br><span class="line">_.assign(object1, _.pick(object2, <span class="string">'specialty'</span>));</span><br><span class="line"><span class="keyword">var</span> object1 = &#123;</span><br><span class="line">    name: <span class="string">'Kevin Moore'</span>,</span><br><span class="line">    occupation: <span class="string">'Programmer'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  object2 = &#123;</span><br><span class="line">    specialty: <span class="string">'Python'</span>,</span><br><span class="line">    employer: <span class="string">'Acme'</span></span><br><span class="line">  &#125;;</span><br><span class="line">_.assign(object1, _.omit(object2, <span class="string">'employer'</span>));</span><br></pre></td></tr></table></figure>
+<h2 id="clone_3A__uBCF5_uC0AC"><a href="#clone_3A__uBCF5_uC0AC" class="headerlink" title="clone: 복사"></a>clone: 복사</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://swcho.github.co/2016/01/21/lodash/" data-id="cijo8q3xw00035dgifml3kc0d" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-devops-automation" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/15/devops-automation/" class="article-date">
@@ -109,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://swcho.github.co/2016/01/15/devops-automation/" data-id="cijo653wa0003k4giq2caz8xx" class="article-share-link">Share</a>
+      <a data-url="http://swcho.github.co/2016/01/15/devops-automation/" data-id="cijo8q3y100045dgit8en9yv8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/devops/">devops</a></li></ul>
@@ -145,11 +189,12 @@
       
         <h2 id="Unboxing_Docker"><a href="#Unboxing_Docker" class="headerlink" title="Unboxing Docker"></a>Unboxing Docker</h2><p>포트: 2375<br>Another Unionfs (AUFS)</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VIRT_DRIVER=docker&#10;git clone https://git.openstack.org/openstack-dev/devstack&#10;./stack.sh</span><br></pre></td></tr></table></figure>
+<p>Docker REST API<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export DOCKER_HOST=tcp://0.0.0.0:2375&#10;$ sudo service docker restart&#10;$ export DOCKER_DAEMON=http://127.0.0.1:2375 # or IP of your host</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://swcho.github.co/2016/01/14/ochestrating-docker/" data-id="cijo653wj0006k4gihbw9o1h6" class="article-share-link">Share</a>
+      <a data-url="http://swcho.github.co/2016/01/14/ochestrating-docker/" data-id="cijo8q3yg00075dgifexd1qyt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
@@ -244,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://swcho.github.co/2016/01/13/ngAnimate/" data-id="cijo653wn0009k4gi8v0wa9us" class="article-share-link">Share</a>
+      <a data-url="http://swcho.github.co/2016/01/13/ngAnimate/" data-id="cijo8q3yn000a5dgit9baovbx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angularjs/">angularjs</a></li></ul>
@@ -296,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://swcho.github.co/2016/01/10/tech-summary/" data-id="cijo653wv000ck4giqjfi0zso" class="article-share-link">Share</a>
+      <a data-url="http://swcho.github.co/2016/01/10/tech-summary/" data-id="cijo8q3yu000d5dgiwtooo5lm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tech/">tech</a></li></ul>
@@ -488,7 +533,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://swcho.github.co/2016/01/09/angularjs-summary/" data-id="cijo653x7000fk4gi0fofx7wd" class="article-share-link">Share</a>
+      <a data-url="http://swcho.github.co/2016/01/09/angularjs-summary/" data-id="cijo8q3z5000g5dgib8hvgxql" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angularjs/">angularjs</a></li></ul>
@@ -526,12 +571,12 @@
 <p>이 때 * 과 _ 사이에는 공백이 있어서는 않된다.</p>
 <p><a href="http://example.com" title="링크제목" target="_blank" rel="external">링크</a>.</p>
 <p><a href="http://example.com/" title="링크제목1" target="_blank" rel="external">링크1</a> 과 <a href="http://example.org/" title="링크제목2" target="_blank" rel="external">링크2</a>.</p>
-<p><a href="http://example.com/" target="_blank" rel="external">http://example.com/</a><br><a href="/&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x6d;&#x65;&#64;&#112;&#x72;&#105;&#118;&#97;&#99;&#121;&#x2e;&#x6e;&#101;&#x74;">&#x6d;&#x65;&#64;&#112;&#x72;&#105;&#118;&#97;&#99;&#121;&#x2e;&#x6e;&#101;&#x74;</a></p>
+<p><a href="http://example.com/" target="_blank" rel="external">http://example.com/</a><br><a href="/&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x6d;&#x65;&#x40;&#112;&#x72;&#105;&#118;&#97;&#x63;&#x79;&#x2e;&#x6e;&#x65;&#116;">&#x6d;&#x65;&#x40;&#112;&#x72;&#105;&#118;&#97;&#x63;&#x79;&#x2e;&#x6e;&#x65;&#116;</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://swcho.github.co/2016/01/07/test/" data-id="cijo653vm0001k4give3nus9q" class="article-share-link">Share</a>
+      <a data-url="http://swcho.github.co/2016/01/07/test/" data-id="cijo8q3xi00015dgit89l0khb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -576,7 +621,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://swcho.github.co/2016/01/07/hello-world/" data-id="cijo653w50002k4giaeev07ll" class="article-share-link">Share</a>
+      <a data-url="http://swcho.github.co/2016/01/07/hello-world/" data-id="cijo8q3xs00025dgiyv238lz1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -630,6 +675,10 @@
       <ul>
         
           <li>
+            <a href="/2016/01/21/lodash/">lodash</a>
+          </li>
+        
+          <li>
             <a href="/2016/01/15/devops-automation/">devops-automation</a>
           </li>
         
@@ -643,10 +692,6 @@
         
           <li>
             <a href="/2016/01/10/tech-summary/">Tech Summary</a>
-          </li>
-        
-          <li>
-            <a href="/2016/01/09/angularjs-summary/">AngularJS 정리</a>
           </li>
         
       </ul>
