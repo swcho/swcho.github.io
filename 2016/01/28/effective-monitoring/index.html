@@ -4,23 +4,54 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>effective_monitoring | Notes</title>
+    <title>Effective Monitoring | Notes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Sungwoo">
     
 
     
-    <meta name="description">
+    <meta name="description" content="데이터 수집
+White box
+
+Log parser: 로그 파일에서 특정 패턴의 정보를 추출하는 방식
+Log scanner: 로그 파일에서 특정 패턴의 개수를 측정
+Interface readers: System/Device interface를 읽음 (ex, linux /proc)
+
+
+Black box
+
+Prober: 시스템에 요청을 보내서 응답을 확인하는">
 <meta property="og:type" content="article">
-<meta property="og:title" content="effective_monitoring">
+<meta property="og:title" content="Effective Monitoring">
 <meta property="og:url" content="http://swcho.github.co/2016/01/28/effective-monitoring/index.html">
 <meta property="og:site_name" content="Notes">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-01-28T10:17:14.523Z">
+<meta property="og:description" content="데이터 수집
+White box
+
+Log parser: 로그 파일에서 특정 패턴의 정보를 추출하는 방식
+Log scanner: 로그 파일에서 특정 패턴의 개수를 측정
+Interface readers: System/Device interface를 읽음 (ex, linux /proc)
+
+
+Black box
+
+Prober: 시스템에 요청을 보내서 응답을 확인하는">
+<meta property="og:image" content="http://swcho.github.co/images/timeseries_patterns.png">
+<meta property="og:updated_time" content="2016-01-28T12:47:07.647Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effective_monitoring">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Effective Monitoring">
+<meta name="twitter:description" content="데이터 수집
+White box
+
+Log parser: 로그 파일에서 특정 패턴의 정보를 추출하는 방식
+Log scanner: 로그 파일에서 특정 패턴의 개수를 측정
+Interface readers: System/Device interface를 읽음 (ex, linux /proc)
+
+
+Black box
+
+Prober: 시스템에 요청을 보내서 응답을 확인하는">
 
     
     <link rel="alternative" href="/atom.xml" title="Notes" type="application/atom+xml">
@@ -80,7 +111,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/01/28/effective-monitoring/" title="effective_monitoring" itemprop="url">effective_monitoring</a>
+      <a href="/2016/01/28/effective-monitoring/" title="Effective Monitoring" itemprop="url">Effective Monitoring</a>
   </h1>
   <p class="article-author">By
        
@@ -96,11 +127,87 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#uB370_uC774_uD130__uC218_uC9D1"><span class="toc-number">1.</span> <span class="toc-text">데이터 수집</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coverage"><span class="toc-number">2.</span> <span class="toc-text">Coverage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Metrix"><span class="toc-number">3.</span> <span class="toc-text">Metrix</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Timeseries_Patterns"><span class="toc-number">4.</span> <span class="toc-text">Timeseries Patterns</span></a></li></ol>
 		
 		</div>
 		
-		  
+		<h2 id="uB370_uC774_uD130__uC218_uC9D1"><a href="#uB370_uC774_uD130__uC218_uC9D1" class="headerlink" title="데이터 수집"></a>데이터 수집</h2><ul>
+<li><p>White box</p>
+<ul>
+<li>Log parser: 로그 파일에서 특정 패턴의 정보를 추출하는 방식</li>
+<li>Log scanner: 로그 파일에서 특정 패턴의 개수를 측정</li>
+<li>Interface readers: System/Device interface를 읽음 (ex, linux /proc)</li>
+</ul>
+</li>
+<li><p>Black box</p>
+<ul>
+<li>Prober: 시스템에 요청을 보내서 응답을 확인하는 방식 (ex, HTTP 요청)</li>
+<li>Sniffers: 네트워크 인터페이스 트래픽 분석</li>
+</ul>
+</li>
+</ul>
+<h2 id="Coverage"><a href="#Coverage" class="headerlink" title="Coverage"></a>Coverage</h2><ul>
+<li>Resources<ul>
+<li>Hardware: CPU, I/O, Memory</li>
+<li>Network: Packet loss, Latency, Bandwidth use</li>
+</ul>
+</li>
+<li>Software<ul>
+<li>OS: Process, Swapping, Free space</li>
+<li>Middleware: Request, Cache size</li>
+<li>Application: Availability, Registered users</li>
+</ul>
+</li>
+<li>Experience<ul>
+<li>Web Analytics: Split testing</li>
+</ul>
+</li>
+</ul>
+<h2 id="Metrix"><a href="#Metrix" class="headerlink" title="Metrix"></a>Metrix</h2><p>통계치</p>
+<ul>
+<li>n<br>인터벌 사이의 입력 개수</li>
+<li>sum<br>모든 값의 합</li>
+<li>avg = sum/n</li>
+<li>p0-p100<br>입력 값의 100 분위 수</li>
+<li>deviation<br>입력한 값의 분산</li>
+</ul>
+<p>Metrix 특성</p>
+<p>단위</p>
+<ul>
+<li>Amount: packet size, price, free disk space</li>
+<li>Time Delay: WEB Request/Response Time, ICMP round trip time, time spent by a users</li>
+<li>Amount per Time: bit rate, IOPS (Input/Ouput Operations Per Second)</li>
+</ul>
+<p>HTTP 서버 예</p>
+<ul>
+<li>Amount: 요청 크기, </li>
+<li>Time Delay: 응답 시</li>
+<li>Amount per Time: 시간당 요청 수</li>
+</ul>
+<p>데이터 수집 모드</p>
+<ul>
+<li>Active: ICMP ping / HTTP GET</li>
+<li>Passive: Sniffing</li>
+</ul>
+<p>데이터 소스</p>
+<ul>
+<li>Internal: log date, device statistics</li>
+<li>External: active 데이터 수집 모드 사용</li>
+</ul>
+<p>Data Point 당 입력 수</p>
+<ul>
+<li>Multi-N: 복수의 입력을 통해 만들어진 복수의 통계치, bytes 전송량, HTTP 요청 수</li>
+<li>Single-N or 1-N: 단일 입력</li>
+</ul>
+<p>양</p>
+<ul>
+<li>Flow: 이벤트 성, Multi-N 같은 것; 패킷 전송량, 응답 시간</li>
+<li>Throughput: 특정 시간 단위로 flow를 잰 것, bit rate, IOPS</li>
+<li>Stock: 특정 시각에 쌓인 양, memory usage, free disk space, queue length, temperature, volume level</li>
+<li>Availability: 특정 기대값에 미치는지 판단, ICMP ping 결과, 패킷 로스</li>
+</ul>
+<h2 id="Timeseries_Patterns"><a href="#Timeseries_Patterns" class="headerlink" title="Timeseries Patterns"></a>Timeseries Patterns</h2><p><img src="/images/timeseries_patterns.png" alt=""></p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -112,7 +219,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swcho.github.co/2016/01/28/effective-monitoring/" data-title="effective_monitoring | Notes" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swcho.github.co/2016/01/28/effective-monitoring/" data-title="Effective Monitoring | Notes" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -150,7 +257,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#uB370_uC774_uD130__uC218_uC9D1"><span class="toc-number">1.</span> <span class="toc-text">데이터 수집</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coverage"><span class="toc-number">2.</span> <span class="toc-text">Coverage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Metrix"><span class="toc-number">3.</span> <span class="toc-text">Metrix</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Timeseries_Patterns"><span class="toc-number">4.</span> <span class="toc-text">Timeseries Patterns</span></a></li></ol>
  
   </div>
 
