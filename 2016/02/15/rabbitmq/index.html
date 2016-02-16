@@ -1,0 +1,507 @@
+
+ <!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>RabbitMQ 개념 | Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Sungwoo">
+    
+
+    
+    <meta name="description" content="Consumer, ProducerProducer는 message를 생성하고, Consumer는 message를 소비 한다.AMQP의 명령을 보내는 가상의 연결인 Channel은 하나의 AMQP 연결(TCP)에서 여러개 설정할 수 있다.
+QueueQ를 기준으로 consumer는 메시지를 소비하며, “basic.consume”, “basic.get”으로 메시지">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RabbitMQ 개념">
+<meta property="og:url" content="http://swcho.github.co/2016/02/15/rabbitmq/index.html">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="Consumer, ProducerProducer는 message를 생성하고, Consumer는 message를 소비 한다.AMQP의 명령을 보내는 가상의 연결인 Channel은 하나의 AMQP 연결(TCP)에서 여러개 설정할 수 있다.
+QueueQ를 기준으로 consumer는 메시지를 소비하며, “basic.consume”, “basic.get”으로 메시지">
+<meta property="og:updated_time" content="2016-02-16T13:32:36.376Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RabbitMQ 개념">
+<meta name="twitter:description" content="Consumer, ProducerProducer는 message를 생성하고, Consumer는 message를 소비 한다.AMQP의 명령을 보내는 가상의 연결인 Channel은 하나의 AMQP 연결(TCP)에서 여러개 설정할 수 있다.
+QueueQ를 기준으로 consumer는 메시지를 소비하며, “basic.consume”, “basic.get”으로 메시지">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Notes" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Notes" title="Notes"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Notes">Notes</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:swcho.github.co">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/02/15/rabbitmq/" title="RabbitMQ 개념" itemprop="url">RabbitMQ 개념</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		
+  <p class="article-time">
+    <time datetime="2016-02-15T10:28:06.000Z" itemprop="datePublished"> Published 2016-02-15</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Consumer_2C_Producer"><span class="toc-number">1.</span> <span class="toc-text">Consumer, Producer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Queue"><span class="toc-number">2.</span> <span class="toc-text">Queue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Exchanges_and_bindings"><span class="toc-number">3.</span> <span class="toc-text">Exchanges and bindings</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uC608_uC81C"><span class="toc-number">4.</span> <span class="toc-text">예제</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="Consumer_2C_Producer"><a href="#Consumer_2C_Producer" class="headerlink" title="Consumer, Producer"></a>Consumer, Producer</h1><p>Producer는 message를 생성하고, Consumer는 message를 소비 한다.<br>AMQP의 명령을 보내는 가상의 연결인 Channel은 하나의 AMQP 연결(TCP)에서 여러개 설정할 수 있다.</p>
+<h1 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h1><p>Q를 기준으로 consumer는 메시지를 소비하며, “basic.consume”, “basic.get”으로 메시지를 가져온다.<br>하나의 Q에 여러개의 consumer가 구독하고 있다면, round robin 방식으로 메시지가 분배 된다.<br>consumer는 명시적으로 basic.ack를 주거나 Q 구독시, auto_ack 파라미터를 설정하여 자동으로 ack를 줄 수 있다.<br>RabbitMQ는 ack를 받으면 전달한 메시지를 삭제한다.<br>만일 consumer가 ack를 전달하기 전에 연결을 해제 하면, 메시지가 전달되지 않은 것으로 간주하고 다음 consumer에게 전달한다.<br>따라서 consumer 애플리케이션이 특정 메시지 처리 중 crash가 발생하면, 해당 메시지는 다른 consumer에게 전달되었다고 생각해도 무방하다.<br>하지만, consumer 애플리케이션이 버그로 인해 ack 전달을 하지 못했다면, 해당 consumer에게 더 이상 메시지를 전송하지 않는다.<br>만일, 명시적으로 ack를 하지 않고 reject를 하고 싶다면, 연결을 해제하거나 RabbitMQ 2.0 이상 부터 지원하는 basic.reject 명령을 사용한다.<br>RabbitMQ가 reject를 받으면 해당 메시지를 다음 consumer에게 전달한다.<br>Q는 producer, consumer 모두 queue.declare 명령을 통해 정의할 수 있다.<br>Consumer가 다른 Q를 구독 중일 때에는 Q를 정의할 수 없다.<br>Q는 다음과 같은 속성이 있다.</p>
+<ul>
+<li>exclusive: 하나의 consumer만 접근</li>
+<li>auto-delete: 마지막 consumer가 구독을 해지하면 삭제됨<br>Q가 존재하는지 확인하려면, queue.declare 명령의 passive 옵션을 준다. 존재할 경우 성공을 그렇지 않을 경우 Q를 생성하지 않고 error를 반환한다.</li>
+</ul>
+<h1 id="Exchanges_and_bindings"><a href="#Exchanges_and_bindings" class="headerlink" title="Exchanges and bindings"></a>Exchanges and bindings</h1><p>$channel-&gt;basic_publish([message], ‘’, [exchange name]);<br>$channel-&gt;queue_bind([queue name], ‘’, [topic])<br>basic_publish(exchange, routing_key, body, properties=None, mandatory=False, immediate=False)<br>queue_bind(queue, exchange, routing_key=None, arguments=None)</p>
+<ul>
+<li>Direct Exchange<ul>
+<li>$channel-&gt;basic_publish($msg, ‘’, ‘queue-name’);</li>
+</ul>
+</li>
+<li>Fanout Exchange</li>
+<li><p>Topic Exchange</p>
+<ul>
+<li>$channel-&gt;basic_publish($msg, ‘logs-exchange’, ‘error.msg-inbox’);</li>
+<li>$channel-&gt;queue_bind(‘msg-inbox-errors’, ‘logs-exchange’, ‘error.msg-inbox’);<br>error 메시지만 수신</li>
+<li>$channel-&gt;queue_bind(‘msg-inbox-logs’, ‘logs-exchange’, ‘*.msg-inbox’);<br>msg-inbox 모듈의 모든 메시지 수신</li>
+<li>$channel-&gt;queue_bind(‘all-logs’, ‘logs-exchange’, ‘#’);<br>모든 로그 수신</li>
+</ul>
+</li>
+<li><p>Exchange, queue, bindings</p>
+</li>
+<li>Queue는 binding rule에 의해 exchange에 연결한다</li>
+<li>메시지는 exchange로 전달한다.</li>
+<li>direct, fanout, topic 의 3가지 exchange type이 존재한다.</li>
+<li>메시지 routing key와 exchange type에 따라 브로커는 메시지를 Q에 전달한다.</li>
+</ul>
+<p>하나의 rabbitmq 내에서 가상의 호스트를 구성함으로서 독립적인 exchange, binding, queue를 가질 수 있으며, 이에 따라 권한 설정을 달리 가져갈 수 있다.</p>
+<p>일반적으로 q의 내용은 RabbitMQ가 재부팅하면 사라진다. 하지만, persistence 설정을 하면 유지할 수 있다.</p>
+<h1 id="uC608_uC81C"><a href="#uC608_uC81C" class="headerlink" title="예제"></a>예제</h1><p>Hello World producer<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pika, sys</span><br><span class="line"></span><br><span class="line">credentials = pika.PlainCredentials(<span class="string">"guest"</span>, <span class="string">"guest"</span>)</span><br><span class="line">conn_params = pika.ConnectionParameters(<span class="string">"localhost"</span>, credentials = credentials)</span><br><span class="line">conn_broker = pika.BlockingConnection(conn_params)</span><br><span class="line">channel = conn_broker.channel()</span><br><span class="line">channel.exchange_declare(exchange=<span class="string">"hello-exchange"</span>,</span><br><span class="line">                         type=<span class="string">"direct"</span>,</span><br><span class="line">                         passive=<span class="keyword">False</span>,</span><br><span class="line">                         durable=<span class="keyword">True</span>,</span><br><span class="line">                         auto_delete=<span class="keyword">False</span>)</span><br><span class="line">msg = sys.argv[<span class="number">1</span>]</span><br><span class="line">msg_props = pika.BasicProperties()</span><br><span class="line">msg_props.content_type = <span class="string">"text/plain"</span></span><br><span class="line">channel.basic_publish(body=msg,</span><br><span class="line">                      exchange=<span class="string">"hello-exchange"</span>,</span><br><span class="line">                      properties=msg_props,</span><br><span class="line">                      routing_key=<span class="string">"hola"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>Hello World consumer<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pika</span><br><span class="line"></span><br><span class="line">credentials = pika.PlainCredentials(<span class="string">"guest"</span>, <span class="string">"guest"</span>)</span><br><span class="line">conn_params = pika.ConnectionParameters(<span class="string">"localhost"</span>, credentials = credentials)</span><br><span class="line">conn_broker = pika.BlockingConnection(conn_params)</span><br><span class="line">channel = conn_broker.channel()</span><br><span class="line">channel.exchange_declare(exchange=<span class="string">"hello-exchange"</span>,</span><br><span class="line">                         type=<span class="string">"direct"</span>,</span><br><span class="line">                         passive=<span class="keyword">False</span>,</span><br><span class="line">                         durable=<span class="keyword">True</span>,</span><br><span class="line">                         auto_delete=<span class="keyword">False</span>)</span><br><span class="line">channel.queue_declare(queue=<span class="string">"hello-queue"</span>)</span><br><span class="line">channel.queue_bind(queue=<span class="string">"hello-queue"</span>,</span><br><span class="line">                   exchange=<span class="string">"hello-exchange"</span>,</span><br><span class="line">                   routing_key=<span class="string">"hola"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">msg_consumer</span><span class="params">(channel, method, header, body)</span>:</span></span><br><span class="line">  channel.basic_ack(delivery_tag=method.delivery_tag)</span><br><span class="line">  <span class="keyword">if</span> body == <span class="string">"quit"</span>:</span><br><span class="line">    channel.basic_cancel(consumer_tag=<span class="string">"hello-consumer"</span>)</span><br><span class="line">    channel.stop_consuming()</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span> body</span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">channel.basic_consume(msg_consumer,</span><br><span class="line">                      queue=<span class="string">"hello-queue"</span>,</span><br><span class="line">                      consumer_tag=<span class="string">"hello-consumer"</span>)</span><br><span class="line">channel.start_consuming()</span><br></pre></td></tr></table></figure></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/rabbitmq/">rabbitmq</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://swcho.github.co/2016/02/15/rabbitmq/" data-title="RabbitMQ 개념 | Notes" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/01/28/effective-monitoring/"  title="Effective Monitoring">
+ <strong>다음글：</strong><br/> 
+ <span>Effective Monitoring
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Consumer_2C_Producer"><span class="toc-number">1.</span> <span class="toc-text">Consumer, Producer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Queue"><span class="toc-number">2.</span> <span class="toc-text">Queue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Exchanges_and_bindings"><span class="toc-number">3.</span> <span class="toc-text">Exchanges and bindings</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uC608_uC81C"><span class="toc-number">4.</span> <span class="toc-text">예제</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="#" target="_blank" title="home">home</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Sungwoo">Sungwoo</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'sungwoosnotes';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
