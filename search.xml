@@ -4,6 +4,138 @@
   
     
     <entry>
+      <title><![CDATA[RabbitMQ Admin]]></title>
+      <url>http://swcho.github.co/2016/02/17/rabbitmq/</url>
+      <content type="html"><![CDATA[<h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><h2 id="Mnesia__uC124_uC815"><a href="#Mnesia__uC124_uC815" class="headerlink" title="Mnesia 설정"></a>Mnesia 설정</h2><table>
+<thead>
+<tr>
+<th>option</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dump_log_write_threshold</td>
+<td>100</td>
+<td>얼마나 자주 데이터 베이스 파일로 flush 하는가</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Rabbit__uC124_uC815"><a href="#Rabbit__uC124_uC815" class="headerlink" title="Rabbit 설정"></a>Rabbit 설정</h2><table>
+<thead>
+<tr>
+<th>option</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tcp_listeners</td>
+<td>[{“0.0.0.0”,5672},]</td>
+<td>non-SSL 접속 가능한 IP 주소와 포트</td>
+</tr>
+<tr>
+<td>ssl_listeners</td>
+<td>NONE</td>
+<td>SSL 접속 가능한 IP 주소와 포트</td>
+</tr>
+<tr>
+<td>ssl_options</td>
+<td>NONE</td>
+<td>cacertfile, certfile, keyfile</td>
+</tr>
+<tr>
+<td>vm_memory_high_watermark</td>
+<td>0.4</td>
+<td>사용 가능한 메모리양</td>
+</tr>
+<tr>
+<td>msg_store_file_size_limit</td>
+<td>16777216</td>
+<td>garbage collection 전에 최대 사용 가능한 메시지 저장 DB의 크기</td>
+</tr>
+<tr>
+<td>queue_index_max_journal_entries</td>
+<td>262144</td>
+<td>journal 가능한 최대 엔트리 수</td>
+</tr>
+</tbody>
+</table>
+<h1 id="User_Permission"><a href="#User_Permission" class="headerlink" title="User Permission"></a>User Permission</h1><h2 id="User"><a href="#User" class="headerlink" title="User"></a>User</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rabbitmqctl add_user cashing-tier cashMe1&#10;$ rabbitmqctl delete_user cashing-tier&#10;$ rabbitmqctl list_users&#10;$ rabbitmqctl change_password cashing-tier compl3xPassword</span><br></pre></td></tr></table></figure>
+<h2 id="Permission"><a href="#Permission" class="headerlink" title="Permission"></a>Permission</h2><table>
+<thead>
+<tr>
+<th>AMQP command</th>
+<th>Configure</th>
+<th>Write</th>
+<th>Read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exchange.declare</td>
+<td>exchange</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exchange.delete</td>
+<td>exchange</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>queue.declare</td>
+<td>queue</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>queue.delete</td>
+<td>queue</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>queue.bind</td>
+<td></td>
+<td>queue</td>
+<td>exchange</td>
+</tr>
+<tr>
+<td>basic.publish</td>
+<td></td>
+<td>exchange</td>
+<td></td>
+</tr>
+<tr>
+<td>basic.get</td>
+<td></td>
+<td></td>
+<td>queue</td>
+</tr>
+<tr>
+<td>basic.consume</td>
+<td></td>
+<td></td>
+<td>queue</td>
+</tr>
+<tr>
+<td>queue.purge</td>
+<td></td>
+<td></td>
+<td>queue</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rabbitmqctl set_permissions -p sycamore cashing-tier &#34;.*&#34; &#34;.*&#34; &#34;.*&#34;&#10;$ rabbitmqctl set_permissions -p oak -s all cashing-tier &#34;&#34; &#34;checks-.*&#34; &#34;.*&#34;&#10;$ rabbitmqctl list_permissions -p oak&#10;$ rabbitmqctl clear_permissions -p oak cashing-tier&#10;$ rabbitmqctl list_permissions -p oak&#10;$ rabbitmqctl list_user_permissions cashing-tier</span><br></pre></td></tr></table></figure>
+<h1 id="Check_Status"><a href="#Check_Status" class="headerlink" title="Check Status"></a>Check Status</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rabbitmqctl list_queues -p sycamore&#10;$ rabbitmqctl list_queues name messages consumers memory&#10;$ rabbitmqctl list_queues name durable auto_delete&#10;$ rabbitmqctl list_exchanges&#10;$ rabbitmqctl list_exchanges name type durable auto_delete&#10;$ rabbitmqctl list_bindings</span><br></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[RabbitMQ 개념]]></title>
       <url>http://swcho.github.co/2016/02/15/rabbitmq/</url>
       <content type="html"><![CDATA[<h1 id="Consumer_2C_Producer"><a href="#Consumer_2C_Producer" class="headerlink" title="Consumer, Producer"></a>Consumer, Producer</h1><p>Producer는 message를 생성하고, Consumer는 message를 소비 한다.<br>AMQP의 명령을 보내는 가상의 연결인 Channel은 하나의 AMQP 연결(TCP)에서 여러개 설정할 수 있다.</p>
@@ -93,7 +225,7 @@
 </ul>
 <p>HTTP 서버 예</p>
 <ul>
-<li>Amount: 요청 크기, </li>
+<li>Amount: 요청 크기,</li>
 <li>Time Delay: 응답 시</li>
 <li>Amount per Time: 시간당 요청 수</li>
 </ul>
@@ -423,7 +555,7 @@
 <p>이 때 * 과 _ 사이에는 공백이 있어서는 않된다.</p>
 <p><a href="http://example.com" title="링크제목" target="_blank" rel="external">링크</a>.</p>
 <p><a href="http://example.com/" title="링크제목1" target="_blank" rel="external">링크1</a> 과 <a href="http://example.org/" title="링크제목2" target="_blank" rel="external">링크2</a>.</p>
-<p><a href="http://example.com/" target="_blank" rel="external">http://example.com/</a><br><a href="/&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#109;&#x65;&#64;&#x70;&#114;&#105;&#x76;&#x61;&#99;&#x79;&#x2e;&#x6e;&#x65;&#x74;">&#109;&#x65;&#64;&#x70;&#114;&#105;&#x76;&#x61;&#99;&#x79;&#x2e;&#x6e;&#x65;&#x74;</a></p>
+<p><a href="http://example.com/" target="_blank" rel="external">http://example.com/</a><br><a href="/&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x6d;&#x65;&#64;&#x70;&#x72;&#x69;&#x76;&#97;&#x63;&#x79;&#x2e;&#110;&#101;&#116;">&#x6d;&#x65;&#64;&#x70;&#x72;&#x69;&#x76;&#97;&#x63;&#x79;&#x2e;&#110;&#101;&#116;</a></p>
 ]]></content>
     </entry>
     

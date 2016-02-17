@@ -81,6 +81,189 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/02/17/rabbitmq/" title="RabbitMQ Admin" itemprop="url">RabbitMQ Admin</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		
+  <p class="article-time">
+    <time datetime="2016-02-17T12:04:32.000Z" itemprop="datePublished"> Published 2016-02-17</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><h2 id="Mnesia__uC124_uC815"><a href="#Mnesia__uC124_uC815" class="headerlink" title="Mnesia 설정"></a>Mnesia 설정</h2><table>
+<thead>
+<tr>
+<th>option</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dump_log_write_threshold</td>
+<td>100</td>
+<td>얼마나 자주 데이터 베이스 파일로 flush 하는가</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Rabbit__uC124_uC815"><a href="#Rabbit__uC124_uC815" class="headerlink" title="Rabbit 설정"></a>Rabbit 설정</h2><table>
+<thead>
+<tr>
+<th>option</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tcp_listeners</td>
+<td>[{“0.0.0.0”,5672},]</td>
+<td>non-SSL 접속 가능한 IP 주소와 포트</td>
+</tr>
+<tr>
+<td>ssl_listeners</td>
+<td>NONE</td>
+<td>SSL 접속 가능한 IP 주소와 포트</td>
+</tr>
+<tr>
+<td>ssl_options</td>
+<td>NONE</td>
+<td>cacertfile, certfile, keyfile</td>
+</tr>
+<tr>
+<td>vm_memory_high_watermark</td>
+<td>0.4</td>
+<td>사용 가능한 메모리양</td>
+</tr>
+<tr>
+<td>msg_store_file_size_limit</td>
+<td>16777216</td>
+<td>garbage collection 전에 최대 사용 가능한 메시지 저장 DB의 크기</td>
+</tr>
+<tr>
+<td>queue_index_max_journal_entries</td>
+<td>262144</td>
+<td>journal 가능한 최대 엔트리 수</td>
+</tr>
+</tbody>
+</table>
+<h1 id="User_Permission"><a href="#User_Permission" class="headerlink" title="User Permission"></a>User Permission</h1><h2 id="User"><a href="#User" class="headerlink" title="User"></a>User</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rabbitmqctl add_user cashing-tier cashMe1&#10;$ rabbitmqctl delete_user cashing-tier&#10;$ rabbitmqctl list_users&#10;$ rabbitmqctl change_password cashing-tier compl3xPassword</span><br></pre></td></tr></table></figure>
+<h2 id="Permission"><a href="#Permission" class="headerlink" title="Permission"></a>Permission</h2><table>
+<thead>
+<tr>
+<th>AMQP command</th>
+<th>Configure</th>
+<th>Write</th>
+<th>Read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exchange.declare</td>
+<td>exchange</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exchange.delete</td>
+<td>exchange</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>queue.declare</td>
+<td>queue</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>queue.delete</td>
+<td>queue</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>queue.bind</td>
+<td></td>
+<td>queue</td>
+<td>exchange</td>
+</tr>
+<tr>
+<td>basic.publish</td>
+<td></td>
+<td>exchange</td>
+<td></td>
+</tr>
+<tr>
+<td>basic.get</td>
+<td></td>
+<td></td>
+<td>queue</td>
+</tr>
+<tr>
+<td>basic.consume</td>
+<td></td>
+<td></td>
+<td>queue</td>
+</tr>
+<tr>
+<td>queue.purge</td>
+<td></td>
+<td></td>
+<td>queue</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rabbitmqctl set_permissions -p sycamore cashing-tier &#34;.*&#34; &#34;.*&#34; &#34;.*&#34;&#10;$ rabbitmqctl set_permissions -p oak -s all cashing-tier &#34;&#34; &#34;checks-.*&#34; &#34;.*&#34;&#10;$ rabbitmqctl list_permissions -p oak&#10;$ rabbitmqctl clear_permissions -p oak cashing-tier&#10;$ rabbitmqctl list_permissions -p oak&#10;$ rabbitmqctl list_user_permissions cashing-tier</span><br></pre></td></tr></table></figure>
+<h1 id="Check_Status"><a href="#Check_Status" class="headerlink" title="Check Status"></a>Check Status</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rabbitmqctl list_queues -p sycamore&#10;$ rabbitmqctl list_queues name messages consumers memory&#10;$ rabbitmqctl list_queues name durable auto_delete&#10;$ rabbitmqctl list_exchanges&#10;$ rabbitmqctl list_exchanges name type durable auto_delete&#10;$ rabbitmqctl list_bindings</span><br></pre></td></tr></table></figure>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/rabbitmq/">rabbitmq</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/02/17/rabbitmq/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/02/15/rabbitmq/" title="RabbitMQ 개념" itemprop="url">RabbitMQ 개념</a>
   </h1>
   <p class="article-author">By
@@ -232,7 +415,7 @@
 </ul>
 <p>HTTP 서버 예</p>
 <ul>
-<li>Amount: 요청 크기, </li>
+<li>Amount: 요청 크기,</li>
 <li>Time Delay: 응답 시</li>
 <li>Amount per Time: 시간당 요청 수</li>
 </ul>
@@ -269,6 +452,11 @@
     <footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/monitoring/">monitoring</a>
+  </div>
 
 </div>
 
@@ -329,6 +517,11 @@
     <footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/lodash/">lodash</a>
+  </div>
 
 </div>
 
@@ -909,7 +1102,7 @@
 <p>이 때 * 과 _ 사이에는 공백이 있어서는 않된다.</p>
 <p><a href="http://example.com" title="링크제목" target="_blank" rel="external">링크</a>.</p>
 <p><a href="http://example.com/" title="링크제목1" target="_blank" rel="external">링크1</a> 과 <a href="http://example.org/" title="링크제목2" target="_blank" rel="external">링크2</a>.</p>
-<p><a href="http://example.com/" target="_blank" rel="external">http://example.com/</a><br><a href="/&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#109;&#x65;&#64;&#x70;&#114;&#105;&#x76;&#x61;&#99;&#x79;&#x2e;&#x6e;&#x65;&#x74;">&#109;&#x65;&#64;&#x70;&#114;&#105;&#x76;&#x61;&#99;&#x79;&#x2e;&#x6e;&#x65;&#x74;</a></p>
+<p><a href="http://example.com/" target="_blank" rel="external">http://example.com/</a><br><a href="/&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x6d;&#x65;&#64;&#x70;&#x72;&#x69;&#x76;&#97;&#x63;&#x79;&#x2e;&#110;&#101;&#116;">&#x6d;&#x65;&#64;&#x70;&#x72;&#x69;&#x76;&#97;&#x63;&#x79;&#x2e;&#110;&#101;&#116;</a></p>
 
         
         
@@ -943,67 +1136,10 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/01/07/hello-world/" title="Hello World" itemprop="url">Hello World</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
-		
-  <p class="article-time">
-    <time datetime="2016-01-07T13:02:29.158Z" itemprop="datePublished"> Published 2016-01-07</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/01/07/hello-world/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
+  <nav id="page-nav" class="clearfix">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+  </nav>
 
 </div>
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
@@ -1023,11 +1159,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>1</sup></a></li>
+				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
 			
 		
 			
@@ -1040,6 +1176,14 @@
 		
 			
 				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
 			
 		
 		</ul>
