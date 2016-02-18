@@ -1,0 +1,534 @@
+
+ <!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>RabbitMQ 패턴 | Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Sungwoo">
+    
+
+    
+    <meta name="description" content="Decoupling
+요청과 수행의 분리
+Load balancer 필요성 감소
+하나의 언어에 종속적이지 않음
+
+Fire and forget
+Batch processing: 오래 걸리는 일들의 묶음
+Notifications
+Alert: fanout 보다는 topic, alert level 기준으로 다양한 처리 가능
+Parallel Processing: fano">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RabbitMQ 패턴">
+<meta property="og:url" content="http://swcho.github.co/2016/02/18/rabbitmq/index.html">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="Decoupling
+요청과 수행의 분리
+Load balancer 필요성 감소
+하나의 언어에 종속적이지 않음
+
+Fire and forget
+Batch processing: 오래 걸리는 일들의 묶음
+Notifications
+Alert: fanout 보다는 topic, alert level 기준으로 다양한 처리 가능
+Parallel Processing: fano">
+<meta property="og:updated_time" content="2016-02-18T12:52:59.464Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RabbitMQ 패턴">
+<meta name="twitter:description" content="Decoupling
+요청과 수행의 분리
+Load balancer 필요성 감소
+하나의 언어에 종속적이지 않음
+
+Fire and forget
+Batch processing: 오래 걸리는 일들의 묶음
+Notifications
+Alert: fanout 보다는 topic, alert level 기준으로 다양한 처리 가능
+Parallel Processing: fano">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Notes" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Notes" title="Notes"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Notes">Notes</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:swcho.github.co">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/02/18/rabbitmq/" title="RabbitMQ 패턴" itemprop="url">RabbitMQ 패턴</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		
+  <p class="article-time">
+    <time datetime="2016-02-18T12:06:56.000Z" itemprop="datePublished"> Published 2016-02-18</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Decoupling"><span class="toc-number">1.</span> <span class="toc-text">Decoupling</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fire_and_forget"><span class="toc-number">2.</span> <span class="toc-text">Fire and forget</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RPC"><span class="toc-number">3.</span> <span class="toc-text">RPC</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="Decoupling"><a href="#Decoupling" class="headerlink" title="Decoupling"></a>Decoupling</h1><ul>
+<li>요청과 수행의 분리</li>
+<li>Load balancer 필요성 감소</li>
+<li>하나의 언어에 종속적이지 않음</li>
+</ul>
+<h1 id="Fire_and_forget"><a href="#Fire_and_forget" class="headerlink" title="Fire and forget"></a>Fire and forget</h1><ul>
+<li>Batch processing: 오래 걸리는 일들의 묶음</li>
+<li>Notifications</li>
+<li>Alert: fanout 보다는 topic, alert level 기준으로 다양한 처리 가능</li>
+<li>Parallel Processing: fanout, 동시에 여러개 처리</li>
+</ul>
+<h1 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h1><ul>
+<li><p>Private queues and sending acknowledgements<br>reply_to 필드 사용해서 수신 queue 정의<br>먼저 queue를 이름 없이 exclusive 설정을 해서 정의를 하면, RabbitMQ는 유일한 이름을 바환하며 이를 reply_to에 설정해서 사용한다.</p>
+<ul>
+<li><p>API server—rpc_server.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pika, json</span><br><span class="line"></span><br><span class="line"><span class="comment"># channel creation</span></span><br><span class="line">creds_broker = pika.PlainCredentials(<span class="string">"rpc_user"</span>, <span class="string">"rpcme"</span>)</span><br><span class="line">conn_params = pika.ConnectionParameters(<span class="string">"localhost"</span>,</span><br><span class="line">                                        virtual_host = <span class="string">"/"</span>,  credentials = creds_broker)</span><br><span class="line">conn_broker = pika.BlockingConnection(conn_params)</span><br><span class="line">channel = conn_broker.channel()</span><br><span class="line"></span><br><span class="line"><span class="comment"># the exchange and queues for receiving the API calls are created</span></span><br><span class="line">channel.exchange_declare(exchange=<span class="string">"rpc"</span>,</span><br><span class="line">                         type=<span class="string">"direct"</span>,</span><br><span class="line">                         auto_delete=<span class="keyword">False</span>)</span><br><span class="line">channel.queue_declare(queue=<span class="string">"ping"</span>, auto_delete=<span class="keyword">False</span>)</span><br><span class="line">channel.queue_bind(queue=<span class="string">"ping"</span>,</span><br><span class="line">                   exchange=<span class="string">"rpc"</span>,</span><br><span class="line">                   routing_key=<span class="string">"ping"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">api_ping</span><span class="params">(channel, method, header, body)</span>:</span></span><br><span class="line">  <span class="string">"""'ping' API call."""</span></span><br><span class="line">  channel.basic_ack(delivery_tag=method.delivery_tag)</span><br><span class="line">  msg_dict = json.loads(body)</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Received API call...replying..."</span></span><br><span class="line">  channel.basic_publish(body=<span class="string">"Pong!"</span> + str(msg_dict[<span class="string">"time"</span>]),</span><br><span class="line">                        exchange=<span class="string">""</span>,</span><br><span class="line">                        routing_key=header.reply_to)</span><br><span class="line"></span><br><span class="line">channel.basic_consume(api_ping,</span><br><span class="line">                      queue=<span class="string">"ping"</span>,</span><br><span class="line">                      consumer_tag=<span class="string">"ping"</span>)</span><br><span class="line"><span class="keyword">print</span> <span class="string">"Waiting for RPC calls..."</span></span><br><span class="line">channel.start_consuming()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>API client—rpc_client.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time, json, pika</span><br><span class="line"></span><br><span class="line"><span class="comment"># channel creation</span></span><br><span class="line">creds_broker = pika.PlainCredentials(<span class="string">"rpc_user"</span>, <span class="string">"rpcme"</span>)</span><br><span class="line">conn_params = pika.ConnectionParameters(<span class="string">"localhost"</span>,</span><br><span class="line">                                        virtual_host = <span class="string">"/"</span>,  credentials = creds_broker)</span><br><span class="line">conn_broker = pika.BlockingConnection(conn_params)</span><br><span class="line">channel = conn_broker.channel()</span><br><span class="line"></span><br><span class="line"><span class="comment"># message</span></span><br><span class="line">msg = json.dumps(&#123;</span><br><span class="line">  <span class="string">"client_name"</span>: <span class="string">"RPC Client 1.0"</span>,</span><br><span class="line">  <span class="string">"time"</span> : time.time()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># create queue binding without name with exclusive</span></span><br><span class="line">result = channel.queue_declare(exclusive=<span class="keyword">True</span>, auto_delete=<span class="keyword">True</span>)</span><br><span class="line">msg_props = pika.BasicProperties()</span><br><span class="line">msg_props.reply_to=result.method.queue</span><br><span class="line">channel.basic_publish(body=msg,</span><br><span class="line">                      exchange=<span class="string">"rpc"</span>,</span><br><span class="line">                      properties=msg_props,</span><br><span class="line">                      routing_key=<span class="string">"ping"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">"Sent 'ping' RPC call. Waiting for reply..."</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reply_callback</span><span class="params">(channel, method, header, body)</span>:</span></span><br><span class="line">  <span class="string">"""Receives RPC server replies."""</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"RPC Reply --- "</span> + body</span><br><span class="line">  channel.stop_consuming()</span><br><span class="line"></span><br><span class="line">channel.basic_consume(reply_callback,</span><br><span class="line">                      queue=result.method.queue,  consumer_tag=result.method.queue)</span><br><span class="line">channel.start_consuming()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/rabiitmq/">rabiitmq</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://swcho.github.co/2016/02/18/rabbitmq/" data-title="RabbitMQ 패턴 | Notes" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/02/17/rabbitmq/"  title="RabbitMQ Admin">
+ <strong>다음글：</strong><br/> 
+ <span>RabbitMQ Admin
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Decoupling"><span class="toc-number">1.</span> <span class="toc-text">Decoupling</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Fire_and_forget"><span class="toc-number">2.</span> <span class="toc-text">Fire and forget</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RPC"><span class="toc-number">3.</span> <span class="toc-text">RPC</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="#" target="_blank" title="home">home</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Sungwoo">Sungwoo</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'sungwoosnotes';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
