@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title><![CDATA[data_mining]]></title>
+      <url>http://swcho.github.co/2016/03/16/data-mining/</url>
+      <content type="html"><![CDATA[<p><a href="http://michael.hahsler.net/SMU/EMIS7332/" target="_blank" rel="external">http://michael.hahsler.net/SMU/EMIS7332/</a><br><a href="http://michael.hahsler.net/SMU/EMIS7332/R/chap2.html" target="_blank" rel="external">http://michael.hahsler.net/SMU/EMIS7332/R/chap2.html</a></p>
+<h1 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data(iris)</span><br></pre></td></tr></table></figure>
+<p>데이터를 읽어옴</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head(iris)</span><br></pre></td></tr></table></figure>
+<p>데이터 앞부분만 보여줌<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str(iris)</span><br></pre></td></tr></table></figure></p>
+<p>구조 표시</p>
+<h1 id="Data_Quality"><a href="#Data_Quality" class="headerlink" title="Data Quality"></a>Data Quality</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot(iris, col=iris$Species)</span><br></pre></td></tr></table></figure>
+<p>노이즈나 outlier 확인</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary(iris)</span><br></pre></td></tr></table></figure>
+<p>숫자일 경우 Min.(최소), 1st Qu.(25% 가 이 값 밑), 3th Qu. (75%가 이 값 밑), median(중간값), mean(평균)<br>문자열일 경우 개수</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">i &lt;- duplicated(iris)</span><br><span class="line">which(i)</span><br><span class="line">iris[i,]</span><br></pre></td></tr></table></figure>
+<p>어느 것이 중복 되었는가?</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clean.data &lt;- unique(iris[complete.cases(iris),])</span><br><span class="line">summary(clean.data)</span><br></pre></td></tr></table></figure>
+<p>complete.cases (missing value 가 없는가?) unique(중복 제외)</p>
+<h1 id="Aggregation"><a href="#Aggregation" class="headerlink" title="Aggregation"></a>Aggregation</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aggregate(. ~ Species, data = iris, FUN = mean)</span><br></pre></td></tr></table></figure>
+<p>종끼리 묶은 후, 평균 값</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aggregate(. ~ Species, data = iris, FUN = median)</span><br></pre></td></tr></table></figure>
+<p>종끼리 묶은 후, 중간 값</p>
+<h1 id="Sampling"><a href="#Sampling" class="headerlink" title="Sampling"></a>Sampling</h1><h2 id="Random_sampling"><a href="#Random_sampling" class="headerlink" title="Random sampling"></a>Random sampling</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id &lt;- sample(<span class="number">1</span>:nrow(iris), <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+<p>1부터 nrow (row 개수) 수 사이에서 20 개 unordered 무작위 검출</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s &lt;- iris[id,]</span><br><span class="line">plot(s, col=s$Species)</span><br></pre></td></tr></table></figure>
+<p>이렇게 뽑은 인덱스로 데이터를 뽑아서 그리기</p>
+<h2 id="Stratified_sampling__28_uCE35_uD654__uCD94_uCD9C_uBC95_29"><a href="#Stratified_sampling__28_uCE35_uD654__uCD94_uCD9C_uBC95_29" class="headerlink" title="Stratified sampling (층화 추출법)"></a>Stratified sampling (층화 추출법)</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(sampling)</span><br><span class="line">id2 &lt;- strata(iris, stratanames=<span class="string">"Species"</span>, size=c(<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>), method=<span class="string">"srswor"</span>)</span><br><span class="line">id2</span><br></pre></td></tr></table></figure>
+<p>stratanames (층화할 변수들의 vector) size (층화 크기)<br>method</p>
+<ul>
+<li>simple random sampling without replacement (srswor)</li>
+<li>simple random sampling with replacement (srswr)</li>
+<li>Poisson sampling (poisson)</li>
+<li>systematic sampling (systematic)</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s2 &lt;- iris[id2$ID_unit,]</span><br><span class="line">plot(s2, col=s2$Species)</span><br></pre></td></tr></table></figure>
+<p>뽑은 ID로 그림 그리기</p>
+<h1 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h1><h2 id="Dimensionality_reduciton__28Principal_Components_Analysis_-_PCA_2C__uC8FC_uC131_uBD84__uBD84_uC11D_29"><a href="#Dimensionality_reduciton__28Principal_Components_Analysis_-_PCA_2C__uC8FC_uC131_uBD84__uBD84_uC11D_29" class="headerlink" title="Dimensionality reduciton (Principal Components Analysis - PCA, 주성분 분석)"></a>Dimensionality reduciton (Principal Components Analysis - PCA, 주성분 분석)</h2><p>다양한 관점으로 바라보기<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(scatterplot3d)</span><br><span class="line">scatterplot3d(iris[,<span class="number">1</span>:<span class="number">3</span>], color=as.integer(iris$Species))</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(rgl)</span><br><span class="line">plot3d(as.matrix(iris[,<span class="number">1</span>:<span class="number">3</span>]), col=as.integer(iris$Species), size=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(plotly)</span><br><span class="line">plot_ly(iris, x = Sepal.Length, y= Petal.Length, z = Sepal.Width, size = Petal.Width, color = Species, type=<span class="string">"scatter3d"</span>, mode=<span class="string">"markers"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pc &lt;- prcomp(as.matrix(iris[,<span class="number">1</span>:<span class="number">4</span>]))</span><br><span class="line">plot(pc)</span><br><span class="line">plot(pc$x, col=iris$Species) <span class="comment"># plot the first 2 principal components</span></span><br><span class="line">biplot(pc, col = c(<span class="string">"grey"</span>, <span class="string">"red"</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="Feature_selection"><a href="#Feature_selection" class="headerlink" title="Feature selection"></a>Feature selection</h2><h2 id="Discretrize_features"><a href="#Discretrize_features" class="headerlink" title="Discretrize features"></a>Discretrize features</h2><p>단일 변수 그리기<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot(iris$Petal.Width, <span class="number">1</span>:<span class="number">150</span>, ylab=<span class="string">"index"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>히스토그램<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hist(iris$Petal.Width)</span><br></pre></td></tr></table></figure></p>
+<p>3 등분으로 나누기<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut(iris$Petal.Width, breaks=<span class="number">3</span>)</span><br></pre></td></tr></table></figure></p>
+<p>3 categories 로 나누기<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(arules)</span><br><span class="line">plot(discretize(iris$Petal.Width, method=<span class="string">"interval"</span>, categories=<span class="number">3</span>))</span><br><span class="line">plot(discretize(iris$Petal.Width, method=<span class="string">"frequency"</span>, categories=<span class="number">3</span>))</span><br><span class="line">plot(discretize(iris$Petal.Width, method=<span class="string">"cluster"</span>, categories=<span class="number">3</span>))</span><br></pre></td></tr></table></figure></p>
+<p>method</p>
+<ul>
+<li>interval: equal interval width</li>
+<li>frequency: equal frequency</li>
+<li>cluster: k-means clustering</li>
+</ul>
+<p>히스토그램과 discretize 결과값 비교<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hist(iris$Petal.Width, main=<span class="string">"Discretization: interval"</span>, sub=<span class="string">"Blue lines are boundaries"</span>)</span><br><span class="line">abline(v=discretize(iris$Petal.Width, method=<span class="string">"interval"</span>, categories=<span class="number">3</span>, onlycuts=<span class="literal">TRUE</span>), col=<span class="string">"blue"</span>)</span><br><span class="line">abline(v=discretize(iris$Petal.Width, method=<span class="string">"cluster"</span>, categories=<span class="number">3</span>, onlycuts=<span class="literal">TRUE</span>), col=<span class="string">"red"</span>)</span><br><span class="line">abline(v=discretize(iris$Petal.Width, method=<span class="string">"frequency"</span>, categories=<span class="number">3</span>, onlycuts=<span class="literal">TRUE</span>), col=<span class="string">"green"</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Standardize_data__28Z-score_29"><a href="#Standardize_data__28Z-score_29" class="headerlink" title="Standardize data (Z-score)"></a>Standardize data (Z-score)</h2><p>Normalization: 모든 값을 0, 1 사이로 scaling 한다.<br><img src="/2016/03/16/data-mining/fig1.png" alt="This is an example image" title="This is an example image"></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[RabbitMQ 패턴]]></title>
       <url>http://swcho.github.co/2016/02/18/rabbitmq/</url>
       <content type="html"><![CDATA[<h1 id="Decoupling"><a href="#Decoupling" class="headerlink" title="Decoupling"></a>Decoupling</h1><ul>
@@ -584,7 +638,7 @@
 <p>이 때 * 과 _ 사이에는 공백이 있어서는 않된다.</p>
 <p><a href="http://example.com" title="링크제목" target="_blank" rel="external">링크</a>.</p>
 <p><a href="http://example.com/" title="링크제목1" target="_blank" rel="external">링크1</a> 과 <a href="http://example.org/" title="링크제목2" target="_blank" rel="external">링크2</a>.</p>
-<p><a href="http://example.com/" target="_blank" rel="external">http://example.com/</a><br><a href="/&#109;&#x61;&#105;&#108;&#x74;&#111;&#58;&#109;&#x65;&#x40;&#112;&#x72;&#105;&#118;&#97;&#99;&#x79;&#46;&#x6e;&#x65;&#116;">&#109;&#x65;&#x40;&#112;&#x72;&#105;&#118;&#97;&#99;&#x79;&#46;&#x6e;&#x65;&#116;</a></p>
+<p><a href="http://example.com/" target="_blank" rel="external">http://example.com/</a><br><a href="/&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#109;&#x65;&#x40;&#x70;&#114;&#x69;&#x76;&#97;&#99;&#121;&#46;&#x6e;&#101;&#x74;">&#109;&#x65;&#x40;&#x70;&#114;&#x69;&#x76;&#97;&#99;&#121;&#46;&#x6e;&#101;&#x74;</a></p>
 ]]></content>
     </entry>
     

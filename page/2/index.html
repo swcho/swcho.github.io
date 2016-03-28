@@ -81,6 +81,217 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/01/09/angularjs-summary/" title="AngularJS 정리" itemprop="url">AngularJS 정리</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		
+  <p class="article-time">
+    <time datetime="2016-01-08T23:56:04.000Z" itemprop="datePublished"> Published 2016-01-09</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="Attribute_Directive__uC815_uB9AC"><a href="#Attribute_Directive__uC815_uB9AC" class="headerlink" title="Attribute Directive 정리"></a>Attribute Directive 정리</h2><ul>
+<li><strong>ng-model</strong><br>input tag 에서 사용</li>
+<li><strong>ng-bind</strong><br>DOM tag 내의 text를  {{ }}  (double-curly) 로 적용해서 하는 것과 동일.<br>angular가 다 로드 되기 전에  {{ }}  구문이 표시될 수 있음.<br>이 때 사용함. ng-cloak도 확인 필요.</li>
+<li><strong>ng-show</strong>: 보이고 안보이고 설정</li>
+<li><strong>ng-class</strong>: CSS class 적용 설정</li>
+<li><strong>ng-repeat</strong>: Tag 반복<br>루프 중에 다음의 helper variables 들을 사용할 수 있다.<br>$first: 첫번째 엘리먼트<br>$middle: 중간 엘리먼트<br>$last: 마지막 엘리먼트<br>$index: 현재 엘리먼트의 인덱스<br>$odd, $even: 홀수 짝수인지</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-repeat</span>=<span class="value">"note in ctrl.notes2 track by note.id"</span>&gt;</span></span><br><span class="line">  &#123;&#123;note.$$hashKey&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"label"</span>&gt;</span> &#123;&#123;note.label&#125;&#125;<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"author"</span> <span class="attribute">ng-bind</span>=<span class="value">"note.done"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Forms_2C_Inputs_2C_and_Services"><a href="#Forms_2C_Inputs_2C_and_Services" class="headerlink" title="Forms, Inputs, and Services"></a>Forms, Inputs, and Services</h2><p>다음과 같이 form tag와 같이 ng-submit을 사용하면 사용자가 enter를 쳐도 동작함<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">ng-submit</span>=<span class="value">"ctrl.submit()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">ng-model</span>=<span class="value">"ctrl.user.username"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">ng-model</span>=<span class="value">"ctrl.user.password"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>ng-model을 사용하면, controller에 property가 없어도 생성해 줌</p>
+<p>다음과 같이 form 태그에서 ng-model 정의 시, wrapping 객체를 하나 더 정의해 주면 손쉭게 form data를 처리할 수 있다.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">ng-submit</span>=<span class="value">"ctrl.submit1()"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">ng-model</span>=<span class="value">"ctrl.username"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">ng-model</span>=<span class="value">"ctrl.password"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">ng-submit</span>=<span class="value">"ctrl.submit2()"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">ng-model</span>=<span class="value">"ctrl.user.username"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">ng-model</span>=<span class="value">"ctrl.user.password"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>다음과 같이 ng-minlength directive를 사용하고 $invalid form state을 사용하여 form validation을 할 수 있다.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">ng-submit</span>=<span class="value">"ctrl.submit()"</span> <span class="attribute">name</span>=<span class="value">"myForm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">ng-model</span>=<span class="value">"ctrl.user.username"</span> <span class="attribute">required</span> <span class="attribute">ng-minlength</span>=<span class="value">"4"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">ng-model</span>=<span class="value">"ctrl.user.password"</span> <span class="attribute">required</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"Submit"</span> <span class="attribute">ng-disabled</span>=<span class="value">"myForm.$invalid"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>Form state</p>
+<ul>
+<li>$invalid &lt;-&gt; $valid<br>required나 ng-minlength와 같은 validation mark에 따라 invalid 표시 함</li>
+<li>$pristine &lt;-&gt; $dirty<br>사용자가 입력을 했는지 알려줌. 이 플래그를 사용해서 reset 버튼을 disable 할 수 있음</li>
+</ul>
+<p>Validators</p>
+<ul>
+<li>required</li>
+<li>ng-required<br>Controller에서 required 인지 아닌지 동적으로 적용할 수 있음</li>
+<li>ng-minlength, ng-maxlength</li>
+<li>ng-pattern: RE</li>
+<li>type=”email”</li>
+<li>type=”number”</li>
+<li>type=”date”</li>
+<li>type=”url”</li>
+</ul>
+<p>Form state와 validator를 사용하면 controller의 도움없이도 다음과 같이 form validation 설정에 따라 error 메시지를 표시할 수 있다.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">ng-submit</span>=<span class="value">"ctrl.submit()"</span> <span class="attribute">name</span>=<span class="value">"myForm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"uname"</span> <span class="attribute">ng-model</span>=<span class="value">"ctrl.user.username"</span> <span class="attribute">required</span> <span class="attribute">ng-minlength</span>=<span class="value">"4"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">ng-show</span>=<span class="value">"myForm.uname.$error.required"</span>&gt;</span></span><br><span class="line">    This is a required field</span><br><span class="line">  <span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">ng-show</span>=<span class="value">"myForm.uname.$error.minlength"</span>&gt;</span></span><br><span class="line">    Minimum length required is 4</span><br><span class="line">  <span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">ng-show</span>=<span class="value">"myForm.uname.$invalid"</span>&gt;</span></span><br><span class="line">    This field is invalid</span><br><span class="line">  <span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">name</span>=<span class="value">"pwd"</span> <span class="attribute">ng-model</span>=<span class="value">"ctrl.user.password"</span> <span class="attribute">required</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">ng-show</span>=<span class="value">"myForm.pwd.$error.required"</span>&gt;</span></span><br><span class="line">    This is a required field</span><br><span class="line">  <span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"Submit"</span> <span class="attribute">ng-disabled</span>=<span class="value">"myForm.$invalid"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Angular_uB294_form/input_state_uC5D0__uB530_uB77C__uB2E4_uC74C_uACFC__uAC19_uC774_class_name_uC744__uC124_uC815_uD574__uC900_uB2E4"><a href="#Angular_uB294_form/input_state_uC5D0__uB530_uB77C__uB2E4_uC74C_uACFC__uAC19_uC774_class_name_uC744__uC124_uC815_uD574__uC900_uB2E4" class="headerlink" title="Angular는 form/input state에 따라 다음과 같이 class name을 설정해 준다."></a>Angular는 form/input state에 따라 다음과 같이 class name을 설정해 준다.</h2><table>
+<thead>
+<tr>
+<th>Form state</th>
+<th>CSS class applied</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$invalid</td>
+<td>ng-invalid</td>
+</tr>
+<tr>
+<td>$valid</td>
+<td>ng-valid</td>
+</tr>
+<tr>
+<td>$pristine</td>
+<td>ng-pristine</td>
+</tr>
+<tr>
+<td>$dirty</td>
+<td>ng-dirty</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Input state</th>
+<th>CSS class applied</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$invalid</td>
+<td>ng-invalid</td>
+</tr>
+<tr>
+<td>$valid</td>
+<td>ng-valid</td>
+</tr>
+<tr>
+<td>$pristine</td>
+<td>ng-pristine</td>
+</tr>
+<tr>
+<td>$dirty</td>
+<td>ng-dirty</td>
+</tr>
+<tr>
+<td>required</td>
+<td>ng-valid-required / ng-invalid-required</td>
+</tr>
+<tr>
+<td>min</td>
+<td>ng-valid-min / ng-invalid-min</td>
+</tr>
+<tr>
+<td>max</td>
+<td>ng-valid-max / ng-invalid-max</td>
+</tr>
+<tr>
+<td>minlength</td>
+<td></td>
+</tr>
+<tr>
+<td>maxlength</td>
+<td></td>
+</tr>
+<tr>
+<td>pattern</td>
+<td></td>
+</tr>
+<tr>
+<td>url</td>
+<td></td>
+</tr>
+<tr>
+<td>email</td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td></td>
+</tr>
+<tr>
+<td>number</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">  <span class="class">.username</span><span class="class">.ng-valid</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> green</span></span>;</span><br><span class="line">  &#125;</span></span><br><span class="line">  <span class="class">.username</span><span class="class">.ng-dirty</span><span class="class">.ng-invalid-required</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> red</span></span>;</span><br><span class="line">  &#125;</span></span><br><span class="line">  <span class="class">.username</span><span class="class">.ng-dirty</span><span class="class">.ng-invalid-minlength</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> lightpink</span></span>;</span><br><span class="line">  &#125;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">ng-submit</span>=<span class="value">"ctrl.submit()"</span> <span class="attribute">name</span>=<span class="value">"myForm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">class</span>=<span class="value">"username"</span> <span class="attribute">name</span>=<span class="value">"uname"</span> <span class="attribute">ng-model</span>=<span class="value">"ctrl.user.username"</span> <span class="attribute">required</span> <span class="attribute">ng</span> <span class="attribute">minlength</span>=<span class="value">"4"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"Submit"</span> <span class="attribute">ng-disabled</span>=<span class="value">"myForm.$invalid"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>ng-form 으로 nested form을 구성할 수 있다.</p>
+<p>Textareas<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">ng-model</span>=<span class="value">"ctrl.user.address"</span> <span class="attribute">required</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>Checkboxes<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">inputtype="checkbox"</span></span><br><span class="line">  <span class="attribute">ng-model</span>=<span class="value">"ctrl.user.agree"</span></span><br><span class="line">  <span class="attribute">ng-true-value</span>=<span class="value">"YES"</span></span><br><span class="line">  <span class="attribute">ng-false-value</span>=<span class="value">"NO"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>Radio Buttons<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-init</span>=<span class="value">"user = &#123;gender: 'female'&#125;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span></span><br><span class="line">    <span class="attribute">name</span>=<span class="value">"gender"</span></span><br><span class="line">    <span class="attribute">ng-model</span>=<span class="value">"user.gender"</span></span><br><span class="line">    <span class="attribute">value</span>=<span class="value">"male"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span></span><br><span class="line">    <span class="attribute">name</span>=<span class="value">"gender"</span></span><br><span class="line">    <span class="attribute">ng-model</span>=<span class="value">"user.gender"</span></span><br><span class="line">    <span class="attribute">value</span>=<span class="value">"female"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>Combo Boxes/Drop-Downs<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-init</span>=<span class="value">"location = 'India'"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">select</span> <span class="attribute">ng-model</span>=<span class="value">"location"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"USA"</span>&gt;</span>USA<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"India"</span>&gt;</span>India<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">"Other"</span>&gt;</span>None of the above<span class="tag">&lt;/<span class="title">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><p>Factory는 함수로 정의, 한번 호출<br>Service는 함수로 정의, new로 매번 Instance 생성<br>Provider는 config 로 사용</p>
+<h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><p>$scope 대신에 Controller 정의 함수의 this를 통해 변수를 정의할 수 있음.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">angular.module(<span class="string">'notesApp'</span>, [])</span><br><span class="line">  .controller(<span class="string">'MainCtrl'</span>, [<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.helloMsg = <span class="string">'Hello '</span>;</span><br><span class="line">    <span class="keyword">var</span> goodbyeMsg = <span class="string">'Goodbye '</span>;</span><br><span class="line">  &#125;]);</span><br></pre></td></tr></table></figure>
+<p>이름을 축약해서 사용할 수 있음.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">ng-controller</span>=<span class="value">"MainCtrl as ctrl"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Controller test with injection<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">describe(<span class="string">'SimpleCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  beforeEach(<span class="built_in">module</span>(<span class="string">'notesApp'</span>));</span><br><span class="line">  <span class="keyword">var</span> ctrl, $loc;</span><br><span class="line">  beforeEach(inject(<span class="function"><span class="keyword">function</span>(<span class="params">$controller, $location</span>) </span>&#123;</span><br><span class="line">    ctrl = $controller(<span class="string">'SimpleCtrl'</span>);</span><br><span class="line">    $loc = $location;</span><br><span class="line">  &#125;));</span><br><span class="line">  it(<span class="string">'should navigate away from the current page'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $loc.path(<span class="string">'/here'</span>);</span><br><span class="line">    ctrl.navigate();</span><br><span class="line">    expect($loc.path()).toEqual(<span class="string">'/some/where/else'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>Mocking controller<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// mock.js</span></span><br><span class="line">angular.module(<span class="string">'notesApp1Mocks'</span>, []).factory(<span class="string">'ItemService'</span>, [<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    list: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> [&#123;id: <span class="number">1</span>, label: <span class="string">'Mock'</span>&#125;];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// test.js</span></span><br><span class="line">describe(<span class="string">'ItemCtrl With global mock'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> ctrl;</span><br><span class="line">  beforeEach(<span class="built_in">module</span>(<span class="string">'notesApp1'</span>));</span><br><span class="line">  beforeEach(<span class="built_in">module</span>(<span class="string">'notesApp1Mocks'</span>));</span><br><span class="line">  </span><br><span class="line">  beforeEach(inject(<span class="function"><span class="keyword">function</span>(<span class="params">$controller</span>) </span>&#123;</span><br><span class="line">    ctrl = $controller(<span class="string">'ItemCtrl'</span>);</span><br><span class="line">  &#125;));</span><br><span class="line">  </span><br><span class="line">  it(<span class="string">'should load mocked out items'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    expect(ctrl.items).toEqual([&#123;id: <span class="number">1</span>, label: <span class="string">'Mock'</span>&#125;]);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// combined.js</span></span><br><span class="line">describe(<span class="string">'ItemCtrl with inline mock'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  beforeEach(<span class="built_in">module</span>(<span class="string">'notesApp1'</span>));</span><br><span class="line">  <span class="keyword">var</span> ctrl, mockService;</span><br><span class="line">  beforeEach(<span class="built_in">module</span>(<span class="function"><span class="keyword">function</span>(<span class="params">$provide</span>) </span>&#123;</span><br><span class="line">    mockService = &#123;</span><br><span class="line">      list: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> [&#123;id: <span class="number">1</span>, label: <span class="string">'Mock'</span>&#125;];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    $provide.value(<span class="string">'ItemService'</span>,mockService);</span><br><span class="line">  &#125;));</span><br><span class="line">  </span><br><span class="line">  beforeEach(inject(<span class="function"><span class="keyword">function</span>(<span class="params">$controller</span>) </span>&#123;</span><br><span class="line">    ctrl = $controller(<span class="string">'ItemCtrl'</span>);</span><br><span class="line">  &#125;));</span><br><span class="line">  </span><br><span class="line">  it(<span class="string">'should load mocked out items'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    expect(ctrl.items).toEqual([&#123;id: <span class="number">1</span>, label: <span class="string">'Mock'</span>&#125;]);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="ngResource"><a href="#ngResource" class="headerlink" title="ngResource"></a>ngResource</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">angular.module(<span class="string">'resourceApp'</span>, [<span class="string">'ngResource'</span>]).factory(<span class="string">'ProjectService'</span>, [<span class="string">'$resource'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$resource</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> $resource(<span class="string">'/api/project/:id'</span>);</span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure>
+<h2 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h2><p>서로 관련 있는 코드를 묶는 단위. Java에서 패키지와 같은 것이라 이해하면 됨.<br>모듈은 controller, service, factory, directive 등을 포함할 수 있고, 서로 간의 연관 관계를 정의할 수 있다.<br>애플리케이션 역시 모듈이며 ng-app에 애플리케이션 모듈의 이름을 설정하여 사용한다.</p>
+<h2 id="Filter"><a href="#Filter" class="headerlink" title="Filter"></a>Filter</h2><p>필터를 사용해서 ng-repeat 제어할 수 있음<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- File: chapter8/filter-arrays.html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Filters in Action<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">ng-app</span>=<span class="value">"filtersApp"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"FilterCtrl as ctrl"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">ng-click</span>=<span class="value">"ctrl.currentFilter = 'string'"</span>&gt;</span></span><br><span class="line">        Filter with String</span><br><span class="line">    <span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">ng-click</span>=<span class="value">"ctrl.currentFilter = 'object'"</span>&gt;</span></span><br><span class="line">        Filter with Object</span><br><span class="line">    <span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">ng-click</span>=<span class="value">"ctrl.currentFilter = 'function'"</span>&gt;</span></span><br><span class="line">        Filter with Function</span><br><span class="line">    <span class="tag">&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line">    Filter Text</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span></span><br><span class="line">           <span class="attribute">ng-model</span>=<span class="value">"ctrl.filterOptions['string']"</span>&gt;</span></span><br><span class="line">    Show Done Only</span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span></span><br><span class="line">           <span class="attribute">ng-model</span>=<span class="value">"ctrl.filterOptions['object'].done"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">ng-repeat</span>=<span class="value">"note in ctrl.notes |</span><br><span class="line">filter:ctrl.filterOptions[ctrl.currentFilter] |</span><br><span class="line">orderBy:ctrl.sortOrder |</span><br><span class="line">limitTo:5"</span>&gt;</span></span><br><span class="line">            &#123;&#123;note.label&#125;&#125; - &#123;&#123;note.type&#125;&#125; - &#123;&#123;note.done&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span></span><br><span class="line">        <span class="attribute">src</span>=<span class="value">"https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"</span>&gt;</span><span class="undefined"></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="actionscript"></span><br><span class="line">    angular.module(<span class="string">'filtersApp'</span>, [])</span><br><span class="line">            .controller(<span class="string">'FilterCtrl'</span>, [<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="keyword">this</span>.notes = [</span><br><span class="line">                    &#123;label: <span class="string">'FC Todo'</span>, type: <span class="string">'chore'</span>, done: <span class="literal">false</span>&#125;,</span><br><span class="line">                    &#123;label: <span class="string">'FT Todo'</span>, type: <span class="string">'task'</span>, done: <span class="literal">false</span>&#125;,</span><br><span class="line">                    &#123;label: <span class="string">'FF Todo'</span>, type: <span class="string">'fun'</span>, done: <span class="literal">true</span>&#125;,</span><br><span class="line">                    &#123;label: <span class="string">'SC Todo'</span>, type: <span class="string">'chore'</span>, done: <span class="literal">false</span>&#125;,</span><br><span class="line">                    &#123;label: <span class="string">'ST Todo'</span>, type: <span class="string">'task'</span>, done: <span class="literal">true</span>&#125;,</span><br><span class="line">                    &#123;label: <span class="string">'SF Todo'</span>, type: <span class="string">'fun'</span>, done: <span class="literal">true</span>&#125;,</span><br><span class="line">                    &#123;label: <span class="string">'TC Todo'</span>, type: <span class="string">'chore'</span>, done: <span class="literal">false</span>&#125;,</span><br><span class="line">                    &#123;label: <span class="string">'TT Todo'</span>, type: <span class="string">'task'</span>, done: <span class="literal">false</span>&#125;,</span><br><span class="line">                    &#123;label: <span class="string">'TF Todo'</span>, type: <span class="string">'fun'</span>, done: <span class="literal">false</span>&#125;</span><br><span class="line">                ];</span><br><span class="line">                <span class="keyword">this</span>.sortOrder = [<span class="string">'+type'</span>, <span class="string">'-label'</span>];</span><br><span class="line">                <span class="keyword">this</span>.filterOptions = &#123;</span><br><span class="line">                    <span class="string">"string"</span>: <span class="string">''</span>,</span><br><span class="line">                    <span class="string">"object"</span>: &#123;done: <span class="literal">false</span>, label: <span class="string">'C'</span>&#125;,</span><br><span class="line">                    <span class="string">"function"</span>: <span class="function"><span class="keyword">function</span> <span class="params">(note)</span> </span>&#123;</span><br><span class="line">                        <span class="keyword">return</span> note.type === <span class="string">'task'</span> &amp;&amp; note.done === <span class="literal">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;;</span><br><span class="line">                <span class="keyword">this</span>.currentFilter = <span class="string">'string'</span>;</span><br><span class="line">            &#125;]);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Directive"><a href="#Directive" class="headerlink" title="Directive"></a>Directive</h1><p>ng-include, ng-switch 사용</p>
+<p>A<br>    attribute</p>
+<p>E<br>    element</p>
+<p>C<br>    class</p>
+<p>M<br>    comments</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">link: <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $element, $attrs</span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="scope"><a href="#scope" class="headerlink" title="scope"></a>scope</h2><ul>
+<li>false<br>This is the default value, which basically tells AngularJS that the directive scope is<br>the same as the parent scope, whichever one it is. So the directive gets access to all<br>the variables and functions that are defined on the parent scope, and any modifi‐<br>cations it makes are immediately reflected in the parent as well.</li>
+<li>true<br>This tells AngularJS that the directive scope inherits the parent scope, but creates<br>a child scope of its own. The directive thus gets access to all the variables and func‐<br>tions from the parent scope, but any modifications it makes are not available in the<br>parent. This is recommended if we need access to the parent’s functions and infor‐<br>mation, but need to make local modifications that are specific to the directive.</li>
+<li>object<br>We can also pass an object with keys and values to the scope. This tells AngularJS<br>to create what we call an isolated scope. This scope does not inherit anything from<br>the parent, and any data that the parent scope needs to share with this directive<br>needs to be passed in through HTML attributes. This is the best option when cre‐<br>ating reusable components that should be independent of how and where they are<br>used.</li>
+<li>‘=’<br>The = sign specifies that the value of the attribute in HTML is to be treated as a<br>JSON object, which will be bound to the scope of the directive so that any changes<br>done in the parent scope will be automatically available in the directive.</li>
+<li>‘@’<br>The @ sign specifies that the value of the attribute in HTML is to be treated as a<br>string, which may or may not have AngularJS binding expressions ( {{ }} ). The value<br>is to be calculated and the final value is to be assigned to the directive’s scope. Any<br>changes in the value will also be available in the directive.</li>
+<li>‘&amp;’<br>The &amp; sign specifies that the value of the attribute in HTML is a function in some<br>controller whose reference needs to be available to the directive. The directive can<br>then trigger the function whenever it needs to.</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/angularjs/">angularjs</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/01/09/angularjs-summary/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/01/07/test/" title="Test" itemprop="url">Test</a>
   </h1>
   <p class="article-author">By
@@ -98,7 +309,7 @@
 <p>이 때 * 과 _ 사이에는 공백이 있어서는 않된다.</p>
 <p><a href="http://example.com" title="링크제목" target="_blank" rel="external">링크</a>.</p>
 <p><a href="http://example.com/" title="링크제목1" target="_blank" rel="external">링크1</a> 과 <a href="http://example.org/" title="링크제목2" target="_blank" rel="external">링크2</a>.</p>
-<p><a href="http://example.com/" target="_blank" rel="external">http://example.com/</a><br><a href="/&#109;&#x61;&#105;&#108;&#x74;&#111;&#58;&#109;&#x65;&#x40;&#112;&#x72;&#105;&#118;&#97;&#99;&#x79;&#46;&#x6e;&#x65;&#116;">&#109;&#x65;&#x40;&#112;&#x72;&#105;&#118;&#97;&#99;&#x79;&#46;&#x6e;&#x65;&#116;</a></p>
+<p><a href="http://example.com/" target="_blank" rel="external">http://example.com/</a><br><a href="/&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#109;&#x65;&#x40;&#x70;&#114;&#x69;&#x76;&#97;&#99;&#121;&#46;&#x6e;&#101;&#x74;">&#109;&#x65;&#x40;&#x70;&#114;&#x69;&#x76;&#97;&#99;&#121;&#46;&#x6e;&#101;&#x74;</a></p>
 
         
         
@@ -221,6 +432,10 @@
 		
 			
 				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/r/" title="r">r<sup>1</sup></a></li>
 			
 		
 			

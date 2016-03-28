@@ -1,0 +1,555 @@
+
+ <!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>data_mining | Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Sungwoo">
+    
+
+    
+    <meta name="description" content="http://michael.hahsler.net/SMU/EMIS7332/http://michael.hahsler.net/SMU/EMIS7332/R/chap2.html
+Preparation1data(iris)
+데이터를 읽어옴
+1head(iris)
+데이터 앞부분만 보여줌1str(iris)
+구조 표시
+Data Quality1plot(iris, col=iris$S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="data_mining">
+<meta property="og:url" content="http://swcho.github.co/2016/03/16/data-mining/index.html">
+<meta property="og:site_name" content="Notes">
+<meta property="og:description" content="http://michael.hahsler.net/SMU/EMIS7332/http://michael.hahsler.net/SMU/EMIS7332/R/chap2.html
+Preparation1data(iris)
+데이터를 읽어옴
+1head(iris)
+데이터 앞부분만 보여줌1str(iris)
+구조 표시
+Data Quality1plot(iris, col=iris$S">
+<meta property="og:image" content="http://swcho.github.co/2016/03/16/data-mining/fig1.png">
+<meta property="og:updated_time" content="2016-03-21T11:29:55.724Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="data_mining">
+<meta name="twitter:description" content="http://michael.hahsler.net/SMU/EMIS7332/http://michael.hahsler.net/SMU/EMIS7332/R/chap2.html
+Preparation1data(iris)
+데이터를 읽어옴
+1head(iris)
+데이터 앞부분만 보여줌1str(iris)
+구조 표시
+Data Quality1plot(iris, col=iris$S">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Notes" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Notes" title="Notes"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Notes">Notes</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:swcho.github.co">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/16/data-mining/" title="data_mining" itemprop="url">data_mining</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-16T11:23:37.000Z" itemprop="datePublished"> Published 2016-03-16</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Preparation"><span class="toc-number">1.</span> <span class="toc-text">Preparation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Data_Quality"><span class="toc-number">2.</span> <span class="toc-text">Data Quality</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Aggregation"><span class="toc-number">3.</span> <span class="toc-text">Aggregation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sampling"><span class="toc-number">4.</span> <span class="toc-text">Sampling</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Random_sampling"><span class="toc-number">4.1.</span> <span class="toc-text">Random sampling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stratified_sampling__28_uCE35_uD654__uCD94_uCD9C_uBC95_29"><span class="toc-number">4.2.</span> <span class="toc-text">Stratified sampling (층화 추출법)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Features"><span class="toc-number">5.</span> <span class="toc-text">Features</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dimensionality_reduciton__28Principal_Components_Analysis_-_PCA_2C__uC8FC_uC131_uBD84__uBD84_uC11D_29"><span class="toc-number">5.1.</span> <span class="toc-text">Dimensionality reduciton (Principal Components Analysis - PCA, 주성분 분석)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Feature_selection"><span class="toc-number">5.2.</span> <span class="toc-text">Feature selection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discretrize_features"><span class="toc-number">5.3.</span> <span class="toc-text">Discretrize features</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Standardize_data__28Z-score_29"><span class="toc-number">5.4.</span> <span class="toc-text">Standardize data (Z-score)</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<p><a href="http://michael.hahsler.net/SMU/EMIS7332/" target="_blank" rel="external">http://michael.hahsler.net/SMU/EMIS7332/</a><br><a href="http://michael.hahsler.net/SMU/EMIS7332/R/chap2.html" target="_blank" rel="external">http://michael.hahsler.net/SMU/EMIS7332/R/chap2.html</a></p>
+<h1 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data(iris)</span><br></pre></td></tr></table></figure>
+<p>데이터를 읽어옴</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head(iris)</span><br></pre></td></tr></table></figure>
+<p>데이터 앞부분만 보여줌<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str(iris)</span><br></pre></td></tr></table></figure></p>
+<p>구조 표시</p>
+<h1 id="Data_Quality"><a href="#Data_Quality" class="headerlink" title="Data Quality"></a>Data Quality</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot(iris, col=iris$Species)</span><br></pre></td></tr></table></figure>
+<p>노이즈나 outlier 확인</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary(iris)</span><br></pre></td></tr></table></figure>
+<p>숫자일 경우 Min.(최소), 1st Qu.(25% 가 이 값 밑), 3th Qu. (75%가 이 값 밑), median(중간값), mean(평균)<br>문자열일 경우 개수</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">i &lt;- duplicated(iris)</span><br><span class="line">which(i)</span><br><span class="line">iris[i,]</span><br></pre></td></tr></table></figure>
+<p>어느 것이 중복 되었는가?</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clean.data &lt;- unique(iris[complete.cases(iris),])</span><br><span class="line">summary(clean.data)</span><br></pre></td></tr></table></figure>
+<p>complete.cases (missing value 가 없는가?) unique(중복 제외)</p>
+<h1 id="Aggregation"><a href="#Aggregation" class="headerlink" title="Aggregation"></a>Aggregation</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aggregate(. ~ Species, data = iris, FUN = mean)</span><br></pre></td></tr></table></figure>
+<p>종끼리 묶은 후, 평균 값</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aggregate(. ~ Species, data = iris, FUN = median)</span><br></pre></td></tr></table></figure>
+<p>종끼리 묶은 후, 중간 값</p>
+<h1 id="Sampling"><a href="#Sampling" class="headerlink" title="Sampling"></a>Sampling</h1><h2 id="Random_sampling"><a href="#Random_sampling" class="headerlink" title="Random sampling"></a>Random sampling</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id &lt;- sample(<span class="number">1</span>:nrow(iris), <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+<p>1부터 nrow (row 개수) 수 사이에서 20 개 unordered 무작위 검출</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s &lt;- iris[id,]</span><br><span class="line">plot(s, col=s$Species)</span><br></pre></td></tr></table></figure>
+<p>이렇게 뽑은 인덱스로 데이터를 뽑아서 그리기</p>
+<h2 id="Stratified_sampling__28_uCE35_uD654__uCD94_uCD9C_uBC95_29"><a href="#Stratified_sampling__28_uCE35_uD654__uCD94_uCD9C_uBC95_29" class="headerlink" title="Stratified sampling (층화 추출법)"></a>Stratified sampling (층화 추출법)</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(sampling)</span><br><span class="line">id2 &lt;- strata(iris, stratanames=<span class="string">"Species"</span>, size=c(<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>), method=<span class="string">"srswor"</span>)</span><br><span class="line">id2</span><br></pre></td></tr></table></figure>
+<p>stratanames (층화할 변수들의 vector) size (층화 크기)<br>method</p>
+<ul>
+<li>simple random sampling without replacement (srswor)</li>
+<li>simple random sampling with replacement (srswr)</li>
+<li>Poisson sampling (poisson)</li>
+<li>systematic sampling (systematic)</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s2 &lt;- iris[id2$ID_unit,]</span><br><span class="line">plot(s2, col=s2$Species)</span><br></pre></td></tr></table></figure>
+<p>뽑은 ID로 그림 그리기</p>
+<h1 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h1><h2 id="Dimensionality_reduciton__28Principal_Components_Analysis_-_PCA_2C__uC8FC_uC131_uBD84__uBD84_uC11D_29"><a href="#Dimensionality_reduciton__28Principal_Components_Analysis_-_PCA_2C__uC8FC_uC131_uBD84__uBD84_uC11D_29" class="headerlink" title="Dimensionality reduciton (Principal Components Analysis - PCA, 주성분 분석)"></a>Dimensionality reduciton (Principal Components Analysis - PCA, 주성분 분석)</h2><p>다양한 관점으로 바라보기<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(scatterplot3d)</span><br><span class="line">scatterplot3d(iris[,<span class="number">1</span>:<span class="number">3</span>], color=as.integer(iris$Species))</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(rgl)</span><br><span class="line">plot3d(as.matrix(iris[,<span class="number">1</span>:<span class="number">3</span>]), col=as.integer(iris$Species), size=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(plotly)</span><br><span class="line">plot_ly(iris, x = Sepal.Length, y= Petal.Length, z = Sepal.Width, size = Petal.Width, color = Species, type=<span class="string">"scatter3d"</span>, mode=<span class="string">"markers"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pc &lt;- prcomp(as.matrix(iris[,<span class="number">1</span>:<span class="number">4</span>]))</span><br><span class="line">plot(pc)</span><br><span class="line">plot(pc$x, col=iris$Species) <span class="comment"># plot the first 2 principal components</span></span><br><span class="line">biplot(pc, col = c(<span class="string">"grey"</span>, <span class="string">"red"</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="Feature_selection"><a href="#Feature_selection" class="headerlink" title="Feature selection"></a>Feature selection</h2><h2 id="Discretrize_features"><a href="#Discretrize_features" class="headerlink" title="Discretrize features"></a>Discretrize features</h2><p>단일 변수 그리기<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot(iris$Petal.Width, <span class="number">1</span>:<span class="number">150</span>, ylab=<span class="string">"index"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>히스토그램<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hist(iris$Petal.Width)</span><br></pre></td></tr></table></figure></p>
+<p>3 등분으로 나누기<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut(iris$Petal.Width, breaks=<span class="number">3</span>)</span><br></pre></td></tr></table></figure></p>
+<p>3 categories 로 나누기<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(arules)</span><br><span class="line">plot(discretize(iris$Petal.Width, method=<span class="string">"interval"</span>, categories=<span class="number">3</span>))</span><br><span class="line">plot(discretize(iris$Petal.Width, method=<span class="string">"frequency"</span>, categories=<span class="number">3</span>))</span><br><span class="line">plot(discretize(iris$Petal.Width, method=<span class="string">"cluster"</span>, categories=<span class="number">3</span>))</span><br></pre></td></tr></table></figure></p>
+<p>method</p>
+<ul>
+<li>interval: equal interval width</li>
+<li>frequency: equal frequency</li>
+<li>cluster: k-means clustering</li>
+</ul>
+<p>히스토그램과 discretize 결과값 비교<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hist(iris$Petal.Width, main=<span class="string">"Discretization: interval"</span>, sub=<span class="string">"Blue lines are boundaries"</span>)</span><br><span class="line">abline(v=discretize(iris$Petal.Width, method=<span class="string">"interval"</span>, categories=<span class="number">3</span>, onlycuts=<span class="literal">TRUE</span>), col=<span class="string">"blue"</span>)</span><br><span class="line">abline(v=discretize(iris$Petal.Width, method=<span class="string">"cluster"</span>, categories=<span class="number">3</span>, onlycuts=<span class="literal">TRUE</span>), col=<span class="string">"red"</span>)</span><br><span class="line">abline(v=discretize(iris$Petal.Width, method=<span class="string">"frequency"</span>, categories=<span class="number">3</span>, onlycuts=<span class="literal">TRUE</span>), col=<span class="string">"green"</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Standardize_data__28Z-score_29"><a href="#Standardize_data__28Z-score_29" class="headerlink" title="Standardize data (Z-score)"></a>Standardize data (Z-score)</h2><p>Normalization: 모든 값을 0, 1 사이로 scaling 한다.<br><img src="/2016/03/16/data-mining/fig1.png" alt="This is an example image" title="This is an example image"></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/r/">r</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://swcho.github.co/2016/03/16/data-mining/" data-title="data_mining | Notes" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/02/18/rabbitmq/"  title="RabbitMQ 패턴">
+ <strong>다음글：</strong><br/> 
+ <span>RabbitMQ 패턴
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Preparation"><span class="toc-number">1.</span> <span class="toc-text">Preparation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Data_Quality"><span class="toc-number">2.</span> <span class="toc-text">Data Quality</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Aggregation"><span class="toc-number">3.</span> <span class="toc-text">Aggregation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sampling"><span class="toc-number">4.</span> <span class="toc-text">Sampling</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Random_sampling"><span class="toc-number">4.1.</span> <span class="toc-text">Random sampling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stratified_sampling__28_uCE35_uD654__uCD94_uCD9C_uBC95_29"><span class="toc-number">4.2.</span> <span class="toc-text">Stratified sampling (층화 추출법)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Features"><span class="toc-number">5.</span> <span class="toc-text">Features</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dimensionality_reduciton__28Principal_Components_Analysis_-_PCA_2C__uC8FC_uC131_uBD84__uBD84_uC11D_29"><span class="toc-number">5.1.</span> <span class="toc-text">Dimensionality reduciton (Principal Components Analysis - PCA, 주성분 분석)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Feature_selection"><span class="toc-number">5.2.</span> <span class="toc-text">Feature selection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discretrize_features"><span class="toc-number">5.3.</span> <span class="toc-text">Discretrize features</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Standardize_data__28Z-score_29"><span class="toc-number">5.4.</span> <span class="toc-text">Standardize data (Z-score)</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/r/" title="r">r<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="#" target="_blank" title="home">home</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Sungwoo">Sungwoo</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'sungwoosnotes';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
