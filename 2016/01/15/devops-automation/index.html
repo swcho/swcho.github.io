@@ -1,13 +1,13 @@
 
  <!DOCTYPE HTML>
-<html lang="en">
+<html >
 <head>
   <meta charset="UTF-8">
   
-    <title>devops-automation | Notes</title>
+    <title>devops-automation | SwForge&#39;s Note</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
-    <meta name="author" content="Sungwoo">
+    <meta name="author" content="SwForge">
     
 
     
@@ -15,8 +15,8 @@
 Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;#10;$ ss -ltn&amp;#10;$ ss -lun">
 <meta property="og:type" content="article">
 <meta property="og:title" content="devops-automation">
-<meta property="og:url" content="http://swcho.github.co/2016/01/15/devops-automation/index.html">
-<meta property="og:site_name" content="Notes">
+<meta property="og:url" content="http://yoursite.com/2016/01/15/devops-automation/index.html">
+<meta property="og:site_name" content="SwForge's Note">
 <meta property="og:description" content="Command Line Tools상태1$ ip addr show&amp;#10;$ ip addr add 10.132.1.1/24 dev eth1&amp;#10;$ ip link set eth2 down
 Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;#10;$ ss -ltn&amp;#10;$ ss -lun">
 <meta property="og:updated_time" content="2016-01-21T12:17:48.543Z">
@@ -26,7 +26,7 @@ Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;
 Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;#10;$ ss -ltn&amp;#10;$ ss -lun">
 
     
-    <link rel="alternative" href="/atom.xml" title="Notes" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="SwForge&#39;s Note" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -44,11 +44,11 @@ Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="Notes" title="Notes"/></a>
+				<a href="/"><img src="/img/logo.png" alt="SwForge&#39;s Note" title="SwForge&#39;s Note"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Notes">Notes</a></h1>
+				<h1 class="site-name"><a href="/" title="SwForge&#39;s Note">SwForge&#39;s Note</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
@@ -68,7 +68,7 @@ Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
 						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:swcho.github.co">
+						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
 					</li>
@@ -87,7 +87,7 @@ Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
 		
   <p class="article-time">
     <time datetime="2016-01-15T12:17:17.000Z" itemprop="datePublished"> Published 2016-01-15</time>
@@ -114,7 +114,7 @@ Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;
 <h2 id="Automatic_Host_builds"><a href="#Automatic_Host_builds" class="headerlink" title="Automatic Host builds"></a>Automatic Host builds</h2><h3 id="Aptly"><a href="#Aptly" class="headerlink" title="Aptly"></a>Aptly</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://repo.aptly.info/ squeeze main&#10;$ sudo apt-key adv --keyserver keys.gnupg.net --recv-keys E083A3782A194991&#10;$ sudo apt-get update&#10;$ sudo apt-get install aptly</span><br></pre></td></tr></table></figure>
 <p>/etc/aptly.conf<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">rootDir</span>": <span class="value"><span class="string">"/var/spool/aptly"</span></span>,</span><br><span class="line">  "<span class="attribute">downloadConcurrency</span>": <span class="value"><span class="number">4</span></span>,</span><br><span class="line">  "<span class="attribute">downloadSpeedLimit</span>": <span class="value"><span class="number">0</span></span>,</span><br><span class="line">  "<span class="attribute">architectures</span>": <span class="value">[<span class="string">"amd64"</span>]</span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowSuggests</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowRecommends</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowAllVariants</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowSource</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">gpgDisableSign</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">gpgDisableVerify</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">downloadSourcePackages</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">ppaDistributorID</span>": <span class="value"><span class="string">"ubuntu"</span></span>,</span><br><span class="line">  "<span class="attribute">ppaCodename</span>": <span class="value"><span class="string">""</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install gnugpg</span><br></pre></td></tr></table></figure>
-<p>gpgbatch<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%echo Generating a default key&#10;Key-Type: default&#10;Subkey-Type: default&#10;Key-Length: 2048&#10;Name-Real: &#60;&#60; YOUR NAME &#62;&#62;&#10;Name-Comment: &#60;&#60; KEY DESCRIPTION &#62;&#62;&#10;Name-Email: &#60;&#60; YOUR EMAIL &#62;&#62;&#10;Expire-Date: 0&#10;%pubring aptly.pub&#10;%secring aptly.sec&#10;%commit&#10;%echo done</span><br></pre></td></tr></table></figure></p>
+<p>gpgbatch<br><figure class="highlight mojolicious"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="perl"><span class="variable">%echo</span> Generating a default key</span><span class="xml"></span><br><span class="line">Key-Type: default</span><br><span class="line">Subkey-Type: default</span><br><span class="line">Key-Length: 2048</span><br><span class="line">Name-Real: <span class="tag">&lt;&lt; <span class="attribute">YOUR</span> <span class="attribute">NAME</span> &gt;</span>&gt;</span><br><span class="line">Name-Comment: <span class="tag">&lt;&lt; <span class="attribute">KEY</span> <span class="attribute">DESCRIPTION</span> &gt;</span>&gt;</span><br><span class="line">Name-Email: <span class="tag">&lt;&lt; <span class="attribute">YOUR</span> <span class="attribute">EMAIL</span> &gt;</span>&gt;</span><br><span class="line">Expire-Date: 0</span><br><span class="line"></span><span class="perl"><span class="variable">%pubring</span> aptly.pub</span><span class="xml"></span><br><span class="line"></span><span class="perl"><span class="variable">%secring</span> aptly.sec</span><span class="xml"></span><br><span class="line"></span><span class="perl"><span class="variable">%commit</span></span><span class="xml"></span><br><span class="line"></span><span class="perl"><span class="variable">%echo</span> done</span><span class="xml"></span></span><br></pre></td></tr></table></figure></p>
 <p>Public/Private 키 생성<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg2 --batch --gen-key gpgbatch</span><br></pre></td></tr></table></figure></p>
 <p>미러 사이닝<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gpg --no-default-keyring --keyring trustedkeys.gpg --keyserver keys.gnupg.net --recv keys 437D05B5</span><br></pre></td></tr></table></figure></p>
 <p>미러링 레포지터리 생성 및 populate &amp; serve<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo aptly mirror create -architectures=amd64 trusty-main http://archive.ubuntu.com/ubuntu trusty main&#10;$ aptly mirror update trusty-main&#10;$ sudo aptly publish snapshot -distribution=trusty trusty-main-snapshot&#10;$ sudo aptly serve</span><br></pre></td></tr></table></figure></p>
@@ -141,7 +141,7 @@ Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swcho.github.co/2016/01/15/devops-automation/" data-title="devops-automation | Notes" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/01/15/devops-automation/" data-title="devops-automation | SwForge&#39;s Note" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -206,15 +206,15 @@ Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>3</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/r/" title="r">r<sup>1</sup></a></li>
 			
 		
 			
@@ -272,7 +272,7 @@ Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+		<p> ^^; <br/>
 			This is my blog,believe it or not.</p>
 	</section>
 	 
@@ -294,7 +294,7 @@ Monitoring / Socket Statistics1$ ip -s link&amp;#10;$ ss -t&amp;#10;$ ss -u&amp;
 		<p class="copyright">
 		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
 		
-		<a href="/about" target="_blank" title="Sungwoo">Sungwoo</a>
+		<a href="/about" target="_blank" title="SwForge">SwForge</a>
 		
 		
 		</p>

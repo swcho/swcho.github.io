@@ -1,28 +1,28 @@
 
  <!DOCTYPE HTML>
-<html lang="en">
+<html >
 <head>
   <meta charset="UTF-8">
   
-    <title>Notes</title>
+    <title>SwForge&#39;s Note</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
-    <meta name="author" content="Sungwoo">
+    <meta name="author" content="SwForge">
     
 
     
     <meta name="description">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Notes">
-<meta property="og:url" content="http://swcho.github.co/index.html">
-<meta property="og:site_name" content="Notes">
+<meta property="og:title" content="SwForge's Note">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="SwForge's Note">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Notes">
+<meta name="twitter:title" content="SwForge's Note">
 <meta name="twitter:description">
 
     
-    <link rel="alternative" href="/atom.xml" title="Notes" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="SwForge&#39;s Note" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -40,11 +40,11 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="Notes" title="Notes"/></a>
+				<a href="/"><img src="/img/logo.png" alt="SwForge&#39;s Note" title="SwForge&#39;s Note"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Notes">Notes</a></h1>
+				<h1 class="site-name"><a href="/" title="SwForge&#39;s Note">SwForge&#39;s Note</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
@@ -64,7 +64,7 @@
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
 						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:swcho.github.co">
+						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
 					</li>
@@ -81,11 +81,153 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/03/16/data-mining/" title="data_mining" itemprop="url">data_mining</a>
+      <a href="/2016/03/29/data-mining-ex/" title="교육 정보 분석, 모아보기" itemprop="url">교육 정보 분석, 모아보기</a>
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-29T11:05:18.000Z" itemprop="datePublished"> Published 2016-03-29</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="RStudio__uC601_uBB38_locale__uC124_uC815"><a href="#RStudio__uC601_uBB38_locale__uC124_uC815" class="headerlink" title="RStudio 영문 locale 설정"></a>RStudio 영문 locale 설정</h1><p>에러가 한국어로 나오다 보니, 두번 검색해야 함… -,.-<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/R/Renviron.site <span class="comment"># LANGUAGE=en 추가</span></span><br></pre></td></tr></table></figure></p>
+<p>일단 데이터 가져오고</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">temp = read.table(<span class="string">"2015.edu.elementary.csv"</span>, sep=<span class="string">','</span>, header = <span class="literal">TRUE</span>)</span><br><span class="line">edu.elementary &lt;- unique(temp[complete.cases(temp),])</span><br><span class="line">edu.elementary$Students = as.numeric(edu.elementary$Students)</span><br></pre></td></tr></table></figure>
+<h1 id="Aggregate__uC2DC_uB3C4"><a href="#Aggregate__uC2DC_uB3C4" class="headerlink" title="Aggregate 시도"></a>Aggregate 시도</h1><p>지역별로 묶어보자<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; byProvince = aggregate(cbind(Students,Teachers)~Province, data=edu.elementary, FUN=mean)</span><br><span class="line">&gt; head(byProvince)</span><br><span class="line">  Province Students Teachers</span><br><span class="line"><span class="number">1</span>   가평군 <span class="number">865.5625</span> <span class="number">14.50000</span></span><br><span class="line"><span class="number">2</span>   강남구 <span class="number">780.8485</span> <span class="number">47.15152</span></span><br><span class="line"><span class="number">3</span>   강동구 <span class="number">750.0385</span> <span class="number">54.76923</span></span><br><span class="line"><span class="number">4</span>   강릉시 <span class="number">769.8378</span> <span class="number">20.67568</span></span><br><span class="line"><span class="number">5</span>   강북구 <span class="number">896.2143</span> <span class="number">56.78571</span></span><br><span class="line"><span class="number">6</span>   강서구 <span class="number">720.7818</span> <span class="number">38.50909</span></span><br></pre></td></tr></table></figure></p>
+<p>갑자기 선생님당 학생수가 궁금해 졌는데…<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; byProvince = aggregate(cbind(Students,Teachers,Students/Teachers)~Province, data=edu.elementary, FUN=mean)</span><br><span class="line">&gt; head(byProvince)</span><br><span class="line">  Province Students Teachers       V3</span><br><span class="line"><span class="number">1</span>   가평군 <span class="number">865.5625</span> <span class="number">14.50000</span> <span class="number">80.38243</span></span><br><span class="line"><span class="number">2</span>   강남구 <span class="number">780.8485</span> <span class="number">47.15152</span> <span class="number">17.81257</span></span><br><span class="line"><span class="number">3</span>   강동구 <span class="number">750.0385</span> <span class="number">54.76923</span> <span class="number">15.29937</span></span><br><span class="line"><span class="number">4</span>   강릉시 <span class="number">769.8378</span> <span class="number">20.67568</span> <span class="number">63.86895</span></span><br><span class="line"><span class="number">5</span>   강북구 <span class="number">896.2143</span> <span class="number">56.78571</span> <span class="number">17.25231</span></span><br><span class="line"><span class="number">6</span>   강서구 <span class="number">720.7818</span> <span class="number">38.50909</span>      <span class="literal">Inf</span></span><br></pre></td></tr></table></figure></p>
+<p>헐퀴… 가평군은 모냐.. 선생님 중노동인 듯…<br>강남구를 제친 강동구는 또 모냐… 선생님도 금수저인가…<br>이 둘은 가나다 순이라 항상 비교 당하겠네..ㅋㅋ<br>Inf는 모냐.. 무한인가? 0으로 나누지도 않았는데…<br>cbind도 ~도 적응안되는데…<br><a href="http://rfriend.tistory.com/51" target="_blank" rel="external">http://rfriend.tistory.com/51</a><br>잘 설명되있다.. 후후 기본이 약하다…<br><a href="https://drive.google.com/file/d/0B_ss3O1d3bGxeXhuRXdjRWpiSzg/view" target="_blank" rel="external">https://drive.google.com/file/d/0B_ss3O1d3bGxeXhuRXdjRWpiSzg/view</a><br>아름다운 책을 공유해 주셨다…</p>
+<p>물결 (tilde) 설명이다..<br><a href="http://stackoverflow.com/questions/14976331/use-of-tilde-in-r-programming-language" target="_blank" rel="external">http://stackoverflow.com/questions/14976331/use-of-tilde-in-r-programming-language</a><br><a href="http://stackoverflow.com/questions/8055508/the-tilde-operator-in-r" target="_blank" rel="external">http://stackoverflow.com/questions/8055508/the-tilde-operator-in-r</a><br><a href="https://www.google.co.kr/search?client=ubuntu&amp;channel=fs&amp;q=r+tilde&amp;ie=utf-8&amp;oe=utf-8&amp;gfe_rd=cr&amp;ei=Xmb6VoejHab98weizoHgCQ" target="_blank" rel="external">https://www.google.co.kr/search?client=ubuntu&amp;channel=fs&amp;q=r+tilde&amp;ie=utf-8&amp;oe=utf-8&amp;gfe_rd=cr&amp;ei=Xmb6VoejHab98weizoHgCQ</a><br>이해 못함…</p>
+<p>Int는 벡터 연산 때문에 발생한 것 같다.<br>그럼 강서구에 선생님이 없는 학교가 있다는 걸까?<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; province_filtered &lt;- filter(edu.elementary, Province==<span class="string">'강서구'</span>, Teachers==<span class="number">0</span>)</span><br><span class="line">&gt; province_filtered</span><br><span class="line">  연도     학제 시도 교육지원청 Province                     학교명 본분교 학교상태 설립구분</span><br><span class="line"><span class="number">1</span> <span class="number">2015</span> 초등학교 부산       북부   강서구               세산초등학교   본교 폐(원)교     공립</span><br><span class="line"><span class="number">2</span> <span class="number">2015</span> 초등학교 서울       강서   강서구 서울공진초등학교공진분교장 분교장 폐(원)교     공립</span><br><span class="line">  우편번호                                                  주소                 홈페이지 Rooms</span><br><span class="line"><span class="number">1</span>  <span class="number">618</span>-<span class="number">220</span>     부산광역시 강서구 세산길 <span class="number">89</span> (미음동.세산초등학교)   http://www.sesan.es.kr     <span class="number">0</span></span><br><span class="line"><span class="number">2</span>  <span class="number">157</span>-<span class="number">807</span> 서울특별시 강서구 양천로<span class="number">55</span>길 <span class="number">22</span> (가양동.공진초등학교) http://www.kongjin.es.kr     <span class="number">0</span></span><br><span class="line">  Students Teachers</span><br><span class="line"><span class="number">1</span>       <span class="number">27</span>        <span class="number">0</span></span><br><span class="line"><span class="number">2</span>       <span class="number">27</span>        <span class="number">0</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>헐 공진초, 세산초가 그러네…</p>
+<blockquote>
+<p>인접한 지역에 서울탑산초등학교가 개교하자 공진초등학교에는 임대아파트 학생들만 배정되게 되었다. 임대아파트는 저소득 주민들이 장기간 거주하는 특성으로 인해 단지째 고령화가 진행되면서 학생수가 급감하였고, 결국 마곡도시개발사업지구로 본교를 이전하게 되었다. 본래는 이전과 동시에 기존 학생들을 전학하려고 했으나, 주민들의 요청에 따라 2014학년도까지 구 교사를 분교장으로 유지하였다<br><a href="https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%EA%B3%B5%EC%A7%84%EC%B4%88%EB%93%B1%ED%95%99%EA%B5%90" target="_blank" rel="external">https://ko.wikipedia.org/wiki/%EC%84%9C%EC%9A%B8%EA%B3%B5%EC%A7%84%EC%B4%88%EB%93%B1%ED%95%99%EA%B5%90</a></p>
+</blockquote>
+<p>니미럴…<br><a href="https://www.youtube.com/watch?v=jJjZ75T5COI" target="_blank" rel="external">https://www.youtube.com/watch?v=jJjZ75T5COI</a></p>
+<p>모든 것의 마지막은 먹먹함을 자아낸다…</p>
+<p>결국 Inf를 없애기 위해서 다음과 같이 작성한다.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; byProvince = aggregate(cbind(Students,Teachers)~Province, data=edu.elementary, FUN=mean)</span><br><span class="line">&gt; SByT &lt;- byProvince$Students / byProvince$Teachers</span><br><span class="line">&gt; byProvince = cbind(byProvince, SByT)</span><br><span class="line">&gt; head(byProvince)</span><br><span class="line">  Province Students Teachers     SByT</span><br><span class="line"><span class="number">1</span>   가평군 <span class="number">865.5625</span> <span class="number">14.50000</span> <span class="number">59.69397</span></span><br><span class="line"><span class="number">2</span>   강남구 <span class="number">780.8485</span> <span class="number">47.15152</span> <span class="number">16.56041</span></span><br><span class="line"><span class="number">3</span>   강동구 <span class="number">750.0385</span> <span class="number">54.76923</span> <span class="number">13.69452</span></span><br><span class="line"><span class="number">4</span>   강릉시 <span class="number">769.8378</span> <span class="number">20.67568</span> <span class="number">37.23399</span></span><br><span class="line"><span class="number">5</span>   강북구 <span class="number">896.2143</span> <span class="number">56.78571</span> <span class="number">15.78239</span></span><br><span class="line"><span class="number">6</span>   강서구 <span class="number">720.7818</span> <span class="number">38.50909</span> <span class="number">18.71719</span></span><br></pre></td></tr></table></figure></p>
+<p>좋은데는?<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; OrderBySByT = byProvince[order(byProvince$SByT),]</span><br><span class="line">&gt; head(OrderBySByT)</span><br><span class="line">    Province Students Teachers      SByT</span><br><span class="line"><span class="number">183</span>   충주시 <span class="number">193.9231</span> <span class="number">22.07692</span>  <span class="number">8.783972</span></span><br><span class="line"><span class="number">93</span>    서초구 <span class="number">695.9167</span> <span class="number">53.70833</span> <span class="number">12.957331</span></span><br><span class="line"><span class="number">59</span>    도봉구 <span class="number">631.3478</span> <span class="number">48.43478</span> <span class="number">13.035009</span></span><br><span class="line"><span class="number">64</span>    동작구 <span class="number">702.9524</span> <span class="number">53.09524</span> <span class="number">13.239462</span></span><br><span class="line"><span class="number">100</span>   송파구 <span class="number">741.6842</span> <span class="number">54.86842</span> <span class="number">13.517506</span></span><br><span class="line"><span class="number">23</span>    관악구 <span class="number">754.9091</span> <span class="number">55.77273</span> <span class="number">13.535452</span></span><br></pre></td></tr></table></figure></p>
+<p>충주로 이사갈까?</p>
+<p>옹진군 빡셀듯..<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; OrderBySByT = byProvince[order(-byProvince$SByT),]</span><br><span class="line">&gt; head(OrderBySByT)</span><br><span class="line">    Province Students  Teachers     SByT</span><br><span class="line"><span class="number">138</span>   옹진군 <span class="number">522.6154</span>  <span class="number">6.000000</span> <span class="number">87.10256</span></span><br><span class="line"><span class="number">162</span>   정선군 <span class="number">866.3158</span> <span class="number">11.105263</span> <span class="number">78.00948</span></span><br><span class="line"><span class="number">107</span>   신안군 <span class="number">497.3429</span>  <span class="number">6.457143</span> <span class="number">77.02212</span></span><br><span class="line"><span class="number">170</span>   진도군 <span class="number">766.8235</span> <span class="number">10.235294</span> <span class="number">74.91954</span></span><br><span class="line"><span class="number">75</span>    봉화군 <span class="number">629.2000</span>  <span class="number">8.600000</span> <span class="number">73.16279</span></span><br><span class="line"><span class="number">130</span>   영양군 <span class="number">741.1250</span> <span class="number">10.375000</span> <span class="number">71.43373</span></span><br></pre></td></tr></table></figure></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/R-data-mining/">R, data mining</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/03/29/data-mining-ex/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/28/data-mining-ex/" title="교육 정보 분석, 데이터 확인" itemprop="url">교육 정보 분석, 데이터 확인</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-28T11:37:59.000Z" itemprop="datePublished"> Published 2016-03-28</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p><a href="https://www.data.go.kr/subMain.jsp?param=REFUQUAzMDM4ODY2#/L2NvbW0vY29tbW9uU2VhcmNoL29yZ2luRGF0YVNldCRAXjAxMm0xJEBecHVibGljRGF0YVBrPTMwNTkxOTYkQF5vcmdJbmRleD1EQVRBJEBedmlld0ZsYWc9LTEkQF5icm1DZD1PQzAwMDEkQF5ncmlkRmxhZz1ZJEBebWFpbkZsYWc9dHJ1ZSRAXnNraXBSb3dzPTAkQF5tYXhSb3dzPTEw" target="_blank" rel="external">자료 출처</a></p>
+<h1 id="uD30C_uC77C__uC77D_uAE30"><a href="#uD30C_uC77C__uC77D_uAE30" class="headerlink" title="파일 읽기"></a>파일 읽기</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">temp = read.table(<span class="string">"2015.edu.elementary.csv"</span>, sep=<span class="string">','</span>, header = <span class="literal">TRUE</span>)</span><br><span class="line">summary(temp)</span><br></pre></td></tr></table></figure>
+<h1 id="uB370_uC774_uD130__uC911_uBCF5_uC744__uD655_uC778_uD574__uBCFC_uAE4C_3F"><a href="#uB370_uC774_uD130__uC911_uBCF5_uC744__uD655_uC778_uD574__uBCFC_uAE4C_3F" class="headerlink" title="데이터 중복을 확인해 볼까?"></a>데이터 중복을 확인해 볼까?</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">i &lt;- duplicated(temp)</span><br><span class="line">which(i)</span><br><span class="line">edu.elementary[i,]</span><br><span class="line">edu.elementary &lt;- unique(temp[complete.cases(temp),])</span><br><span class="line">summary(edu.elementary)</span><br></pre></td></tr></table></figure>
+<h1 id="uD559_uC0DD_uC218_histogram__uBC0F_summary"><a href="#uD559_uC0DD_uC218_histogram__uBC0F_summary" class="headerlink" title="학생수 histogram 및 summary"></a>학생수 histogram 및 summary</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(students)</span><br><span class="line">   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span><br><span class="line">    <span class="number">1.0</span>   <span class="number">523.0</span>   <span class="number">773.0</span>   <span class="number">745.4</span>  <span class="number">1015.0</span>  <span class="number">1352.0</span> </span><br><span class="line">&gt; hist(students)</span><br></pre></td></tr></table></figure>
+<img src="/2016/03/28/data-mining-ex/students_hist.png" alt="학생수 히스토그램" title="학생수 히스토그램">
+<h1 id="uD559_uAE09_uC218_histogram__uBC0F_summary"><a href="#uD559_uAE09_uC218_histogram__uBC0F_summary" class="headerlink" title="학급수 histogram 및 summary"></a>학급수 histogram 및 summary</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(class_rooms)</span><br><span class="line">   Min. <span class="number">1</span>st Qu.  Median    Mean <span class="number">3</span>rd Qu.    Max. </span><br><span class="line">    <span class="number">0.0</span>     <span class="number">7.0</span>    <span class="number">17.0</span>    <span class="number">19.2</span>    <span class="number">30.0</span>    <span class="number">81.0</span> </span><br><span class="line">&gt; hist(class_rooms)</span><br></pre></td></tr></table></figure>
+<img src="/2016/03/28/data-mining-ex/class_rooms_hist.png" alt="학급수 히스토그램" title="학급수 히스토그램">
+<h1 id="uC120_uC0DD_uB2D8_uC218_histogram__uBC0F_summary"><a href="#uC120_uC0DD_uB2D8_uC218_histogram__uBC0F_summary" class="headerlink" title="선생님수 histogram 및 summary"></a>선생님수 histogram 및 summary</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(teachers)</span><br><span class="line">   Min. <span class="number">1</span>st Qu.  Median    Mean <span class="number">3</span>rd Qu.    Max. </span><br><span class="line">   <span class="number">0.00</span>   <span class="number">11.00</span>   <span class="number">26.00</span>   <span class="number">29.21</span>   <span class="number">44.00</span>  <span class="number">112.00</span> </span><br><span class="line">&gt; hist(teachers)</span><br></pre></td></tr></table></figure>
+<img src="/2016/03/28/data-mining-ex/teachers_hist.png" alt="선생님수 히스토그램" title="선생님수 히스토그램">
+<p>초등학교니까 학급수와 선생님수의 분포가 비슷한데 학생수와는 무관한듯 보이네…</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/R-data-mining/">R, data mining</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/03/28/data-mining-ex/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/16/data-mining/" title="데이터 준비 정리" itemprop="url">데이터 준비 정리</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
 		
   <p class="article-time">
     <time datetime="2016-03-16T11:23:37.000Z" itemprop="datePublished"> Published 2016-03-16</time>
@@ -141,7 +283,58 @@
 <li>cluster: k-means clustering</li>
 </ul>
 <p>히스토그램과 discretize 결과값 비교<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hist(iris$Petal.Width, main=<span class="string">"Discretization: interval"</span>, sub=<span class="string">"Blue lines are boundaries"</span>)</span><br><span class="line">abline(v=discretize(iris$Petal.Width, method=<span class="string">"interval"</span>, categories=<span class="number">3</span>, onlycuts=<span class="literal">TRUE</span>), col=<span class="string">"blue"</span>)</span><br><span class="line">abline(v=discretize(iris$Petal.Width, method=<span class="string">"cluster"</span>, categories=<span class="number">3</span>, onlycuts=<span class="literal">TRUE</span>), col=<span class="string">"red"</span>)</span><br><span class="line">abline(v=discretize(iris$Petal.Width, method=<span class="string">"frequency"</span>, categories=<span class="number">3</span>, onlycuts=<span class="literal">TRUE</span>), col=<span class="string">"green"</span>)</span><br></pre></td></tr></table></figure></p>
-<h2 id="Standardize_data__28Z-score_29"><a href="#Standardize_data__28Z-score_29" class="headerlink" title="Standardize data (Z-score)"></a>Standardize data (Z-score)</h2><p>Normalization: 모든 값을 0, 1 사이로 scaling 한다.<br><img src="/2016/03/16/data-mining/fig1.png" alt="This is an example image" title="This is an example image"></p>
+<h2 id="Standardize_data__28Z-score_29"><a href="#Standardize_data__28Z-score_29" class="headerlink" title="Standardize data (Z-score)"></a>Standardize data (Z-score)</h2><blockquote>
+<p>참조 전반적인 내용<br><a href="http://www.dataminingblog.com/standardization-vs-normalization/" target="_blank" rel="external">http://www.dataminingblog.com/standardization-vs-normalization/</a></p>
+</blockquote>
+<p>Normalization: 모든 값을 0, 1 사이로 scaling 한다.<br><img src="/2016/03/16/data-mining/fig1.png" alt="Normalization" title="Normalization"><br>outlier 에 취약</p>
+<p>Standardization, z-transformation, 정규화: 평균이 0이 되도록 함, 데이터에서 평균을 뺀 후, 표준편차로 나누기<br><img src="/2016/03/16/data-mining/fig2.png" alt="Standardization" title="Standardization"></p>
+<blockquote>
+<p>정규화 잘 설명 됨<br><a href="http://adnoctum.tistory.com/184" target="_blank" rel="external">http://adnoctum.tistory.com/184</a></p>
+</blockquote>
+<p>정규화, 평균을 확인해 보면 0<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iris.scaled &lt;- scale(iris[<span class="number">1</span>:<span class="number">4</span>])</span><br><span class="line">head(iris.scaled)</span><br><span class="line">summary(iris.scaled)</span><br></pre></td></tr></table></figure></p>
+<h1 id="Proximities_3A_Similarities_and_distances"><a href="#Proximities_3A_Similarities_and_distances" class="headerlink" title="Proximities: Similarities and distances"></a>Proximities: Similarities and distances</h1><h2 id="Minkovsky_distances"><a href="#Minkovsky_distances" class="headerlink" title="Minkovsky distances"></a>Minkovsky distances</h2><p>정규화된 값의 앞 5개 뽑기<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iris.scaled[<span class="number">1</span>:<span class="number">5</span>,]</span><br></pre></td></tr></table></figure></p>
+<p>거리<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dist(iris.scaled[<span class="number">1</span>:<span class="number">5</span>,], method=<span class="string">"euclidean"</span>)</span><br><span class="line">dist(iris.scaled[<span class="number">1</span>:<span class="number">5</span>,], method=<span class="string">"manhattan"</span>)</span><br><span class="line">dist(iris.scaled[<span class="number">1</span>:<span class="number">5</span>,], method=<span class="string">"maximum"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>method<br>the distance measure to be used. This must be one of “euclidean”, “maximum”, “manhattan”, “canberra”, “binary” or “minkowski”. Any unambiguous substring can be given.</p>
+<ul>
+<li>euclidean: Usual distance between the two vectors (2 norm aka L_2), sqrt(sum((x_i - y_i)^2)).</li>
+<li>maximum: Maximum distance between two components of x and y (supremum norm)</li>
+<li>manhattan: Absolute distance between the two vectors (1 norm aka L_1).</li>
+<li>canberra: sum(|x_i - y_i| / |x_i + y_i|). Terms with zero numerator and denominator are omitted from the sum and treated as if the values were missing.<br>This is intended for non-negative values (e.g., counts): taking the absolute value of the denominator is a 1998 R modification to avoid negative distances.</li>
+<li>binary: (aka asymmetric binary): The vectors are regarded as binary bits, so non-zero elements are ‘on’ and zero elements are ‘off’. The distance is the proportion of bits in which only one is on amongst those in which at least one is on.</li>
+</ul>
+<p>minkowski:<br>The p norm, the pth root of the sum of the pth powers of the differences of the components.</p>
+<h2 id="Distances_for_binary_data__28Jaccard_and_Hamming_29"><a href="#Distances_for_binary_data__28Jaccard_and_Hamming_29" class="headerlink" title="Distances for binary data (Jaccard and Hamming)"></a>Distances for binary data (Jaccard and Hamming)</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">b &lt;- rbind(</span><br><span class="line">  c(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>),</span><br><span class="line">  c(<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line">  )</span><br><span class="line">b</span><br><span class="line">dist(b, method=<span class="string">"binary"</span>)</span><br><span class="line">dist(b, method=<span class="string">"manhattan"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Gower_u2019s_distance"><a href="#Gower_u2019s_distance" class="headerlink" title="Gower’s distance"></a>Gower’s distance</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data &lt;- data.frame(</span><br><span class="line">  height= c(      <span class="number">160</span>,    <span class="number">185</span>,    <span class="number">170</span>),</span><br><span class="line">  weight= c(       <span class="number">52</span>,     <span class="number">90</span>,     <span class="number">75</span>),</span><br><span class="line">  sex=    c( <span class="string">"female"</span>, <span class="string">"male"</span>, <span class="string">"male"</span>)</span><br><span class="line">)</span><br><span class="line">data</span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(proxy)</span><br><span class="line">dist(data, method=<span class="string">"Gower"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Additional_proximity_measures_available_in_package_proxy"><a href="#Additional_proximity_measures_available_in_package_proxy" class="headerlink" title="Additional proximity measures available in package proxy"></a>Additional proximity measures available in package proxy</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(proxy)</span><br><span class="line">names(pr_DB$get_entries())</span><br></pre></td></tr></table></figure>
+<h1 id="Relationship_between_features"><a href="#Relationship_between_features" class="headerlink" title="Relationship between features"></a>Relationship between features</h1><h2 id="Correlation__28for_ratio/interval_scaled_features_29"><a href="#Correlation__28for_ratio/interval_scaled_features_29" class="headerlink" title="Correlation (for ratio/interval scaled features)"></a>Correlation (for ratio/interval scaled features)</h2><img src="/2016/03/16/data-mining/Correlation_examples2.svg" alt="Correlation Example" title="Correlation Example">
+<img src="/2016/03/16/data-mining/correlation_01.png" alt="Correlation" title="Correlation">
+<img src="/2016/03/16/data-mining/correlation_02.png" alt="Covariance" title="Covariance">    
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cor(iris[,<span class="number">1</span>:<span class="number">4</span>])</span><br></pre></td></tr></table></figure>
+<p>Correlation between objects (transpose matrix(전치행렬) first)<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cc &lt;- cor(t(iris[,<span class="number">1</span>:<span class="number">4</span>]))</span><br><span class="line">dim(cc)</span><br></pre></td></tr></table></figure></p>
+<p>상관관계 표시<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(<span class="string">"seriation"</span>) <span class="comment"># for pimage</span></span><br><span class="line">pimage(cc, main = <span class="string">"Correlation between objects"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>Convert correlations into a dissimilarities<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d &lt;- as.dist(<span class="number">1</span>-abs(cc))</span><br><span class="line">pimage(d, main = <span class="string">"Dissimilaries between objects"</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Rank_correlation__28for_ordinal_features_29"><a href="#Rank_correlation__28for_ordinal_features_29" class="headerlink" title="Rank correlation (for ordinal features)"></a>Rank correlation (for ordinal features)</h2><p>각 컬럼 값(sepal, petal)을 3분위 함<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">iris_ord &lt;- data.frame(</span><br><span class="line">  cut(iris[,<span class="number">1</span>], <span class="number">3</span>, labels=c(<span class="string">"short"</span>, <span class="string">"medium"</span>, <span class="string">"long"</span>), ordered=<span class="literal">T</span>),</span><br><span class="line">  cut(iris[,<span class="number">2</span>], <span class="number">3</span>, labels=c(<span class="string">"short"</span>, <span class="string">"medium"</span>, <span class="string">"long"</span>), ordered=<span class="literal">T</span>),</span><br><span class="line">  cut(iris[,<span class="number">3</span>], <span class="number">3</span>, labels=c(<span class="string">"short"</span>, <span class="string">"medium"</span>, <span class="string">"long"</span>), ordered=<span class="literal">T</span>),</span><br><span class="line">  cut(iris[,<span class="number">4</span>], <span class="number">3</span>, labels=c(<span class="string">"short"</span>, <span class="string">"medium"</span>, <span class="string">"long"</span>), ordered=<span class="literal">T</span>),</span><br><span class="line">  iris[,<span class="number">5</span>])</span><br><span class="line">colnames(iris_ord) &lt;- colnames(iris)</span><br><span class="line">summary(iris_ord)</span><br><span class="line">head(iris_ord$Sepal.Length)</span><br></pre></td></tr></table></figure></p>
+<p>Kendall’s tau rank correlation coefficient<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cor(sapply(iris_ord[,<span class="number">1</span>:<span class="number">4</span>], xtfrm), method=<span class="string">"kendall"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>Spearman’s rho<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cor(sapply(iris_ord[,<span class="number">1</span>:<span class="number">4</span>], xtfrm), method=<span class="string">"spearman"</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Relationship_between_nominal_and_ordinal_features"><a href="#Relationship_between_nominal_and_ordinal_features" class="headerlink" title="Relationship between nominal and ordinal features"></a>Relationship between nominal and ordinal features</h2><blockquote>
+<p>nominal scale, 명목 척도<br>부여된 수치의 의미가 분류의 의미를 가질 뿐,가감승제 연산을 사용할 수 없다.<br>ex) 주민등록번호, 우편번호, 운동선수의 등번호, 지역구분(서울 1, 경기 2, 등) 등</p>
+<p>ordinal scale, 서열 척도<br>서열척도(ordinal scale)는 측정 대상의 분류뿐만 아니라 측정대상을 크기에 따라 순서적으로 배열할 수 있는 측정방법<br>그러나 서열척도는 ‘크기의 정도’를 알 수 없다. 즉 ‘어느 정도 잘했는가’혹은 ‘얼마나 더 선호하는가’와 같은 정보를 제공하지는 않는다. 따라서 가감승제 연산을 사용할 수 없다.<br>ex) 학업석차, 결승점에 도달한 경주마의 순위, 사회계층(상류층, 중류층, 하류층) 등</p>
+<p>interval scale, 등간 척도<br>명목척도와 서열척도의 특성을 모두 갖고 있으면서 ‘크기의 정도’를 말할 수 있는 측정척도<br>ex) 온도</p>
+<p>ratio scale, 비율 척도<br>가장 포괄적인 정보를 제공하는 최상위 수준의 측정척도로 등간척도의 모든 정보를 제공하면서 절대영점을 갖는다.<br>예)   월 소득, 연령, 휘발유 1리터당 주행거리, TV 시청률 등</p>
+</blockquote>
+<p>Is sepal length and species related? Use cross tabulation<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tbl &lt;- table(Sepal.Length=iris_ord$Sepal.Length, iris_ord$Species)</span><br><span class="line">tbl</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Chi-square Test, 카이제곱검정<br><a href="http://dermabae.tistory.com/173" target="_blank" rel="external">http://dermabae.tistory.com/173</a><br><a href="https://www.khanacademy.org/math/probability/statistics-inferential/chi-square/v/pearson-s-chi-square-test-goodness-of-fit" target="_blank" rel="external">https://www.khanacademy.org/math/probability/statistics-inferential/chi-square/v/pearson-s-chi-square-test-goodness-of-fit</a></p>
+</blockquote>
+<p>Test of Independence: Pearson’s chi-squared test is performed with the null hypothesis that the joint distribution of the cell counts in a 2-dimensional contingency table is the product of the row and column marginals. (h0 is independence)</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chisq.test(tbl)</span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- xtabs(~Sepal.Length + Species, data=iris_ord)</span><br><span class="line">x</span><br></pre></td></tr></table></figure>
+<p>그룹 평균<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aggregate(Sepal.Length ~ Species, data=iris, FUN = mean)</span><br><span class="line">aggregate(Sepal.Width ~ Species, data=iris, FUN = mean)</span><br></pre></td></tr></table></figure></p>
+<h1 id="Density_estimation"><a href="#Density_estimation" class="headerlink" title="Density estimation"></a>Density estimation</h1><p>단순히 데이터 그리기<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot(iris$Petal.Length, jitter(rep(<span class="number">1</span>, nrow(iris))), ylab =<span class="string">""</span>, yaxt = <span class="string">"n"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>히스토그램을 보여주고, 실제 데이터 위치를 rug 함수를 사용하여 보여주며 KDE 표시<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hist(iris$Petal.Length)</span><br><span class="line">rug(iris$Petal.Length)</span><br><span class="line">lines(density(iris$Petal.Length), col=<span class="string">"red"</span>, lwd = <span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
+<p>이차원 Kernel Density Estimation 그래프<br>참조: <a href="http://www.everydayanalytics.ca/2014/09/5-ways-to-do-2d-histograms-in-r.html" target="_blank" rel="external">http://www.everydayanalytics.ca/2014/09/5-ways-to-do-2d-histograms-in-r.html</a><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(MASS)</span><br><span class="line">dens &lt;- kde2d(iris$Sepal.Length, iris$Sepal.Width, n=<span class="number">100</span>) <span class="comment"># </span></span><br><span class="line">image(dens, xlab=<span class="string">"Sepal.Length"</span>, ylab=<span class="string">"Sepal.Width"</span>) <span class="comment"># 이미지로 표시</span></span><br><span class="line">contour(dens, add=<span class="literal">TRUE</span>) <span class="comment"># 등고선 표시</span></span><br><span class="line">points(jitter(iris$Sepal.Length, <span class="number">2</span>), jitter(iris$Sepal.Width, <span class="number">2</span>), cex=<span class="number">.7</span>, pch=<span class="string">"+"</span>) <span class="comment"># 십자 표시</span></span><br></pre></td></tr></table></figure></p>
+<p>3차원 표시<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">persp(dens, xlab=<span class="string">"Sepal.Length"</span>, ylab=<span class="string">"Sepal.Width"</span>, zlab=<span class="string">"density"</span>, shade=<span class="number">.5</span>) <span class="comment"># Perspective Plots</span></span><br></pre></td></tr></table></figure></p>
 
         
         
@@ -155,7 +348,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/r/">r</a>
+  <span></span> <a href="/tags/R-data-mining/">R, data mining</a>
   </div>
 
 </div>
@@ -190,7 +383,7 @@
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
 		
   <p class="article-time">
     <time datetime="2016-02-18T12:06:56.000Z" itemprop="datePublished"> Published 2016-02-18</time>
@@ -270,7 +463,7 @@
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
 		
   <p class="article-time">
     <time datetime="2016-02-17T12:04:32.000Z" itemprop="datePublished"> Published 2016-02-17</time>
@@ -453,7 +646,7 @@
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
 		
   <p class="article-time">
     <time datetime="2016-02-15T10:28:06.000Z" itemprop="datePublished"> Published 2016-02-15</time>
@@ -542,7 +735,7 @@
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
 		
   <p class="article-time">
     <time datetime="2016-01-28T10:17:14.000Z" itemprop="datePublished"> Published 2016-01-28</time>
@@ -675,7 +868,7 @@
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
 		
   <p class="article-time">
     <time datetime="2016-01-21T12:32:49.000Z" itemprop="datePublished"> Published 2016-01-21</time>
@@ -687,10 +880,10 @@
         <h2 id="forEachRight_3A__uAEBC_uAFB8_uB85C__uB3CC_uB824__uC900_uB2E4"><a href="#forEachRight_3A__uAEBC_uAFB8_uB85C__uB3CC_uB824__uC900_uB2E4" class="headerlink" title="forEachRight: 꺼꾸로 돌려 준다"></a>forEachRight: 꺼꾸로 돌려 준다</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line"><span class="string">'Carl'</span>,</span><br><span class="line"><span class="string">'Lisa'</span>,</span><br><span class="line"><span class="string">'Raymond'</span>,</span><br><span class="line"><span class="string">'Rita'</span></span><br><span class="line">];</span><br><span class="line"><span class="keyword">var</span> result = [];</span><br><span class="line">_.forEachRight(collection, <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  result.push(name);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h2 id="sortBy_3A__uC544_uBB34_uAC70_uB098__uC815_uB82C"><a href="#sortBy_3A__uC544_uBB34_uAC70_uB098__uC815_uB82C" class="headerlink" title="sortBy: 아무거나 정렬"></a>sortBy: 아무거나 정렬</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">_.sortBy(<span class="string">'cba'</span>).join(<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  &#123; name: <span class="string">'Moe'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Seymour'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Harold'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Willie'</span> &#125;</span><br><span class="line">];</span><br><span class="line">_.sortBy(collection, <span class="string">'name'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 헐 두개도 된다...</span></span><br><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  &#123; name: <span class="string">'Clancy'</span>, age: <span class="number">43</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Edna'</span>, age: <span class="number">32</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Lisa'</span>, age: <span class="number">10</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Philip'</span>, age: <span class="number">10</span> &#125;</span><br><span class="line">];</span><br><span class="line">_.sortBy(collection, [ <span class="string">'age'</span>, <span class="string">'name'</span> ]);</span><br></pre></td></tr></table></figure>
 <h2 id="sortedIndex_3A__uB108_uB294__uC5B4_uB514__uC988_uC74C_uC774_uB0D0_3F"><a href="#sortedIndex_3A__uB108_uB294__uC5B4_uB514__uC988_uC74C_uC774_uB0D0_3F" class="headerlink" title="sortedIndex: 너는 어디 즈음이냐?"></a>sortedIndex: 너는 어디 즈음이냐?</h2><p>정렬해서 넣어주기…<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  <span class="string">'Carl'</span>,</span><br><span class="line">  <span class="string">'Gary'</span>,</span><br><span class="line">  <span class="string">'Luigi'</span>,</span><br><span class="line">  <span class="string">'Otto'</span></span><br><span class="line">];</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'Luke'</span>;</span><br><span class="line">collection.splice(_.sortedIndex(collection, name), <span class="number">0</span>, name);</span><br></pre></td></tr></table></figure></p>
-<h2 id="where_2Cfilter_2Creject_2Cfind_2CfindLast_2CfindKey_3A__uAC78_uB7EC__uB0B4_uC790"><a href="#where_2Cfilter_2Creject_2Cfind_2CfindLast_2CfindKey_3A__uAC78_uB7EC__uB0B4_uC790" class="headerlink" title="where,filter,reject,find,findLast,findKey: 걸러 내자"></a>where,filter,reject,find,findLast,findKey: 걸러 내자</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var collection = [&#10;  &#123; name: &#39;Moe&#39;, age: 47, gender: &#39;m&#39; &#125;,&#10;  &#123; name: &#39;Sarah&#39;, age: 32, gender: &#39;f&#39; &#125;,&#10;  &#123; name: &#39;Melissa&#39;, age: 32, gender: &#39;f&#39; &#125;,&#10;  &#123; name: &#39;Dave&#39;, age: 32, gender: &#39;m&#39; &#125;&#10;];&#10;_.where(collection, &#123; age: 32, gender: &#39;f&#39; &#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="where_2Cfilter_2Creject_2Cfind_2CfindLast_2CfindKey_3A__uAC78_uB7EC__uB0B4_uC790"><a href="#where_2Cfilter_2Creject_2Cfind_2CfindLast_2CfindKey_3A__uAC78_uB7EC__uB0B4_uC790" class="headerlink" title="where,filter,reject,find,findLast,findKey: 걸러 내자"></a>where,filter,reject,find,findLast,findKey: 걸러 내자</h2><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var collection = [</span><br><span class="line">  &#123; <span class="string">name:</span> <span class="string">'Moe'</span>, <span class="string">age:</span> <span class="number">47</span>, <span class="string">gender:</span> <span class="string">'m'</span> &#125;,</span><br><span class="line">  &#123; <span class="string">name:</span> <span class="string">'Sarah'</span>, <span class="string">age:</span> <span class="number">32</span>, <span class="string">gender:</span> <span class="string">'f'</span> &#125;,</span><br><span class="line">  &#123; <span class="string">name:</span> <span class="string">'Melissa'</span>, <span class="string">age:</span> <span class="number">32</span>, <span class="string">gender:</span> <span class="string">'f'</span> &#125;,</span><br><span class="line">  &#123; <span class="string">name:</span> <span class="string">'Dave'</span>, <span class="string">age:</span> <span class="number">32</span>, <span class="string">gender:</span> <span class="string">'m'</span> &#125;</span><br><span class="line">];</span><br><span class="line">_.where(collection, &#123; <span class="string">age:</span> <span class="number">32</span>, <span class="string">gender:</span> <span class="string">'f'</span> &#125;);</span><br></pre></td></tr></table></figure>
 <p>filter는 함수도 된다.<br>reject는 여집합<br>find,findLast는 하나만 찾는다</p>
 <h2 id="take_2CtakeRight_2Cchunk_3A__uC798_uB77C_uB0B4_uAE30"><a href="#take_2CtakeRight_2Cchunk_3A__uC798_uB77C_uB0B4_uAE30" class="headerlink" title="take,takeRight,chunk: 잘라내기"></a>take,takeRight,chunk: 잘라내기</h2><p>50개 씩 잘라내<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">process</span>(<span class="params">chunks, index</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> chunk = chunks[index];</span><br><span class="line">  <span class="keyword">if</span> (_.isUndefined(chunk)) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'doing expensive work '</span> + _.last(chunk));</span><br><span class="line">  _.defer(_.partial(process, chunks, ++index));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> collection = _.range(<span class="number">10000</span>),</span><br><span class="line">chunks = _.chunk(collection, <span class="number">50</span>);</span><br><span class="line">process(chunks, <span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
-<h2 id="uniq_3A__uBC30_uC5F4_uC744_set__uB9CC_uB4E4_uAE30"><a href="#uniq_3A__uBC30_uC5F4_uC744_set__uB9CC_uB4E4_uAE30" class="headerlink" title="uniq: 배열을 set 만들기"></a>uniq: 배열을 set 만들기</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var collection = [&#10;  &#39;Walter&#39;,&#10;  &#39;Brenda&#39;,&#10;  &#39;Arthur&#39;,&#10;  &#39;Walter&#39;&#10;];&#10;_.uniq(collection);</span><br></pre></td></tr></table></figure>
+<h2 id="uniq_3A__uBC30_uC5F4_uC744_set__uB9CC_uB4E4_uAE30"><a href="#uniq_3A__uBC30_uC5F4_uC744_set__uB9CC_uB4E4_uAE30" class="headerlink" title="uniq: 배열을 set 만들기"></a>uniq: 배열을 set 만들기</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var collection = [</span><br><span class="line">  <span class="string">'Walter'</span>,</span><br><span class="line">  <span class="string">'Brenda'</span>,</span><br><span class="line">  <span class="string">'Arthur'</span>,</span><br><span class="line">  <span class="string">'Walter'</span></span><br><span class="line">];</span><br><span class="line"><span class="number">_</span>.uni<span class="string">q(collection)</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="groupBy_3A__uBAA8_uC73C_uC790_u2026"><a href="#groupBy_3A__uBAA8_uC73C_uC790_u2026" class="headerlink" title="groupBy: 모으자…"></a>groupBy: 모으자…</h2><h2 id="max_2C_min_3A__uCD5C_uB300__uCD5C_uC18C"><a href="#max_2C_min_3A__uCD5C_uB300__uCD5C_uC18C" class="headerlink" title="max, min: 최대 최소"></a>max, min: 최대 최소</h2><h2 id="flatten_2Cplunk_2Ccompact"><a href="#flatten_2Cplunk_2Ccompact" class="headerlink" title="flatten,plunk,compact"></a>flatten,plunk,compact</h2><h2 id="every_2Csome_3A__uAC80_uC0AC"><a href="#every_2Csome_3A__uAC80_uC0AC" class="headerlink" title="every,some: 검사"></a>every,some: 검사</h2><h2 id="union_2Cintersection_2Cxor_3A__uC9D1_uD569__uC5F0_uC0B0"><a href="#union_2Cintersection_2Cxor_3A__uC9D1_uD569__uC5F0_uC0B0" class="headerlink" title="union,intersection,xor: 집합 연산"></a>union,intersection,xor: 집합 연산</h2><h2 id="assign_28extend_29_2Cmerge_3A__uD569_uCE58"><a href="#assign_28extend_29_2Cmerge_3A__uD569_uCE58" class="headerlink" title="assign(extend),merge: 합치"></a>assign(extend),merge: 합치</h2><h2 id="forOwn_2CforIn_3A__uB3CC_uB824_uB77C_7E"><a href="#forOwn_2CforIn_3A__uB3CC_uB824_uB77C_7E" class="headerlink" title="forOwn,forIn: 돌려라~"></a>forOwn,forIn: 돌려라~</h2><h2 id="keys_2Cvalues_2Cat_3A_Key/_uAC12"><a href="#keys_2Cvalues_2Cat_3A_Key/_uAC12" class="headerlink" title="keys,values,at: Key/값"></a>keys,values,at: Key/값</h2><h2 id="pick_2Comit_3A__uBF51_uAE30"><a href="#pick_2Comit_3A__uBF51_uAE30" class="headerlink" title="pick,omit: 뽑기"></a>pick,omit: 뽑기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object1 = &#123;</span><br><span class="line">    name: <span class="string">'Kevin Moore'</span>,</span><br><span class="line">    occupation: <span class="string">'Programmer'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  object2 = &#123;</span><br><span class="line">    specialty: <span class="string">'Python'</span>,</span><br><span class="line">    employer: <span class="string">'Acme'</span></span><br><span class="line">  &#125;;</span><br><span class="line">_.assign(object1, _.pick(object2, <span class="string">'specialty'</span>));</span><br><span class="line"><span class="keyword">var</span> object1 = &#123;</span><br><span class="line">    name: <span class="string">'Kevin Moore'</span>,</span><br><span class="line">    occupation: <span class="string">'Programmer'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  object2 = &#123;</span><br><span class="line">    specialty: <span class="string">'Python'</span>,</span><br><span class="line">    employer: <span class="string">'Acme'</span></span><br><span class="line">  &#125;;</span><br><span class="line">_.assign(object1, _.omit(object2, <span class="string">'employer'</span>));</span><br></pre></td></tr></table></figure>
 <h2 id="clone_3A__uBCF5_uC0AC"><a href="#clone_3A__uBCF5_uC0AC" class="headerlink" title="clone: 복사"></a>clone: 복사</h2><h2 id="bind_2CbindAll_2CbindKey"><a href="#bind_2CbindAll_2CbindKey" class="headerlink" title="bind,bindAll,bindKey"></a>bind,bindAll,bindKey</h2><h2 id="after_2Cdelay_2Cdefer_3A__uC788_uB2E4_uAC00__uC2E4_uD589"><a href="#after_2Cdelay_2Cdefer_3A__uC788_uB2E4_uAC00__uC2E4_uD589" class="headerlink" title="after,delay,defer: 있다가 실행"></a>after,delay,defer: 있다가 실행</h2><h2 id="throttle_2Cdebouncing_3A__uD638_uCD9C__uC81C_uC5B4"><a href="#throttle_2Cdebouncing_3A__uD638_uCD9C__uC81C_uC5B4" class="headerlink" title="throttle,debouncing: 호출 제어"></a>throttle,debouncing: 호출 제어</h2>
         
@@ -740,7 +933,7 @@
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
 		
   <p class="article-time">
     <time datetime="2016-01-15T12:17:17.000Z" itemprop="datePublished"> Published 2016-01-15</time>
@@ -760,7 +953,7 @@
 <h2 id="Automatic_Host_builds"><a href="#Automatic_Host_builds" class="headerlink" title="Automatic Host builds"></a>Automatic Host builds</h2><h3 id="Aptly"><a href="#Aptly" class="headerlink" title="Aptly"></a>Aptly</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://repo.aptly.info/ squeeze main&#10;$ sudo apt-key adv --keyserver keys.gnupg.net --recv-keys E083A3782A194991&#10;$ sudo apt-get update&#10;$ sudo apt-get install aptly</span><br></pre></td></tr></table></figure>
 <p>/etc/aptly.conf<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">rootDir</span>": <span class="value"><span class="string">"/var/spool/aptly"</span></span>,</span><br><span class="line">  "<span class="attribute">downloadConcurrency</span>": <span class="value"><span class="number">4</span></span>,</span><br><span class="line">  "<span class="attribute">downloadSpeedLimit</span>": <span class="value"><span class="number">0</span></span>,</span><br><span class="line">  "<span class="attribute">architectures</span>": <span class="value">[<span class="string">"amd64"</span>]</span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowSuggests</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowRecommends</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowAllVariants</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowSource</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">gpgDisableSign</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">gpgDisableVerify</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">downloadSourcePackages</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">ppaDistributorID</span>": <span class="value"><span class="string">"ubuntu"</span></span>,</span><br><span class="line">  "<span class="attribute">ppaCodename</span>": <span class="value"><span class="string">""</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install gnugpg</span><br></pre></td></tr></table></figure>
-<p>gpgbatch<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%echo Generating a default key&#10;Key-Type: default&#10;Subkey-Type: default&#10;Key-Length: 2048&#10;Name-Real: &#60;&#60; YOUR NAME &#62;&#62;&#10;Name-Comment: &#60;&#60; KEY DESCRIPTION &#62;&#62;&#10;Name-Email: &#60;&#60; YOUR EMAIL &#62;&#62;&#10;Expire-Date: 0&#10;%pubring aptly.pub&#10;%secring aptly.sec&#10;%commit&#10;%echo done</span><br></pre></td></tr></table></figure></p>
+<p>gpgbatch<br><figure class="highlight mojolicious"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="perl"><span class="variable">%echo</span> Generating a default key</span><span class="xml"></span><br><span class="line">Key-Type: default</span><br><span class="line">Subkey-Type: default</span><br><span class="line">Key-Length: 2048</span><br><span class="line">Name-Real: <span class="tag">&lt;&lt; <span class="attribute">YOUR</span> <span class="attribute">NAME</span> &gt;</span>&gt;</span><br><span class="line">Name-Comment: <span class="tag">&lt;&lt; <span class="attribute">KEY</span> <span class="attribute">DESCRIPTION</span> &gt;</span>&gt;</span><br><span class="line">Name-Email: <span class="tag">&lt;&lt; <span class="attribute">YOUR</span> <span class="attribute">EMAIL</span> &gt;</span>&gt;</span><br><span class="line">Expire-Date: 0</span><br><span class="line"></span><span class="perl"><span class="variable">%pubring</span> aptly.pub</span><span class="xml"></span><br><span class="line"></span><span class="perl"><span class="variable">%secring</span> aptly.sec</span><span class="xml"></span><br><span class="line"></span><span class="perl"><span class="variable">%commit</span></span><span class="xml"></span><br><span class="line"></span><span class="perl"><span class="variable">%echo</span> done</span><span class="xml"></span></span><br></pre></td></tr></table></figure></p>
 <p>Public/Private 키 생성<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg2 --batch --gen-key gpgbatch</span><br></pre></td></tr></table></figure></p>
 <p>미러 사이닝<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gpg --no-default-keyring --keyring trustedkeys.gpg --keyserver keys.gnupg.net --recv keys 437D05B5</span><br></pre></td></tr></table></figure></p>
 <p>미러링 레포지터리 생성 및 populate &amp; serve<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo aptly mirror create -architectures=amd64 trusty-main http://archive.ubuntu.com/ubuntu trusty main&#10;$ aptly mirror update trusty-main&#10;$ sudo aptly publish snapshot -distribution=trusty trusty-main-snapshot&#10;$ sudo aptly serve</span><br></pre></td></tr></table></figure></p>
@@ -818,7 +1011,7 @@
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
 		
   <p class="article-time">
     <time datetime="2016-01-14T13:18:31.000Z" itemprop="datePublished"> Published 2016-01-14</time>
@@ -868,191 +1061,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/01/13/ngAnimate/" title="ngAnimate" itemprop="url">ngAnimate</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
-		
-  <p class="article-time">
-    <time datetime="2016-01-13T12:10:11.000Z" itemprop="datePublished"> Published 2016-01-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="ng-if_2C_ng-switch_2C_ng-message_2C_ng-view"><a href="#ng-if_2C_ng-switch_2C_ng-message_2C_ng-view" class="headerlink" title="ng-if, ng-switch, ng-message, ng-view"></a>ng-if, ng-switch, ng-message, ng-view</h2><ul>
-<li>ng-enter: true 시작</li>
-<li>ng-enter-active: ng-enter transition finished</li>
-<li>ng-leave: false 시작</li>
-<li>ng-leave-active: ng-leave transition finished</li>
-</ul>
-<h2 id="ng-repeat"><a href="#ng-repeat" class="headerlink" title="ng-repeat"></a>ng-repeat</h2><ul>
-<li>ng-enter: 아이템 추가 시</li>
-<li>ng-move: 아이템 이동 시</li>
-<li>ng-leave: 아이템 삭제 시</li>
-</ul>
-<h2 id="ng-hide_2C_ng-show"><a href="#ng-hide_2C_ng-show" class="headerlink" title="ng-hide, ng-show"></a>ng-hide, ng-show</h2><ul>
-<li>ng-[hide|show]-add</li>
-<li>ng-[hide|show]-add-active</li>
-<li>ng-[hide|show]-remove</li>
-<li>ng-[hide|show]-remove-active</li>
-</ul>
-<h2 id="ng-class"><a href="#ng-class" class="headerlink" title="ng-class"></a>ng-class</h2><ul>
-<li>[class name]-add</li>
-<li>[class name]-remove<script src="https://gist.github.com/swcho/ea419808cc6bf929052e.js"></script>
-
-</li>
-</ul>
-<h2 id="ng-model"><a href="#ng-model" class="headerlink" title="ng-model"></a>ng-model</h2><ul>
-<li>ng-invalid-add</li>
-<li>ng-invalid-add-active</li>
-</ul>
-<h2 id="ng-message"><a href="#ng-message" class="headerlink" title="ng-message"></a>ng-message</h2><ul>
-<li>ng-active-add</li>
-<li>ng-active</li>
-<li>ng-inactive-add</li>
-<li>ng-inactive</li>
-<li>ng-enter</li>
-<li>ng-enter-active</li>
-<li>ng-leave</li>
-<li>ng-leave-active<script src="https://gist.github.com/swcho/4158c0193346d4f1b75e.js"></script>
-
-</li>
-</ul>
-<h2 id="ng-view"><a href="#ng-view" class="headerlink" title="ng-view"></a>ng-view</h2><ul>
-<li>ng-enter</li>
-<li>ng-enter-active</li>
-<li>ng-leave</li>
-<li>ng-leave-active</li>
-</ul>
-<h2 id="ng-switch"><a href="#ng-switch" class="headerlink" title="ng-switch"></a>ng-switch</h2><ul>
-<li>ng-enter</li>
-<li>ng-enter-active</li>
-<li>ng-leave</li>
-<li>ng-leave-active</li>
-</ul>
-<h2 id="ng-include"><a href="#ng-include" class="headerlink" title="ng-include"></a>ng-include</h2><ul>
-<li>ng-enter</li>
-<li>ng-enter-active</li>
-<li>ng-leave</li>
-<li>ng-leave-active</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/angularjs/">angularjs</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/01/13/ngAnimate/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/01/10/tech-summary/" title="Tech Summary" itemprop="url">Tech Summary</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Sungwoo" target="_blank" itemprop="author">Sungwoo</a>
-		
-  <p class="article-time">
-    <time datetime="2016-01-10T04:18:02.000Z" itemprop="datePublished"> Published 2016-01-10</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <ul>
-<li><p>FreeBSD Jails<br>OS Level 가상화</p>
-</li>
-<li><p>Docker Init System<br><a href="https://github.com/Yelp/dumb-init" target="_blank" rel="external">https://github.com/Yelp/dumb-init</a><br>Host에서 container에서 실행한 프로세스로 term signal 등을 보내어 처리할 수 있도록 한 장치</p>
-</li>
-<li><p>Offline NPM<br><a href="https://addyosmani.com/blog/using-npm-offline/" target="_blank" rel="external">https://addyosmani.com/blog/using-npm-offline/</a><br>읽어보면 npm registry 경로를 변경하는 것이 나옴</p>
-</li>
-<li><p>Node.js profiling<br><a href="https://strongloop.com/strongblog/tips-optimizing-slow-code-in-nodejs/" target="_blank" rel="external">https://strongloop.com/strongblog/tips-optimizing-slow-code-in-nodejs/</a></p>
-</li>
-<li><p>MSA<br><a href="https://dzone.com/articles/microservices-architecture-what-when-how?edition=130252&amp;utm_source=Spotlight&amp;utm_medium=email&amp;utm_campaign=integration%202016-01-07" target="_blank" rel="external">https://dzone.com/articles/microservices-architecture-what-when-how?edition=130252&amp;utm_source=Spotlight&amp;utm_medium=email&amp;utm_campaign=integration%202016-01-07</a></p>
-</li>
-<li><p>CSS Variable Architecture<br><a href="https://www.smashingmagazine.com/2016/01/variables-in-css-architecture/" target="_blank" rel="external">https://www.smashingmagazine.com/2016/01/variables-in-css-architecture/</a></p>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/tech/">tech</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/01/10/tech-summary/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -1076,15 +1084,15 @@
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>3</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/r/" title="r">r<sup>1</sup></a></li>
 			
 		
 			
@@ -1142,7 +1150,7 @@
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+		<p> ^^; <br/>
 			This is my blog,believe it or not.</p>
 	</section>
 	 
@@ -1164,7 +1172,7 @@
 		<p class="copyright">
 		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
 		
-		<a href="/about" target="_blank" title="Sungwoo">Sungwoo</a>
+		<a href="/about" target="_blank" title="SwForge">SwForge</a>
 		
 		
 		</p>

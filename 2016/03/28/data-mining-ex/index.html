@@ -4,35 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Tech Summary | SwForge&#39;s Note</title>
+    <title>교육 정보 분석, 데이터 확인 | SwForge&#39;s Note</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SwForge">
     
 
     
-    <meta name="description" content="FreeBSD JailsOS Level 가상화
-
-Docker Init Systemhttps://github.com/Yelp/dumb-initHost에서 container에서 실행한 프로세스로 term signal 등을 보내어 처리할 수 있도록 한 장치
-
-Offline NPMhttps://addyosmani.com/blog/using-npm-offline/읽">
+    <meta name="description" content="자료 출처
+파일 읽기12temp = read.table(&quot;2015.edu.elementary.csv&quot;, sep=&apos;,&apos;, header = TRUE)summary(temp)
+데이터 중복을 확인해 볼까?12345i &amp;lt;- duplicated(temp)which(i)edu.elementary[i,]edu.elementary &amp;lt;- unique(temp[co">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tech Summary">
-<meta property="og:url" content="http://yoursite.com/2016/01/10/tech-summary/index.html">
+<meta property="og:title" content="교육 정보 분석, 데이터 확인">
+<meta property="og:url" content="http://yoursite.com/2016/03/28/data-mining-ex/index.html">
 <meta property="og:site_name" content="SwForge's Note">
-<meta property="og:description" content="FreeBSD JailsOS Level 가상화
-
-Docker Init Systemhttps://github.com/Yelp/dumb-initHost에서 container에서 실행한 프로세스로 term signal 등을 보내어 처리할 수 있도록 한 장치
-
-Offline NPMhttps://addyosmani.com/blog/using-npm-offline/읽">
-<meta property="og:updated_time" content="2016-01-13T22:20:25.216Z">
+<meta property="og:description" content="자료 출처
+파일 읽기12temp = read.table(&quot;2015.edu.elementary.csv&quot;, sep=&apos;,&apos;, header = TRUE)summary(temp)
+데이터 중복을 확인해 볼까?12345i &amp;lt;- duplicated(temp)which(i)edu.elementary[i,]edu.elementary &amp;lt;- unique(temp[co">
+<meta property="og:image" content="http://yoursite.com/2016/03/28/data-mining-ex/students_hist.png">
+<meta property="og:image" content="http://yoursite.com/2016/03/28/data-mining-ex/class_rooms_hist.png">
+<meta property="og:image" content="http://yoursite.com/2016/03/28/data-mining-ex/teachers_hist.png">
+<meta property="og:updated_time" content="2016-03-29T12:27:42.451Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tech Summary">
-<meta name="twitter:description" content="FreeBSD JailsOS Level 가상화
-
-Docker Init Systemhttps://github.com/Yelp/dumb-initHost에서 container에서 실행한 프로세스로 term signal 등을 보내어 처리할 수 있도록 한 장치
-
-Offline NPMhttps://addyosmani.com/blog/using-npm-offline/읽">
+<meta name="twitter:title" content="교육 정보 분석, 데이터 확인">
+<meta name="twitter:description" content="자료 출처
+파일 읽기12temp = read.table(&quot;2015.edu.elementary.csv&quot;, sep=&apos;,&apos;, header = TRUE)summary(temp)
+데이터 중복을 확인해 볼까?12345i &amp;lt;- duplicated(temp)which(i)edu.elementary[i,]edu.elementary &amp;lt;- unique(temp[co">
 
     
     <link rel="alternative" href="/atom.xml" title="SwForge&#39;s Note" type="application/atom+xml">
@@ -92,14 +89,14 @@ Offline NPMhttps://addyosmani.com/blog/using-npm-offline/읽">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/01/10/tech-summary/" title="Tech Summary" itemprop="url">Tech Summary</a>
+      <a href="/2016/03/28/data-mining-ex/" title="교육 정보 분석, 데이터 확인" itemprop="url">교육 정보 분석, 데이터 확인</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
 		
   <p class="article-time">
-    <time datetime="2016-01-10T04:18:02.000Z" itemprop="datePublished"> Published 2016-01-10</time>
+    <time datetime="2016-03-28T11:37:59.000Z" itemprop="datePublished"> Published 2016-03-28</time>
     
   </p>
 </header>
@@ -108,24 +105,20 @@ Offline NPMhttps://addyosmani.com/blog/using-npm-offline/읽">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#uD30C_uC77C__uC77D_uAE30"><span class="toc-number">1.</span> <span class="toc-text">파일 읽기</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uB370_uC774_uD130__uC911_uBCF5_uC744__uD655_uC778_uD574__uBCFC_uAE4C_3F"><span class="toc-number">2.</span> <span class="toc-text">데이터 중복을 확인해 볼까?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uD559_uC0DD_uC218_histogram__uBC0F_summary"><span class="toc-number">3.</span> <span class="toc-text">학생수 histogram 및 summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uD559_uAE09_uC218_histogram__uBC0F_summary"><span class="toc-number">4.</span> <span class="toc-text">학급수 histogram 및 summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uC120_uC0DD_uB2D8_uC218_histogram__uBC0F_summary"><span class="toc-number">5.</span> <span class="toc-text">선생님수 histogram 및 summary</span></a></li></ol>
 		
 		</div>
 		
-		<ul>
-<li><p>FreeBSD Jails<br>OS Level 가상화</p>
-</li>
-<li><p>Docker Init System<br><a href="https://github.com/Yelp/dumb-init" target="_blank" rel="external">https://github.com/Yelp/dumb-init</a><br>Host에서 container에서 실행한 프로세스로 term signal 등을 보내어 처리할 수 있도록 한 장치</p>
-</li>
-<li><p>Offline NPM<br><a href="https://addyosmani.com/blog/using-npm-offline/" target="_blank" rel="external">https://addyosmani.com/blog/using-npm-offline/</a><br>읽어보면 npm registry 경로를 변경하는 것이 나옴</p>
-</li>
-<li><p>Node.js profiling<br><a href="https://strongloop.com/strongblog/tips-optimizing-slow-code-in-nodejs/" target="_blank" rel="external">https://strongloop.com/strongblog/tips-optimizing-slow-code-in-nodejs/</a></p>
-</li>
-<li><p>MSA<br><a href="https://dzone.com/articles/microservices-architecture-what-when-how?edition=130252&amp;utm_source=Spotlight&amp;utm_medium=email&amp;utm_campaign=integration%202016-01-07" target="_blank" rel="external">https://dzone.com/articles/microservices-architecture-what-when-how?edition=130252&amp;utm_source=Spotlight&amp;utm_medium=email&amp;utm_campaign=integration%202016-01-07</a></p>
-</li>
-<li><p>CSS Variable Architecture<br><a href="https://www.smashingmagazine.com/2016/01/variables-in-css-architecture/" target="_blank" rel="external">https://www.smashingmagazine.com/2016/01/variables-in-css-architecture/</a></p>
-</li>
-</ul>
+		<p><a href="https://www.data.go.kr/subMain.jsp?param=REFUQUAzMDM4ODY2#/L2NvbW0vY29tbW9uU2VhcmNoL29yZ2luRGF0YVNldCRAXjAxMm0xJEBecHVibGljRGF0YVBrPTMwNTkxOTYkQF5vcmdJbmRleD1EQVRBJEBedmlld0ZsYWc9LTEkQF5icm1DZD1PQzAwMDEkQF5ncmlkRmxhZz1ZJEBebWFpbkZsYWc9dHJ1ZSRAXnNraXBSb3dzPTAkQF5tYXhSb3dzPTEw" target="_blank" rel="external">자료 출처</a></p>
+<h1 id="uD30C_uC77C__uC77D_uAE30"><a href="#uD30C_uC77C__uC77D_uAE30" class="headerlink" title="파일 읽기"></a>파일 읽기</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">temp = read.table(<span class="string">"2015.edu.elementary.csv"</span>, sep=<span class="string">','</span>, header = <span class="literal">TRUE</span>)</span><br><span class="line">summary(temp)</span><br></pre></td></tr></table></figure>
+<h1 id="uB370_uC774_uD130__uC911_uBCF5_uC744__uD655_uC778_uD574__uBCFC_uAE4C_3F"><a href="#uB370_uC774_uD130__uC911_uBCF5_uC744__uD655_uC778_uD574__uBCFC_uAE4C_3F" class="headerlink" title="데이터 중복을 확인해 볼까?"></a>데이터 중복을 확인해 볼까?</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">i &lt;- duplicated(temp)</span><br><span class="line">which(i)</span><br><span class="line">edu.elementary[i,]</span><br><span class="line">edu.elementary &lt;- unique(temp[complete.cases(temp),])</span><br><span class="line">summary(edu.elementary)</span><br></pre></td></tr></table></figure>
+<h1 id="uD559_uC0DD_uC218_histogram__uBC0F_summary"><a href="#uD559_uC0DD_uC218_histogram__uBC0F_summary" class="headerlink" title="학생수 histogram 및 summary"></a>학생수 histogram 및 summary</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(students)</span><br><span class="line">   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span><br><span class="line">    <span class="number">1.0</span>   <span class="number">523.0</span>   <span class="number">773.0</span>   <span class="number">745.4</span>  <span class="number">1015.0</span>  <span class="number">1352.0</span> </span><br><span class="line">&gt; hist(students)</span><br></pre></td></tr></table></figure>
+<img src="/2016/03/28/data-mining-ex/students_hist.png" alt="학생수 히스토그램" title="학생수 히스토그램">
+<h1 id="uD559_uAE09_uC218_histogram__uBC0F_summary"><a href="#uD559_uAE09_uC218_histogram__uBC0F_summary" class="headerlink" title="학급수 histogram 및 summary"></a>학급수 histogram 및 summary</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(class_rooms)</span><br><span class="line">   Min. <span class="number">1</span>st Qu.  Median    Mean <span class="number">3</span>rd Qu.    Max. </span><br><span class="line">    <span class="number">0.0</span>     <span class="number">7.0</span>    <span class="number">17.0</span>    <span class="number">19.2</span>    <span class="number">30.0</span>    <span class="number">81.0</span> </span><br><span class="line">&gt; hist(class_rooms)</span><br></pre></td></tr></table></figure>
+<img src="/2016/03/28/data-mining-ex/class_rooms_hist.png" alt="학급수 히스토그램" title="학급수 히스토그램">
+<h1 id="uC120_uC0DD_uB2D8_uC218_histogram__uBC0F_summary"><a href="#uC120_uC0DD_uB2D8_uC218_histogram__uBC0F_summary" class="headerlink" title="선생님수 histogram 및 summary"></a>선생님수 histogram 및 summary</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(teachers)</span><br><span class="line">   Min. <span class="number">1</span>st Qu.  Median    Mean <span class="number">3</span>rd Qu.    Max. </span><br><span class="line">   <span class="number">0.00</span>   <span class="number">11.00</span>   <span class="number">26.00</span>   <span class="number">29.21</span>   <span class="number">44.00</span>  <span class="number">112.00</span> </span><br><span class="line">&gt; hist(teachers)</span><br></pre></td></tr></table></figure>
+<img src="/2016/03/28/data-mining-ex/teachers_hist.png" alt="선생님수 히스토그램" title="선생님수 히스토그램">
+<p>초등학교니까 학급수와 선생님수의 분포가 비슷한데 학생수와는 무관한듯 보이네…</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -134,7 +127,7 @@ Offline NPMhttps://addyosmani.com/blog/using-npm-offline/읽">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/tech/">tech</a>
+  <span></span> <a href="/tags/R-data-mining/">R, data mining</a>
   </div>
 
 </div>
@@ -143,7 +136,7 @@ Offline NPMhttps://addyosmani.com/blog/using-npm-offline/읽">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/01/10/tech-summary/" data-title="Tech Summary | SwForge&#39;s Note" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/03/28/data-mining-ex/" data-title="교육 정보 분석, 데이터 확인 | SwForge&#39;s Note" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -157,18 +150,18 @@ Offline NPMhttps://addyosmani.com/blog/using-npm-offline/읽">
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/01/13/ngAnimate/" title="ngAnimate">
+ <a href="/2016/03/29/data-mining-ex/" title="교육 정보 분석, 모아보기">
   <strong>이전글：</strong><br/>
   <span>
-  ngAnimate</span>
+  교육 정보 분석, 모아보기</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/01/09/angularjs-summary/"  title="AngularJS 정리">
+<a href="/2016/03/16/data-mining/"  title="데이터 준비 정리">
  <strong>다음글：</strong><br/> 
- <span>AngularJS 정리
+ <span>데이터 준비 정리
 </span>
 </a>
 </div>
@@ -189,7 +182,7 @@ Offline NPMhttps://addyosmani.com/blog/using-npm-offline/읽">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#uD30C_uC77C__uC77D_uAE30"><span class="toc-number">1.</span> <span class="toc-text">파일 읽기</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uB370_uC774_uD130__uC911_uBCF5_uC744__uD655_uC778_uD574__uBCFC_uAE4C_3F"><span class="toc-number">2.</span> <span class="toc-text">데이터 중복을 확인해 볼까?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uD559_uC0DD_uC218_histogram__uBC0F_summary"><span class="toc-number">3.</span> <span class="toc-text">학생수 histogram 및 summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uD559_uAE09_uC218_histogram__uBC0F_summary"><span class="toc-number">4.</span> <span class="toc-text">학급수 histogram 및 summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uC120_uC0DD_uB2D8_uC218_histogram__uBC0F_summary"><span class="toc-number">5.</span> <span class="toc-text">선생님수 histogram 및 summary</span></a></li></ol>
  
   </div>
 
