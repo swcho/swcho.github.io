@@ -4,29 +4,30 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>ochestrating-docker | SwForge&#39;s Note</title>
+    <title>샘플링 | SwForge&#39;s Note</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SwForge">
     
 
     
-    <meta name="description" content="Unboxing Docker포트: 2375Another Unionfs (AUFS)
-1VIRT_DRIVER=docker&amp;#10;git clone https://git.openstack.org/openstack-dev/devstack&amp;#10;./stack.sh
-Docker REST API1$ export DOCKER_HOST=tcp://0.0.0.0:2375&amp;">
+    <meta name="description" content="R에서 원본데이터가 있을 경우, sample이 왜 필요한지는 모르겠지만…
+Random sampling12&amp;gt; length(edu.elementary$Students)[1] 6253
+총 6253 개의 데이터에서 10개 정도만 뽑아 보면, 히스토그램의 분포가 전혀 비슷하게 나오지 않는다.적정 sampling 개수에 대한 수학적 근거가 어디에 있겠지만, 아직">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ochestrating-docker">
-<meta property="og:url" content="http://yoursite.com/2016/01/14/ochestrating-docker/index.html">
+<meta property="og:title" content="샘플링">
+<meta property="og:url" content="http://yoursite.com/2016/04/01/data-mining-ex-sampling/index.html">
 <meta property="og:site_name" content="SwForge's Note">
-<meta property="og:description" content="Unboxing Docker포트: 2375Another Unionfs (AUFS)
-1VIRT_DRIVER=docker&amp;#10;git clone https://git.openstack.org/openstack-dev/devstack&amp;#10;./stack.sh
-Docker REST API1$ export DOCKER_HOST=tcp://0.0.0.0:2375&amp;">
-<meta property="og:updated_time" content="2016-01-21T12:29:04.207Z">
+<meta property="og:description" content="R에서 원본데이터가 있을 경우, sample이 왜 필요한지는 모르겠지만…
+Random sampling12&amp;gt; length(edu.elementary$Students)[1] 6253
+총 6253 개의 데이터에서 10개 정도만 뽑아 보면, 히스토그램의 분포가 전혀 비슷하게 나오지 않는다.적정 sampling 개수에 대한 수학적 근거가 어디에 있겠지만, 아직">
+<meta property="og:image" content="http://yoursite.com/2016/04/01/data-mining-ex-sampling/sample.png">
+<meta property="og:updated_time" content="2016-04-04T10:55:38.814Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ochestrating-docker">
-<meta name="twitter:description" content="Unboxing Docker포트: 2375Another Unionfs (AUFS)
-1VIRT_DRIVER=docker&amp;#10;git clone https://git.openstack.org/openstack-dev/devstack&amp;#10;./stack.sh
-Docker REST API1$ export DOCKER_HOST=tcp://0.0.0.0:2375&amp;">
+<meta name="twitter:title" content="샘플링">
+<meta name="twitter:description" content="R에서 원본데이터가 있을 경우, sample이 왜 필요한지는 모르겠지만…
+Random sampling12&amp;gt; length(edu.elementary$Students)[1] 6253
+총 6253 개의 데이터에서 10개 정도만 뽑아 보면, 히스토그램의 분포가 전혀 비슷하게 나오지 않는다.적정 sampling 개수에 대한 수학적 근거가 어디에 있겠지만, 아직">
 
     
     <link rel="alternative" href="/atom.xml" title="SwForge&#39;s Note" type="application/atom+xml">
@@ -86,14 +87,14 @@ Docker REST API1$ export DOCKER_HOST=tcp://0.0.0.0:2375&amp;">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/01/14/ochestrating-docker/" title="ochestrating-docker" itemprop="url">ochestrating-docker</a>
+      <a href="/2016/04/01/data-mining-ex-sampling/" title="샘플링" itemprop="url">샘플링</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
 		
   <p class="article-time">
-    <time datetime="2016-01-14T13:18:31.000Z" itemprop="datePublished"> Published 2016-01-14</time>
+    <time datetime="2016-04-01T11:18:08.000Z" itemprop="datePublished"> Published 2016-04-01</time>
     
   </p>
 </header>
@@ -102,13 +103,20 @@ Docker REST API1$ export DOCKER_HOST=tcp://0.0.0.0:2375&amp;">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Unboxing_Docker"><span class="toc-number">1.</span> <span class="toc-text">Unboxing Docker</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Random_sampling"><span class="toc-number">1.</span> <span class="toc-text">Random sampling</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Stratified_sampling"><span class="toc-number">2.</span> <span class="toc-text">Stratified sampling</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="Unboxing_Docker"><a href="#Unboxing_Docker" class="headerlink" title="Unboxing Docker"></a>Unboxing Docker</h2><p>포트: 2375<br>Another Unionfs (AUFS)</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VIRT_DRIVER=docker&#10;git clone https://git.openstack.org/openstack-dev/devstack&#10;./stack.sh</span><br></pre></td></tr></table></figure>
-<p>Docker REST API<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export DOCKER_HOST=tcp://0.0.0.0:2375&#10;$ sudo service docker restart&#10;$ export DOCKER_DAEMON=http://127.0.0.1:2375 # or IP of your host</span><br></pre></td></tr></table></figure></p>
+		<p>R에서 원본데이터가 있을 경우, sample이 왜 필요한지는 모르겠지만…</p>
+<h1 id="Random_sampling"><a href="#Random_sampling" class="headerlink" title="Random sampling"></a>Random sampling</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; length(edu.elementary$Students)</span><br><span class="line">[<span class="number">1</span>] <span class="number">6253</span></span><br></pre></td></tr></table></figure>
+<p>총 6253 개의 데이터에서 10개 정도만 뽑아 보면, 히스토그램의 분포가 전혀 비슷하게 나오지 않는다.<br>적정 sampling 개수에 대한 수학적 근거가 어디에 있겠지만, 아직은 그 단계가 아니니 대략 10%인 600을 뽑아 모집단의 평균과 샘플의 평균의 차를 내어 본다.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary_all = summary(edu.elementary$Students)</span><br><span class="line">&gt; samples = sample(edu.elementary$Students, <span class="number">600</span>)</span><br><span class="line">&gt; mean(edu.elementary$Students) - mean(samples)</span><br><span class="line">[<span class="number">1</span>] -<span class="number">9.877109</span></span><br><span class="line">&gt; samples = sample(edu.elementary$Students, <span class="number">600</span>)</span><br><span class="line">&gt; mean(edu.elementary$Students) - mean(samples)</span><br><span class="line">[<span class="number">1</span>] <span class="number">0.6495575</span></span><br><span class="line">&gt; samples = sample(edu.elementary$Students, <span class="number">600</span>)</span><br><span class="line">&gt; mean(edu.elementary$Students) - mean(samples)</span><br><span class="line">[<span class="number">1</span>] <span class="number">17.85456</span></span><br><span class="line">&gt; samples = sample(edu.elementary$Students, <span class="number">600</span>)</span><br><span class="line">&gt; mean(edu.elementary$Students) - mean(samples)</span><br><span class="line">[<span class="number">1</span>] -<span class="number">16.42378</span></span><br></pre></td></tr></table></figure>
+<p>모집단의 평균이 745.3662 임으로 최대 (18/745) * 100 = 2.416 정도의 오차가 관측되었다.<br>물론 많이 하면, 또 나름의 분포가 그려질 거다…</p>
+<h1 id="Stratified_sampling"><a href="#Stratified_sampling" class="headerlink" title="Stratified sampling"></a>Stratified sampling</h1><p>교육지원청이 몇 개인지 쉽게 알 수 있는 방법을 몰라, 배운 aggregate 를 사용해 본다.<br>배보다 배꼽이 큰거 같지만…<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">byCenter = aggregate(cbind(Students,Teachers,Rooms)~교육지원청, data=edu.elementary, FUN=mean)</span><br><span class="line">byCenter</span><br><span class="line">length(byCenter$교육지원청)</span><br></pre></td></tr></table></figure></p>
+<p>수행하면, 161로 나온다</p>
+<p>그리하야 어렵개 교육지원청 별로 5개씩 샘플을 뽑아 봤다.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; s = strata(edu.elementary, stratanames = <span class="string">"교육지원청"</span>, size=rep(<span class="number">5</span>, <span class="number">161</span>), method=<span class="string">"srswor"</span>)</span><br><span class="line">&gt; head(s)</span><br><span class="line">   교육지원청 ID_unit      Prob Stratum</span><br><span class="line"><span class="number">12</span>       강릉      <span class="number">12</span> <span class="number">0.1351351</span>       <span class="number">1</span></span><br><span class="line"><span class="number">18</span>       강릉      <span class="number">18</span> <span class="number">0.1351351</span>       <span class="number">1</span></span><br><span class="line"><span class="number">20</span>       강릉      <span class="number">20</span> <span class="number">0.1351351</span>       <span class="number">1</span></span><br><span class="line"><span class="number">25</span>       강릉      <span class="number">25</span> <span class="number">0.1351351</span>       <span class="number">1</span></span><br><span class="line"><span class="number">29</span>       강릉      <span class="number">29</span> <span class="number">0.1351351</span>       <span class="number">1</span></span><br><span class="line"><span class="number">40</span>       고성      <span class="number">40</span> <span class="number">0.1428571</span>       <span class="number">2</span></span><br><span class="line">&gt; plot(s2, col=edu.elementary$교육지원청)</span><br></pre></td></tr></table></figure></p>
+<p>몬지 모르겠지만 그려진다…</p>
+<img src="/2016/04/01/data-mining-ex-sampling/sample.png" alt="교육지원청 별 뽑은거" title="교육지원청 별 뽑은거">
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -117,7 +125,7 @@ Docker REST API1$ export DOCKER_HOST=tcp://0.0.0.0:2375&amp;">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/docker/">docker</a>
+  <span></span> <a href="/tags/R-data-mining/">R, data mining</a>
   </div>
 
 </div>
@@ -126,7 +134,7 @@ Docker REST API1$ export DOCKER_HOST=tcp://0.0.0.0:2375&amp;">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/01/14/ochestrating-docker/" data-title="ochestrating-docker | SwForge&#39;s Note" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/04/01/data-mining-ex-sampling/" data-title="샘플링 | SwForge&#39;s Note" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -140,18 +148,18 @@ Docker REST API1$ export DOCKER_HOST=tcp://0.0.0.0:2375&amp;">
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/01/15/devops-automation/" title="devops-automation">
+ <a href="/2016/04/04/data-mining-ex-feature/" title="Feature">
   <strong>이전글：</strong><br/>
   <span>
-  devops-automation</span>
+  Feature</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/01/13/ngAnimate/"  title="ngAnimate">
+<a href="/2016/03/29/data-mining-ex/"  title="교육 정보 분석, 모아보기">
  <strong>다음글：</strong><br/> 
- <span>ngAnimate
+ <span>교육 정보 분석, 모아보기
 </span>
 </a>
 </div>
@@ -172,7 +180,7 @@ Docker REST API1$ export DOCKER_HOST=tcp://0.0.0.0:2375&amp;">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Unboxing_Docker"><span class="toc-number">1.</span> <span class="toc-text">Unboxing Docker</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Random_sampling"><span class="toc-number">1.</span> <span class="toc-text">Random sampling</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Stratified_sampling"><span class="toc-number">2.</span> <span class="toc-text">Stratified sampling</span></a></li></ol>
  
   </div>
 

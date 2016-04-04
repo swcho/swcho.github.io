@@ -1,0 +1,525 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Feature | SwForge&#39;s Note</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="SwForge">
+    
+
+    
+    <meta name="description" content="Dimensionality reduciton (Principal Components Analysis - PCA)대략 다음과 같은 느낌의 그림을 뽑아보자.12library(scatterplot3d)scatterplot3d(iris[,1:3], color=as.integer(iris$Species))
+
+늘 그렇듯 먼저 데이터 로드하고..123temp = rea">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Feature">
+<meta property="og:url" content="http://yoursite.com/2016/04/04/data-mining-ex-feature/index.html">
+<meta property="og:site_name" content="SwForge's Note">
+<meta property="og:description" content="Dimensionality reduciton (Principal Components Analysis - PCA)대략 다음과 같은 느낌의 그림을 뽑아보자.12library(scatterplot3d)scatterplot3d(iris[,1:3], color=as.integer(iris$Species))
+
+늘 그렇듯 먼저 데이터 로드하고..123temp = rea">
+<meta property="og:image" content="http://yoursite.com/2016/04/04/data-mining-ex-feature/feature_01.png">
+<meta property="og:image" content="http://yoursite.com/2016/04/04/data-mining-ex-feature/feature_02.png">
+<meta property="og:image" content="http://yoursite.com/2016/04/04/data-mining-ex-feature/feature_03.png">
+<meta property="og:image" content="http://yoursite.com/2016/04/04/data-mining-ex-feature/feature_04.png">
+<meta property="og:image" content="http://yoursite.com/2016/04/04/data-mining-ex-feature/feature_05.png">
+<meta property="og:updated_time" content="2016-04-04T12:44:16.558Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Feature">
+<meta name="twitter:description" content="Dimensionality reduciton (Principal Components Analysis - PCA)대략 다음과 같은 느낌의 그림을 뽑아보자.12library(scatterplot3d)scatterplot3d(iris[,1:3], color=as.integer(iris$Species))
+
+늘 그렇듯 먼저 데이터 로드하고..123temp = rea">
+
+    
+    <link rel="alternative" href="/atom.xml" title="SwForge&#39;s Note" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="SwForge&#39;s Note" title="SwForge&#39;s Note"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="SwForge&#39;s Note">SwForge&#39;s Note</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/04/04/data-mining-ex-feature/" title="Feature" itemprop="url">Feature</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-04T10:55:13.000Z" itemprop="datePublished"> Published 2016-04-04</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dimensionality_reduciton__28Principal_Components_Analysis_-_PCA_29"><span class="toc-number">1.</span> <span class="toc-text">Dimensionality reduciton (Principal Components Analysis - PCA)</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="Dimensionality_reduciton__28Principal_Components_Analysis_-_PCA_29"><a href="#Dimensionality_reduciton__28Principal_Components_Analysis_-_PCA_29" class="headerlink" title="Dimensionality reduciton (Principal Components Analysis - PCA)"></a>Dimensionality reduciton (Principal Components Analysis - PCA)</h1><p>대략 다음과 같은 느낌의 그림을 뽑아보자.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(scatterplot3d)</span><br><span class="line">scatterplot3d(iris[,<span class="number">1</span>:<span class="number">3</span>], color=as.integer(iris$Species))</span><br></pre></td></tr></table></figure></p>
+<img src="/2016/04/04/data-mining-ex-feature/feature_01.png" alt="Iris 데이터로 그린 것" title="Iris 데이터로 그린 것">
+<p>늘 그렇듯 먼저 데이터 로드하고..<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">temp = read.table(<span class="string">"2015.edu.elementary.csv"</span>, sep=<span class="string">','</span>, header = <span class="literal">TRUE</span>)</span><br><span class="line">edu.elementary &lt;- unique(temp[complete.cases(temp),])</span><br><span class="line">edu.elementary$Students = as.numeric(edu.elementary$Students)</span><br></pre></td></tr></table></figure></p>
+<p>일단 먼저 다음과 같이 시도해 보았지만<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cbind(edu.elementary$시도, edu.elementary$Students, edu.elementary$Rooms, edu.elementary$Teachers)</span><br></pre></td></tr></table></figure></p>
+<p>시도가 숫자로 치환된다. cbind는 matrix를 반환하기 때문에 스트링 정보인 시도 정보가 숫자로 바뀌어 버린다.<br>따라서, data.frame을 사용하고 컬럼의 이름도 바꾸어보자<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data_for_plot = data.frame(edu.elementary$Students, edu.elementary$Rooms, edu.elementary$Teachers, edu.elementary$시도)</span><br><span class="line">colnames(data_for_plot) &lt;- c(<span class="string">"Students"</span>, <span class="string">"Rooms"</span>, <span class="string">"Teachers"</span>, <span class="string">"Province"</span>)</span><br><span class="line">head(data_for_plot)</span><br><span class="line">scatterplot3d(data_for_plot[,<span class="number">1</span>:<span class="number">3</span>], color=as.integer(data_for_plot$Province))</span><br></pre></td></tr></table></figure></p>
+<img src="/2016/04/04/data-mining-ex-feature/feature_02.png" alt="시도별" title="시도별">
+<p>무언가 명확히 보지 않아 시만 뽑아보자<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data_by_city = data_for_plot[data_for_plot$Province %<span class="keyword">in</span>% c(<span class="string">"서울"</span>, <span class="string">"인천"</span>, <span class="string">"대전"</span>, <span class="string">"대구"</span>, <span class="string">"세종"</span>, <span class="string">"광주"</span>, <span class="string">"부산"</span>), ]</span><br><span class="line">scatterplot3d(data_by_city[,<span class="number">1</span>:<span class="number">3</span>], color=as.integer(data_by_city$Province))</span><br></pre></td></tr></table></figure></p>
+<img src="/2016/04/04/data-mining-ex-feature/feature_03.png" alt="시별" title="시별">
+<p>그래도 잘 보이진 않지만, 무언가 패턴이 3개로 나누어진다는 것을 알 수 있다</p>
+<ol>
+<li>선생님의 숫자가 60이상이고, 학생의 숫자가 700 이하이면서 학생 숫자에 따라 가파르게 학급수가 증가하는 패턴</li>
+<li>학생의 숫자에따라 학급의 수는 늘어나지만 선생님의 수는 그만큼 늘어나지 않는 패턴</li>
+<li>다음은 선생님 수는 바닥이고 교실수도 바닥이고 학생만 많은… 그런 곳…</li>
+</ol>
+<p>아마도 학생과 선생님의 표시만으로 패턴이 보일거 같긴하다</p>
+<img src="/2016/04/04/data-mining-ex-feature/feature_04.png" alt="시별" title="시별">
+<p>3차원으로보면 보다 극명하게 보인다.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(rgl)</span><br><span class="line">plot3d(data_by_city[,<span class="number">1</span>:<span class="number">3</span>], col=as.integer(data_by_city$Province), size=<span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
+<img src="/2016/04/04/data-mining-ex-feature/feature_05.png" alt="시별" title="시별">
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(plotly)</span><br><span class="line">plot_ly(data_by_city, x = Students, y= Rooms, z = Teachers, color = Province, type=<span class="string">"scatter3d"</span>, mode=<span class="string">"markers"</span>)</span><br></pre></td></tr></table></figure>
+<p>Custering 해본다</p>
+<p>누구나 1번 타입의 학교를 원하겠지…</p>
+<pre><code>Students Rooms Teachers Province               Name cluster
+</code></pre><p>2721      128    44       64     광주       본촌초등학교       1<br>2738      341    42       63     광주       고실초등학교       1<br>2747      256    42       58     광주       봉산초등학교       1<br>2750      251    46       63     광주       산정초등학교       1<br>2754      223    42       56     광주       선창초등학교       1<br>2761      308    50       80     광주       수문초등학교       1<br>2762      446    52       78     광주       수완초등학교       1<br>2764      351    47       65     광주       신창초등학교       1<br>2774      380    54       74     광주       장덕초등학교       1<br>2778      304    47       71     광주       큰별초등학교       1<br>2817      197    48       75     광주       만호초등학교       1<br>2823      176    47       69     광주       신암초등학교       1<br>2859       80    41       62     대구   대구본리초등학교       1<br>2873      109    42       66     대구   대구신월초등학교       1<br>2880      401    53       86     대구   대구월서초등학교       1<br>2882      303    42       60     대구   대구월암초등학교       1<br>2884      124    43       66     대구   대구유천초등학교       1<br>2896      329    37       50     대구   대구한샘초등학교       1<br>2918       69    38       61     대구   대구죽곡초등학교       1<br>2925      296    47       65     대구   대구강동초등학교       1<br>2934       51    34       51     대구   대구봉무초등학교       1<br>2946       88    37       58     대구   대구율원초등학교       1<br>2957      409    53       78     대구   대구경동초등학교       1<br>2961      170    39       53     대구   대구동도초등학교       1<br>2964       41    48       70     대구   대구동성초등학교       1<br>2966      146    34       58     대구   대구동일초등학교       1<br>2972       46    43       65     대구   대구매호초등학교       1<br>2977      253    42       64     대구   대구사월초등학교       1<br>2979      418    52       74     대구   대구성동초등학교       1<br>2983      166    46       67     대구   대구용지초등학교       1<br>2985      313    45       68     대구   대구중앙초등학교       1<br>3001      207    48       67     대구   대구강북초등학교       1<br>3004      129    40       56     대구   대구관문초등학교       1<br>3009      136    49       74     대구   대구달산초등학교       1<br>3015      369    55       77     대구   대구동평초등학교       1<br>3029      383    51       79     대구   대구칠성초등학교       1<br>3035      138    52       75     대구   대구학남초등학교       1<br>3060      156    46       71     대전   대전매봉초등학교       1<br>3066      133    44       67     대전   대전송촌초등학교       1<br>3078       49    37       54     대전   대전가오초등학교       1<br>3088       57    42       59     대전   대전용전초등학교       1<br>3089       74    35       55     대전 대전은어송초등학교       1<br>3091       73    42       57     대전   대전천동초등학교       1<br>3100      277    46       70     대전   대전글꽃초등학교       1<br>3110      219    45       70     대전 대전버드내초등학교       1<br>3136      248    48       66     대전   대전내동초등학교       1<br>3137       99    44       69     대전 대전느리울초등학교       1<br>3142      163    45       64     대전   대전둔원초등학교       1<br>3152      160    44       62     대전 대전샘머리초등학교       1<br>3154       75    41       56     대전   대전서원초등학교       1<br>3156      217    44       60     대전   대전성룡초등학교       1<br>3159      200    45       64     대전   대전신계초등학교       1<br>3164       55    42       61     대전   대전탄방초등학교       1<br>3165      417    49       71     대전       한밭초등학교       1<br>3174       79    41       60     대전   대전노은초등학교       1<br>3178      329    48       69     대전   대전반석초등학교       1<br>3181      170    44       62     대전   대전상대초등학교       1<br>3193      219    50       69     대전   대전전민초등학교       1<br>3205      204    50       75     부산       대연초등학교       1<br>3219      174    44       57     부산       용문초등학교       1<br>3235      107    49       74     부산       가야초등학교       1<br>3259      287    50       70     부산       연지초등학교       1<br>3277       60    40       56     부산       두실초등학교       1<br>3294      274    37       48     부산       명륜초등학교       1<br>3305      137    37       53     부산       예원초등학교       1<br>3312      309    41       56     부산       남문초등학교       1<br>3336      444    47       66     부산       명호초등학교       1<br>3364       94    46       65     부산       용수초등학교       1<br>3395      172    45       60     부산       낙동초등학교       1<br>3400       63    40       53     부산     몰운대초등학교       1<br>3404       43    43       60     부산       사하초등학교       1<br>3462      357    44       65     부산       정관초등학교       1<br>3463      266    37       43     부산       정원초등학교       1<br>3476       55    45       59     부산       수영초등학교       1<br>3486      148    46       66     부산       부흥초등학교       1<br>3489      419    43       64     부산       센텀초등학교       1<br>3501       64    44       58     부산       장산초등학교       1<br>3516      130    44       70     서울   서울대곡초등학교       1<br>3517      466    52       74     서울   서울대도초등학교       1<br>3518       71    32       56     서울   서울대모초등학교       1<br>3525      410    44       62     서울   서울도성초등학교       1<br>3533      467    51       81     서울   서울언북초등학교       1<br>3534      260    47       69     서울   서울언주초등학교       1<br>3547      404    50       87     서울   서울반원초등학교       1<br>3549       32    40       67     서울   서울방배초등학교       1<br>3552      329    47       70     서울   서울서래초등학교       1<br>3553       80    39       57     서울   서울서원초등학교       1<br>3554      241    44       67     서울   서울서이초등학교       1<br>3557      367    45       60     서울   서울신동초등학교       1<br>3561       49    40       58     서울   서울우면초등학교       1<br>3564      361    42       65     서울   서울원명초등학교       1<br>3565      264    38       60     서울   서울원촌초등학교       1<br>3567      468    54       82     서울   서울잠원초등학교       1<br>3570      214    47       70     서울   서울강명초등학교       1<br>3571      428    55       75     서울   서울강일초등학교       1<br>3575       42    43       73     서울   서울길동초등학교       1<br>3578      188    41       56     서울   서울명덕초등학교       1<br>3580      196    48       71     서울   서울명일초등학교       1<br>3584      140    46       74     서울   서울선사초등학교       1<br>3585      149    46       74     서울   서울성내초등학교       1<br>3586      106    46       68     서울   서울성일초등학교       1<br>3597       90    42       68     서울   서울가주초등학교       1<br>3600      271    51       79     서울   서울거원초등학교       1<br>3602      152    46       72     서울   서울마천초등학교       1<br>3604       67    45       71     서울   서울문정초등학교       1<br>3605      144    44       69     서울   서울문현초등학교       1<br>3609       54    44       72     서울   서울삼전초등학교       1<br>3610      208    48       77     서울   서울석촌초등학교       1<br>3612       36    43       60     서울   서울송례초등학교       1<br>3622      423    50       80     서울   서울잠신초등학교       1<br>3623      144    40       59     서울   서울잠실초등학교       1<br>3624      452    57       78     서울   서울잠일초등학교       1<br>3627       72    44       79     서울   서울중대초등학교       1<br>3637       47    41       57     서울   서울공항초등학교       1<br>3638      405    50       73     서울 서울내발산초등학교       1<br>3646      231    47       70     서울   서울발산초등학교       1<br>3651      238    50       71     서울   서울송화초등학교       1<br>3652      331    49       70     서울   서울수명초등학교       1<br>3655      493    81      112     서울   서울신정초등학교       1<br>3658       64    37       54     서울   서울염경초등학교       1<br>3659       73    39       61     서울   서울염동초등학교       1<br>3662      258    52       82     서울   서울월정초등학교       1<br>3666       65    43       66     서울   서울화곡초등학교       1<br>3670      253    49       74     서울   서울강서초등학교       1<br>3673       89    36       52     서울   서울경인초등학교       1<br>3676      239    48       71     서울   서울목동초등학교       1<br>3677      399    49       70     서울   서울목운초등학교       1<br>3684      171    45       67     서울   서울신서초등학교       1<br>3686       34    39       54     서울   서울신은초등학교       1<br>3693      252    50       75     서울   서울영도초등학교       1<br>3694      255    43       64     서울   서울월촌초등학교       1<br>3697      282    52       70     서울   서울정목초등학교       1<br>3700      325    53       79     서울   서울개봉초등학교       1<br>3707      282    52       81     서울   서울구일초등학교       1<br>3708      183    40       68     서울   서울덕의초등학교       1<br>3714      177    44       70     서울 서울신도림초등학교       1<br>3718       88    43       62     서울 서울오류남초등학교       1<br>3721      135    44       68     서울   서울온수초등학교       1<br>3722       63    45       63     서울   서울천왕초등학교       1<br>3725       71    37       56     서울   서울금동초등학교       1<br>3742      190    46       69     서울   서울당서초등학교       1<br>3750      201    42       66     서울   서울문래초등학교       1<br>3754       76    43       68     서울 서울여의도초등학교       1<br>3758      127    40       62     서울   서울영문초등학교       1<br>3759      101    45       76     서울   서울영신초등학교       1<br>3771       92    43       62     서울   서울안평초등학교       1<br>3774      167    39       58     서울   서울장평초등학교       1<br>3789      164    49       78     서울   서울면동초등학교       1<br>3802       33    41       62     서울   서울원묵초등학교       1<br>3803      216    52       77     서울   서울중곡초등학교       1<br>3806      365    53       80     서울   서울중화초등학교       1<br>3809      470    59       95     서울   서울구암초등학교       1<br>3811       40    40       60     서울   서울난우초등학교       1<br>3812       91    43       66     서울   서울난향초등학교       1<br>3817      194    45       69     서울   서울봉현초등학교       1<br>3826      260    51       77     서울   서울은천초등학교       1<br>3827      333    54       85     서울   서울인헌초등학교       1<br>3834      235    47       68     서울   서울대림초등학교       1<br>3837      454    52       78     서울 서울보라매초등학교       1<br>3839       53    36       55     서울   서울삼일초등학교       1<br>3840       94    44       69     서울   서울상도초등학교       1<br>3842      312    46       76     서울   서울신길초등학교       1<br>3844      220    50       79     서울 서울신상도초등학교       1<br>3845       78    38       64     서울   서울영본초등학교       1<br>3861      154    43       64     서울   서울불암초등학교       1<br>3865      144    45       68     서울   서울상수초등학교       1<br>3881      411    57       80     서울   서울을지초등학교       1<br>3882       62    39       55     서울   서울중계초등학교       1<br>3884      438    60       91     서울   서울중평초등학교       1<br>3887       82    38       56     서울   서울태랑초등학교       1<br>3888      185    46       67     서울   서울태릉초등학교       1<br>3889       97    43       60     서울   서울한천초등학교       1<br>3895       98    44       62     서울   서울누원초등학교       1<br>3898       36    43       62     서울   서울백운초등학교       1<br>3907       81    42       59     서울   서울자운초등학교       1<br>3908      104    43       63     서울   서울창경초등학교       1<br>3909       32    42       68     서울   서울창도초등학교       1<br>3911      108    45       64     서울   서울창림초등학교       1<br>3913       61    41       58     서울   서울창일초등학교       1<br>3914      117    43       63     서울   서울초당초등학교       1<br>3917      258    49       82     서울   서울동교초등학교       1<br>3922      109    45       67     서울   서울서강초등학교       1<br>3928      163    42       67     서울   서울신북초등학교       1<br>3931      269    47       69     서울   서울염리초등학교       1<br>3935      181    44       67     서울   서울하늘초등학교       1<br>3944      385    61       89     서울 서울북가좌초등학교       1<br>3947      400    63      104     서울   서울연가초등학교       1<br>3948      160    48       66     서울   서울연희초등학교       1<br>3953       56    44       77     서울   서울홍제초등학교       1<br>3956      364    56       86     서울   서울갈현초등학교       1<br>3957      135    46       77     서울   서울구산초등학교       1<br>3959       75    43       64     서울   서울녹번초등학교       1<br>3961       93    45       68     서울   서울대조초등학교       1<br>3968      233    45       63     서울   서울신도초등학교       1<br>3970      450    68      108     서울   서울역촌초등학교       1<br>3975      354    50       73     서울   서울은명초등학교       1<br>3976      299    47       67     서울   서울은빛초등학교       1<br>3981       50    40       59     서울   서울진관초등학교       1<br>3988      349    50       78     서울   서울광남초등학교       1<br>3994      285    53       80     서울   서울동자초등학교       1<br>3999      398    53       80     서울   서울양진초등학교       1<br>4001      275    54       92     서울   서울용마초등학교       1<br>4009      163    52       84     서울   서울경동초등학교       1<br>4027       85    36       54     서울   서울행현초등학교       1<br>4031      333    46       67     서울 서울삼각산초등학교       1<br>4035      104    43       74     서울   서울수송초등학교       1<br>4038      310    56       87     서울   서울우이초등학교       1<br>4046       97    40       65     서울   서울개운초등학교       1<br>4047      229    46       69     서울   서울길원초등학교       1<br>4048      128    42       64     서울   서울길음초등학교       1<br>4049      339    58       91     서울   서울돈암초등학교       1<br>4051      300    48       75     서울   서울미아초등학교       1<br>4057      301    55       88     서울   서울숭덕초등학교       1<br>4059      362    49       85     서울   서울숭인초등학교       1<br>4066      165    44       63     서울   서울정덕초등학교       1<br>4067       39    43       65     서울   서울정릉초등학교       1<br>4077      448    62       93     서울 서울신용산초등학교       1<br>4127      261    53       75     세종       아름초등학교       1<br>4292      317    44       62     인천   인천경원초등학교       1<br>4297       43    43       66     인천   인천문학초등학교       1<br>4301      136    46       71     인천   인천숭의초등학교       1<br>4306      129    45       60     인천 인천용현남초등학교       1<br>4307      225    50       72     인천   인천용현초등학교       1<br>4312      120    45       62     인천   인천학산초등학교       1<br>4337       92    42       53     인천   인천삼목초등학교       1<br>4343      131    42       59     인천   인천영종초등학교       1<br>4352      225    43       62     인천   인천고잔초등학교       1<br>4361      152    43       62     인천   인천동방초등학교       1<br>4363       67    43       64     인천 인천만수북초등학교       1<br>4369      268    44       65     인천   인천서창초등학교       1<br>4370       60    43       59     인천   인천석정초등학교       1<br>4371      119    45       66     인천   인천석천초등학교       1<br>4377      226    39       56     인천   인천원동초등학교       1<br>4379      240    48       67     인천   인천인동초등학교       1<br>4383      348    46       68     인천   인천정각초등학교       1<br>4386      113    43       59     인천   인천한빛초등학교       1<br>4390      173    44       67     인천 인천먼우금초등학교       1<br>4391      276    45       61     인천   인천명선초등학교       1<br>4400      379    50       71     인천   인천신정초등학교       1<br>4401       76    40       56     인천   인천연성초등학교       1<br>4404      150    47       65     인천   인천옥련초등학교       1<br>4415      121    43       60     인천   인천굴포초등학교       1<br>4426      264    52       73     인천   인천부곡초등학교       1<br>4432      108    46       69     인천 인천부평남초등학교       1<br>4444      125    44       61     인천   인천영선초등학교       1<br>4459      295    44       61     인천   인천당산초등학교       1<br>4463       65    42       62     인천 인천부현동초등학교       1<br>4475      226    49       70     인천   인천화전초등학교       1<br>4485       83    41       59     인천 인천간재울초등학교       1<br>4495      441    60       84     인천   인천당하초등학교       1<br>4497      160    43       63     인천   인천마전초등학교       1<br>4499      107    42       62     인천   인천발산초등학교       1<br>4518      371    58       85     인천   인천청라초등학교       1<br>4521      135    43       58     인천   인천초은초등학교       1<br>4522      352    54       80     인천   인천해원초등학교       1</p>
+<p>용인이닷..</p>
+<pre><code>Students Rooms Teachers Province             Name cluster
+</code></pre><p>1228       36    38       53     용인     갈곡초등학교       2<br>1238      327    46       67     용인     나산초등학교       2<br>1246      153    40       59     용인     독정초등학교       2<br>1247      179    38       50     용인     동막초등학교       2<br>1248      435    54       76     용인     동백초등학교       2<br>1264       74    38       52     용인     상하초등학교       2<br>1266       37    37       49     용인     새빛초등학교       2<br>1271      272    43       60     용인     석성초등학교       2<br>1272      241    42       52     용인     석현초등학교       2<br>1277      169    40       55     용인     손곡초등학교       2<br>1289       68    36       51     용인     역북초등학교       2<br>1294       89    40       56     용인 용인둔전초등학교       2<br>1295      328    44       60     용인 용인백현초등학교       2<br>1299      156    39       57     용인 용인신촌초등학교       2<br>1310       65    37       55     용인     정평초등학교       2<br>1318      342    49       64     용인     청덕초등학교       2<br>1320       32    38       51     용인     토월초등학교       2<br>1322       78    39       55     용인     풍덕초등학교       2<br>1323      185    36       53     용인     풍천초등학교       2<br>1328       75    37       54     용인     흥덕초등학교       2</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/R-data-mining/">R, data mining</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/04/04/data-mining-ex-feature/" data-title="Feature | SwForge&#39;s Note" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/04/01/data-mining-ex-sampling/"  title="샘플링">
+ <strong>다음글：</strong><br/> 
+ <span>샘플링
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dimensionality_reduciton__28Principal_Components_Analysis_-_PCA_29"><span class="toc-number">1.</span> <span class="toc-text">Dimensionality reduciton (Principal Components Analysis - PCA)</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="#" target="_blank" title="home">home</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> ^^; <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="SwForge">SwForge</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'sungwoosnotes';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

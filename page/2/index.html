@@ -81,6 +81,144 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/01/15/devops-automation/" title="devops-automation" itemprop="url">devops-automation</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-01-15T12:17:17.000Z" itemprop="datePublished"> Published 2016-01-15</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="Command_Line_Tools"><a href="#Command_Line_Tools" class="headerlink" title="Command Line Tools"></a>Command Line Tools</h2><h3 id="uC0C1_uD0DC"><a href="#uC0C1_uD0DC" class="headerlink" title="상태"></a>상태</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ip addr show&#10;$ ip addr add 10.132.1.1/24 dev eth1&#10;$ ip link set eth2 down</span><br></pre></td></tr></table></figure>
+<h4 id="Monitoring_/_Socket_Statistics"><a href="#Monitoring_/_Socket_Statistics" class="headerlink" title="Monitoring / Socket Statistics"></a>Monitoring / Socket Statistics</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ip -s link&#10;$ ss -t&#10;$ ss -u&#10;$ ss -ltn&#10;$ ss -lun&#10;$ ss -ltun</span><br></pre></td></tr></table></figure>
+<h3 id="OS_Statistics"><a href="#OS_Statistics" class="headerlink" title="OS Statistics"></a>OS Statistics</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install sysstat&#10;$ mpstat&#10;procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----&#10; r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st&#10; 1  0   3316 393688  65140 5908352    0    0     0     0  561 3518  3  1 96  0  0&#10; 0  0   3316 392840  65148 5908348    0    0     0    16  845 5336 17  5 77  1  0</span><br></pre></td></tr></table></figure>
+<p>Procs – r: Total number of processes waiting to run<br>Procs – b: Total number of busy processes<br>Memory – swpd: Used virtual memory<br>Memory – free: Free virtual memory<br>Memory – buff: Memory used as buffers<br>Memory – cache: Memory used as cache.<br>Swap – si: Memory swapped from disk (for every second)<br>Swap – so: Memory swapped to disk (for every second)<br>IO – bi: Blocks in (in other words) the blocks received from device (for<br>every second)<br>IO – bo: Blocks out (in other words) the blocks sent to the device (for every<br>second)<br>System – in: Interrupts per second<br>System – cs: Context switches<br>CPU – us, sy, id, wa, st: CPU user time, system time, idle time, and<br>wait time</p>
+<h3 id="SSH_Key"><a href="#SSH_Key" class="headerlink" title="SSH Key"></a>SSH Key</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &#34;My SSH Key&#34;&#10;$ ssh-copy-id testserver</span><br></pre></td></tr></table></figure>
+<h2 id="Ansible"><a href="#Ansible" class="headerlink" title="Ansible"></a>Ansible</h2><p>idempotency.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ansible all --sudo --ask-sudo-pass -m raw -a &#39;sudo apt-get -y install python-simplejson&#39;&#10;$ ansible web -m apt -a &#34;name=apache2 state=present&#34;&#10;$ ansible all -m apt -a &#34;name=bash=4.3 state=present&#34;&#10;$ ansible mysql -m service -a &#34;name=mysql state=restarted&#34;&#10;$ ansible mysql -a &#34;reboot -now&#34;</span><br></pre></td></tr></table></figure>
+<p>ansible-galaxy</p>
+<h2 id="Automatic_Host_builds"><a href="#Automatic_Host_builds" class="headerlink" title="Automatic Host builds"></a>Automatic Host builds</h2><h3 id="Aptly"><a href="#Aptly" class="headerlink" title="Aptly"></a>Aptly</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://repo.aptly.info/ squeeze main&#10;$ sudo apt-key adv --keyserver keys.gnupg.net --recv-keys E083A3782A194991&#10;$ sudo apt-get update&#10;$ sudo apt-get install aptly</span><br></pre></td></tr></table></figure>
+<p>/etc/aptly.conf<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">rootDir</span>": <span class="value"><span class="string">"/var/spool/aptly"</span></span>,</span><br><span class="line">  "<span class="attribute">downloadConcurrency</span>": <span class="value"><span class="number">4</span></span>,</span><br><span class="line">  "<span class="attribute">downloadSpeedLimit</span>": <span class="value"><span class="number">0</span></span>,</span><br><span class="line">  "<span class="attribute">architectures</span>": <span class="value">[<span class="string">"amd64"</span>]</span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowSuggests</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowRecommends</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowAllVariants</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">dependencyFollowSource</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">gpgDisableSign</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">gpgDisableVerify</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">downloadSourcePackages</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">  "<span class="attribute">ppaDistributorID</span>": <span class="value"><span class="string">"ubuntu"</span></span>,</span><br><span class="line">  "<span class="attribute">ppaCodename</span>": <span class="value"><span class="string">""</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install gnugpg</span><br></pre></td></tr></table></figure>
+<p>gpgbatch<br><figure class="highlight mojolicious"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="perl"><span class="variable">%echo</span> Generating a default key</span><span class="xml"></span><br><span class="line">Key-Type: default</span><br><span class="line">Subkey-Type: default</span><br><span class="line">Key-Length: 2048</span><br><span class="line">Name-Real: <span class="tag">&lt;&lt; <span class="attribute">YOUR</span> <span class="attribute">NAME</span> &gt;</span>&gt;</span><br><span class="line">Name-Comment: <span class="tag">&lt;&lt; <span class="attribute">KEY</span> <span class="attribute">DESCRIPTION</span> &gt;</span>&gt;</span><br><span class="line">Name-Email: <span class="tag">&lt;&lt; <span class="attribute">YOUR</span> <span class="attribute">EMAIL</span> &gt;</span>&gt;</span><br><span class="line">Expire-Date: 0</span><br><span class="line"></span><span class="perl"><span class="variable">%pubring</span> aptly.pub</span><span class="xml"></span><br><span class="line"></span><span class="perl"><span class="variable">%secring</span> aptly.sec</span><span class="xml"></span><br><span class="line"></span><span class="perl"><span class="variable">%commit</span></span><span class="xml"></span><br><span class="line"></span><span class="perl"><span class="variable">%echo</span> done</span><span class="xml"></span></span><br></pre></td></tr></table></figure></p>
+<p>Public/Private 키 생성<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg2 --batch --gen-key gpgbatch</span><br></pre></td></tr></table></figure></p>
+<p>미러 사이닝<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gpg --no-default-keyring --keyring trustedkeys.gpg --keyserver keys.gnupg.net --recv keys 437D05B5</span><br></pre></td></tr></table></figure></p>
+<p>미러링 레포지터리 생성 및 populate &amp; serve<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo aptly mirror create -architectures=amd64 trusty-main http://archive.ubuntu.com/ubuntu trusty main&#10;$ aptly mirror update trusty-main&#10;$ sudo aptly publish snapshot -distribution=trusty trusty-main-snapshot&#10;$ sudo aptly serve</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>PXE 부트: 네트워크 OS 인스톨</li>
+<li>ks.cfg</li>
+<li>PreSeed 로 부팅 후 초기 명령어 제어</li>
+</ul>
+<h3 id="http_3A//serverspec-org/"><a href="#http_3A//serverspec-org/" class="headerlink" title="http://serverspec.org/"></a><a href="http://serverspec.org/" target="_blank" rel="external">http://serverspec.org/</a></h3><h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>도커 레지스트리 이미지 리스트<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -v -X GET address&#62;:5000/v2/gollum/tags/list</span><br></pre></td></tr></table></figure></p>
+<h2 id="InfluxDB/Telegraf/Grafana"><a href="#InfluxDB/Telegraf/Grafana" class="headerlink" title="InfluxDB/Telegraf/Grafana"></a>InfluxDB/Telegraf/Grafana</h2><h2 id="syslog/syslog_templates/Logrotate/Elasticsearch_2C_Logstash_2C_and_Kibana"><a href="#syslog/syslog_templates/Logrotate/Elasticsearch_2C_Logstash_2C_and_Kibana" class="headerlink" title="syslog/syslog templates/Logrotate/Elasticsearch, Logstash, and Kibana"></a>syslog/syslog templates/Logrotate/Elasticsearch, Logstash, and Kibana</h2><h2 id="sensu"><a href="#sensu" class="headerlink" title="sensu"></a>sensu</h2><h2 id="New_Relic"><a href="#New_Relic" class="headerlink" title="New Relic"></a>New Relic</h2>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/devops/">devops</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/01/15/devops-automation/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/01/14/ochestrating-docker/" title="ochestrating-docker" itemprop="url">ochestrating-docker</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-01-14T13:18:31.000Z" itemprop="datePublished"> Published 2016-01-14</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="Unboxing_Docker"><a href="#Unboxing_Docker" class="headerlink" title="Unboxing Docker"></a>Unboxing Docker</h2><p>포트: 2375<br>Another Unionfs (AUFS)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VIRT_DRIVER=docker&#10;git clone https://git.openstack.org/openstack-dev/devstack&#10;./stack.sh</span><br></pre></td></tr></table></figure>
+<p>Docker REST API<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export DOCKER_HOST=tcp://0.0.0.0:2375&#10;$ sudo service docker restart&#10;$ export DOCKER_DAEMON=http://127.0.0.1:2375 # or IP of your host</span><br></pre></td></tr></table></figure></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/docker/">docker</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/01/14/ochestrating-docker/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/01/13/ngAnimate/" title="ngAnimate" itemprop="url">ngAnimate</a>
   </h1>
   <p class="article-author">By
@@ -494,7 +632,7 @@
 <p>이 때 * 과 _ 사이에는 공백이 있어서는 않된다.</p>
 <p><a href="http://example.com" title="링크제목" target="_blank" rel="external">링크</a>.</p>
 <p><a href="http://example.com/" title="링크제목1" target="_blank" rel="external">링크1</a> 과 <a href="http://example.org/" title="링크제목2" target="_blank" rel="external">링크2</a>.</p>
-<p><a href="http://example.com/" target="_blank" rel="external">http://example.com/</a><br><a href="/&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x6d;&#x65;&#64;&#112;&#x72;&#105;&#x76;&#x61;&#x63;&#x79;&#46;&#110;&#x65;&#x74;">&#x6d;&#x65;&#64;&#112;&#x72;&#105;&#x76;&#x61;&#x63;&#x79;&#46;&#110;&#x65;&#x74;</a></p>
+<p><a href="http://example.com/" target="_blank" rel="external">http://example.com/</a><br><a href="/&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x6d;&#101;&#x40;&#112;&#x72;&#x69;&#118;&#x61;&#x63;&#121;&#46;&#x6e;&#101;&#116;">&#x6d;&#101;&#x40;&#112;&#x72;&#x69;&#118;&#x61;&#x63;&#121;&#46;&#x6e;&#101;&#116;</a></p>
 
         
         
@@ -551,7 +689,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>3</sup></a></li>
+				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>5</sup></a></li>
 			
 		
 			
