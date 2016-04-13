@@ -116,7 +116,7 @@ non-SS">
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -180,11 +180,11 @@ non-SS">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Configuration"><span class="toc-number">1.</span> <span class="toc-text">Configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mnesia__uC124_uC815"><span class="toc-number">1.1.</span> <span class="toc-text">Mnesia 설정</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rabbit__uC124_uC815"><span class="toc-number">1.2.</span> <span class="toc-text">Rabbit 설정</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User_Permission"><span class="toc-number">2.</span> <span class="toc-text">User Permission</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#User"><span class="toc-number">2.1.</span> <span class="toc-text">User</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Permission"><span class="toc-number">2.2.</span> <span class="toc-text">Permission</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Check_Status"><span class="toc-number">3.</span> <span class="toc-text">Check Status</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Configuration"><span class="toc-number">1.</span> <span class="toc-text">Configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mnesia-설정"><span class="toc-number">1.1.</span> <span class="toc-text">Mnesia 설정</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rabbit-설정"><span class="toc-number">1.2.</span> <span class="toc-text">Rabbit 설정</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User-Permission"><span class="toc-number">2.</span> <span class="toc-text">User Permission</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#User"><span class="toc-number">2.1.</span> <span class="toc-text">User</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Permission"><span class="toc-number">2.2.</span> <span class="toc-text">Permission</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Check-Status"><span class="toc-number">3.</span> <span class="toc-text">Check Status</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><h2 id="Mnesia__uC124_uC815"><a href="#Mnesia__uC124_uC815" class="headerlink" title="Mnesia 설정"></a>Mnesia 설정</h2><table>
+		<h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><h2 id="Mnesia-설정"><a href="#Mnesia-설정" class="headerlink" title="Mnesia 설정"></a>Mnesia 설정</h2><table>
 <thead>
 <tr>
 <th>option</th>
@@ -200,7 +200,7 @@ non-SS">
 </tr>
 </tbody>
 </table>
-<h2 id="Rabbit__uC124_uC815"><a href="#Rabbit__uC124_uC815" class="headerlink" title="Rabbit 설정"></a>Rabbit 설정</h2><table>
+<h2 id="Rabbit-설정"><a href="#Rabbit-설정" class="headerlink" title="Rabbit 설정"></a>Rabbit 설정</h2><table>
 <thead>
 <tr>
 <th>option</th>
@@ -241,7 +241,7 @@ non-SS">
 </tr>
 </tbody>
 </table>
-<h1 id="User_Permission"><a href="#User_Permission" class="headerlink" title="User Permission"></a>User Permission</h1><h2 id="User"><a href="#User" class="headerlink" title="User"></a>User</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rabbitmqctl add_user cashing-tier cashMe1&#10;$ rabbitmqctl delete_user cashing-tier&#10;$ rabbitmqctl list_users&#10;$ rabbitmqctl change_password cashing-tier compl3xPassword</span><br></pre></td></tr></table></figure>
+<h1 id="User-Permission"><a href="#User-Permission" class="headerlink" title="User Permission"></a>User Permission</h1><h2 id="User"><a href="#User" class="headerlink" title="User"></a>User</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ rabbitmqctl add_user cashing-tier cashMe1</span><br><span class="line">$ rabbitmqctl delete_user cashing-tier</span><br><span class="line">$ rabbitmqctl list_users</span><br><span class="line">$ rabbitmqctl change_password cashing-tier compl3xPassword</span><br></pre></td></tr></table></figure>
 <h2 id="Permission"><a href="#Permission" class="headerlink" title="Permission"></a>Permission</h2><table>
 <thead>
 <tr>
@@ -308,8 +308,8 @@ non-SS">
 </tr>
 </tbody>
 </table>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rabbitmqctl set_permissions -p sycamore cashing-tier &#34;.*&#34; &#34;.*&#34; &#34;.*&#34;&#10;$ rabbitmqctl set_permissions -p oak -s all cashing-tier &#34;&#34; &#34;checks-.*&#34; &#34;.*&#34;&#10;$ rabbitmqctl list_permissions -p oak&#10;$ rabbitmqctl clear_permissions -p oak cashing-tier&#10;$ rabbitmqctl list_permissions -p oak&#10;$ rabbitmqctl list_user_permissions cashing-tier</span><br></pre></td></tr></table></figure>
-<h1 id="Check_Status"><a href="#Check_Status" class="headerlink" title="Check Status"></a>Check Status</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rabbitmqctl list_queues -p sycamore&#10;$ rabbitmqctl list_queues name messages consumers memory&#10;$ rabbitmqctl list_queues name durable auto_delete&#10;$ rabbitmqctl list_exchanges&#10;$ rabbitmqctl list_exchanges name type durable auto_delete&#10;$ rabbitmqctl list_bindings</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ rabbitmqctl set_permissions -p sycamore cashing-tier &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;</span><br><span class="line">$ rabbitmqctl set_permissions -p oak -s all cashing-tier &quot;&quot; &quot;checks-.*&quot; &quot;.*&quot;</span><br><span class="line">$ rabbitmqctl list_permissions -p oak</span><br><span class="line">$ rabbitmqctl clear_permissions -p oak cashing-tier</span><br><span class="line">$ rabbitmqctl list_permissions -p oak</span><br><span class="line">$ rabbitmqctl list_user_permissions cashing-tier</span><br></pre></td></tr></table></figure>
+<h1 id="Check-Status"><a href="#Check-Status" class="headerlink" title="Check Status"></a>Check Status</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ rabbitmqctl list_queues -p sycamore</span><br><span class="line">$ rabbitmqctl list_queues name messages consumers memory</span><br><span class="line">$ rabbitmqctl list_queues name durable auto_delete</span><br><span class="line">$ rabbitmqctl list_exchanges</span><br><span class="line">$ rabbitmqctl list_exchanges name type durable auto_delete</span><br><span class="line">$ rabbitmqctl list_bindings</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -373,7 +373,7 @@ non-SS">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Configuration"><span class="toc-number">1.</span> <span class="toc-text">Configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mnesia__uC124_uC815"><span class="toc-number">1.1.</span> <span class="toc-text">Mnesia 설정</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rabbit__uC124_uC815"><span class="toc-number">1.2.</span> <span class="toc-text">Rabbit 설정</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User_Permission"><span class="toc-number">2.</span> <span class="toc-text">User Permission</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#User"><span class="toc-number">2.1.</span> <span class="toc-text">User</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Permission"><span class="toc-number">2.2.</span> <span class="toc-text">Permission</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Check_Status"><span class="toc-number">3.</span> <span class="toc-text">Check Status</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Configuration"><span class="toc-number">1.</span> <span class="toc-text">Configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mnesia-설정"><span class="toc-number">1.1.</span> <span class="toc-text">Mnesia 설정</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rabbit-설정"><span class="toc-number">1.2.</span> <span class="toc-text">Rabbit 설정</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User-Permission"><span class="toc-number">2.</span> <span class="toc-text">User Permission</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#User"><span class="toc-number">2.1.</span> <span class="toc-text">User</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Permission"><span class="toc-number">2.2.</span> <span class="toc-text">Permission</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Check-Status"><span class="toc-number">3.</span> <span class="toc-text">Check Status</span></a></li></ol>
  
   </div>
 
@@ -392,11 +392,7 @@ non-SS">
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>5</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
+				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>6</sup></a></li>
 			
 		
 			
@@ -404,19 +400,11 @@ non-SS">
 			
 		
 			
-				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
 			
 		
 			
@@ -424,7 +412,19 @@ non-SS">
 			
 		
 			
-				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
 			
 		
 		</ul>

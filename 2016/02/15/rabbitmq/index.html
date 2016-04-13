@@ -35,7 +35,7 @@ QueueQ를 기준으로 consumer는 메시지를 소비하며, “basic.consume�
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -99,17 +99,17 @@ QueueQ를 기준으로 consumer는 메시지를 소비하며, “basic.consume�
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Consumer_2C_Producer"><span class="toc-number">1.</span> <span class="toc-text">Consumer, Producer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Queue"><span class="toc-number">2.</span> <span class="toc-text">Queue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Exchanges_and_bindings"><span class="toc-number">3.</span> <span class="toc-text">Exchanges and bindings</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uC608_uC81C"><span class="toc-number">4.</span> <span class="toc-text">예제</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Consumer-Producer"><span class="toc-number">1.</span> <span class="toc-text">Consumer, Producer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Queue"><span class="toc-number">2.</span> <span class="toc-text">Queue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Exchanges-and-bindings"><span class="toc-number">3.</span> <span class="toc-text">Exchanges and bindings</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#예제"><span class="toc-number">4.</span> <span class="toc-text">예제</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="Consumer_2C_Producer"><a href="#Consumer_2C_Producer" class="headerlink" title="Consumer, Producer"></a>Consumer, Producer</h1><p>Producer는 message를 생성하고, Consumer는 message를 소비 한다.<br>AMQP의 명령을 보내는 가상의 연결인 Channel은 하나의 AMQP 연결(TCP)에서 여러개 설정할 수 있다.</p>
+		<h1 id="Consumer-Producer"><a href="#Consumer-Producer" class="headerlink" title="Consumer, Producer"></a>Consumer, Producer</h1><p>Producer는 message를 생성하고, Consumer는 message를 소비 한다.<br>AMQP의 명령을 보내는 가상의 연결인 Channel은 하나의 AMQP 연결(TCP)에서 여러개 설정할 수 있다.</p>
 <h1 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h1><p>Q를 기준으로 consumer는 메시지를 소비하며, “basic.consume”, “basic.get”으로 메시지를 가져온다.<br>하나의 Q에 여러개의 consumer가 구독하고 있다면, round robin 방식으로 메시지가 분배 된다.<br>consumer는 명시적으로 basic.ack를 주거나 Q 구독시, auto_ack 파라미터를 설정하여 자동으로 ack를 줄 수 있다.<br>RabbitMQ는 ack를 받으면 전달한 메시지를 삭제한다.<br>만일 consumer가 ack를 전달하기 전에 연결을 해제 하면, 메시지가 전달되지 않은 것으로 간주하고 다음 consumer에게 전달한다.<br>따라서 consumer 애플리케이션이 특정 메시지 처리 중 crash가 발생하면, 해당 메시지는 다른 consumer에게 전달되었다고 생각해도 무방하다.<br>하지만, consumer 애플리케이션이 버그로 인해 ack 전달을 하지 못했다면, 해당 consumer에게 더 이상 메시지를 전송하지 않는다.<br>만일, 명시적으로 ack를 하지 않고 reject를 하고 싶다면, 연결을 해제하거나 RabbitMQ 2.0 이상 부터 지원하는 basic.reject 명령을 사용한다.<br>RabbitMQ가 reject를 받으면 해당 메시지를 다음 consumer에게 전달한다.<br>Q는 producer, consumer 모두 queue.declare 명령을 통해 정의할 수 있다.<br>Consumer가 다른 Q를 구독 중일 때에는 Q를 정의할 수 없다.<br>Q는 다음과 같은 속성이 있다.</p>
 <ul>
 <li>exclusive: 하나의 consumer만 접근</li>
 <li>auto-delete: 마지막 consumer가 구독을 해지하면 삭제됨<br>Q가 존재하는지 확인하려면, queue.declare 명령의 passive 옵션을 준다. 존재할 경우 성공을 그렇지 않을 경우 Q를 생성하지 않고 error를 반환한다.</li>
 </ul>
-<h1 id="Exchanges_and_bindings"><a href="#Exchanges_and_bindings" class="headerlink" title="Exchanges and bindings"></a>Exchanges and bindings</h1><p>$channel-&gt;basic_publish([message], ‘’, [exchange name]);<br>$channel-&gt;queue_bind([queue name], ‘’, [topic])<br>basic_publish(exchange, routing_key, body, properties=None, mandatory=False, immediate=False)<br>queue_bind(queue, exchange, routing_key=None, arguments=None)</p>
+<h1 id="Exchanges-and-bindings"><a href="#Exchanges-and-bindings" class="headerlink" title="Exchanges and bindings"></a>Exchanges and bindings</h1><p>$channel-&gt;basic_publish([message], ‘’, [exchange name]);<br>$channel-&gt;queue_bind([queue name], ‘’, [topic])<br>basic_publish(exchange, routing_key, body, properties=None, mandatory=False, immediate=False)<br>queue_bind(queue, exchange, routing_key=None, arguments=None)</p>
 <ul>
 <li>Direct Exchange<ul>
 <li>$channel-&gt;basic_publish($msg, ‘’, ‘queue-name’);</li>
@@ -133,7 +133,7 @@ QueueQ를 기준으로 consumer는 메시지를 소비하며, “basic.consume�
 </ul>
 <p>하나의 rabbitmq 내에서 가상의 호스트를 구성함으로서 독립적인 exchange, binding, queue를 가질 수 있으며, 이에 따라 권한 설정을 달리 가져갈 수 있다.</p>
 <p>일반적으로 q의 내용은 RabbitMQ가 재부팅하면 사라진다. 하지만, persistence 설정을 하면 유지할 수 있다.</p>
-<h1 id="uC608_uC81C"><a href="#uC608_uC81C" class="headerlink" title="예제"></a>예제</h1><p>Hello World producer<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pika, sys</span><br><span class="line"></span><br><span class="line">credentials = pika.PlainCredentials(<span class="string">"guest"</span>, <span class="string">"guest"</span>)</span><br><span class="line">conn_params = pika.ConnectionParameters(<span class="string">"localhost"</span>, credentials = credentials)</span><br><span class="line">conn_broker = pika.BlockingConnection(conn_params)</span><br><span class="line">channel = conn_broker.channel()</span><br><span class="line">channel.exchange_declare(exchange=<span class="string">"hello-exchange"</span>,</span><br><span class="line">                         type=<span class="string">"direct"</span>,</span><br><span class="line">                         passive=<span class="keyword">False</span>,</span><br><span class="line">                         durable=<span class="keyword">True</span>,</span><br><span class="line">                         auto_delete=<span class="keyword">False</span>)</span><br><span class="line">msg = sys.argv[<span class="number">1</span>]</span><br><span class="line">msg_props = pika.BasicProperties()</span><br><span class="line">msg_props.content_type = <span class="string">"text/plain"</span></span><br><span class="line">channel.basic_publish(body=msg,</span><br><span class="line">                      exchange=<span class="string">"hello-exchange"</span>,</span><br><span class="line">                      properties=msg_props,</span><br><span class="line">                      routing_key=<span class="string">"hola"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h1><p>Hello World producer<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pika, sys</span><br><span class="line"></span><br><span class="line">credentials = pika.PlainCredentials(<span class="string">"guest"</span>, <span class="string">"guest"</span>)</span><br><span class="line">conn_params = pika.ConnectionParameters(<span class="string">"localhost"</span>, credentials = credentials)</span><br><span class="line">conn_broker = pika.BlockingConnection(conn_params)</span><br><span class="line">channel = conn_broker.channel()</span><br><span class="line">channel.exchange_declare(exchange=<span class="string">"hello-exchange"</span>,</span><br><span class="line">                         type=<span class="string">"direct"</span>,</span><br><span class="line">                         passive=<span class="keyword">False</span>,</span><br><span class="line">                         durable=<span class="keyword">True</span>,</span><br><span class="line">                         auto_delete=<span class="keyword">False</span>)</span><br><span class="line">msg = sys.argv[<span class="number">1</span>]</span><br><span class="line">msg_props = pika.BasicProperties()</span><br><span class="line">msg_props.content_type = <span class="string">"text/plain"</span></span><br><span class="line">channel.basic_publish(body=msg,</span><br><span class="line">                      exchange=<span class="string">"hello-exchange"</span>,</span><br><span class="line">                      properties=msg_props,</span><br><span class="line">                      routing_key=<span class="string">"hola"</span>)</span><br></pre></td></tr></table></figure></p>
 <p>Hello World consumer<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pika</span><br><span class="line"></span><br><span class="line">credentials = pika.PlainCredentials(<span class="string">"guest"</span>, <span class="string">"guest"</span>)</span><br><span class="line">conn_params = pika.ConnectionParameters(<span class="string">"localhost"</span>, credentials = credentials)</span><br><span class="line">conn_broker = pika.BlockingConnection(conn_params)</span><br><span class="line">channel = conn_broker.channel()</span><br><span class="line">channel.exchange_declare(exchange=<span class="string">"hello-exchange"</span>,</span><br><span class="line">                         type=<span class="string">"direct"</span>,</span><br><span class="line">                         passive=<span class="keyword">False</span>,</span><br><span class="line">                         durable=<span class="keyword">True</span>,</span><br><span class="line">                         auto_delete=<span class="keyword">False</span>)</span><br><span class="line">channel.queue_declare(queue=<span class="string">"hello-queue"</span>)</span><br><span class="line">channel.queue_bind(queue=<span class="string">"hello-queue"</span>,</span><br><span class="line">                   exchange=<span class="string">"hello-exchange"</span>,</span><br><span class="line">                   routing_key=<span class="string">"hola"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">msg_consumer</span><span class="params">(channel, method, header, body)</span>:</span></span><br><span class="line">  channel.basic_ack(delivery_tag=method.delivery_tag)</span><br><span class="line">  <span class="keyword">if</span> body == <span class="string">"quit"</span>:</span><br><span class="line">    channel.basic_cancel(consumer_tag=<span class="string">"hello-consumer"</span>)</span><br><span class="line">    channel.stop_consuming()</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span> body</span><br><span class="line">  <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">channel.basic_consume(msg_consumer,</span><br><span class="line">                      queue=<span class="string">"hello-queue"</span>,</span><br><span class="line">                      consumer_tag=<span class="string">"hello-consumer"</span>)</span><br><span class="line">channel.start_consuming()</span><br></pre></td></tr></table></figure></p>
   
 	</div>
@@ -198,7 +198,7 @@ QueueQ를 기준으로 consumer는 메시지를 소비하며, “basic.consume�
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Consumer_2C_Producer"><span class="toc-number">1.</span> <span class="toc-text">Consumer, Producer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Queue"><span class="toc-number">2.</span> <span class="toc-text">Queue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Exchanges_and_bindings"><span class="toc-number">3.</span> <span class="toc-text">Exchanges and bindings</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uC608_uC81C"><span class="toc-number">4.</span> <span class="toc-text">예제</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Consumer-Producer"><span class="toc-number">1.</span> <span class="toc-text">Consumer, Producer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Queue"><span class="toc-number">2.</span> <span class="toc-text">Queue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Exchanges-and-bindings"><span class="toc-number">3.</span> <span class="toc-text">Exchanges and bindings</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#예제"><span class="toc-number">4.</span> <span class="toc-text">예제</span></a></li></ol>
  
   </div>
 
@@ -217,11 +217,7 @@ QueueQ를 기준으로 consumer는 메시지를 소비하며, “basic.consume�
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>5</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
+				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>6</sup></a></li>
 			
 		
 			
@@ -229,19 +225,11 @@ QueueQ를 기준으로 consumer는 메시지를 소비하며, “basic.consume�
 			
 		
 			
-				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
 			
 		
 			
@@ -249,7 +237,19 @@ QueueQ를 기준으로 consumer는 메시지를 소비하며, “basic.consume�
 			
 		
 			
-				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
 			
 		
 		</ul>

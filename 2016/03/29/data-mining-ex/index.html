@@ -21,7 +21,7 @@
 <meta property="og:description" content="RStudio 영문 locale 설정에러가 한국어로 나오다 보니, 두번 검색해야 함… -,.-1$ sudo vi /etc/R/Renviron.site # LANGUAGE=en 추가
 일단 데이터 가져오고
 123temp = read.table(&quot;2015.edu.elementary.csv&quot;, sep=&apos;,&apos;, header = TRUE)edu.elementary &amp;">
-<meta property="og:updated_time" content="2016-03-29T12:24:06.135Z">
+<meta property="og:updated_time" content="2016-04-13T06:00:14.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="교육 정보 분석, 모아보기">
 <meta name="twitter:description" content="RStudio 영문 locale 설정에러가 한국어로 나오다 보니, 두번 검색해야 함… -,.-1$ sudo vi /etc/R/Renviron.site # LANGUAGE=en 추가
@@ -38,7 +38,7 @@
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -102,14 +102,14 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RStudio__uC601_uBB38_locale__uC124_uC815"><span class="toc-number">1.</span> <span class="toc-text">RStudio 영문 locale 설정</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Aggregate__uC2DC_uB3C4"><span class="toc-number">2.</span> <span class="toc-text">Aggregate 시도</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RStudio-영문-locale-설정"><span class="toc-number">1.</span> <span class="toc-text">RStudio 영문 locale 설정</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Aggregate-시도"><span class="toc-number">2.</span> <span class="toc-text">Aggregate 시도</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="RStudio__uC601_uBB38_locale__uC124_uC815"><a href="#RStudio__uC601_uBB38_locale__uC124_uC815" class="headerlink" title="RStudio 영문 locale 설정"></a>RStudio 영문 locale 설정</h1><p>에러가 한국어로 나오다 보니, 두번 검색해야 함… -,.-<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/R/Renviron.site <span class="comment"># LANGUAGE=en 추가</span></span><br></pre></td></tr></table></figure></p>
+		<h1 id="RStudio-영문-locale-설정"><a href="#RStudio-영문-locale-설정" class="headerlink" title="RStudio 영문 locale 설정"></a>RStudio 영문 locale 설정</h1><p>에러가 한국어로 나오다 보니, 두번 검색해야 함… -,.-<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/R/Renviron.site <span class="comment"># LANGUAGE=en 추가</span></span><br></pre></td></tr></table></figure></p>
 <p>일단 데이터 가져오고</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">temp = read.table(<span class="string">"2015.edu.elementary.csv"</span>, sep=<span class="string">','</span>, header = <span class="literal">TRUE</span>)</span><br><span class="line">edu.elementary &lt;- unique(temp[complete.cases(temp),])</span><br><span class="line">edu.elementary$Students = as.numeric(edu.elementary$Students)</span><br></pre></td></tr></table></figure>
-<h1 id="Aggregate__uC2DC_uB3C4"><a href="#Aggregate__uC2DC_uB3C4" class="headerlink" title="Aggregate 시도"></a>Aggregate 시도</h1><p>지역별로 묶어보자<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; byProvince = aggregate(cbind(Students,Teachers)~Province, data=edu.elementary, FUN=mean)</span><br><span class="line">&gt; head(byProvince)</span><br><span class="line">  Province Students Teachers</span><br><span class="line"><span class="number">1</span>   가평군 <span class="number">865.5625</span> <span class="number">14.50000</span></span><br><span class="line"><span class="number">2</span>   강남구 <span class="number">780.8485</span> <span class="number">47.15152</span></span><br><span class="line"><span class="number">3</span>   강동구 <span class="number">750.0385</span> <span class="number">54.76923</span></span><br><span class="line"><span class="number">4</span>   강릉시 <span class="number">769.8378</span> <span class="number">20.67568</span></span><br><span class="line"><span class="number">5</span>   강북구 <span class="number">896.2143</span> <span class="number">56.78571</span></span><br><span class="line"><span class="number">6</span>   강서구 <span class="number">720.7818</span> <span class="number">38.50909</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Aggregate-시도"><a href="#Aggregate-시도" class="headerlink" title="Aggregate 시도"></a>Aggregate 시도</h1><p>지역별로 묶어보자<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; byProvince = aggregate(cbind(Students,Teachers)~Province, data=edu.elementary, FUN=mean)</span><br><span class="line">&gt; head(byProvince)</span><br><span class="line">  Province Students Teachers</span><br><span class="line"><span class="number">1</span>   가평군 <span class="number">865.5625</span> <span class="number">14.50000</span></span><br><span class="line"><span class="number">2</span>   강남구 <span class="number">780.8485</span> <span class="number">47.15152</span></span><br><span class="line"><span class="number">3</span>   강동구 <span class="number">750.0385</span> <span class="number">54.76923</span></span><br><span class="line"><span class="number">4</span>   강릉시 <span class="number">769.8378</span> <span class="number">20.67568</span></span><br><span class="line"><span class="number">5</span>   강북구 <span class="number">896.2143</span> <span class="number">56.78571</span></span><br><span class="line"><span class="number">6</span>   강서구 <span class="number">720.7818</span> <span class="number">38.50909</span></span><br></pre></td></tr></table></figure></p>
 <p>갑자기 선생님당 학생수가 궁금해 졌는데…<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; byProvince = aggregate(cbind(Students,Teachers,Students/Teachers)~Province, data=edu.elementary, FUN=mean)</span><br><span class="line">&gt; head(byProvince)</span><br><span class="line">  Province Students Teachers       V3</span><br><span class="line"><span class="number">1</span>   가평군 <span class="number">865.5625</span> <span class="number">14.50000</span> <span class="number">80.38243</span></span><br><span class="line"><span class="number">2</span>   강남구 <span class="number">780.8485</span> <span class="number">47.15152</span> <span class="number">17.81257</span></span><br><span class="line"><span class="number">3</span>   강동구 <span class="number">750.0385</span> <span class="number">54.76923</span> <span class="number">15.29937</span></span><br><span class="line"><span class="number">4</span>   강릉시 <span class="number">769.8378</span> <span class="number">20.67568</span> <span class="number">63.86895</span></span><br><span class="line"><span class="number">5</span>   강북구 <span class="number">896.2143</span> <span class="number">56.78571</span> <span class="number">17.25231</span></span><br><span class="line"><span class="number">6</span>   강서구 <span class="number">720.7818</span> <span class="number">38.50909</span>      <span class="literal">Inf</span></span><br></pre></td></tr></table></figure></p>
 <p>헐퀴… 가평군은 모냐.. 선생님 중노동인 듯…<br>강남구를 제친 강동구는 또 모냐… 선생님도 금수저인가…<br>이 둘은 가나다 순이라 항상 비교 당하겠네..ㅋㅋ<br>Inf는 모냐.. 무한인가? 0으로 나누지도 않았는데…<br>cbind도 ~도 적응안되는데…<br><a href="http://rfriend.tistory.com/51" target="_blank" rel="external">http://rfriend.tistory.com/51</a><br>잘 설명되있다.. 후후 기본이 약하다…<br><a href="https://drive.google.com/file/d/0B_ss3O1d3bGxeXhuRXdjRWpiSzg/view" target="_blank" rel="external">https://drive.google.com/file/d/0B_ss3O1d3bGxeXhuRXdjRWpiSzg/view</a><br>아름다운 책을 공유해 주셨다…</p>
 <p>물결 (tilde) 설명이다..<br><a href="http://stackoverflow.com/questions/14976331/use-of-tilde-in-r-programming-language" target="_blank" rel="external">http://stackoverflow.com/questions/14976331/use-of-tilde-in-r-programming-language</a><br><a href="http://stackoverflow.com/questions/8055508/the-tilde-operator-in-r" target="_blank" rel="external">http://stackoverflow.com/questions/8055508/the-tilde-operator-in-r</a><br><a href="https://www.google.co.kr/search?client=ubuntu&amp;channel=fs&amp;q=r+tilde&amp;ie=utf-8&amp;oe=utf-8&amp;gfe_rd=cr&amp;ei=Xmb6VoejHab98weizoHgCQ" target="_blank" rel="external">https://www.google.co.kr/search?client=ubuntu&amp;channel=fs&amp;q=r+tilde&amp;ie=utf-8&amp;oe=utf-8&amp;gfe_rd=cr&amp;ei=Xmb6VoejHab98weizoHgCQ</a><br>이해 못함…</p>
@@ -120,10 +120,10 @@
 </blockquote>
 <p>니미럴…<br><a href="https://www.youtube.com/watch?v=jJjZ75T5COI" target="_blank" rel="external">https://www.youtube.com/watch?v=jJjZ75T5COI</a></p>
 <p>모든 것의 마지막은 먹먹함을 자아낸다…</p>
-<p>결국 Inf를 없애기 위해서 다음과 같이 작성한다.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; byProvince = aggregate(cbind(Students,Teachers)~Province, data=edu.elementary, FUN=mean)</span><br><span class="line">&gt; SByT &lt;- byProvince$Students / byProvince$Teachers</span><br><span class="line">&gt; byProvince = cbind(byProvince, SByT)</span><br><span class="line">&gt; head(byProvince)</span><br><span class="line">  Province Students Teachers     SByT</span><br><span class="line"><span class="number">1</span>   가평군 <span class="number">865.5625</span> <span class="number">14.50000</span> <span class="number">59.69397</span></span><br><span class="line"><span class="number">2</span>   강남구 <span class="number">780.8485</span> <span class="number">47.15152</span> <span class="number">16.56041</span></span><br><span class="line"><span class="number">3</span>   강동구 <span class="number">750.0385</span> <span class="number">54.76923</span> <span class="number">13.69452</span></span><br><span class="line"><span class="number">4</span>   강릉시 <span class="number">769.8378</span> <span class="number">20.67568</span> <span class="number">37.23399</span></span><br><span class="line"><span class="number">5</span>   강북구 <span class="number">896.2143</span> <span class="number">56.78571</span> <span class="number">15.78239</span></span><br><span class="line"><span class="number">6</span>   강서구 <span class="number">720.7818</span> <span class="number">38.50909</span> <span class="number">18.71719</span></span><br></pre></td></tr></table></figure></p>
-<p>좋은데는?<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; OrderBySByT = byProvince[order(byProvince$SByT),]</span><br><span class="line">&gt; head(OrderBySByT)</span><br><span class="line">    Province Students Teachers      SByT</span><br><span class="line"><span class="number">183</span>   충주시 <span class="number">193.9231</span> <span class="number">22.07692</span>  <span class="number">8.783972</span></span><br><span class="line"><span class="number">93</span>    서초구 <span class="number">695.9167</span> <span class="number">53.70833</span> <span class="number">12.957331</span></span><br><span class="line"><span class="number">59</span>    도봉구 <span class="number">631.3478</span> <span class="number">48.43478</span> <span class="number">13.035009</span></span><br><span class="line"><span class="number">64</span>    동작구 <span class="number">702.9524</span> <span class="number">53.09524</span> <span class="number">13.239462</span></span><br><span class="line"><span class="number">100</span>   송파구 <span class="number">741.6842</span> <span class="number">54.86842</span> <span class="number">13.517506</span></span><br><span class="line"><span class="number">23</span>    관악구 <span class="number">754.9091</span> <span class="number">55.77273</span> <span class="number">13.535452</span></span><br></pre></td></tr></table></figure></p>
+<p>결국 Inf를 없애기 위해서 다음과 같이 작성한다.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; byProvince = aggregate(cbind(Students,Teachers)~Province, data=edu.elementary, FUN=mean)</span><br><span class="line">&gt; SByT &lt;- byProvince$Students / byProvince$Teachers</span><br><span class="line">&gt; byProvince = cbind(byProvince, SByT)</span><br><span class="line">&gt; head(byProvince)</span><br><span class="line">  Province Students Teachers     SByT</span><br><span class="line"><span class="number">1</span>   가평군 <span class="number">865.5625</span> <span class="number">14.50000</span> <span class="number">59.69397</span></span><br><span class="line"><span class="number">2</span>   강남구 <span class="number">780.8485</span> <span class="number">47.15152</span> <span class="number">16.56041</span></span><br><span class="line"><span class="number">3</span>   강동구 <span class="number">750.0385</span> <span class="number">54.76923</span> <span class="number">13.69452</span></span><br><span class="line"><span class="number">4</span>   강릉시 <span class="number">769.8378</span> <span class="number">20.67568</span> <span class="number">37.23399</span></span><br><span class="line"><span class="number">5</span>   강북구 <span class="number">896.2143</span> <span class="number">56.78571</span> <span class="number">15.78239</span></span><br><span class="line"><span class="number">6</span>   강서구 <span class="number">720.7818</span> <span class="number">38.50909</span> <span class="number">18.71719</span></span><br></pre></td></tr></table></figure></p>
+<p>좋은데는?<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; OrderBySByT = byProvince[order(byProvince$SByT),]</span><br><span class="line">&gt; head(OrderBySByT)</span><br><span class="line">    Province Students Teachers      SByT</span><br><span class="line"><span class="number">183</span>   충주시 <span class="number">193.9231</span> <span class="number">22.07692</span>  <span class="number">8.783972</span></span><br><span class="line"><span class="number">93</span>    서초구 <span class="number">695.9167</span> <span class="number">53.70833</span> <span class="number">12.957331</span></span><br><span class="line"><span class="number">59</span>    도봉구 <span class="number">631.3478</span> <span class="number">48.43478</span> <span class="number">13.035009</span></span><br><span class="line"><span class="number">64</span>    동작구 <span class="number">702.9524</span> <span class="number">53.09524</span> <span class="number">13.239462</span></span><br><span class="line"><span class="number">100</span>   송파구 <span class="number">741.6842</span> <span class="number">54.86842</span> <span class="number">13.517506</span></span><br><span class="line"><span class="number">23</span>    관악구 <span class="number">754.9091</span> <span class="number">55.77273</span> <span class="number">13.535452</span></span><br></pre></td></tr></table></figure></p>
 <p>충주로 이사갈까?</p>
-<p>옹진군 빡셀듯..<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; OrderBySByT = byProvince[order(-byProvince$SByT),]</span><br><span class="line">&gt; head(OrderBySByT)</span><br><span class="line">    Province Students  Teachers     SByT</span><br><span class="line"><span class="number">138</span>   옹진군 <span class="number">522.6154</span>  <span class="number">6.000000</span> <span class="number">87.10256</span></span><br><span class="line"><span class="number">162</span>   정선군 <span class="number">866.3158</span> <span class="number">11.105263</span> <span class="number">78.00948</span></span><br><span class="line"><span class="number">107</span>   신안군 <span class="number">497.3429</span>  <span class="number">6.457143</span> <span class="number">77.02212</span></span><br><span class="line"><span class="number">170</span>   진도군 <span class="number">766.8235</span> <span class="number">10.235294</span> <span class="number">74.91954</span></span><br><span class="line"><span class="number">75</span>    봉화군 <span class="number">629.2000</span>  <span class="number">8.600000</span> <span class="number">73.16279</span></span><br><span class="line"><span class="number">130</span>   영양군 <span class="number">741.1250</span> <span class="number">10.375000</span> <span class="number">71.43373</span></span><br></pre></td></tr></table></figure></p>
+<p>옹진군 빡셀듯..<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; OrderBySByT = byProvince[order(-byProvince$SByT),]</span><br><span class="line">&gt; head(OrderBySByT)</span><br><span class="line">    Province Students  Teachers     SByT</span><br><span class="line"><span class="number">138</span>   옹진군 <span class="number">522.6154</span>  <span class="number">6.000000</span> <span class="number">87.10256</span></span><br><span class="line"><span class="number">162</span>   정선군 <span class="number">866.3158</span> <span class="number">11.105263</span> <span class="number">78.00948</span></span><br><span class="line"><span class="number">107</span>   신안군 <span class="number">497.3429</span>  <span class="number">6.457143</span> <span class="number">77.02212</span></span><br><span class="line"><span class="number">170</span>   진도군 <span class="number">766.8235</span> <span class="number">10.235294</span> <span class="number">74.91954</span></span><br><span class="line"><span class="number">75</span>    봉화군 <span class="number">629.2000</span>  <span class="number">8.600000</span> <span class="number">73.16279</span></span><br><span class="line"><span class="number">130</span>   영양군 <span class="number">741.1250</span> <span class="number">10.375000</span> <span class="number">71.43373</span></span><br></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -187,7 +187,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RStudio__uC601_uBB38_locale__uC124_uC815"><span class="toc-number">1.</span> <span class="toc-text">RStudio 영문 locale 설정</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Aggregate__uC2DC_uB3C4"><span class="toc-number">2.</span> <span class="toc-text">Aggregate 시도</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RStudio-영문-locale-설정"><span class="toc-number">1.</span> <span class="toc-text">RStudio 영문 locale 설정</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Aggregate-시도"><span class="toc-number">2.</span> <span class="toc-text">Aggregate 시도</span></a></li></ol>
  
   </div>
 
@@ -206,11 +206,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>5</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
+				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>6</sup></a></li>
 			
 		
 			
@@ -218,19 +214,11 @@
 			
 		
 			
-				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
 			
 		
 			
@@ -238,7 +226,19 @@
 			
 		
 			
-				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
 			
 		
 		</ul>

@@ -24,12 +24,13 @@
 <meta property="og:image" content="http://yoursite.com/2016/03/28/data-mining-ex/students_hist.png">
 <meta property="og:image" content="http://yoursite.com/2016/03/28/data-mining-ex/class_rooms_hist.png">
 <meta property="og:image" content="http://yoursite.com/2016/03/28/data-mining-ex/teachers_hist.png">
-<meta property="og:updated_time" content="2016-03-29T12:27:42.451Z">
+<meta property="og:updated_time" content="2016-04-13T05:59:48.355Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="교육 정보 분석, 데이터 확인">
 <meta name="twitter:description" content="자료 출처
 파일 읽기12temp = read.table(&quot;2015.edu.elementary.csv&quot;, sep=&apos;,&apos;, header = TRUE)summary(temp)
 데이터 중복을 확인해 볼까?12345i &amp;lt;- duplicated(temp)which(i)edu.elementary[i,]edu.elementary &amp;lt;- unique(temp[co">
+<meta name="twitter:image" content="http://yoursite.com/2016/03/28/data-mining-ex/students_hist.png">
 
     
     <link rel="alternative" href="/atom.xml" title="SwForge&#39;s Note" type="application/atom+xml">
@@ -41,7 +42,7 @@
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -105,18 +106,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#uD30C_uC77C__uC77D_uAE30"><span class="toc-number">1.</span> <span class="toc-text">파일 읽기</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uB370_uC774_uD130__uC911_uBCF5_uC744__uD655_uC778_uD574__uBCFC_uAE4C_3F"><span class="toc-number">2.</span> <span class="toc-text">데이터 중복을 확인해 볼까?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uD559_uC0DD_uC218_histogram__uBC0F_summary"><span class="toc-number">3.</span> <span class="toc-text">학생수 histogram 및 summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uD559_uAE09_uC218_histogram__uBC0F_summary"><span class="toc-number">4.</span> <span class="toc-text">학급수 histogram 및 summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uC120_uC0DD_uB2D8_uC218_histogram__uBC0F_summary"><span class="toc-number">5.</span> <span class="toc-text">선생님수 histogram 및 summary</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#파일-읽기"><span class="toc-number">1.</span> <span class="toc-text">파일 읽기</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#데이터-중복을-확인해-볼까"><span class="toc-number">2.</span> <span class="toc-text">데이터 중복을 확인해 볼까?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#학생수-histogram-및-summary"><span class="toc-number">3.</span> <span class="toc-text">학생수 histogram 및 summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#학급수-histogram-및-summary"><span class="toc-number">4.</span> <span class="toc-text">학급수 histogram 및 summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#선생님수-histogram-및-summary"><span class="toc-number">5.</span> <span class="toc-text">선생님수 histogram 및 summary</span></a></li></ol>
 		
 		</div>
 		
 		<p><a href="https://www.data.go.kr/subMain.jsp?param=REFUQUAzMDM4ODY2#/L2NvbW0vY29tbW9uU2VhcmNoL29yZ2luRGF0YVNldCRAXjAxMm0xJEBecHVibGljRGF0YVBrPTMwNTkxOTYkQF5vcmdJbmRleD1EQVRBJEBedmlld0ZsYWc9LTEkQF5icm1DZD1PQzAwMDEkQF5ncmlkRmxhZz1ZJEBebWFpbkZsYWc9dHJ1ZSRAXnNraXBSb3dzPTAkQF5tYXhSb3dzPTEw" target="_blank" rel="external">자료 출처</a></p>
-<h1 id="uD30C_uC77C__uC77D_uAE30"><a href="#uD30C_uC77C__uC77D_uAE30" class="headerlink" title="파일 읽기"></a>파일 읽기</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">temp = read.table(<span class="string">"2015.edu.elementary.csv"</span>, sep=<span class="string">','</span>, header = <span class="literal">TRUE</span>)</span><br><span class="line">summary(temp)</span><br></pre></td></tr></table></figure>
-<h1 id="uB370_uC774_uD130__uC911_uBCF5_uC744__uD655_uC778_uD574__uBCFC_uAE4C_3F"><a href="#uB370_uC774_uD130__uC911_uBCF5_uC744__uD655_uC778_uD574__uBCFC_uAE4C_3F" class="headerlink" title="데이터 중복을 확인해 볼까?"></a>데이터 중복을 확인해 볼까?</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">i &lt;- duplicated(temp)</span><br><span class="line">which(i)</span><br><span class="line">edu.elementary[i,]</span><br><span class="line">edu.elementary &lt;- unique(temp[complete.cases(temp),])</span><br><span class="line">summary(edu.elementary)</span><br></pre></td></tr></table></figure>
-<h1 id="uD559_uC0DD_uC218_histogram__uBC0F_summary"><a href="#uD559_uC0DD_uC218_histogram__uBC0F_summary" class="headerlink" title="학생수 histogram 및 summary"></a>학생수 histogram 및 summary</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(students)</span><br><span class="line">   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span><br><span class="line">    <span class="number">1.0</span>   <span class="number">523.0</span>   <span class="number">773.0</span>   <span class="number">745.4</span>  <span class="number">1015.0</span>  <span class="number">1352.0</span> </span><br><span class="line">&gt; hist(students)</span><br></pre></td></tr></table></figure>
+<h1 id="파일-읽기"><a href="#파일-읽기" class="headerlink" title="파일 읽기"></a>파일 읽기</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">temp = read.table(<span class="string">"2015.edu.elementary.csv"</span>, sep=<span class="string">','</span>, header = <span class="literal">TRUE</span>)</span><br><span class="line">summary(temp)</span><br></pre></td></tr></table></figure>
+<h1 id="데이터-중복을-확인해-볼까"><a href="#데이터-중복을-확인해-볼까" class="headerlink" title="데이터 중복을 확인해 볼까?"></a>데이터 중복을 확인해 볼까?</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">i &lt;- duplicated(temp)</span><br><span class="line">which(i)</span><br><span class="line">edu.elementary[i,]</span><br><span class="line">edu.elementary &lt;- unique(temp[complete.cases(temp),])</span><br><span class="line">summary(edu.elementary)</span><br></pre></td></tr></table></figure>
+<h1 id="학생수-histogram-및-summary"><a href="#학생수-histogram-및-summary" class="headerlink" title="학생수 histogram 및 summary"></a>학생수 histogram 및 summary</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(students)</span><br><span class="line">   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span><br><span class="line">    <span class="number">1.0</span>   <span class="number">523.0</span>   <span class="number">773.0</span>   <span class="number">745.4</span>  <span class="number">1015.0</span>  <span class="number">1352.0</span> </span><br><span class="line">&gt; hist(students)</span><br></pre></td></tr></table></figure>
 <img src="/2016/03/28/data-mining-ex/students_hist.png" alt="학생수 히스토그램" title="학생수 히스토그램">
-<h1 id="uD559_uAE09_uC218_histogram__uBC0F_summary"><a href="#uD559_uAE09_uC218_histogram__uBC0F_summary" class="headerlink" title="학급수 histogram 및 summary"></a>학급수 histogram 및 summary</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(class_rooms)</span><br><span class="line">   Min. <span class="number">1</span>st Qu.  Median    Mean <span class="number">3</span>rd Qu.    Max. </span><br><span class="line">    <span class="number">0.0</span>     <span class="number">7.0</span>    <span class="number">17.0</span>    <span class="number">19.2</span>    <span class="number">30.0</span>    <span class="number">81.0</span> </span><br><span class="line">&gt; hist(class_rooms)</span><br></pre></td></tr></table></figure>
+<h1 id="학급수-histogram-및-summary"><a href="#학급수-histogram-및-summary" class="headerlink" title="학급수 histogram 및 summary"></a>학급수 histogram 및 summary</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(class_rooms)</span><br><span class="line">   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span><br><span class="line">    <span class="number">0.0</span>     <span class="number">7.0</span>    <span class="number">17.0</span>    <span class="number">19.2</span>    <span class="number">30.0</span>    <span class="number">81.0</span> </span><br><span class="line">&gt; hist(class_rooms)</span><br></pre></td></tr></table></figure>
 <img src="/2016/03/28/data-mining-ex/class_rooms_hist.png" alt="학급수 히스토그램" title="학급수 히스토그램">
-<h1 id="uC120_uC0DD_uB2D8_uC218_histogram__uBC0F_summary"><a href="#uC120_uC0DD_uB2D8_uC218_histogram__uBC0F_summary" class="headerlink" title="선생님수 histogram 및 summary"></a>선생님수 histogram 및 summary</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(teachers)</span><br><span class="line">   Min. <span class="number">1</span>st Qu.  Median    Mean <span class="number">3</span>rd Qu.    Max. </span><br><span class="line">   <span class="number">0.00</span>   <span class="number">11.00</span>   <span class="number">26.00</span>   <span class="number">29.21</span>   <span class="number">44.00</span>  <span class="number">112.00</span> </span><br><span class="line">&gt; hist(teachers)</span><br></pre></td></tr></table></figure>
+<h1 id="선생님수-histogram-및-summary"><a href="#선생님수-histogram-및-summary" class="headerlink" title="선생님수 histogram 및 summary"></a>선생님수 histogram 및 summary</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(teachers)</span><br><span class="line">   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span><br><span class="line">   <span class="number">0.00</span>   <span class="number">11.00</span>   <span class="number">26.00</span>   <span class="number">29.21</span>   <span class="number">44.00</span>  <span class="number">112.00</span> </span><br><span class="line">&gt; hist(teachers)</span><br></pre></td></tr></table></figure>
 <img src="/2016/03/28/data-mining-ex/teachers_hist.png" alt="선생님수 히스토그램" title="선생님수 히스토그램">
 <p>초등학교니까 학급수와 선생님수의 분포가 비슷한데 학생수와는 무관한듯 보이네…</p>
   
@@ -182,7 +183,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#uD30C_uC77C__uC77D_uAE30"><span class="toc-number">1.</span> <span class="toc-text">파일 읽기</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uB370_uC774_uD130__uC911_uBCF5_uC744__uD655_uC778_uD574__uBCFC_uAE4C_3F"><span class="toc-number">2.</span> <span class="toc-text">데이터 중복을 확인해 볼까?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uD559_uC0DD_uC218_histogram__uBC0F_summary"><span class="toc-number">3.</span> <span class="toc-text">학생수 histogram 및 summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uD559_uAE09_uC218_histogram__uBC0F_summary"><span class="toc-number">4.</span> <span class="toc-text">학급수 histogram 및 summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#uC120_uC0DD_uB2D8_uC218_histogram__uBC0F_summary"><span class="toc-number">5.</span> <span class="toc-text">선생님수 histogram 및 summary</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#파일-읽기"><span class="toc-number">1.</span> <span class="toc-text">파일 읽기</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#데이터-중복을-확인해-볼까"><span class="toc-number">2.</span> <span class="toc-text">데이터 중복을 확인해 볼까?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#학생수-histogram-및-summary"><span class="toc-number">3.</span> <span class="toc-text">학생수 histogram 및 summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#학급수-histogram-및-summary"><span class="toc-number">4.</span> <span class="toc-text">학급수 histogram 및 summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#선생님수-histogram-및-summary"><span class="toc-number">5.</span> <span class="toc-text">선생님수 histogram 및 summary</span></a></li></ol>
  
   </div>
 
@@ -201,11 +202,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>5</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
+				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>6</sup></a></li>
 			
 		
 			
@@ -213,19 +210,11 @@
 			
 		
 			
-				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
 			
 		
 			
@@ -233,7 +222,19 @@
 			
 		
 			
-				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
 			
 		
 		</ul>
