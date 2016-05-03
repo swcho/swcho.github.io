@@ -1,0 +1,514 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>relationship between features | SwForge&#39;s Note</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="SwForge">
+    
+
+    
+    <meta name="description" content="데이터를 로드하고.12345temp = read.table(&quot;2015.edu.elementary.csv&quot;, sep=&apos;,&apos;, header = TRUE)elementary &amp;lt;- unique(temp[complete.cases(temp),])elementary$Province = as.numeric(elementary$Province)elementary$G">
+<meta property="og:type" content="article">
+<meta property="og:title" content="relationship between features">
+<meta property="og:url" content="http://yoursite.com/2016/05/03/relationship-between_features/index.html">
+<meta property="og:site_name" content="SwForge's Note">
+<meta property="og:description" content="데이터를 로드하고.12345temp = read.table(&quot;2015.edu.elementary.csv&quot;, sep=&apos;,&apos;, header = TRUE)elementary &amp;lt;- unique(temp[complete.cases(temp),])elementary$Province = as.numeric(elementary$Province)elementary$G">
+<meta property="og:image" content="http://yoursite.com/2016/05/03/relationship-between_features/relationship_01.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/03/relationship-between_features/relationship_02.png">
+<meta property="og:updated_time" content="2016-05-03T12:07:45.365Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="relationship between features">
+<meta name="twitter:description" content="데이터를 로드하고.12345temp = read.table(&quot;2015.edu.elementary.csv&quot;, sep=&apos;,&apos;, header = TRUE)elementary &amp;lt;- unique(temp[complete.cases(temp),])elementary$Province = as.numeric(elementary$Province)elementary$G">
+<meta name="twitter:image" content="http://yoursite.com/2016/05/03/relationship-between_features/relationship_01.png">
+
+    
+    <link rel="alternative" href="/atom.xml" title="SwForge&#39;s Note" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="SwForge&#39;s Note" title="SwForge&#39;s Note"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="SwForge&#39;s Note">SwForge&#39;s Note</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/05/03/relationship-between_features/" title="relationship between features" itemprop="url">relationship between features</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-05-03T11:58:37.000Z" itemprop="datePublished"> Published 2016-05-03</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Correlation-for-ratio-interval-scaled-features"><span class="toc-number">1.</span> <span class="toc-text">Correlation (for ratio/interval scaled features)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rank-Relationship"><span class="toc-number">2.</span> <span class="toc-text">Rank Relationship</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Relationship-between-nominal-and-ordinal-features"><span class="toc-number">3.</span> <span class="toc-text">Relationship between nominal and ordinal features</span></a></li></ol>
+		
+		</div>
+		
+		<p>데이터를 로드하고.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">temp = read.table(<span class="string">"2015.edu.elementary.csv"</span>, sep=<span class="string">','</span>, header = <span class="literal">TRUE</span>)</span><br><span class="line">elementary &lt;- unique(temp[complete.cases(temp),])</span><br><span class="line">elementary$Province = as.numeric(elementary$Province)</span><br><span class="line">elementary$Gov = as.numeric(elementary$교육지원청)</span><br><span class="line">elementary$Students = as.numeric(elementary$Students)</span><br></pre></td></tr></table></figure></p>
+<h1 id="Correlation-for-ratio-interval-scaled-features"><a href="#Correlation-for-ratio-interval-scaled-features" class="headerlink" title="Correlation (for ratio/interval scaled features)"></a>Correlation (for ratio/interval scaled features)</h1><p>상관 관계를 구하면<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; cor(elementary[<span class="number">13</span>:<span class="number">15</span>])</span><br><span class="line">              Rooms   Students   Teachers</span><br><span class="line">Rooms    <span class="number">1.00000000</span> <span class="number">0.05938743</span> <span class="number">0.98902676</span></span><br><span class="line">Students <span class="number">0.05938743</span> <span class="number">1.00000000</span> <span class="number">0.06299264</span></span><br><span class="line">Teachers <span class="number">0.98902676</span> <span class="number">0.06299264</span> <span class="number">1.00000000</span></span><br></pre></td></tr></table></figure></p>
+<p>선생님수와 학급수가 강한 상관관계를 가짐을 알 수 있다.</p>
+<p>원래는 다음과 같이 각 요소간 상관관계를 전치 행렬로 변환하여 상관관계를 구해<br>pimage로 확인해 봐야 하나…</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cc &lt;- cor(t(elementary[<span class="number">13</span>:<span class="number">15</span>]))</span><br><span class="line">cc[<span class="number">1</span>:<span class="number">50</span>, <span class="number">1</span>:<span class="number">50</span>]</span><br><span class="line"><span class="keyword">library</span>(<span class="string">"seriation"</span>) <span class="comment"># for pimage</span></span><br><span class="line">pimage(cc[<span class="number">1</span>:<span class="number">100</span>, <span class="number">1</span>:<span class="number">100</span>], main = <span class="string">"Correlation between objects"</span>)</span><br><span class="line">dim(cc)</span><br></pre></td></tr></table></figure>
+<p>거먼색만 나온다… -,.-</p>
+<img src="/2016/05/03/relationship-between_features/relationship_01.png" alt="pimage(cc[1:100, 1:100], main = 'Correlation between objects')" title="pimage(cc[1:100, 1:100], main = 'Correlation between objects')">
+<p>대신 좀 뻔하지만, Rooms, Students, Teachers 상관관계를 그려보면 다음과 같다<br><img src="/2016/05/03/relationship-between_features/relationship_02.png" alt="pimage(cor(elementary[13:15]))" title="pimage(cor(elementary[13:15]))"></p>
+<h1 id="Rank-Relationship"><a href="#Rank-Relationship" class="headerlink" title="Rank Relationship"></a>Rank Relationship</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; elementary_ord &lt;- data.frame(</span><br><span class="line">+ cut(elementary[,<span class="number">13</span>], <span class="number">3</span>, labels=c(<span class="string">"short"</span>, <span class="string">"medium"</span>, <span class="string">"long"</span>), ordered=<span class="literal">T</span>),</span><br><span class="line">+ cut(elementary[,<span class="number">14</span>], <span class="number">3</span>, labels=c(<span class="string">"short"</span>, <span class="string">"medium"</span>, <span class="string">"long"</span>), ordered=<span class="literal">T</span>),</span><br><span class="line">+ cut(elementary[,<span class="number">15</span>], <span class="number">3</span>, labels=c(<span class="string">"short"</span>, <span class="string">"medium"</span>, <span class="string">"long"</span>), ordered=<span class="literal">T</span>))</span><br><span class="line">&gt; colnames(elementary_ord) &lt;- colnames(elementary[<span class="number">13</span>:<span class="number">15</span>])</span><br><span class="line">&gt; summary(elementary_ord)</span><br><span class="line">    Rooms        Students      Teachers   </span><br><span class="line"> short :<span class="number">4461</span>   short :<span class="number">1222</span>   short :<span class="number">4108</span>  </span><br><span class="line"> medium:<span class="number">1764</span>   medium:<span class="number">2764</span>   medium:<span class="number">2056</span>  </span><br><span class="line"> long  :  <span class="number">28</span>   long  :<span class="number">2267</span>   long  :  <span class="number">89</span></span><br></pre></td></tr></table></figure>
+<p>Kendall’s tau rank correlation coefficient</p>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient" target="_blank" rel="external">https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient</a><br><a href="http://wolfpack.hnu.ac.kr/lecture/Spring01/nonparametric/nonpara8.pdf" target="_blank" rel="external">http://wolfpack.hnu.ac.kr/lecture/Spring01/nonparametric/nonpara8.pdf</a><br><a href="http://wolfpack.hnu.ac.kr/lecture/Spring01/nonparametric/index.htm" target="_blank" rel="external">http://wolfpack.hnu.ac.kr/lecture/Spring01/nonparametric/index.htm</a></p>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; cor(sapply(elementary_ord, xtfrm), method=<span class="string">"kendall"</span>)</span><br><span class="line">             Rooms  Students  Teachers</span><br><span class="line">Rooms    <span class="number">1.0000000</span> <span class="number">0.1421921</span> <span class="number">0.8680415</span></span><br><span class="line">Students <span class="number">0.1421921</span> <span class="number">1.0000000</span> <span class="number">0.1797677</span></span><br><span class="line">Teachers <span class="number">0.8680415</span> <span class="number">0.1797677</span> <span class="number">1.0000000</span></span><br></pre></td></tr></table></figure>
+<p>Spearman’s rho<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; cor(sapply(elementary_ord, xtfrm), method=<span class="string">"spearman"</span>)</span><br><span class="line">             Rooms  Students  Teachers</span><br><span class="line">Rooms    <span class="number">1.0000000</span> <span class="number">0.1490474</span> <span class="number">0.8722736</span></span><br><span class="line">Students <span class="number">0.1490474</span> <span class="number">1.0000000</span> <span class="number">0.1865755</span></span><br><span class="line">Teachers <span class="number">0.8722736</span> <span class="number">0.1865755</span> <span class="number">1.0000000</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Relationship-between-nominal-and-ordinal-features"><a href="#Relationship-between-nominal-and-ordinal-features" class="headerlink" title="Relationship between nominal and ordinal features"></a>Relationship between nominal and ordinal features</h1><p>카이제곱 검정<br>명목척도(nominal)를 이용하여 측정된 자료에서 연관성을 찾을 때 사용.<br>상관성은 서열척도(ordinal), 구간척도, 비율척도로 측정된 자료의 연관성을 찾을 때 사용.</p>
+<p>일단 ordinal 데이터인 학생수를 3등분하여 short, medium, long의 nominal 데이터로 만든다.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt; elementary_ord &lt;- data.frame(</span><br><span class="line">+ elementary$교육지원청,</span><br><span class="line">+ cut(elementary[,<span class="number">13</span>], <span class="number">3</span>, labels=c(<span class="string">"short"</span>, <span class="string">"medium"</span>, <span class="string">"long"</span>), ordered=<span class="literal">T</span>),</span><br><span class="line">+ cut(elementary[,<span class="number">14</span>], <span class="number">3</span>, labels=c(<span class="string">"short"</span>, <span class="string">"medium"</span>, <span class="string">"long"</span>), ordered=<span class="literal">T</span>),</span><br><span class="line">+ cut(elementary[,<span class="number">15</span>], <span class="number">3</span>, labels=c(<span class="string">"short"</span>, <span class="string">"medium"</span>, <span class="string">"long"</span>), ordered=<span class="literal">T</span>))</span><br><span class="line">&gt; colnames(elementary_ord) &lt;- c(<span class="string">'Gov'</span>, <span class="string">'Rooms'</span>, <span class="string">'Students'</span>, <span class="string">'Teachers'</span>)</span><br><span class="line">&gt; head(elementary_ord)</span><br><span class="line">   Gov  Rooms Students Teachers</span><br><span class="line"><span class="number">1</span> 강릉  short     long    short</span><br><span class="line"><span class="number">2</span> 강릉  short   medium    short</span><br><span class="line"><span class="number">3</span> 강릉  short   medium    short</span><br><span class="line"><span class="number">4</span> 강릉 medium     long   medium</span><br><span class="line"><span class="number">5</span> 강릉  short   medium    short</span><br><span class="line"><span class="number">6</span> 강릉  short     long    short</span><br></pre></td></tr></table></figure>
+<p>이렇게 하면, Gov, Rooms, Student, Teachers 모두 범주형 변수가 된다.<br>Gov와 Rooms 변수로 분할표(contigency table)을 다음과 같이 만든다.</p>
+<blockquote>
+<p><a href="http://dermabae.tistory.com/172" target="_blank" rel="external">http://dermabae.tistory.com/172</a><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">tbl &lt;- table(Students=elementary_ord$Students, elementary_ord$Gov)</span><br><span class="line">&gt; head(tbl)</span><br><span class="line">대략 이리나옴<span class="keyword">...</span></span><br><span class="line">Students 가평 강남 강동·송파 강릉 강북 강서 강진 강화 거제 거창 경산 경주 고령 고성 고양 고창 고흥</span><br><span class="line">  short     <span class="number">2</span>   <span class="number">25</span>         <span class="number">20</span>    <span class="number">4</span>   <span class="number">10</span>   <span class="number">21</span>    <span class="number">1</span>    <span class="number">4</span>    <span class="number">8</span>    <span class="number">1</span>    <span class="number">5</span>   <span class="number">13</span>    <span class="number">2</span>    <span class="number">4</span>   <span class="number">15</span>    <span class="number">1</span>    <span class="number">4</span></span><br><span class="line">  medium    <span class="number">6</span>   <span class="number">46</span>         <span class="number">12</span>   <span class="number">22</span>   <span class="number">23</span>   <span class="number">19</span>    <span class="number">8</span>   <span class="number">12</span>   <span class="number">13</span>   <span class="number">15</span>   <span class="number">13</span>   <span class="number">22</span>    <span class="number">7</span>   <span class="number">25</span>   <span class="number">30</span>   <span class="number">17</span>   <span class="number">12</span></span><br><span class="line">  long      <span class="number">8</span>   <span class="number">50</span>         <span class="number">32</span>   <span class="number">11</span>   <span class="number">24</span>   <span class="number">27</span>    <span class="number">5</span>    <span class="number">7</span>   <span class="number">17</span>    <span class="number">1</span>   <span class="number">14</span>   <span class="number">12</span>    <span class="number">0</span>    <span class="number">6</span>   <span class="number">37</span>    <span class="number">3</span>    <span class="number">6</span></span><br><span class="line"></span><br><span class="line">&gt; chisq.test(tbl)</span><br><span class="line"></span><br><span class="line">	Pearson<span class="string">'s Chi-squared test</span><br><span class="line"></span><br><span class="line">data:  tbl</span><br><span class="line">X-squared = 735.12, df = 320, p-value &lt; 2.2e-16</span><br><span class="line"></span><br><span class="line">Warning message:</span><br><span class="line">In chisq.test(tbl) : Chi-squared approximation may be incorrect</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>값이 몰 의미하는지는 모르겠다… 0.05보다는 훨 작긴한거 같은데.. 관련있다는 뜻인가?</p>
+<p>교실수는?<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; chisq.test(table(Students=elementary_ord$Rooms, elementary_ord$Gov))</span><br><span class="line"></span><br><span class="line">	Pearson<span class="string">'s Chi-squared test</span><br><span class="line"></span><br><span class="line">data:  table(Students = elementary_ord$Rooms, elementary_ord$Gov)</span><br><span class="line">X-squared = 1286, df = 320, p-value &lt; 2.2e-16</span><br><span class="line"></span><br><span class="line">Warning message:</span><br><span class="line">In chisq.test(table(Students = elementary_ord$Rooms, elementary_ord$Gov)) :</span><br><span class="line">  Chi-squared approximation may be incorrect</span></span><br></pre></td></tr></table></figure></p>
+<p>선생님 수는?<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; chisq.test(table(Students=elementary_ord$Teachers, elementary_ord$Gov))</span><br><span class="line"></span><br><span class="line">	Pearson<span class="string">'s Chi-squared test</span><br><span class="line"></span><br><span class="line">data:  table(Students = elementary_ord$Teachers, elementary_ord$Gov)</span><br><span class="line">X-squared = 1721.1, df = 320, p-value &lt; 2.2e-16</span><br><span class="line"></span><br><span class="line">Warning message:</span><br><span class="line">In chisq.test(table(Students = elementary_ord$Teachers, elementary_ord$Gov)) :</span><br><span class="line">  Chi-squared approximation may be incorrect</span></span><br></pre></td></tr></table></figure></p>
+<p>선생님과 교실수 해볼까?<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; chisq.test(table(elementary_ord$Teachers, elementary_ord$Rooms))</span><br><span class="line"></span><br><span class="line">	Pearson<span class="string">'s Chi-squared test</span><br><span class="line"></span><br><span class="line">data:  table(elementary_ord$Teachers, elementary_ord$Rooms)</span><br><span class="line">X-squared = 6493.6, df = 4, p-value &lt; 2.2e-16</span><br><span class="line"></span><br><span class="line">Warning message:</span><br><span class="line">In chisq.test(table(elementary_ord$Teachers, elementary_ord$Rooms)) :</span><br><span class="line">  Chi-squared approximation may be incorrect</span></span><br></pre></td></tr></table></figure></p>
+<p>모 p-value는 모에 쓰는지 모르겠네.. X^2은 확연이 차이나는거 같다…</p>
+<p>여기까지 하자.. 나중에 다시 고민해 볼 날이 오겠지…</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/05/03/relationship-between_features/" data-title="relationship between features | SwForge&#39;s Note" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/04/14/proximities/"  title="Proximities - Similarities and distances">
+ <strong>다음글：</strong><br/> 
+ <span>Proximities - Similarities and distances
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Correlation-for-ratio-interval-scaled-features"><span class="toc-number">1.</span> <span class="toc-text">Correlation (for ratio/interval scaled features)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rank-Relationship"><span class="toc-number">2.</span> <span class="toc-text">Rank Relationship</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Relationship-between-nominal-and-ordinal-features"><span class="toc-number">3.</span> <span class="toc-text">Relationship between nominal and ordinal features</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="#" target="_blank" title="home">home</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> ^^; <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="SwForge">SwForge</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'sungwoosnotes';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
