@@ -45,5 +45,17 @@ head(elementary_ord)
 
 tbl <- table(Students=elementary_ord$Students, elementary_ord$Gov)
 tbl
+head(tbl)
 
 chisq.test(tbl)
+
+chisq.test(table(Students=elementary_ord$Rooms, elementary_ord$Gov))
+chisq.test(table(Students=elementary_ord$Teachers, elementary_ord$Gov))
+
+table(elementary_ord$Teachers, elementary_ord$Rooms)
+
+chisq.test(table(elementary_ord$Teachers, elementary_ord$Rooms))
+
+chisq.test(table(elementary_ord$Students, elementary_ord$Rooms))
+
+chisq.test(table(elementary_ord$Students, elementary_ord$Teachers))

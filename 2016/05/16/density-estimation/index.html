@@ -1,0 +1,515 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Density Estimation | SwForge&#39;s Note</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="SwForge">
+    
+
+    
+    <meta name="description" content="Scattered Plotjitter 함수는 렌덤하게 노이즈를 추가한다. 이를 이용해서 다음과 같이 학생 수에 대한 scatterplot을 그린다.
+1plot(elementary$Students, jitter(rep(1, nrow(elementary))), ylab =&quot;&quot;, yaxt = &quot;n&quot;)
+
+Histogram밀도 측정이니… 히스토그램이 빠질 수 없다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Density Estimation">
+<meta property="og:url" content="http://yoursite.com/2016/05/16/density-estimation/index.html">
+<meta property="og:site_name" content="SwForge's Note">
+<meta property="og:description" content="Scattered Plotjitter 함수는 렌덤하게 노이즈를 추가한다. 이를 이용해서 다음과 같이 학생 수에 대한 scatterplot을 그린다.
+1plot(elementary$Students, jitter(rep(1, nrow(elementary))), ylab =&quot;&quot;, yaxt = &quot;n&quot;)
+
+Histogram밀도 측정이니… 히스토그램이 빠질 수 없다.">
+<meta property="og:image" content="http://yoursite.com/2016/05/16/density-estimation/density_est_01.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/16/density-estimation/density_est_02.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/16/density-estimation/density_est_03.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/16/density-estimation/density_est_04.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/16/density-estimation/density_est_05.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/16/density-estimation/density_est_06.png">
+<meta property="og:updated_time" content="2016-05-16T11:40:21.778Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Density Estimation">
+<meta name="twitter:description" content="Scattered Plotjitter 함수는 렌덤하게 노이즈를 추가한다. 이를 이용해서 다음과 같이 학생 수에 대한 scatterplot을 그린다.
+1plot(elementary$Students, jitter(rep(1, nrow(elementary))), ylab =&quot;&quot;, yaxt = &quot;n&quot;)
+
+Histogram밀도 측정이니… 히스토그램이 빠질 수 없다.">
+<meta name="twitter:image" content="http://yoursite.com/2016/05/16/density-estimation/density_est_01.png">
+
+    
+    <link rel="alternative" href="/atom.xml" title="SwForge&#39;s Note" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="SwForge&#39;s Note" title="SwForge&#39;s Note"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="SwForge&#39;s Note">SwForge&#39;s Note</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/05/16/density-estimation/" title="Density Estimation" itemprop="url">Density Estimation</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-05-16T11:05:49.000Z" itemprop="datePublished"> Published 2016-05-16</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Scattered-Plot"><span class="toc-number">1.</span> <span class="toc-text">Scattered Plot</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Histogram"><span class="toc-number">2.</span> <span class="toc-text">Histogram</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2d-KDE"><span class="toc-number">3.</span> <span class="toc-text">2d KDE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#With-plotly"><span class="toc-number">4.</span> <span class="toc-text">With plotly</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="Scattered-Plot"><a href="#Scattered-Plot" class="headerlink" title="Scattered Plot"></a>Scattered Plot</h1><p>jitter 함수는 렌덤하게 노이즈를 추가한다. 이를 이용해서 다음과 같이 학생 수에 대한 scatterplot을 그린다.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot(elementary$Students, jitter(rep(<span class="number">1</span>, nrow(elementary))), ylab =<span class="string">""</span>, yaxt = <span class="string">"n"</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2016/05/16/density-estimation/density_est_01.png" alt="plot(elementary$Students, jitter(rep(1, nrow(elementary))), ylab =" ",="" yaxt="n" )"="" title="plot(elementary$Students, jitter(rep(1, nrow(elementary))), ylab =">
+<h1 id="Histogram"><a href="#Histogram" class="headerlink" title="Histogram"></a>Histogram</h1><p>밀도 측정이니… 히스토그램이 빠질 수 없다..<br>KDE (Kernel Density Estimate)도 빨간 선으로 표시한다.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hist(elementary$Students, freq = <span class="literal">FALSE</span>)</span><br><span class="line">rug(elementary$Students)</span><br><span class="line">lines(density(elementary$Students), col=<span class="string">'red'</span>, lwd=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>rug는 표본수가 많아서 그런지 그냥 시꺼멓게 나온다.</p>
+<img src="/2016/05/16/density-estimation/density_est_02.png" alt="Histogram & KDE" title="Histogram & KDE">
+<h1 id="2d-KDE"><a href="#2d-KDE" class="headerlink" title="2d KDE"></a>2d KDE</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(MASS)</span><br><span class="line">dens &lt;- kde2d(elementary$Students, elementary$Teachers, n=<span class="number">100</span>)</span><br><span class="line">image(dens, xlab=<span class="string">"Students"</span>, ylab=<span class="string">"Teachers"</span>)</span><br><span class="line">contour(dens, add=<span class="literal">TRUE</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2016/05/16/density-estimation/density_est_03.png" alt="2D KDE" title="2D KDE">
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">points(jitter(elementary$Students, <span class="number">2</span>), jitter(elementary$Teachers, <span class="number">2</span>), cex=<span class="number">.7</span>, pch=<span class="string">"+"</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2016/05/16/density-estimation/density_est_04.png" alt="2D KDE with points" title="2D KDE with points">
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">persp(dens, xlab=<span class="string">"Students"</span>, ylab=<span class="string">"Teachers"</span>, zlab=<span class="string">"density"</span>, shade=<span class="number">.5</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2016/05/16/density-estimation/density_est_05.png" alt="3D" title="3D">
+<h1 id="With-plotly"><a href="#With-plotly" class="headerlink" title="With plotly"></a>With plotly</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(plotly)</span><br><span class="line">plot_ly(dens, z = z, type = <span class="string">"surface"</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2016/05/16/density-estimation/density_est_06.png" alt="plotly" title="plotly">
+<p>이제서야 data mining을 복습해 봤다…<br>Data Explorating 차례다…</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/05/16/density-estimation/" data-title="Density Estimation | SwForge&#39;s Note" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/05/03/relationship-between_features/"  title="relationship between features">
+ <strong>다음글：</strong><br/> 
+ <span>relationship between features
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Scattered-Plot"><span class="toc-number">1.</span> <span class="toc-text">Scattered Plot</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Histogram"><span class="toc-number">2.</span> <span class="toc-text">Histogram</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2d-KDE"><span class="toc-number">3.</span> <span class="toc-text">2d KDE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#With-plotly"><span class="toc-number">4.</span> <span class="toc-text">With plotly</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="#" target="_blank" title="home">home</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> ^^; <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="SwForge">SwForge</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'sungwoosnotes';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
