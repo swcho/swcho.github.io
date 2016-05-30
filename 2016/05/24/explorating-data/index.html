@@ -1,0 +1,507 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>explorating data | SwForge&#39;s Note</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="SwForge">
+    
+
+    
+    <meta name="description" content="Basic statistics요약12345678&amp;gt; summary(iris)  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width          Species   Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100   setosa    :">
+<meta property="og:type" content="article">
+<meta property="og:title" content="explorating data">
+<meta property="og:url" content="http://yoursite.com/2016/05/24/explorating-data/index.html">
+<meta property="og:site_name" content="SwForge's Note">
+<meta property="og:description" content="Basic statistics요약12345678&amp;gt; summary(iris)  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width          Species   Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100   setosa    :">
+<meta property="og:updated_time" content="2016-05-30T10:55:43.708Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="explorating data">
+<meta name="twitter:description" content="Basic statistics요약12345678&amp;gt; summary(iris)  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width          Species   Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100   setosa    :">
+
+    
+    <link rel="alternative" href="/atom.xml" title="SwForge&#39;s Note" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="SwForge&#39;s Note" title="SwForge&#39;s Note"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="SwForge&#39;s Note">SwForge&#39;s Note</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/05/24/explorating-data/" title="explorating data" itemprop="url">explorating data</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-05-24T11:36:31.000Z" itemprop="datePublished"> Published 2016-05-24</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Basic-statistics"><span class="toc-number">1.</span> <span class="toc-text">Basic statistics</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Tabulate-data-표만들기"><span class="toc-number">2.</span> <span class="toc-text">Tabulate data (표만들기)</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="Basic-statistics"><a href="#Basic-statistics" class="headerlink" title="Basic statistics"></a>Basic statistics</h1><p>요약<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(iris)</span><br><span class="line">  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width          Species  </span><br><span class="line"> Min.   :<span class="number">4.300</span>   Min.   :<span class="number">2.000</span>   Min.   :<span class="number">1.000</span>   Min.   :<span class="number">0.100</span>   setosa    :<span class="number">50</span>  </span><br><span class="line"> 1st Qu.:<span class="number">5.100</span>   1st Qu.:<span class="number">2.800</span>   1st Qu.:<span class="number">1.600</span>   1st Qu.:<span class="number">0.300</span>   versicolor:<span class="number">50</span>  </span><br><span class="line"> Median :<span class="number">5.800</span>   Median :<span class="number">3.000</span>   Median :<span class="number">4.350</span>   Median :<span class="number">1.300</span>   virginica :<span class="number">50</span>  </span><br><span class="line"> Mean   :<span class="number">5.843</span>   Mean   :<span class="number">3.057</span>   Mean   :<span class="number">3.758</span>   Mean   :<span class="number">1.199</span>                  </span><br><span class="line"> 3rd Qu.:<span class="number">6.400</span>   3rd Qu.:<span class="number">3.300</span>   3rd Qu.:<span class="number">5.100</span>   3rd Qu.:<span class="number">1.800</span>                  </span><br><span class="line"> Max.   :<span class="number">7.900</span>   Max.   :<span class="number">4.400</span>   Max.   :<span class="number">6.900</span>   Max.   :<span class="number">2.500</span></span><br></pre></td></tr></table></figure></p>
+<p>평균과 표준편차<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; mean(iris$Sepal.Length)</span><br><span class="line">[<span class="number">1</span>] <span class="number">5.843333</span></span><br><span class="line">&gt; sd(iris$Sepal.Length)</span><br><span class="line">[<span class="number">1</span>] <span class="number">0.8280661</span></span><br></pre></td></tr></table></figure></p>
+<p>apply 함수는 첫 번째 인자인 행렬을 3번째 인자인 함수에 대입하여 그 값을 표시한다.<br>MARGIN이 1일 경우 각 row를 백터로 취해 함수에 대입하고 2일 경우 각 column을 백터로 취해 함수에 대입한다.<br>만일 각 값에 대해 특정 함수를 호출하고자 한다면, apply(iris[1:4], 1:2, mean) 이런 식으로 하면 된다.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; apply(iris[<span class="number">1</span>:<span class="number">4</span>], MARGIN=<span class="number">1</span>, mean)</span><br><span class="line">  [<span class="number">1</span>] <span class="number">2.550</span> <span class="number">2.375</span> <span class="number">2.350</span> <span class="number">2.350</span> <span class="number">2.550</span> <span class="number">2.850</span> <span class="number">2.425</span> <span class="number">2.525</span> <span class="number">2.225</span> <span class="number">2.400</span> <span class="number">2.700</span> <span class="number">2.500</span> <span class="number">2.325</span> <span class="number">2.125</span> <span class="number">2.800</span> <span class="number">3.000</span></span><br><span class="line"> [<span class="number">17</span>] <span class="number">2.750</span> <span class="number">2.575</span> <span class="number">2.875</span> <span class="number">2.675</span> <span class="number">2.675</span> <span class="number">2.675</span> <span class="number">2.350</span> <span class="number">2.650</span> <span class="number">2.575</span> <span class="number">2.450</span> <span class="number">2.600</span> <span class="number">2.600</span> <span class="number">2.550</span> <span class="number">2.425</span> <span class="number">2.425</span> <span class="number">2.675</span></span><br><span class="line"> [<span class="number">33</span>] <span class="number">2.725</span> <span class="number">2.825</span> <span class="number">2.425</span> <span class="number">2.400</span> <span class="number">2.625</span> <span class="number">2.500</span> <span class="number">2.225</span> <span class="number">2.550</span> <span class="number">2.525</span> <span class="number">2.100</span> <span class="number">2.275</span> <span class="number">2.675</span> <span class="number">2.800</span> <span class="number">2.375</span> <span class="number">2.675</span> <span class="number">2.350</span></span><br><span class="line"> [<span class="number">49</span>] <span class="number">2.675</span> <span class="number">2.475</span> <span class="number">4.075</span> <span class="number">3.900</span> <span class="number">4.100</span> <span class="number">3.275</span> <span class="number">3.850</span> <span class="number">3.575</span> <span class="number">3.975</span> <span class="number">2.900</span> <span class="number">3.850</span> <span class="number">3.300</span> <span class="number">2.875</span> <span class="number">3.650</span> <span class="number">3.300</span> <span class="number">3.775</span></span><br><span class="line"> [<span class="number">65</span>] <span class="number">3.350</span> <span class="number">3.900</span> <span class="number">3.650</span> <span class="number">3.400</span> <span class="number">3.600</span> <span class="number">3.275</span> <span class="number">3.925</span> <span class="number">3.550</span> <span class="number">3.800</span> <span class="number">3.700</span> <span class="number">3.725</span> <span class="number">3.850</span> <span class="number">3.950</span> <span class="number">4.100</span> <span class="number">3.725</span> <span class="number">3.200</span></span><br><span class="line"> [<span class="number">81</span>] <span class="number">3.200</span> <span class="number">3.150</span> <span class="number">3.400</span> <span class="number">3.850</span> <span class="number">3.600</span> <span class="number">3.875</span> <span class="number">4.000</span> <span class="number">3.575</span> <span class="number">3.500</span> <span class="number">3.325</span> <span class="number">3.425</span> <span class="number">3.775</span> <span class="number">3.400</span> <span class="number">2.900</span> <span class="number">3.450</span> <span class="number">3.525</span></span><br><span class="line"> [<span class="number">97</span>] <span class="number">3.525</span> <span class="number">3.675</span> <span class="number">2.925</span> <span class="number">3.475</span> <span class="number">4.525</span> <span class="number">3.875</span> <span class="number">4.525</span> <span class="number">4.150</span> <span class="number">4.375</span> <span class="number">4.825</span> <span class="number">3.400</span> <span class="number">4.575</span> <span class="number">4.200</span> <span class="number">4.850</span> <span class="number">4.200</span> <span class="number">4.075</span></span><br><span class="line">[<span class="number">113</span>] <span class="number">4.350</span> <span class="number">3.800</span> <span class="number">4.025</span> <span class="number">4.300</span> <span class="number">4.200</span> <span class="number">5.100</span> <span class="number">4.875</span> <span class="number">3.675</span> <span class="number">4.525</span> <span class="number">3.825</span> <span class="number">4.800</span> <span class="number">3.925</span> <span class="number">4.450</span> <span class="number">4.550</span> <span class="number">3.900</span> <span class="number">3.950</span></span><br><span class="line">[<span class="number">129</span>] <span class="number">4.225</span> <span class="number">4.400</span> <span class="number">4.550</span> <span class="number">5.025</span> <span class="number">4.250</span> <span class="number">3.925</span> <span class="number">3.925</span> <span class="number">4.775</span> <span class="number">4.425</span> <span class="number">4.200</span> <span class="number">3.900</span> <span class="number">4.375</span> <span class="number">4.450</span> <span class="number">4.350</span> <span class="number">3.875</span> <span class="number">4.550</span></span><br><span class="line">[<span class="number">145</span>] <span class="number">4.550</span> <span class="number">4.300</span> <span class="number">3.925</span> <span class="number">4.175</span> <span class="number">4.325</span> <span class="number">3.950</span></span><br></pre></td></tr></table></figure></p>
+<p>각 column에 대해서 평균, 중위값, 표준편차, 분산, 최소, 최대 값이다… 그냥 summary 하면 될 듯..<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt; apply(iris[<span class="number">1</span>:<span class="number">4</span>], <span class="number">2</span>, mean)</span><br><span class="line">Sepal.Length  Sepal.Width Petal.Length  Petal.Width </span><br><span class="line">    <span class="number">5.843333</span>     <span class="number">3.057333</span>     <span class="number">3.758000</span>     <span class="number">1.199333</span> </span><br><span class="line">&gt; apply(iris[<span class="number">1</span>:<span class="number">4</span>], <span class="number">2</span>, median)</span><br><span class="line">Sepal.Length  Sepal.Width Petal.Length  Petal.Width </span><br><span class="line">        <span class="number">5.80</span>         <span class="number">3.00</span>         <span class="number">4.35</span>         <span class="number">1.30</span> </span><br><span class="line">&gt; apply(iris[<span class="number">1</span>:<span class="number">4</span>], <span class="number">2</span>, sd)</span><br><span class="line">Sepal.Length  Sepal.Width Petal.Length  Petal.Width </span><br><span class="line">   <span class="number">0.8280661</span>    <span class="number">0.4358663</span>    <span class="number">1.7652982</span>    <span class="number">0.7622377</span> </span><br><span class="line">&gt; apply(iris[<span class="number">1</span>:<span class="number">4</span>], <span class="number">2</span>, var)</span><br><span class="line">Sepal.Length  Sepal.Width Petal.Length  Petal.Width </span><br><span class="line">   <span class="number">0.6856935</span>    <span class="number">0.1899794</span>    <span class="number">3.1162779</span>    <span class="number">0.5810063</span> </span><br><span class="line">&gt; apply(iris[<span class="number">1</span>:<span class="number">4</span>], <span class="number">2</span>, min)</span><br><span class="line">Sepal.Length  Sepal.Width Petal.Length  Petal.Width </span><br><span class="line">         <span class="number">4.3</span>          <span class="number">2.0</span>          <span class="number">1.0</span>          <span class="number">0.1</span> </span><br><span class="line">&gt; apply(iris[<span class="number">1</span>:<span class="number">4</span>], <span class="number">2</span>, max)</span><br><span class="line">Sepal.Length  Sepal.Width Petal.Length  Petal.Width </span><br><span class="line">         <span class="number">7.9</span>          <span class="number">4.4</span>          <span class="number">6.9</span>          <span class="number">2.5</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="Tabulate-data-표만들기"><a href="#Tabulate-data-표만들기" class="headerlink" title="Tabulate data (표만들기)"></a>Tabulate data (표만들기)</h1><p>이전에 한번 했던 거 같은데… </p>
+<blockquote>
+<p><a href="http://swcho.github.io/2016/05/03/relationship-between_features/" target="_blank" rel="external">http://swcho.github.io/2016/05/03/relationship-between_features/</a><br>서열척도를 명목척도로 바꾸는 거..<br>점수에 따라 수,우,미,양,가 나누는거도 이런식으로 하면된다.<br>R 에서는 요인(Factor), 범주형(Categorical) 변수라 불린다.</p>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt; iris_discrete &lt;- data.frame(</span><br><span class="line">+ Sepal.Length= cut(iris$Sepal.Length, breaks=<span class="number">3</span>, labels=c(<span class="string">"small"</span>, <span class="string">"medium"</span>, <span class="string">"large"</span>), ordered=<span class="literal">TRUE</span>),</span><br><span class="line">+ Sepal.Width= cut(iris$Sepal.Width, breaks=<span class="number">3</span>, labels=c(<span class="string">"small"</span>, <span class="string">"medium"</span>, <span class="string">"large"</span>), ordered=<span class="literal">TRUE</span>),</span><br><span class="line">+ Petal.Length= cut(iris$Petal.Length, breaks=<span class="number">3</span>, labels=c(<span class="string">"small"</span>, <span class="string">"medium"</span>, <span class="string">"large"</span>), ordered=<span class="literal">TRUE</span>),</span><br><span class="line">+ Petal.Width= cut(iris$Petal.Width, breaks=<span class="number">3</span>, labels=c(<span class="string">"small"</span>, <span class="string">"medium"</span>, <span class="string">"large"</span>), ordered=<span class="literal">TRUE</span>),</span><br><span class="line">+ Species = iris$Species</span><br><span class="line">+ )</span><br><span class="line">&gt; head(iris_discrete)</span><br><span class="line">  Sepal.Length Sepal.Width Petal.Length Petal.Width Species</span><br><span class="line"><span class="number">1</span>        small      medium        small       small  setosa</span><br><span class="line"><span class="number">2</span>        small      medium        small       small  setosa</span><br><span class="line"><span class="number">3</span>        small      medium        small       small  setosa</span><br><span class="line"><span class="number">4</span>        small      medium        small       small  setosa</span><br><span class="line"><span class="number">5</span>        small      medium        small       small  setosa</span><br><span class="line"><span class="number">6</span>        small       large        small       small  setosa</span><br></pre></td></tr></table></figure>
+<p>범주형 데이터만으로 구성되었기 때문에 다음과 같이 각 범주의 개수를 표시한다.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary(iris_discrete)</span><br><span class="line"> Sepal.Length Sepal.Width Petal.Length Petal.Width       Species  </span><br><span class="line"> small :<span class="number">59</span>    small :<span class="number">47</span>   small :<span class="number">50</span>    small :<span class="number">50</span>   setosa    :<span class="number">50</span>  </span><br><span class="line"> medium:<span class="number">71</span>    medium:<span class="number">88</span>   medium:<span class="number">54</span>    medium:<span class="number">54</span>   versicolor:<span class="number">50</span>  </span><br><span class="line"> large :<span class="number">20</span>    large :<span class="number">15</span>   large :<span class="number">46</span>    large :<span class="number">46</span>   virginica :<span class="number">50</span></span><br></pre></td></tr></table></figure></p>
+<p>table은 Factor 들의 값을 받아 분할표(contingency table)를 만든다.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt; table(iris_discrete$Sepal.Length, iris_discrete$Sepal.Width)</span><br><span class="line">        </span><br><span class="line">         small medium large</span><br><span class="line">  small     <span class="number">12</span>     <span class="number">37</span>    <span class="number">10</span></span><br><span class="line">  medium    <span class="number">31</span>     <span class="number">37</span>     <span class="number">3</span></span><br><span class="line">  large      <span class="number">4</span>     <span class="number">14</span>     <span class="number">2</span></span><br><span class="line">&gt; table(iris_discrete$Petal.Length, iris_discrete$Petal.Width)</span><br><span class="line">        </span><br><span class="line">         small medium large</span><br><span class="line">  small     <span class="number">50</span>      <span class="number">0</span>     <span class="number">0</span></span><br><span class="line">  medium     <span class="number">0</span>     <span class="number">48</span>     <span class="number">6</span></span><br><span class="line">  large      <span class="number">0</span>      <span class="number">6</span>    <span class="number">40</span></span><br><span class="line">&gt; table(iris_discrete$Petal.Length, iris_discrete$Species)</span><br><span class="line">        </span><br><span class="line">         setosa versicolor virginica</span><br><span class="line">  small      <span class="number">50</span>          <span class="number">0</span>         <span class="number">0</span></span><br><span class="line">  medium      <span class="number">0</span>         <span class="number">48</span>         <span class="number">6</span></span><br><span class="line">  large       <span class="number">0</span>          <span class="number">2</span>        <span class="number">44</span></span><br></pre></td></tr></table></figure></p>
+<p>이 contingency table을 기반으로, 두개의 feature들이 서로 독립임(H0)을 검증해볼 수 있다.<br>p-value(유의 확률)이 작으면(0.05 ~ 0.01 사이에 있으면) 귀무 가설인 H0 를 기각한다.<br>다음과 같이 카이 제곱 검정을 사용한다.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt; tbl &lt;- table(iris_discrete$Sepal.Length, iris_discrete$Sepal.Width)</span><br><span class="line">&gt; tbl</span><br><span class="line">        </span><br><span class="line">         small medium large</span><br><span class="line">  small     <span class="number">12</span>     <span class="number">37</span>    <span class="number">10</span></span><br><span class="line">  medium    <span class="number">31</span>     <span class="number">37</span>     <span class="number">3</span></span><br><span class="line">  large      <span class="number">4</span>     <span class="number">14</span>     <span class="number">2</span></span><br><span class="line">&gt; chisq.test(tbl)</span><br><span class="line"></span><br><span class="line">	Pearson<span class="string">'s Chi-squared test</span><br><span class="line"></span><br><span class="line">data:  tbl</span><br><span class="line">X-squared = 12.879, df = 4, p-value = 0.01188</span><br><span class="line"></span><br><span class="line">Warning message:</span><br><span class="line">In chisq.test(tbl) : Chi-squared approximation may be incorrect</span></span><br></pre></td></tr></table></figure></p>
+<p>결국 Sepal 길이와 너비는 독립이 아니다…<br>Fisher의 exact test 는 5 이하의 cell들로 이루어 졌을 경우 더 좋은 검증법이라고 한다.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; fisher.test(tbl)</span><br><span class="line"></span><br><span class="line">	Fisher<span class="string">'s Exact Test for Count Data</span><br><span class="line"></span><br><span class="line">data:  tbl</span><br><span class="line">p-value = 0.01063</span><br><span class="line">alternative hypothesis: two.sided</span></span><br></pre></td></tr></table></figure></p>
+<p>다음과 같이 하나의 변수만 가지고 table을 만들어 barplot을 그릴 수 있다.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; table(iris_discrete$Sepal.Length)</span><br><span class="line"></span><br><span class="line"> small medium  large </span><br><span class="line">    <span class="number">59</span>     <span class="number">71</span>     <span class="number">20</span></span><br></pre></td></tr></table></figure></p>
+
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/data-mining/">data mining</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/05/24/explorating-data/" data-title="explorating data | SwForge&#39;s Note" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/05/16/density-estimation/"  title="Density Estimation">
+ <strong>다음글：</strong><br/> 
+ <span>Density Estimation
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Basic-statistics"><span class="toc-number">1.</span> <span class="toc-text">Basic statistics</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Tabulate-data-표만들기"><span class="toc-number">2.</span> <span class="toc-text">Tabulate data (표만들기)</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/data-mining/" title="data mining">data mining<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="#" target="_blank" title="home">home</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> ^^; <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="SwForge">SwForge</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'sungwoosnotes';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
