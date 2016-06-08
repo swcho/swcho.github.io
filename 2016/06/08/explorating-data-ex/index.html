@@ -1,0 +1,492 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>explorating_data_ex | SwForge&#39;s Note</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="SwForge">
+    
+
+    
+    <meta name="description" content="데이터 준비공공데이터 중 소상공인 상가 정보를 사용해 본다.Text 파일 크기가 1 GB를 넘기 때문에, 다음과 같이 주요 지역 별로 나누어 본다.
+12$ iconv -f EUC-KR -t UTF-8 micro_enterprise_db_2015_12.csv | grep 서울특별시 &amp;gt; micro_enterprise_db_2015_12_seoul.csv$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="explorating_data_ex">
+<meta property="og:url" content="http://yoursite.com/2016/06/08/explorating-data-ex/index.html">
+<meta property="og:site_name" content="SwForge's Note">
+<meta property="og:description" content="데이터 준비공공데이터 중 소상공인 상가 정보를 사용해 본다.Text 파일 크기가 1 GB를 넘기 때문에, 다음과 같이 주요 지역 별로 나누어 본다.
+12$ iconv -f EUC-KR -t UTF-8 micro_enterprise_db_2015_12.csv | grep 서울특별시 &amp;gt; micro_enterprise_db_2015_12_seoul.csv$">
+<meta property="og:updated_time" content="2016-06-08T13:05:36.435Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="explorating_data_ex">
+<meta name="twitter:description" content="데이터 준비공공데이터 중 소상공인 상가 정보를 사용해 본다.Text 파일 크기가 1 GB를 넘기 때문에, 다음과 같이 주요 지역 별로 나누어 본다.
+12$ iconv -f EUC-KR -t UTF-8 micro_enterprise_db_2015_12.csv | grep 서울특별시 &amp;gt; micro_enterprise_db_2015_12_seoul.csv$">
+
+    
+    <link rel="alternative" href="/atom.xml" title="SwForge&#39;s Note" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="SwForge&#39;s Note" title="SwForge&#39;s Note"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="SwForge&#39;s Note">SwForge&#39;s Note</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/06/08/explorating-data-ex/" title="explorating_data_ex" itemprop="url">explorating_data_ex</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-06-08T11:56:33.000Z" itemprop="datePublished"> Published 2016-06-08</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#데이터-준비"><span class="toc-number">1.</span> <span class="toc-text">데이터 준비</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="데이터-준비"><a href="#데이터-준비" class="headerlink" title="데이터 준비"></a>데이터 준비</h1><p>공공데이터 중 소상공인 상가 정보를 사용해 본다.<br>Text 파일 크기가 1 GB를 넘기 때문에, 다음과 같이 주요 지역 별로 나누어 본다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ iconv <span class="_">-f</span> EUC-KR -t UTF-8 micro_enterprise_db_2015_12.csv | grep 서울특별시 &gt; micro_enterprise_db_2015_12_seoul.csv</span><br><span class="line">$ iconv <span class="_">-f</span> EUC-KR -t UTF-8 micro_enterprise_db_2015_12.csv | grep 경기도 &gt; micro_enterprise_db_2015_12_kyungki.csv</span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">&gt; me_yongin = read.csv(<span class="string">'micro_enterprise_db_2015_12_kyungki_yongin.csv'</span>, header=<span class="literal">TRUE</span>, stringsAsFactors=<span class="literal">FALSE</span>, fileEncoding=<span class="string">"UTF-8"</span>)</span><br><span class="line">&gt; summary(me_yongin)</span><br><span class="line">  상가업소번호         상호명             지점명          상권업종대분류코드 상권업종대분류명  </span><br><span class="line"> Min.   :<span class="number">20100934</span>   Length:<span class="number">33240</span>       Length:<span class="number">33240</span>       Length:<span class="number">33240</span>       Length:<span class="number">33240</span>      </span><br><span class="line"> 1st Qu.:<span class="number">23029528</span>   Class :character   Class :character   Class :character   Class :character  </span><br><span class="line"> Median :<span class="number">24465258</span>   Mode  :character   Mode  :character   Mode  :character   Mode  :character  </span><br><span class="line"> Mean   :<span class="number">24085896</span>                                                                              </span><br><span class="line"> 3rd Qu.:<span class="number">25406874</span>                                                                              </span><br><span class="line"> Max.   :<span class="number">28524539</span>                                                                              </span><br><span class="line">                                                                                               </span><br><span class="line"> 상권업종중분류코드 상권업종중분류명   상권업종소분류코드 상권업종소분류명   표준산업분류코드  </span><br><span class="line"> Length:<span class="number">33240</span>       Length:<span class="number">33240</span>       Length:<span class="number">33240</span>       Length:<span class="number">33240</span>       Length:<span class="number">33240</span>      </span><br><span class="line"> Class :character   Class :character   Class :character   Class :character   Class :character  </span><br><span class="line"> Mode  :character   Mode  :character   Mode  :character   Mode  :character   Mode  :character  </span><br><span class="line">                                                                                               </span><br><span class="line">                                                                                               </span><br><span class="line">                                                                                               </span><br><span class="line">                                                                                               </span><br><span class="line"> 표준산업분류명        시도코드     시도명            시군구코드      시군구명        </span><br><span class="line"> Length:<span class="number">33240</span>       Min.   :<span class="number">41</span>   Length:<span class="number">33240</span>       Min.   :<span class="number">41460</span>   Length:<span class="number">33240</span>      </span><br><span class="line"> Class :character   1st Qu.:<span class="number">41</span>   Class :character   1st Qu.:<span class="number">41460</span>   Class :character  </span><br><span class="line"> Mode  :character   Median :<span class="number">41</span>   Mode  :character   Median :<span class="number">41460</span>   Mode  :character  </span><br><span class="line">                    Mean   :<span class="number">41</span>                      Mean   :<span class="number">41460</span>                     </span><br><span class="line">                    3rd Qu.:<span class="number">41</span>                      3rd Qu.:<span class="number">41460</span>                     </span><br><span class="line">                    Max.   :<span class="number">41</span>                      Max.   :<span class="number">41460</span>                     </span><br><span class="line">                                                                                      </span><br><span class="line">   행정동코드          행정동명           법정동코드          법정동명            PNU코드         </span><br><span class="line"> Min.   :<span class="number">4.146e+09</span>   Length:<span class="number">33240</span>       Min.   :<span class="number">4.146e+09</span>   Length:<span class="number">33240</span>       Min.   :<span class="number">4.146e+18</span>  </span><br><span class="line"> 1st Qu.:<span class="number">4.146e+09</span>   Class :character   1st Qu.:<span class="number">4.146e+09</span>   Class :character   1st Qu.:<span class="number">4.146e+18</span>  </span><br><span class="line"> Median :<span class="number">4.146e+09</span>   Mode  :character   Median :<span class="number">4.146e+09</span>   Mode  :character   Median :<span class="number">4.146e+18</span>  </span><br><span class="line"> Mean   :<span class="number">4.146e+09</span>                      Mean   :<span class="number">4.146e+09</span>                      Mean   :<span class="number">4.146e+18</span>  </span><br><span class="line"> 3rd Qu.:<span class="number">4.147e+09</span>                      3rd Qu.:<span class="number">4.147e+09</span>                      3rd Qu.:<span class="number">4.147e+18</span>  </span><br><span class="line"> Max.   :<span class="number">4.147e+09</span>                      Max.   :<span class="number">4.147e+09</span>                      Max.   :<span class="number">4.147e+18</span>  </span><br><span class="line">                                                                                                  </span><br><span class="line">  대지구분코드    대지구분명          지번본번지       지번부번지        지번주소        </span><br><span class="line"> Min.   :<span class="number">1.000</span>   Length:<span class="number">33240</span>       Min.   :   <span class="number">1.0</span>   Min.   :   <span class="number">1.00</span>   Length:<span class="number">33240</span>      </span><br><span class="line"> 1st Qu.:<span class="number">1.000</span>   Class :character   1st Qu.: <span class="number">254.0</span>   1st Qu.:   <span class="number">2.00</span>   Class :character  </span><br><span class="line"> Median :<span class="number">1.000</span>   Mode  :character   Median : <span class="number">522.0</span>   Median :   <span class="number">4.00</span>   Mode  :character  </span><br><span class="line"> Mean   :<span class="number">1.003</span>                      Mean   : <span class="number">564.1</span>   Mean   :  <span class="number">12.13</span>                     </span><br><span class="line"> 3rd Qu.:<span class="number">1.000</span>                      3rd Qu.: <span class="number">833.0</span>   3rd Qu.:   <span class="number">8.00</span>                     </span><br><span class="line"> Max.   :<span class="number">2.000</span>                      Max.   :<span class="number">1803.0</span>   Max.   :<span class="number">1063.00</span>                     </span><br><span class="line">                                                     <span class="literal">NA</span><span class="string">'s   :10024                       </span><br><span class="line">   도로명코드           도로명            건물본번지       건물부번지      건물관리번호      </span><br><span class="line"> Min.   :4.146e+11   Length:33240       Min.   :   1.0   Min.   : 1.000   Min.   :4.146e+24  </span><br><span class="line"> 1st Qu.:4.146e+11   Class :character   1st Qu.:  14.0   1st Qu.: 2.000   1st Qu.:4.146e+24  </span><br><span class="line"> Median :4.146e+11   Mode  :character   Median :  51.0   Median : 6.000   Median :4.146e+24  </span><br><span class="line"> Mean   :4.146e+11                      Mean   : 226.3   Mean   : 8.302   Mean   :4.146e+24  </span><br><span class="line"> 3rd Qu.:4.147e+11                      3rd Qu.: 148.0   3rd Qu.:12.000   3rd Qu.:4.147e+24  </span><br><span class="line"> Max.   :4.147e+11                      Max.   :2797.0   Max.   :70.000   Max.   :4.147e+24  </span><br><span class="line">                                                         NA'</span>s   :<span class="number">27023</span>                       </span><br><span class="line">    건물명           도로명주소          구우편번호       신우편번호       동정보         </span><br><span class="line"> Length:<span class="number">33240</span>       Length:<span class="number">33240</span>       Min.   :<span class="number">446505</span>   Min.   :<span class="number">16800</span>   Length:<span class="number">33240</span>      </span><br><span class="line"> Class :character   Class :character   1st Qu.:<span class="number">446901</span>   1st Qu.:<span class="number">16892</span>   Class :character  </span><br><span class="line"> Mode  :character   Mode  :character   Median :<span class="number">448509</span>   Median :<span class="number">16972</span>   Mode  :character  </span><br><span class="line">                                       Mean   :<span class="number">448213</span>   Mean   :<span class="number">16976</span>                     </span><br><span class="line">                                       3rd Qu.:<span class="number">449812</span>   3rd Qu.:<span class="number">17052</span>                     </span><br><span class="line">                                       Max.   :<span class="number">449935</span>   Max.   :<span class="number">17183</span>                     </span><br><span class="line">                                                                                          </span><br><span class="line">    층정보             호정보            전화번호              경도            위도      </span><br><span class="line"> Length:<span class="number">33240</span>       Length:<span class="number">33240</span>       Length:<span class="number">33240</span>       Min.   :<span class="number">127.0</span>   Min.   :<span class="number">37.09</span>  </span><br><span class="line"> Class :character   Class :character   Class :character   1st Qu.:<span class="number">127.1</span>   1st Qu.:<span class="number">37.25</span>  </span><br><span class="line"> Mode  :character   Mode  :character   Mode  :character   Median :<span class="number">127.1</span>   Median :<span class="number">37.28</span>  </span><br><span class="line">                                                          Mean   :<span class="number">127.1</span>   Mean   :<span class="number">37.28</span>  </span><br><span class="line">                                                          3rd Qu.:<span class="number">127.2</span>   3rd Qu.:<span class="number">37.32</span>  </span><br><span class="line">                                                          Max.   :<span class="number">127.4</span>   Max.   :<span class="number">37.37</span>  </span><br><span class="line">                                                                                         </span><br><span class="line">    상권번호     데이터기준일자    </span><br><span class="line"> Min.   :<span class="number">1467</span>    Length:<span class="number">33240</span>      </span><br><span class="line"> 1st Qu.:<span class="number">1507</span>    Class :character  </span><br><span class="line"> Median :<span class="number">1531</span>    Mode  :character  </span><br><span class="line"> Mean   :<span class="number">1537</span>                      </span><br><span class="line"> 3rd Qu.:<span class="number">1575</span>                      </span><br><span class="line"> Max.   :<span class="number">1577</span>                      </span><br><span class="line"> <span class="literal">NA</span><span class="string">'s   :27321</span></span><br></pre></td></tr></table></figure>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/06/08/explorating-data-ex/" data-title="explorating_data_ex | SwForge&#39;s Note" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/05/24/explorating-data/"  title="explorating data">
+ <strong>다음글：</strong><br/> 
+ <span>explorating data
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#데이터-준비"><span class="toc-number">1.</span> <span class="toc-text">데이터 준비</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/data-mining/" title="data mining">data mining<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="#" target="_blank" title="home">home</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> ^^; <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="SwForge">SwForge</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'sungwoosnotes';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
