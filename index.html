@@ -81,6 +81,60 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/06/21/explorating-data-ex3/" title="explorating-data-ex3" itemprop="url">explorating-data-ex3</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-06-21T11:42:34.000Z" itemprop="datePublished"> Published 2016-06-21</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>일단 데이터를 준비하고.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">me_yongin = read.csv(<span class="string">'micro_enterprise_db_2015_12_kyungki_yongin.csv'</span>, header=<span class="literal">TRUE</span>, stringsAsFactors=<span class="literal">FALSE</span>, fileEncoding=<span class="string">"UTF-8"</span>)</span><br><span class="line">me = data.frame(me_yongin$상호명, me_yongin$상권업종대분류명, me_yongin$상권업종중분류명, me_yongin$상권업종소분류명, me_yongin$행정동명, me_yongin$경도, me_yongin$위도)</span><br><span class="line">colnames(me) &lt;- c(<span class="string">'name'</span>, <span class="string">'cat1'</span>, <span class="string">'cat2'</span>, <span class="string">'cat3'</span>, <span class="string">'district'</span>, <span class="string">'lon'</span>, <span class="string">'lat'</span>)</span><br><span class="line">summary(me)</span><br><span class="line"></span><br><span class="line">aggregate(x=me$name, by=list(district=me$district, cat1=me$cat1), FUN=length)</span><br><span class="line">pivot = table(me$district, me$cat1)</span><br><span class="line">pivot_frame = as.data.frame.matrix(pivot)</span><br></pre></td></tr></table></figure></p>
+<h1 id="Percentiles"><a href="#Percentiles" class="headerlink" title="Percentiles"></a>Percentiles</h1><p>각 동별 상가 대분류 기준으로 변위치(quantile)<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&gt; apply(pivot_frame[<span class="number">1</span>:<span class="number">8</span>], MARGIN=<span class="number">2</span>, quantile)</span><br><span class="line">     관광/여가/오락 부동산 생활서비스  소매 숙박 음식  의료 학문/교육</span><br><span class="line"><span class="number">0</span>%              <span class="number">2.0</span>   <span class="number">13.0</span>       <span class="number">23.0</span> <span class="number">102.0</span>  <span class="number">0.0</span>  <span class="number">104</span>   <span class="number">3.0</span>       <span class="number">5.0</span></span><br><span class="line"><span class="number">25</span>%            <span class="number">12.5</span>   <span class="number">29.0</span>      <span class="number">111.5</span> <span class="number">227.5</span>  <span class="number">1.0</span>  <span class="number">183</span>  <span class="number">17.5</span>      <span class="number">51.0</span></span><br><span class="line"><span class="number">50</span>%            <span class="number">18.0</span>   <span class="number">46.0</span>      <span class="number">143.0</span> <span class="number">289.0</span>  <span class="number">3.0</span>  <span class="number">226</span>  <span class="number">47.0</span>     <span class="number">120.0</span></span><br><span class="line"><span class="number">75</span>%            <span class="number">34.0</span>   <span class="number">81.5</span>      <span class="number">228.0</span> <span class="number">461.5</span> <span class="number">11.5</span>  <span class="number">363</span>  <span class="number">65.0</span>     <span class="number">158.5</span></span><br><span class="line"><span class="number">100</span>%          <span class="number">101.0</span>  <span class="number">170.0</span>      <span class="number">342.0</span> <span class="number">889.0</span> <span class="number">33.0</span>  <span class="number">620</span> <span class="number">122.0</span>     <span class="number">434.0</span></span><br><span class="line">&gt; quantile(pivot_frame$부동산)</span><br><span class="line">   <span class="number">0</span>%   <span class="number">25</span>%   <span class="number">50</span>%   <span class="number">75</span>%  <span class="number">100</span>% </span><br><span class="line"> <span class="number">13.0</span>  <span class="number">29.0</span>  <span class="number">46.0</span>  <span class="number">81.5</span> <span class="number">170.0</span> </span><br><span class="line">&gt; quantile(pivot_frame$부동산)[<span class="number">4</span>] - quantile(pivot_frame$부동산)[<span class="number">2</span>]</span><br><span class="line"> <span class="number">75</span>% </span><br><span class="line"><span class="number">52.5</span> </span><br><span class="line">&gt; mad &lt;- <span class="keyword">function</span>(x) median(abs(x-mean(x)))</span><br><span class="line">&gt; apply(pivot_frame[<span class="number">1</span>:<span class="number">8</span>], MARGIN=<span class="number">2</span>, mad)</span><br><span class="line">관광/여가/오락         부동산     생활서비스           소매           숙박           음식           의료 </span><br><span class="line">     <span class="number">15.290323</span>      <span class="number">31.677419</span>      <span class="number">61.516129</span>     <span class="number">122.129032</span>       <span class="number">6.290323</span>     <span class="number">101.161290</span>      <span class="number">21.806452</span> </span><br><span class="line">     학문/교육 </span><br><span class="line">     <span class="number">72.032258</span></span><br></pre></td></tr></table></figure></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/06/21/explorating-data-ex3/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/06/14/explorating-data-ex2/" title="explorating-data-ex2" itemprop="url">explorating-data-ex2</a>
   </h1>
   <p class="article-author">By
@@ -753,73 +807,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/04/01/data-mining-ex-sampling/" title="샘플링" itemprop="url">샘플링</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
-		
-  <p class="article-time">
-    <time datetime="2016-04-01T11:18:08.000Z" itemprop="datePublished"> Published 2016-04-01</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>R에서 원본데이터가 있을 경우, sample이 왜 필요한지는 모르겠지만…</p>
-<h1 id="Random-sampling"><a href="#Random-sampling" class="headerlink" title="Random sampling"></a>Random sampling</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; length(edu.elementary$Students)</span><br><span class="line">[<span class="number">1</span>] <span class="number">6253</span></span><br></pre></td></tr></table></figure>
-<p>총 6253 개의 데이터에서 10개 정도만 뽑아 보면, 히스토그램의 분포가 전혀 비슷하게 나오지 않는다.<br>적정 sampling 개수에 대한 수학적 근거가 어디에 있겠지만, 아직은 그 단계가 아니니 대략 10%인 600을 뽑아 모집단의 평균과 샘플의 평균의 차를 내어 본다.</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt; summary_all = summary(edu.elementary$Students)</span><br><span class="line">&gt; samples = sample(edu.elementary$Students, <span class="number">600</span>)</span><br><span class="line">&gt; mean(edu.elementary$Students) - mean(samples)</span><br><span class="line">[<span class="number">1</span>] -<span class="number">9.877109</span></span><br><span class="line">&gt; samples = sample(edu.elementary$Students, <span class="number">600</span>)</span><br><span class="line">&gt; mean(edu.elementary$Students) - mean(samples)</span><br><span class="line">[<span class="number">1</span>] <span class="number">0.6495575</span></span><br><span class="line">&gt; samples = sample(edu.elementary$Students, <span class="number">600</span>)</span><br><span class="line">&gt; mean(edu.elementary$Students) - mean(samples)</span><br><span class="line">[<span class="number">1</span>] <span class="number">17.85456</span></span><br><span class="line">&gt; samples = sample(edu.elementary$Students, <span class="number">600</span>)</span><br><span class="line">&gt; mean(edu.elementary$Students) - mean(samples)</span><br><span class="line">[<span class="number">1</span>] -<span class="number">16.42378</span></span><br></pre></td></tr></table></figure>
-<p>모집단의 평균이 745.3662 임으로 최대 (18/745) * 100 = 2.416 정도의 오차가 관측되었다.<br>물론 많이 하면, 또 나름의 분포가 그려질 거다…</p>
-<h1 id="Stratified-sampling"><a href="#Stratified-sampling" class="headerlink" title="Stratified sampling"></a>Stratified sampling</h1><p>교육지원청이 몇 개인지 쉽게 알 수 있는 방법을 몰라, 배운 aggregate 를 사용해 본다.<br>배보다 배꼽이 큰거 같지만…<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">byCenter = aggregate(cbind(Students,Teachers,Rooms)~교육지원청, data=edu.elementary, FUN=mean)</span><br><span class="line">byCenter</span><br><span class="line">length(byCenter$교육지원청)</span><br></pre></td></tr></table></figure></p>
-<p>수행하면, 161로 나온다</p>
-<p>그리하야 어렵개 교육지원청 별로 5개씩 샘플을 뽑아 봤다.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; s = strata(edu.elementary, stratanames = <span class="string">"교육지원청"</span>, size=rep(<span class="number">5</span>, <span class="number">161</span>), method=<span class="string">"srswor"</span>)</span><br><span class="line">&gt; head(s)</span><br><span class="line">   교육지원청 ID_unit      Prob Stratum</span><br><span class="line"><span class="number">12</span>       강릉      <span class="number">12</span> <span class="number">0.1351351</span>       <span class="number">1</span></span><br><span class="line"><span class="number">18</span>       강릉      <span class="number">18</span> <span class="number">0.1351351</span>       <span class="number">1</span></span><br><span class="line"><span class="number">20</span>       강릉      <span class="number">20</span> <span class="number">0.1351351</span>       <span class="number">1</span></span><br><span class="line"><span class="number">25</span>       강릉      <span class="number">25</span> <span class="number">0.1351351</span>       <span class="number">1</span></span><br><span class="line"><span class="number">29</span>       강릉      <span class="number">29</span> <span class="number">0.1351351</span>       <span class="number">1</span></span><br><span class="line"><span class="number">40</span>       고성      <span class="number">40</span> <span class="number">0.1428571</span>       <span class="number">2</span></span><br><span class="line">&gt; plot(s2, col=edu.elementary$교육지원청)</span><br></pre></td></tr></table></figure></p>
-<p>몬지 모르겠지만 그려진다…</p>
-<img src="/2016/04/01/data-mining-ex-sampling/sample.png" alt="교육지원청 별 뽑은거" title="교육지원청 별 뽑은거">
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/R-data-mining/">R, data mining</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/04/01/data-mining-ex-sampling/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -855,7 +842,7 @@
 			
 		
 			
-				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
 			
 		
 			
@@ -867,11 +854,11 @@
 			
 		
 			
-				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
 			
 		
 			
