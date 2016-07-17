@@ -81,6 +81,82 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/07/16/building-maintaining-atomic-design-systems-pattern-lab/" title="Tech Summary" itemprop="url">Tech Summary</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-07-16T09:58:08.000Z" itemprop="datePublished"> Published 2016-07-16</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <blockquote>
+<p><a href="https://www.smashingmagazine.com/2016/07/building-maintaining-atomic-design-systems-pattern-lab/" target="_blank" rel="external">https://www.smashingmagazine.com/2016/07/building-maintaining-atomic-design-systems-pattern-lab/</a><br>Pattern Lab 2 소개<br>CSS 디자인/개발 시 패턴 라이브러리 공유 툴</p>
+<p><a href="http://atomicdesign.bradfrost.com/chapter-2/" target="_blank" rel="external">http://atomicdesign.bradfrost.com/chapter-2/</a></p>
+<ol>
+<li>Atoms<br>더이상 쪼갤수 없는 UI 요소<br>color palettes, font stacks, animations<br>label, inputs, buttons</li>
+<li>Molecules<br>form label, search input, button 이 모여서 search form molecule</li>
+<li>Organisms<br>분자들의 조합, 유기체들의 조합, header</li>
+<li>Templates<br>Page layout 컨텐트 구조<br>Page의 구조</li>
+<li>Pages<br>Template 를 적용하면서, 변화를 적용하여 디자인 시스템의 유연성을 확인</li>
+</ol>
+<p><a href="https://www.smashingmagazine.com/2016/07/how-i-ended-up-with-element-queries-and-how-you-can-use-them-today/" target="_blank" rel="external">https://www.smashingmagazine.com/2016/07/how-i-ended-up-with-element-queries-and-how-you-can-use-them-today/</a><br>Media Query 대신 EQCSS가 구현한  Element Query를 사용하는 방법<br>Reponsive web</p>
+<p><a href="https://www.smashingmagazine.com/2016/07/web-development-reading-list-144/" target="_blank" rel="external">https://www.smashingmagazine.com/2016/07/web-development-reading-list-144/</a></p>
+<ul>
+<li>HTTP 상태값 결정하는 방법</li>
+<li><a href="http://www.webpagetest.org/" target="_blank" rel="external">http://www.webpagetest.org/</a> 을 사용한 테스트 방법 소개</li>
+<li>Contetn Security Policy (CSP)</li>
+</ul>
+<p><a href="https://www.zachleat.com/web/comprehensive-webfonts/" target="_blank" rel="external">https://www.zachleat.com/web/comprehensive-webfonts/</a><br>Font loading 전략</p>
+</blockquote>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/smashingmagazine/">smashingmagazine</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/07/16/building-maintaining-atomic-design-systems-pattern-lab/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/06/21/explorating-data-ex3/" title="explorating-data-ex3" itemprop="url">explorating-data-ex3</a>
   </h1>
   <p class="article-author">By
@@ -726,87 +802,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/04/04/data-mining-ex-feature/" title="Feature" itemprop="url">Feature</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
-		
-  <p class="article-time">
-    <time datetime="2016-04-04T10:55:13.000Z" itemprop="datePublished"> Published 2016-04-04</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>대략 다음과 같은 느낌의 그림을 뽑아보자.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(scatterplot3d)</span><br><span class="line">scatterplot3d(iris[,<span class="number">1</span>:<span class="number">3</span>], color=as.integer(iris$Species))</span><br></pre></td></tr></table></figure></p>
-<img src="/2016/04/04/data-mining-ex-feature/feature_01.png" alt="Iris 데이터로 그린 것" title="Iris 데이터로 그린 것">
-<p>늘 그렇듯 먼저 데이터 로드하고..<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">temp = read.table(<span class="string">"2015.edu.elementary.csv"</span>, sep=<span class="string">','</span>, header = <span class="literal">TRUE</span>)</span><br><span class="line">edu.elementary &lt;- unique(temp[complete.cases(temp),])</span><br><span class="line">edu.elementary$Students = as.numeric(edu.elementary$Students)</span><br></pre></td></tr></table></figure></p>
-<p>일단 먼저 다음과 같이 시도해 보았지만<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cbind(edu.elementary$시도, edu.elementary$Students, edu.elementary$Rooms, edu.elementary$Teachers)</span><br></pre></td></tr></table></figure></p>
-<p>시도가 숫자로 치환된다. cbind는 matrix를 반환하기 때문에 스트링 정보인 시도 정보가 숫자로 바뀌어 버린다.<br>따라서, data.frame을 사용하고 컬럼의 이름도 바꾸어보자<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data_for_plot = data.frame(edu.elementary$Students, edu.elementary$Rooms, edu.elementary$Teachers, edu.elementary$시도)</span><br><span class="line">colnames(data_for_plot) &lt;- c(<span class="string">"Students"</span>, <span class="string">"Rooms"</span>, <span class="string">"Teachers"</span>, <span class="string">"Province"</span>)</span><br><span class="line">head(data_for_plot)</span><br><span class="line">scatterplot3d(data_for_plot[,<span class="number">1</span>:<span class="number">3</span>], color=as.integer(data_for_plot$Province))</span><br></pre></td></tr></table></figure></p>
-<img src="/2016/04/04/data-mining-ex-feature/feature_02.png" alt="시도별" title="시도별">
-<p>무언가 명확히 보지 않아 시만 뽑아보자<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data_by_city = data_for_plot[data_for_plot$Province %<span class="keyword">in</span>% c(<span class="string">"서울"</span>, <span class="string">"인천"</span>, <span class="string">"대전"</span>, <span class="string">"대구"</span>, <span class="string">"세종"</span>, <span class="string">"광주"</span>, <span class="string">"부산"</span>), ]</span><br><span class="line">scatterplot3d(data_by_city[,<span class="number">1</span>:<span class="number">3</span>], color=as.integer(data_by_city$Province))</span><br></pre></td></tr></table></figure></p>
-<img src="/2016/04/04/data-mining-ex-feature/feature_03.png" alt="시별" title="시별">
-<p>그래도 잘 보이진 않지만, 무언가 패턴이 3개로 나누어진다는 것을 알 수 있다</p>
-<ol>
-<li>선생님의 숫자가 60이상이고, 학생의 숫자가 700 이하이면서 학생 숫자에 따라 가파르게 학급수가 증가하는 패턴</li>
-<li>학생의 숫자에따라 학급의 수는 늘어나지만 선생님의 수는 그만큼 늘어나지 않는 패턴</li>
-<li>다음은 선생님 수는 바닥이고 교실수도 바닥이고 학생만 많은… 그런 곳…</li>
-</ol>
-<p>아마도 학생과 선생님의 표시만으로 패턴이 보일거 같긴하다</p>
-<img src="/2016/04/04/data-mining-ex-feature/feature_04.png" alt="시별" title="시별">
-<p>3차원으로보면 보다 극명하게 보인다.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(rgl)</span><br><span class="line">plot3d(data_by_city[,<span class="number">1</span>:<span class="number">3</span>], col=as.integer(data_by_city$Province), size=<span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
-<img src="/2016/04/04/data-mining-ex-feature/feature_05.png" alt="시별" title="시별">
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(plotly)</span><br><span class="line">plot_ly(data_by_city, x = Students, y= Rooms, z = Teachers, color = Province, type=<span class="string">"scatter3d"</span>, mode=<span class="string">"markers"</span>)</span><br></pre></td></tr></table></figure>
-<p>Custering 해본다</p>
-<p>누구나 1번 타입의 학교를 원하겠지…</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br></pre></td><td class="code"><pre><span class="line">     Students Rooms Teachers Province               Name cluster</span><br><span class="line">2721      128    44       64     광주       본촌초등학교       1</span><br><span class="line">2738      341    42       63     광주       고실초등학교       1</span><br><span class="line">2747      256    42       58     광주       봉산초등학교       1</span><br><span class="line">2750      251    46       63     광주       산정초등학교       1</span><br><span class="line">2754      223    42       56     광주       선창초등학교       1</span><br><span class="line">2761      308    50       80     광주       수문초등학교       1</span><br><span class="line">2762      446    52       78     광주       수완초등학교       1</span><br><span class="line">2764      351    47       65     광주       신창초등학교       1</span><br><span class="line">2774      380    54       74     광주       장덕초등학교       1</span><br><span class="line">2778      304    47       71     광주       큰별초등학교       1</span><br><span class="line">2817      197    48       75     광주       만호초등학교       1</span><br><span class="line">2823      176    47       69     광주       신암초등학교       1</span><br><span class="line">2859       80    41       62     대구   대구본리초등학교       1</span><br><span class="line">2873      109    42       66     대구   대구신월초등학교       1</span><br><span class="line">2880      401    53       86     대구   대구월서초등학교       1</span><br><span class="line">2882      303    42       60     대구   대구월암초등학교       1</span><br><span class="line">2884      124    43       66     대구   대구유천초등학교       1</span><br><span class="line">2896      329    37       50     대구   대구한샘초등학교       1</span><br><span class="line">2918       69    38       61     대구   대구죽곡초등학교       1</span><br><span class="line">2925      296    47       65     대구   대구강동초등학교       1</span><br><span class="line">2934       51    34       51     대구   대구봉무초등학교       1</span><br><span class="line">2946       88    37       58     대구   대구율원초등학교       1</span><br><span class="line">2957      409    53       78     대구   대구경동초등학교       1</span><br><span class="line">2961      170    39       53     대구   대구동도초등학교       1</span><br><span class="line">2964       41    48       70     대구   대구동성초등학교       1</span><br><span class="line">2966      146    34       58     대구   대구동일초등학교       1</span><br><span class="line">2972       46    43       65     대구   대구매호초등학교       1</span><br><span class="line">2977      253    42       64     대구   대구사월초등학교       1</span><br><span class="line">2979      418    52       74     대구   대구성동초등학교       1</span><br><span class="line">2983      166    46       67     대구   대구용지초등학교       1</span><br><span class="line">2985      313    45       68     대구   대구중앙초등학교       1</span><br><span class="line">3001      207    48       67     대구   대구강북초등학교       1</span><br><span class="line">3004      129    40       56     대구   대구관문초등학교       1</span><br><span class="line">3009      136    49       74     대구   대구달산초등학교       1</span><br><span class="line">3015      369    55       77     대구   대구동평초등학교       1</span><br><span class="line">3029      383    51       79     대구   대구칠성초등학교       1</span><br><span class="line">3035      138    52       75     대구   대구학남초등학교       1</span><br><span class="line">3060      156    46       71     대전   대전매봉초등학교       1</span><br><span class="line">3066      133    44       67     대전   대전송촌초등학교       1</span><br><span class="line">3078       49    37       54     대전   대전가오초등학교       1</span><br><span class="line">3088       57    42       59     대전   대전용전초등학교       1</span><br><span class="line">3089       74    35       55     대전 대전은어송초등학교       1</span><br><span class="line">3091       73    42       57     대전   대전천동초등학교       1</span><br><span class="line">3100      277    46       70     대전   대전글꽃초등학교       1</span><br><span class="line">3110      219    45       70     대전 대전버드내초등학교       1</span><br><span class="line">3136      248    48       66     대전   대전내동초등학교       1</span><br><span class="line">3137       99    44       69     대전 대전느리울초등학교       1</span><br><span class="line">3142      163    45       64     대전   대전둔원초등학교       1</span><br><span class="line">3152      160    44       62     대전 대전샘머리초등학교       1</span><br><span class="line">3154       75    41       56     대전   대전서원초등학교       1</span><br><span class="line">3156      217    44       60     대전   대전성룡초등학교       1</span><br><span class="line">3159      200    45       64     대전   대전신계초등학교       1</span><br><span class="line">3164       55    42       61     대전   대전탄방초등학교       1</span><br><span class="line">3165      417    49       71     대전       한밭초등학교       1</span><br><span class="line">3174       79    41       60     대전   대전노은초등학교       1</span><br><span class="line">3178      329    48       69     대전   대전반석초등학교       1</span><br><span class="line">3181      170    44       62     대전   대전상대초등학교       1</span><br><span class="line">3193      219    50       69     대전   대전전민초등학교       1</span><br><span class="line">3205      204    50       75     부산       대연초등학교       1</span><br><span class="line">3219      174    44       57     부산       용문초등학교       1</span><br><span class="line">3235      107    49       74     부산       가야초등학교       1</span><br><span class="line">3259      287    50       70     부산       연지초등학교       1</span><br><span class="line">3277       60    40       56     부산       두실초등학교       1</span><br><span class="line">3294      274    37       48     부산       명륜초등학교       1</span><br><span class="line">3305      137    37       53     부산       예원초등학교       1</span><br><span class="line">3312      309    41       56     부산       남문초등학교       1</span><br><span class="line">3336      444    47       66     부산       명호초등학교       1</span><br><span class="line">3364       94    46       65     부산       용수초등학교       1</span><br><span class="line">3395      172    45       60     부산       낙동초등학교       1</span><br><span class="line">3400       63    40       53     부산     몰운대초등학교       1</span><br><span class="line">3404       43    43       60     부산       사하초등학교       1</span><br><span class="line">3462      357    44       65     부산       정관초등학교       1</span><br><span class="line">3463      266    37       43     부산       정원초등학교       1</span><br><span class="line">3476       55    45       59     부산       수영초등학교       1</span><br><span class="line">3486      148    46       66     부산       부흥초등학교       1</span><br><span class="line">3489      419    43       64     부산       센텀초등학교       1</span><br><span class="line">3501       64    44       58     부산       장산초등학교       1</span><br><span class="line">3516      130    44       70     서울   서울대곡초등학교       1</span><br><span class="line">3517      466    52       74     서울   서울대도초등학교       1</span><br><span class="line">3518       71    32       56     서울   서울대모초등학교       1</span><br><span class="line">3525      410    44       62     서울   서울도성초등학교       1</span><br><span class="line">3533      467    51       81     서울   서울언북초등학교       1</span><br><span class="line">3534      260    47       69     서울   서울언주초등학교       1</span><br><span class="line">3547      404    50       87     서울   서울반원초등학교       1</span><br><span class="line">3549       32    40       67     서울   서울방배초등학교       1</span><br><span class="line">3552      329    47       70     서울   서울서래초등학교       1</span><br><span class="line">3553       80    39       57     서울   서울서원초등학교       1</span><br><span class="line">3554      241    44       67     서울   서울서이초등학교       1</span><br><span class="line">3557      367    45       60     서울   서울신동초등학교       1</span><br><span class="line">3561       49    40       58     서울   서울우면초등학교       1</span><br><span class="line">3564      361    42       65     서울   서울원명초등학교       1</span><br><span class="line">3565      264    38       60     서울   서울원촌초등학교       1</span><br><span class="line">3567      468    54       82     서울   서울잠원초등학교       1</span><br><span class="line">3570      214    47       70     서울   서울강명초등학교       1</span><br><span class="line">3571      428    55       75     서울   서울강일초등학교       1</span><br><span class="line">3575       42    43       73     서울   서울길동초등학교       1</span><br><span class="line">3578      188    41       56     서울   서울명덕초등학교       1</span><br><span class="line">3580      196    48       71     서울   서울명일초등학교       1</span><br><span class="line">3584      140    46       74     서울   서울선사초등학교       1</span><br><span class="line">3585      149    46       74     서울   서울성내초등학교       1</span><br><span class="line">3586      106    46       68     서울   서울성일초등학교       1</span><br><span class="line">3597       90    42       68     서울   서울가주초등학교       1</span><br><span class="line">3600      271    51       79     서울   서울거원초등학교       1</span><br><span class="line">3602      152    46       72     서울   서울마천초등학교       1</span><br><span class="line">3604       67    45       71     서울   서울문정초등학교       1</span><br><span class="line">3605      144    44       69     서울   서울문현초등학교       1</span><br><span class="line">3609       54    44       72     서울   서울삼전초등학교       1</span><br><span class="line">3610      208    48       77     서울   서울석촌초등학교       1</span><br><span class="line">3612       36    43       60     서울   서울송례초등학교       1</span><br><span class="line">3622      423    50       80     서울   서울잠신초등학교       1</span><br><span class="line">3623      144    40       59     서울   서울잠실초등학교       1</span><br><span class="line">3624      452    57       78     서울   서울잠일초등학교       1</span><br><span class="line">3627       72    44       79     서울   서울중대초등학교       1</span><br><span class="line">3637       47    41       57     서울   서울공항초등학교       1</span><br><span class="line">3638      405    50       73     서울 서울내발산초등학교       1</span><br><span class="line">3646      231    47       70     서울   서울발산초등학교       1</span><br><span class="line">3651      238    50       71     서울   서울송화초등학교       1</span><br><span class="line">3652      331    49       70     서울   서울수명초등학교       1</span><br><span class="line">3655      493    81      112     서울   서울신정초등학교       1</span><br><span class="line">3658       64    37       54     서울   서울염경초등학교       1</span><br><span class="line">3659       73    39       61     서울   서울염동초등학교       1</span><br><span class="line">3662      258    52       82     서울   서울월정초등학교       1</span><br><span class="line">3666       65    43       66     서울   서울화곡초등학교       1</span><br><span class="line">3670      253    49       74     서울   서울강서초등학교       1</span><br><span class="line">3673       89    36       52     서울   서울경인초등학교       1</span><br><span class="line">3676      239    48       71     서울   서울목동초등학교       1</span><br><span class="line">3677      399    49       70     서울   서울목운초등학교       1</span><br><span class="line">3684      171    45       67     서울   서울신서초등학교       1</span><br><span class="line">3686       34    39       54     서울   서울신은초등학교       1</span><br><span class="line">3693      252    50       75     서울   서울영도초등학교       1</span><br><span class="line">3694      255    43       64     서울   서울월촌초등학교       1</span><br><span class="line">3697      282    52       70     서울   서울정목초등학교       1</span><br><span class="line">3700      325    53       79     서울   서울개봉초등학교       1</span><br><span class="line">3707      282    52       81     서울   서울구일초등학교       1</span><br><span class="line">3708      183    40       68     서울   서울덕의초등학교       1</span><br><span class="line">3714      177    44       70     서울 서울신도림초등학교       1</span><br><span class="line">3718       88    43       62     서울 서울오류남초등학교       1</span><br><span class="line">3721      135    44       68     서울   서울온수초등학교       1</span><br><span class="line">3722       63    45       63     서울   서울천왕초등학교       1</span><br><span class="line">3725       71    37       56     서울   서울금동초등학교       1</span><br><span class="line">3742      190    46       69     서울   서울당서초등학교       1</span><br><span class="line">3750      201    42       66     서울   서울문래초등학교       1</span><br><span class="line">3754       76    43       68     서울 서울여의도초등학교       1</span><br><span class="line">3758      127    40       62     서울   서울영문초등학교       1</span><br><span class="line">3759      101    45       76     서울   서울영신초등학교       1</span><br><span class="line">3771       92    43       62     서울   서울안평초등학교       1</span><br><span class="line">3774      167    39       58     서울   서울장평초등학교       1</span><br><span class="line">3789      164    49       78     서울   서울면동초등학교       1</span><br><span class="line">3802       33    41       62     서울   서울원묵초등학교       1</span><br><span class="line">3803      216    52       77     서울   서울중곡초등학교       1</span><br><span class="line">3806      365    53       80     서울   서울중화초등학교       1</span><br><span class="line">3809      470    59       95     서울   서울구암초등학교       1</span><br><span class="line">3811       40    40       60     서울   서울난우초등학교       1</span><br><span class="line">3812       91    43       66     서울   서울난향초등학교       1</span><br><span class="line">3817      194    45       69     서울   서울봉현초등학교       1</span><br><span class="line">3826      260    51       77     서울   서울은천초등학교       1</span><br><span class="line">3827      333    54       85     서울   서울인헌초등학교       1</span><br><span class="line">3834      235    47       68     서울   서울대림초등학교       1</span><br><span class="line">3837      454    52       78     서울 서울보라매초등학교       1</span><br><span class="line">3839       53    36       55     서울   서울삼일초등학교       1</span><br><span class="line">3840       94    44       69     서울   서울상도초등학교       1</span><br><span class="line">3842      312    46       76     서울   서울신길초등학교       1</span><br><span class="line">3844      220    50       79     서울 서울신상도초등학교       1</span><br><span class="line">3845       78    38       64     서울   서울영본초등학교       1</span><br><span class="line">3861      154    43       64     서울   서울불암초등학교       1</span><br><span class="line">3865      144    45       68     서울   서울상수초등학교       1</span><br><span class="line">3881      411    57       80     서울   서울을지초등학교       1</span><br><span class="line">3882       62    39       55     서울   서울중계초등학교       1</span><br><span class="line">3884      438    60       91     서울   서울중평초등학교       1</span><br><span class="line">3887       82    38       56     서울   서울태랑초등학교       1</span><br><span class="line">3888      185    46       67     서울   서울태릉초등학교       1</span><br><span class="line">3889       97    43       60     서울   서울한천초등학교       1</span><br><span class="line">3895       98    44       62     서울   서울누원초등학교       1</span><br><span class="line">3898       36    43       62     서울   서울백운초등학교       1</span><br><span class="line">3907       81    42       59     서울   서울자운초등학교       1</span><br><span class="line">3908      104    43       63     서울   서울창경초등학교       1</span><br><span class="line">3909       32    42       68     서울   서울창도초등학교       1</span><br><span class="line">3911      108    45       64     서울   서울창림초등학교       1</span><br><span class="line">3913       61    41       58     서울   서울창일초등학교       1</span><br><span class="line">3914      117    43       63     서울   서울초당초등학교       1</span><br><span class="line">3917      258    49       82     서울   서울동교초등학교       1</span><br><span class="line">3922      109    45       67     서울   서울서강초등학교       1</span><br><span class="line">3928      163    42       67     서울   서울신북초등학교       1</span><br><span class="line">3931      269    47       69     서울   서울염리초등학교       1</span><br><span class="line">3935      181    44       67     서울   서울하늘초등학교       1</span><br><span class="line">3944      385    61       89     서울 서울북가좌초등학교       1</span><br><span class="line">3947      400    63      104     서울   서울연가초등학교       1</span><br><span class="line">3948      160    48       66     서울   서울연희초등학교       1</span><br><span class="line">3953       56    44       77     서울   서울홍제초등학교       1</span><br><span class="line">3956      364    56       86     서울   서울갈현초등학교       1</span><br><span class="line">3957      135    46       77     서울   서울구산초등학교       1</span><br><span class="line">3959       75    43       64     서울   서울녹번초등학교       1</span><br><span class="line">3961       93    45       68     서울   서울대조초등학교       1</span><br><span class="line">3968      233    45       63     서울   서울신도초등학교       1</span><br><span class="line">3970      450    68      108     서울   서울역촌초등학교       1</span><br><span class="line">3975      354    50       73     서울   서울은명초등학교       1</span><br><span class="line">3976      299    47       67     서울   서울은빛초등학교       1</span><br><span class="line">3981       50    40       59     서울   서울진관초등학교       1</span><br><span class="line">3988      349    50       78     서울   서울광남초등학교       1</span><br><span class="line">3994      285    53       80     서울   서울동자초등학교       1</span><br><span class="line">3999      398    53       80     서울   서울양진초등학교       1</span><br><span class="line">4001      275    54       92     서울   서울용마초등학교       1</span><br><span class="line">4009      163    52       84     서울   서울경동초등학교       1</span><br><span class="line">4027       85    36       54     서울   서울행현초등학교       1</span><br><span class="line">4031      333    46       67     서울 서울삼각산초등학교       1</span><br><span class="line">4035      104    43       74     서울   서울수송초등학교       1</span><br><span class="line">4038      310    56       87     서울   서울우이초등학교       1</span><br><span class="line">4046       97    40       65     서울   서울개운초등학교       1</span><br><span class="line">4047      229    46       69     서울   서울길원초등학교       1</span><br><span class="line">4048      128    42       64     서울   서울길음초등학교       1</span><br><span class="line">4049      339    58       91     서울   서울돈암초등학교       1</span><br><span class="line">4051      300    48       75     서울   서울미아초등학교       1</span><br><span class="line">4057      301    55       88     서울   서울숭덕초등학교       1</span><br><span class="line">4059      362    49       85     서울   서울숭인초등학교       1</span><br><span class="line">4066      165    44       63     서울   서울정덕초등학교       1</span><br><span class="line">4067       39    43       65     서울   서울정릉초등학교       1</span><br><span class="line">4077      448    62       93     서울 서울신용산초등학교       1</span><br><span class="line">4127      261    53       75     세종       아름초등학교       1</span><br><span class="line">4292      317    44       62     인천   인천경원초등학교       1</span><br><span class="line">4297       43    43       66     인천   인천문학초등학교       1</span><br><span class="line">4301      136    46       71     인천   인천숭의초등학교       1</span><br><span class="line">4306      129    45       60     인천 인천용현남초등학교       1</span><br><span class="line">4307      225    50       72     인천   인천용현초등학교       1</span><br><span class="line">4312      120    45       62     인천   인천학산초등학교       1</span><br><span class="line">4337       92    42       53     인천   인천삼목초등학교       1</span><br><span class="line">4343      131    42       59     인천   인천영종초등학교       1</span><br><span class="line">4352      225    43       62     인천   인천고잔초등학교       1</span><br><span class="line">4361      152    43       62     인천   인천동방초등학교       1</span><br><span class="line">4363       67    43       64     인천 인천만수북초등학교       1</span><br><span class="line">4369      268    44       65     인천   인천서창초등학교       1</span><br><span class="line">4370       60    43       59     인천   인천석정초등학교       1</span><br><span class="line">4371      119    45       66     인천   인천석천초등학교       1</span><br><span class="line">4377      226    39       56     인천   인천원동초등학교       1</span><br><span class="line">4379      240    48       67     인천   인천인동초등학교       1</span><br><span class="line">4383      348    46       68     인천   인천정각초등학교       1</span><br><span class="line">4386      113    43       59     인천   인천한빛초등학교       1</span><br><span class="line">4390      173    44       67     인천 인천먼우금초등학교       1</span><br><span class="line">4391      276    45       61     인천   인천명선초등학교       1</span><br><span class="line">4400      379    50       71     인천   인천신정초등학교       1</span><br><span class="line">4401       76    40       56     인천   인천연성초등학교       1</span><br><span class="line">4404      150    47       65     인천   인천옥련초등학교       1</span><br><span class="line">4415      121    43       60     인천   인천굴포초등학교       1</span><br><span class="line">4426      264    52       73     인천   인천부곡초등학교       1</span><br><span class="line">4432      108    46       69     인천 인천부평남초등학교       1</span><br><span class="line">4444      125    44       61     인천   인천영선초등학교       1</span><br><span class="line">4459      295    44       61     인천   인천당산초등학교       1</span><br><span class="line">4463       65    42       62     인천 인천부현동초등학교       1</span><br><span class="line">4475      226    49       70     인천   인천화전초등학교       1</span><br><span class="line">4485       83    41       59     인천 인천간재울초등학교       1</span><br><span class="line">4495      441    60       84     인천   인천당하초등학교       1</span><br><span class="line">4497      160    43       63     인천   인천마전초등학교       1</span><br><span class="line">4499      107    42       62     인천   인천발산초등학교       1</span><br><span class="line">4518      371    58       85     인천   인천청라초등학교       1</span><br><span class="line">4521      135    43       58     인천   인천초은초등학교       1</span><br><span class="line">4522      352    54       80     인천   인천해원초등학교       1</span><br></pre></td></tr></table></figure>
-<p>용인이닷..</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">     Students Rooms Teachers Province             Name cluster</span><br><span class="line">1228       36    38       53     용인     갈곡초등학교       2</span><br><span class="line">1238      327    46       67     용인     나산초등학교       2</span><br><span class="line">1246      153    40       59     용인     독정초등학교       2</span><br><span class="line">1247      179    38       50     용인     동막초등학교       2</span><br><span class="line">1248      435    54       76     용인     동백초등학교       2</span><br><span class="line">1264       74    38       52     용인     상하초등학교       2</span><br><span class="line">1266       37    37       49     용인     새빛초등학교       2</span><br><span class="line">1271      272    43       60     용인     석성초등학교       2</span><br><span class="line">1272      241    42       52     용인     석현초등학교       2</span><br><span class="line">1277      169    40       55     용인     손곡초등학교       2</span><br><span class="line">1289       68    36       51     용인     역북초등학교       2</span><br><span class="line">1294       89    40       56     용인 용인둔전초등학교       2</span><br><span class="line">1295      328    44       60     용인 용인백현초등학교       2</span><br><span class="line">1299      156    39       57     용인 용인신촌초등학교       2</span><br><span class="line">1310       65    37       55     용인     정평초등학교       2</span><br><span class="line">1318      342    49       64     용인     청덕초등학교       2</span><br><span class="line">1320       32    38       51     용인     토월초등학교       2</span><br><span class="line">1322       78    39       55     용인     풍덕초등학교       2</span><br><span class="line">1323      185    36       53     용인     풍천초등학교       2</span><br><span class="line">1328       75    37       54     용인     흥덕초등학교       2</span><br></pre></td></tr></table></figure>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/R-data-mining/">R, data mining</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/04/04/data-mining-ex-feature/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -842,15 +837,7 @@
 			
 		
 			
-				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
 			
 		
 			
@@ -858,15 +845,27 @@
 			
 		
 			
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/smashingmagazine/" title="smashingmagazine">smashingmagazine<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
+				<li><a href="/tags/data-mining/" title="data mining">data mining<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/data-mining/" title="data mining">data mining<sup>1</sup></a></li>
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
 			
 		
 		</ul>
