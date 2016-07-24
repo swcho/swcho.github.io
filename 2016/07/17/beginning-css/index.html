@@ -1,0 +1,631 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Beginning CSS - Cascading Style Sheets for Web Design | SwForge&#39;s Note</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="SwForge">
+    
+
+    
+    <meta name="description" content="The BasicsThe Bits that Make Up a Style Sheet
+Rules
+Selectors
+Declarations: curly brace 안에 있는 것들
+Values
+Keywords: red, green, blue
+Stringsfont-family: ‘Times New Roman’, Times, serif;
+Length and Measu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beginning CSS - Cascading Style Sheets for Web Design">
+<meta property="og:url" content="http://yoursite.com/2016/07/17/beginning-css/index.html">
+<meta property="og:site_name" content="SwForge's Note">
+<meta property="og:description" content="The BasicsThe Bits that Make Up a Style Sheet
+Rules
+Selectors
+Declarations: curly brace 안에 있는 것들
+Values
+Keywords: red, green, blue
+Stringsfont-family: ‘Times New Roman’, Times, serif;
+Length and Measu">
+<meta property="og:updated_time" content="2016-07-24T04:58:53.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Beginning CSS - Cascading Style Sheets for Web Design">
+<meta name="twitter:description" content="The BasicsThe Bits that Make Up a Style Sheet
+Rules
+Selectors
+Declarations: curly brace 안에 있는 것들
+Values
+Keywords: red, green, blue
+Stringsfont-family: ‘Times New Roman’, Times, serif;
+Length and Measu">
+
+    
+    <link rel="alternative" href="/atom.xml" title="SwForge&#39;s Note" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="SwForge&#39;s Note" title="SwForge&#39;s Note"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="SwForge&#39;s Note">SwForge&#39;s Note</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/07/17/beginning-css/" title="Beginning CSS - Cascading Style Sheets for Web Design" itemprop="url">Beginning CSS - Cascading Style Sheets for Web Design</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-07-17T08:00:10.000Z" itemprop="datePublished"> Published 2016-07-17</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#The-Basics"><span class="toc-number">1.</span> <span class="toc-text">The Basics</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Bits-that-Make-Up-a-Style-Sheet"><span class="toc-number">1.1.</span> <span class="toc-text">The Bits that Make Up a Style Sheet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Selectors"><span class="toc-number">1.2.</span> <span class="toc-text">Selectors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Cascade-and-Inheritance"><span class="toc-number">1.3.</span> <span class="toc-text">The Cascade and Inheritance</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Properties"><span class="toc-number">2.</span> <span class="toc-text">Properties</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Applying-Font-Faces"><span class="toc-number">2.1.</span> <span class="toc-text">Applying Font Faces</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Manipulating-the-Display-of-Text"><span class="toc-number">2.2.</span> <span class="toc-text">Manipulating the Display of Text</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Background-Colors-and-Images"><span class="toc-number">2.3.</span> <span class="toc-text">Background Colors and Images</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Box-Model-Controlling-Margins-Borders-Padding-Width-and-Height"><span class="toc-number">2.4.</span> <span class="toc-text">The Box Model: Controlling Margins, Borders, Padding, Width, and Height</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Floating-and-Vertical-Alignment"><span class="toc-number">2.5.</span> <span class="toc-text">Floating and Vertical Alignment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Styling-Lists"><span class="toc-number">2.6.</span> <span class="toc-text">Styling Lists</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Positioning"><span class="toc-number">2.7.</span> <span class="toc-text">Positioning</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Styling-Tables"><span class="toc-number">2.8.</span> <span class="toc-text">Styling Tables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-a-Complete-Layout"><span class="toc-number">2.9.</span> <span class="toc-text">Create a Complete Layout</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Advanced-CSS-and-Alternative-Media"><span class="toc-number">3.</span> <span class="toc-text">Advanced CSS and Alternative Media</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AdvancedSelectors"><span class="toc-number">3.1.</span> <span class="toc-text">AdvancedSelectors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Styling-for-Print"><span class="toc-number">3.2.</span> <span class="toc-text">Styling for Print</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Customizing-the-Mouse-Cursor"><span class="toc-number">3.3.</span> <span class="toc-text">Customizing the Mouse Cursor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Controlling-Opacity-and-Visibility"><span class="toc-number">3.4.</span> <span class="toc-text">Controlling Opacity and Visibility</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Styling-Content-for-Mobile-Devices"><span class="toc-number">3.5.</span> <span class="toc-text">Styling Content for Mobile Devices</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Closing-Comments"><span class="toc-number">3.6.</span> <span class="toc-text">Closing Comments</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="The-Basics"><a href="#The-Basics" class="headerlink" title="The Basics"></a>The Basics</h1><h2 id="The-Bits-that-Make-Up-a-Style-Sheet"><a href="#The-Bits-that-Make-Up-a-Style-Sheet" class="headerlink" title="The Bits that Make Up a Style Sheet"></a>The Bits that Make Up a Style Sheet</h2><ul>
+<li>Rules</li>
+<li>Selectors</li>
+<li>Declarations: curly brace 안에 있는 것들</li>
+<li>Values<ul>
+<li>Keywords: red, green, blue</li>
+<li>Strings<br>font-family: ‘Times New Roman’, Times, serif;</li>
+<li>Length and Measurement<ul>
+<li>Absolute Measurement<br>in, cm, mm, pt, pc</li>
+<li>Relative Measurement<br>em, ex, px, %<br>em은 font 크기에 비례해서 크기를 정함<br>ex는 font의 lower case 높이에 비례함, font에 따라 달라질 수 있음으로 잘 사용하지 않음</li>
+</ul>
+</li>
+<li>Numbers</li>
+<li>Colors</li>
+<li>The URI<br>background 이미지나 style sheet 을 @import 할 경우 사용</li>
+</ul>
+</li>
+</ul>
+<p><code>&lt;table&gt;</code>의 width: auto; 는 shrink-to-fit, 데이터의 크기에 따라 맞추어짐</p>
+<p><code>&lt;div&gt;</code>의 width: auto; 는 expand-to-fit</p>
+<p>Doctypes and Quirks Mode</p>
+<p>doctype을 제대로 지정하지 않으면 quirks mode로 동작함</p>
+<h2 id="Selectors"><a href="#Selectors" class="headerlink" title="Selectors"></a>Selectors</h2><ul>
+<li>Universla Selector: *</li>
+<li>Descendent Selector: 하위 엘리먼트 선택자</li>
+<li>Pseudo-classes: dynamic event, 상태 변화, 문서의 일반적인 조건 선택자<ul>
+<li>Dynamic pseudo-class<ul>
+<li>:link : 방문하지 않은 링크</li>
+<li>:visited : 방문한 링크</li>
+<li>:hover : mouse hover</li>
+<li>:focus : 포커스 됨</li>
+<li>:active : 클릭 중임, 마우스 누르고 있는 상태</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="The-Cascade-and-Inheritance"><a href="#The-Cascade-and-Inheritance" class="headerlink" title="The Cascade and Inheritance"></a>The Cascade and Inheritance</h2><p>Style sheet precedence (우선순위)</p>
+<p>browser’s &lt; user’s &lt; author’s</p>
+<p>Specificity</p>
+<ol>
+<li>style 속성에 스타일 적용한 경우, a=1</li>
+<li>ID selector의 개수, b</li>
+<li>attribute, pseudo-class, class name 선택자 개수, c</li>
+<li>element 이름 개수, d</li>
+<li>Pseudo-element 무시<br>!importanct 는 짱…</li>
+</ol>
+<h1 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h1><h2 id="Applying-Font-Faces"><a href="#Applying-Font-Faces" class="headerlink" title="Applying Font Faces"></a>Applying Font Faces</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">font-family: [[ &lt;family-name&gt; | &lt;generic-family&gt; ] [, &lt;family-name&gt;|&lt;generic-family&gt;]* ]</span><br><span class="line">font-style: *normal | italic | oblique</span><br><span class="line">font-weight:  *normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900</span><br><span class="line">font-variant: *normal | small-caps</span><br><span class="line">font-size: &lt;absolute-size&gt; | &lt;relative-size&gt; | &lt;length&gt; | &lt;percentage&gt; // Initial value: medium</span><br><span class="line"></span><br><span class="line">font: [ &lt;’font-style’&gt; || &lt;’font-variant’&gt; || &lt;’font-weight’&gt; ]?</span><br><span class="line">&lt;’font-size’&gt; [ / &lt;’line-height’&gt; ]? &lt;’font-family’&gt; ] caption |</span><br><span class="line">icon | menu | message-box | small-caption | status-bar</span><br></pre></td></tr></table></figure>
+<p>Generic font</p>
+<ul>
+<li>serif: Times, Times New Roman 와 유사</li>
+<li>sans-serif: Helvetica, Arial 와 유사</li>
+<li>cursive: Zapf-Chancery 와 유사</li>
+<li>fantasy: Western 과 유사</li>
+<li>monospace: Courier, Courier New 와 유사</li>
+</ul>
+<h2 id="Manipulating-the-Display-of-Text"><a href="#Manipulating-the-Display-of-Text" class="headerlink" title="Manipulating the Display of Text"></a>Manipulating the Display of Text</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">line-height: *normal | &lt;number&gt; | &lt;length&gt; | &lt;percentage&gt; | inherit</span><br><span class="line">letter-spacing: *normal | &lt;length&gt; | inherit</span><br><span class="line">word-spacing: *normal | &lt;length&gt; | inherit</span><br><span class="line">text-indent: &lt;length&gt; | &lt;percentage&gt; | inherit</span><br><span class="line">text-align: *left | right | center | justify</span><br><span class="line">text-decoration: *none | [ underline || overline || line-through || blink ]</span><br><span class="line">text-transform: capitalize | uppercase | lowercase | *none</span><br><span class="line">white-space: *normal | pre | nowrap</span><br></pre></td></tr></table></figure>
+<h2 id="Background-Colors-and-Images"><a href="#Background-Colors-and-Images" class="headerlink" title="Background Colors and Images"></a>Background Colors and Images</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">background-color: &lt;color&gt; | *transparent</span><br><span class="line">background-image: &lt;uri&gt; | *none</span><br><span class="line">background-repeat: *repeat | repeat-x | repeat-y | no-repeat</span><br><span class="line">background-position</span><br><span class="line">[ [ &lt;percentage&gt; | &lt;length&gt; | left | center | right ] [</span><br><span class="line"> &lt;percentage&gt; | &lt;length&gt; | top | center | bottom ]? ] | [ [ left</span><br><span class="line">| center | right ] || [ top | center | bottom ] ] | inherit</span><br><span class="line">Initial value: 0% 0%</span><br><span class="line"></span><br><span class="line">background-attachment: *scroll | fixed</span><br><span class="line">background: &lt;’background-color’&gt; || &lt;’background-image’&gt; || &lt;’background-</span><br><span class="line">repeat’&gt; || &lt;’background-attachment’&gt; || &lt;’background-position’&gt;</span><br><span class="line">Initial value: n/a</span><br></pre></td></tr></table></figure>
+<h2 id="The-Box-Model-Controlling-Margins-Borders-Padding-Width-and-Height"><a href="#The-Box-Model-Controlling-Margins-Borders-Padding-Width-and-Height" class="headerlink" title="The Box Model: Controlling Margins, Borders, Padding, Width, and Height"></a>The Box Model: Controlling Margins, Borders, Padding, Width, and Height</h2><h2 id="Floating-and-Vertical-Alignment"><a href="#Floating-and-Vertical-Alignment" class="headerlink" title="Floating and Vertical Alignment"></a>Floating and Vertical Alignment</h2><p>float, vertical-align</p>
+<h2 id="Styling-Lists"><a href="#Styling-Lists" class="headerlink" title="Styling Lists"></a>Styling Lists</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">list-style-type: </span><br><span class="line">disc | circle | square | decimal | decimal-leading-zero | lower-roman</span><br><span class="line">| upper-roman | lower-greek | lower-latin | upper-latin | armenian |</span><br><span class="line">georgian | none</span><br><span class="line">Initial value for unordered list: disc</span><br><span class="line">Initial value for unordered list: decimal</span><br><span class="line"></span><br><span class="line">list-style-image: </span><br><span class="line">&lt;uri&gt; | none</span><br><span class="line">Initial value: none</span><br><span class="line"></span><br><span class="line">list-style-position</span><br><span class="line">inside | outside</span><br><span class="line">Initial value: outside</span><br><span class="line"></span><br><span class="line">list-style</span><br><span class="line">&lt;’list-style-type’&gt; || &lt;’list-style-position’&gt; || &lt;’list-style-image’&gt;</span><br><span class="line">Initial value: n/a</span><br></pre></td></tr></table></figure>
+<h2 id="Positioning"><a href="#Positioning" class="headerlink" title="Positioning"></a>Positioning</h2><p>top, left, right, bottom, z-index</p>
+<h2 id="Styling-Tables"><a href="#Styling-Tables" class="headerlink" title="Styling Tables"></a>Styling Tables</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">caption-side</span><br><span class="line">top | bottom</span><br><span class="line">Initial value: top</span><br><span class="line"></span><br><span class="line">&lt;col&gt; element</span><br><span class="line"></span><br><span class="line">table-layout</span><br><span class="line">auto | fixed</span><br><span class="line">Initial value: auto</span><br><span class="line"></span><br><span class="line">border-collapse</span><br><span class="line">collapse | separate</span><br><span class="line">Initial value: separate</span><br><span class="line"></span><br><span class="line">border-spacing</span><br><span class="line">&lt;length&gt; &lt;length&gt;?</span><br><span class="line">Initial value: 0</span><br></pre></td></tr></table></figure>
+<h2 id="Create-a-Complete-Layout"><a href="#Create-a-Complete-Layout" class="headerlink" title="Create a Complete Layout"></a>Create a Complete Layout</h2><p>STYLING TEXT AND CUSTOM FONTS</p>
+<p>BUILDING THE LAYOUT</p>
+<p>GRADIENT BACKGROUNDS</p>
+<h1 id="Advanced-CSS-and-Alternative-Media"><a href="#Advanced-CSS-and-Alternative-Media" class="headerlink" title="Advanced CSS and Alternative Media"></a>Advanced CSS and Alternative Media</h1><h2 id="AdvancedSelectors"><a href="#AdvancedSelectors" class="headerlink" title="AdvancedSelectors"></a>AdvancedSelectors</h2><ul>
+<li>DIRECT CHILD SELECTORS: &gt;</li>
+<li>NEXT SIBLING SELECTOR: +</li>
+<li>ATTRIBUTE SELECTORS<ul>
+<li>Select by Presence of an Attribute: input[name]</li>
+<li>Select by Attribute Value: input[name=”email”]</li>
+<li>Attribute Substring Selectors<ul>
+<li>Selection Based on Attribute Values That Begin with a String: a[href^=”mailto:”] </li>
+<li>Selection Based on Attribute Values That End with a String: input[id$=”name”] </li>
+<li>Selection Based on Attribute Values That Contain a String: [name*=”recipe”]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>PSEUDO-ELEMENTS</p>
+<ul>
+<li>:first-lettter: 첫 번째 문자</li>
+<li>:first-line: 첫 번째 줄</li>
+</ul>
+<p>STRUCTURAL PSEUDO-CLASSES</p>
+<ul>
+<li>:first-child</li>
+<li>:last-child</li>
+<li>:nth-child(n)</li>
+</ul>
+<h2 id="Styling-for-Print"><a href="#Styling-for-Print" class="headerlink" title="Styling for Print"></a>Styling for Print</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">”text/css”</span> <span class="attr">media</span>=<span class="string">”screen”</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">”stylesheet”</span> <span class="attr">type</span>=<span class="string">”text/css”</span> <span class="attr">href</span>=<span class="string">”print.css”</span> <span class="attr">media</span>=<span class="string">”print”</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>CONTROLLING STYLES FOR MEDIA WITHIN A STYLE SHEET</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen &#123;</span><br><span class="line">  <span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">3em</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#A00</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> print &#123;</span><br><span class="line">  <span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">50pt</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>CONTROLLING PAGE BREAKS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* page-break-before</span><br><span class="line">auto | always | avoid | left | right</span><br><span class="line">Initial value: auto</span><br><span class="line">* page-break-after</span><br><span class="line">auto | always | avoid | left | right</span><br><span class="line">Initial value: auto</span><br></pre></td></tr></table></figure>
+<p>THE CONTENT PROPERTY</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: “ (http://example.com” <span class="built_in">attr</span>(href) “) “;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Customizing-the-Mouse-Cursor"><a href="#Customizing-the-Mouse-Cursor" class="headerlink" title="Customizing the Mouse Cursor"></a>Customizing the Mouse Cursor</h2><blockquote>
+<p>Everything You Need to Know About the CSS Cursor Rule<br><a href="http://webdesign.tutsplus.com/articles/everything-you-need-to-know-about-the-css-cursor-rule--webdesign-9441" target="_blank" rel="external">http://webdesign.tutsplus.com/articles/everything-you-need-to-know-about-the-css-cursor-rule--webdesign-9441</a></p>
+</blockquote>
+<h2 id="Controlling-Opacity-and-Visibility"><a href="#Controlling-Opacity-and-Visibility" class="headerlink" title="Controlling Opacity and Visibility"></a>Controlling Opacity and Visibility</h2><h2 id="Styling-Content-for-Mobile-Devices"><a href="#Styling-Content-for-Mobile-Devices" class="headerlink" title="Styling Content for Mobile Devices"></a>Styling Content for Mobile Devices</h2><p>모바일 사이트 주의점</p>
+<ul>
+<li>width를 고정하지 말라</li>
+<li>주 컨텐트는 하나의 컬럼에서 표시해라</li>
+<li>link, button 및 사용자 입력 컨트롤을 명확히 해라</li>
+<li>hover 상태가 있을 것이라 생각지 말라</li>
+</ul>
+<p>Media query<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">”text/css”</span> <span class="attr">media</span>=<span class="string">”screen</span> <span class="attr">and</span> (<span class="attr">max-device-width:</span> <span class="attr">480px</span>)”&gt;</span><span class="undefined"></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">”stylesheet”</span> <span class="attr">type</span>=<span class="string">”text/css”</span> <span class="attr">href</span>=<span class="string">”mobile.css”</span> <span class="attr">media</span>=<span class="string">”screen</span> <span class="attr">and</span> (<span class="attr">max-device-width:</span> <span class="attr">480px</span>)”&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">”text/css”</span>&gt;</span><span class="css"></span><br><span class="line">  @<span class="keyword">media</span> screen and (max-device-width: <span class="number">480px</span>) &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Closing-Comments"><a href="#Closing-Comments" class="headerlink" title="Closing Comments"></a>Closing Comments</h2><p>W3C HTML Validator: <a href="http://validator.w3.org/" target="_blank" rel="external">http://validator.w3.org/</a><br>Valid Doctype list: www.w3.org/QA/2002/04/valid-dtd-list.html<br>W3C CSS2.1 recommendation: www.w3.org/TR/CSS2/<br>W3C CSS3 recommendation: www.w3.org/Style/CSS/current-work<br>W3C CSS Validator: jigsaw.w3.org/css-validator/<br>CSS3 support information: www.css3.info/<br>Specificity: <a href="http://meyerweb.com/eric/css/link-specificity.html" target="_blank" rel="external">http://meyerweb.com/eric/css/link-specificity.html</a><br>Commonly installed Font Families: www.codestyle.org/css/font-family/index.shtml<br>Font Family stacks: www.codestyle.org/css/font-family/BuildBetterCSSFontStacks.shtml<br>Box model switching: www.quirksmode.org/css/box.html<br>Conditional Comments: www.quirksmode.org/css/condcom.html<br>IE hacks: <a href="http://webstandardstips.com/2008/11/18/css-hacks-for-ie-only-style-rules/" target="_blank" rel="external">http://webstandardstips.com/2008/11/18/css-hacks-for-ie-only-style-rules/</a><br>position: fixed; in IE6: www.gunlaug.no/contents/wd_additions_15.html<br><a href="http://ryanfait.com/resources/fixed-positioning-in-internet-explorer/" target="_blank" rel="external">http://ryanfait.com/resources/fixed-positioning-in-internet-explorer/</a><br>Sprites: www.alistapart.com/articles/sprites<br>Gradient Backgrounds for all browsers: <a href="http://robertnyman.com/2010/02/15/" target="_blank" rel="external">http://robertnyman.com/2010/02/15/</a><br>css-gradients-for-all-web-browsers-without-using-images/<br>Gradient Background generator: <a href="http://gradients.glrzad.com/" target="_blank" rel="external">http://gradients.glrzad.com/</a><br>Free embeddable fonts: www.theleagueofmoveabletype.com/<br>Print style sheets: www.alistapart.com/articles/goingtoprint/<br>Cross browser opacity: www.impressivewebs.com/css-opacity-reference/<br><a href="http://blogs.msdn.com/b/ie/archive/2010/08/17/ie9-opacity-and-alpha.aspx" target="_blank" rel="external">http://blogs.msdn.com/b/ie/archive/2010/08/17/ie9-opacity-and-alpha.aspx</a><br>The mobile landscape: www.alistapart.com/articles/smartphone-browser-landscape/<br>Mobile Emulators: <a href="http://mobiforge.com/emulators/page/mobile-emulators" target="_blank" rel="external">http://mobiforge.com/emulators/page/mobile-emulators</a><br>CSS Media Queries: www.w3.org/TR/css3-mediaqueries/</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/css/">css</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/07/17/beginning-css/" data-title="Beginning CSS - Cascading Style Sheets for Web Design | SwForge&#39;s Note" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/07/16/building-maintaining-atomic-design-systems-pattern-lab/"  title="Tech Summary">
+ <strong>다음글：</strong><br/> 
+ <span>Tech Summary
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#The-Basics"><span class="toc-number">1.</span> <span class="toc-text">The Basics</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Bits-that-Make-Up-a-Style-Sheet"><span class="toc-number">1.1.</span> <span class="toc-text">The Bits that Make Up a Style Sheet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Selectors"><span class="toc-number">1.2.</span> <span class="toc-text">Selectors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Cascade-and-Inheritance"><span class="toc-number">1.3.</span> <span class="toc-text">The Cascade and Inheritance</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Properties"><span class="toc-number">2.</span> <span class="toc-text">Properties</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Applying-Font-Faces"><span class="toc-number">2.1.</span> <span class="toc-text">Applying Font Faces</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Manipulating-the-Display-of-Text"><span class="toc-number">2.2.</span> <span class="toc-text">Manipulating the Display of Text</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Background-Colors-and-Images"><span class="toc-number">2.3.</span> <span class="toc-text">Background Colors and Images</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Box-Model-Controlling-Margins-Borders-Padding-Width-and-Height"><span class="toc-number">2.4.</span> <span class="toc-text">The Box Model: Controlling Margins, Borders, Padding, Width, and Height</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Floating-and-Vertical-Alignment"><span class="toc-number">2.5.</span> <span class="toc-text">Floating and Vertical Alignment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Styling-Lists"><span class="toc-number">2.6.</span> <span class="toc-text">Styling Lists</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Positioning"><span class="toc-number">2.7.</span> <span class="toc-text">Positioning</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Styling-Tables"><span class="toc-number">2.8.</span> <span class="toc-text">Styling Tables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create-a-Complete-Layout"><span class="toc-number">2.9.</span> <span class="toc-text">Create a Complete Layout</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Advanced-CSS-and-Alternative-Media"><span class="toc-number">3.</span> <span class="toc-text">Advanced CSS and Alternative Media</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#AdvancedSelectors"><span class="toc-number">3.1.</span> <span class="toc-text">AdvancedSelectors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Styling-for-Print"><span class="toc-number">3.2.</span> <span class="toc-text">Styling for Print</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Customizing-the-Mouse-Cursor"><span class="toc-number">3.3.</span> <span class="toc-text">Customizing the Mouse Cursor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Controlling-Opacity-and-Visibility"><span class="toc-number">3.4.</span> <span class="toc-text">Controlling Opacity and Visibility</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Styling-Content-for-Mobile-Devices"><span class="toc-number">3.5.</span> <span class="toc-text">Styling Content for Mobile Devices</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Closing-Comments"><span class="toc-number">3.6.</span> <span class="toc-text">Closing Comments</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/R-data-mining/" title="R, data mining">R, data mining<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/angularjs/" title="angularjs">angularjs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabbitmq/" title="rabbitmq">rabbitmq<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rabiitmq/" title="rabiitmq">rabiitmq<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/css/" title="css">css<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/data-mining/" title="data mining">data mining<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/smashingmagazine/" title="smashingmagazine">smashingmagazine<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="#" target="_blank" title="home">home</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> ^^; <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="SwForge">SwForge</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'sungwoosnotes';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

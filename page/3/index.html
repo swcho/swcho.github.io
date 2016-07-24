@@ -81,6 +81,71 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/01/21/lodash/" title="lodash" itemprop="url">lodash</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-01-21T12:32:49.000Z" itemprop="datePublished"> Published 2016-01-21</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="forEachRight-꺼꾸로-돌려-준다"><a href="#forEachRight-꺼꾸로-돌려-준다" class="headerlink" title="forEachRight: 꺼꾸로 돌려 준다"></a>forEachRight: 꺼꾸로 돌려 준다</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line"><span class="string">'Carl'</span>,</span><br><span class="line"><span class="string">'Lisa'</span>,</span><br><span class="line"><span class="string">'Raymond'</span>,</span><br><span class="line"><span class="string">'Rita'</span></span><br><span class="line">];</span><br><span class="line"><span class="keyword">var</span> result = [];</span><br><span class="line">_.forEachRight(collection, <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  result.push(name);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="sortBy-아무거나-정렬"><a href="#sortBy-아무거나-정렬" class="headerlink" title="sortBy: 아무거나 정렬"></a>sortBy: 아무거나 정렬</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">_.sortBy(<span class="string">'cba'</span>).join(<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  &#123; name: <span class="string">'Moe'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Seymour'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Harold'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Willie'</span> &#125;</span><br><span class="line">];</span><br><span class="line">_.sortBy(collection, <span class="string">'name'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 헐 두개도 된다...</span></span><br><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  &#123; name: <span class="string">'Clancy'</span>, age: <span class="number">43</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Edna'</span>, age: <span class="number">32</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Lisa'</span>, age: <span class="number">10</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Philip'</span>, age: <span class="number">10</span> &#125;</span><br><span class="line">];</span><br><span class="line">_.sortBy(collection, [ <span class="string">'age'</span>, <span class="string">'name'</span> ]);</span><br></pre></td></tr></table></figure>
+<h2 id="sortedIndex-너는-어디-즈음이냐"><a href="#sortedIndex-너는-어디-즈음이냐" class="headerlink" title="sortedIndex: 너는 어디 즈음이냐?"></a>sortedIndex: 너는 어디 즈음이냐?</h2><p>정렬해서 넣어주기…<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  <span class="string">'Carl'</span>,</span><br><span class="line">  <span class="string">'Gary'</span>,</span><br><span class="line">  <span class="string">'Luigi'</span>,</span><br><span class="line">  <span class="string">'Otto'</span></span><br><span class="line">];</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'Luke'</span>;</span><br><span class="line">collection.splice(_.sortedIndex(collection, name), <span class="number">0</span>, name);</span><br></pre></td></tr></table></figure></p>
+<h2 id="where-filter-reject-find-findLast-findKey-걸러-내자"><a href="#where-filter-reject-find-findLast-findKey-걸러-내자" class="headerlink" title="where,filter,reject,find,findLast,findKey: 걸러 내자"></a>where,filter,reject,find,findLast,findKey: 걸러 내자</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  &#123; name: <span class="string">'Moe'</span>, age: <span class="number">47</span>, gender: <span class="string">'m'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Sarah'</span>, age: <span class="number">32</span>, gender: <span class="string">'f'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Melissa'</span>, age: <span class="number">32</span>, gender: <span class="string">'f'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Dave'</span>, age: <span class="number">32</span>, gender: <span class="string">'m'</span> &#125;</span><br><span class="line">];</span><br><span class="line">_.where(collection, &#123; age: <span class="number">32</span>, gender: <span class="string">'f'</span> &#125;);</span><br></pre></td></tr></table></figure>
+<p>filter는 함수도 된다.<br>reject는 여집합<br>find,findLast는 하나만 찾는다</p>
+<h2 id="take-takeRight-chunk-잘라내기"><a href="#take-takeRight-chunk-잘라내기" class="headerlink" title="take,takeRight,chunk: 잘라내기"></a>take,takeRight,chunk: 잘라내기</h2><p>50개 씩 잘라내<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">process</span>(<span class="params">chunks, index</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> chunk = chunks[index];</span><br><span class="line">  <span class="keyword">if</span> (_.isUndefined(chunk)) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'doing expensive work '</span> + _.last(chunk));</span><br><span class="line">  _.defer(_.partial(process, chunks, ++index));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> collection = _.range(<span class="number">10000</span>),</span><br><span class="line">chunks = _.chunk(collection, <span class="number">50</span>);</span><br><span class="line">process(chunks, <span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="uniq-배열을-set-만들기"><a href="#uniq-배열을-set-만들기" class="headerlink" title="uniq: 배열을 set 만들기"></a>uniq: 배열을 set 만들기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  <span class="string">'Walter'</span>,</span><br><span class="line">  <span class="string">'Brenda'</span>,</span><br><span class="line">  <span class="string">'Arthur'</span>,</span><br><span class="line">  <span class="string">'Walter'</span></span><br><span class="line">];</span><br><span class="line">_.uniq(collection);</span><br></pre></td></tr></table></figure>
+<h2 id="groupBy-모으자…"><a href="#groupBy-모으자…" class="headerlink" title="groupBy: 모으자…"></a>groupBy: 모으자…</h2><h2 id="max-min-최대-최소"><a href="#max-min-최대-최소" class="headerlink" title="max, min: 최대 최소"></a>max, min: 최대 최소</h2><h2 id="flatten-plunk-compact"><a href="#flatten-plunk-compact" class="headerlink" title="flatten,plunk,compact"></a>flatten,plunk,compact</h2><h2 id="every-some-검사"><a href="#every-some-검사" class="headerlink" title="every,some: 검사"></a>every,some: 검사</h2><h2 id="union-intersection-xor-집합-연산"><a href="#union-intersection-xor-집합-연산" class="headerlink" title="union,intersection,xor: 집합 연산"></a>union,intersection,xor: 집합 연산</h2><h2 id="assign-extend-merge-합치"><a href="#assign-extend-merge-합치" class="headerlink" title="assign(extend),merge: 합치"></a>assign(extend),merge: 합치</h2><h2 id="forOwn-forIn-돌려라"><a href="#forOwn-forIn-돌려라" class="headerlink" title="forOwn,forIn: 돌려라~"></a>forOwn,forIn: 돌려라~</h2><h2 id="keys-values-at-Key-값"><a href="#keys-values-at-Key-값" class="headerlink" title="keys,values,at: Key/값"></a>keys,values,at: Key/값</h2><h2 id="pick-omit-뽑기"><a href="#pick-omit-뽑기" class="headerlink" title="pick,omit: 뽑기"></a>pick,omit: 뽑기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object1 = &#123;</span><br><span class="line">    name: <span class="string">'Kevin Moore'</span>,</span><br><span class="line">    occupation: <span class="string">'Programmer'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  object2 = &#123;</span><br><span class="line">    specialty: <span class="string">'Python'</span>,</span><br><span class="line">    employer: <span class="string">'Acme'</span></span><br><span class="line">  &#125;;</span><br><span class="line">_.assign(object1, _.pick(object2, <span class="string">'specialty'</span>));</span><br><span class="line"><span class="keyword">var</span> object1 = &#123;</span><br><span class="line">    name: <span class="string">'Kevin Moore'</span>,</span><br><span class="line">    occupation: <span class="string">'Programmer'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  object2 = &#123;</span><br><span class="line">    specialty: <span class="string">'Python'</span>,</span><br><span class="line">    employer: <span class="string">'Acme'</span></span><br><span class="line">  &#125;;</span><br><span class="line">_.assign(object1, _.omit(object2, <span class="string">'employer'</span>));</span><br></pre></td></tr></table></figure>
+<h2 id="clone-복사"><a href="#clone-복사" class="headerlink" title="clone: 복사"></a>clone: 복사</h2><h2 id="bind-bindAll-bindKey"><a href="#bind-bindAll-bindKey" class="headerlink" title="bind,bindAll,bindKey"></a>bind,bindAll,bindKey</h2><h2 id="after-delay-defer-있다가-실행"><a href="#after-delay-defer-있다가-실행" class="headerlink" title="after,delay,defer: 있다가 실행"></a>after,delay,defer: 있다가 실행</h2><h2 id="throttle-debouncing-호출-제어"><a href="#throttle-debouncing-호출-제어" class="headerlink" title="throttle,debouncing: 호출 제어"></a>throttle,debouncing: 호출 제어</h2>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/lodash/">lodash</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/01/21/lodash/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/01/15/devops-automation/" title="devops-automation" itemprop="url">devops-automation</a>
   </h1>
   <p class="article-author">By
@@ -644,23 +709,7 @@
 			
 		
 			
-				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/smashingmagazine/" title="smashingmagazine">smashingmagazine<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
 			
 		
 			
@@ -668,11 +717,31 @@
 			
 		
 			
+				<li><a href="/tags/css/" title="css">css<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/data-mining/" title="data mining">data mining<sup>1</sup></a></li>
 			
 		
 			
+				<li><a href="/tags/smashingmagazine/" title="smashingmagazine">smashingmagazine<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
 			
 		
 		</ul>

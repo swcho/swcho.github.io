@@ -81,6 +81,80 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/04/05/data-mining-ex-feature-2/" title="Feature 21" itemprop="url">Feature 21</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-05T11:03:41.000Z" itemprop="datePublished"> Published 2016-04-05</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="Dimensionality-reduciton-Principal-Components-Analysis-PCA"><a href="#Dimensionality-reduciton-Principal-Components-Analysis-PCA" class="headerlink" title="Dimensionality reduciton (Principal Components Analysis - PCA)"></a>Dimensionality reduciton (Principal Components Analysis - PCA)</h1><p><a href="http://darkpgmr.tistory.com/110" target="_blank" rel="external">http://darkpgmr.tistory.com/110</a><br><a href="http://rfriend.tistory.com/61" target="_blank" rel="external">http://rfriend.tistory.com/61</a></p>
+<p>먼저 데이터를 로딩하고…<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">temp = read.table(<span class="string">"2015.edu.elementary.csv"</span>, sep=<span class="string">','</span>, header = <span class="literal">TRUE</span>)</span><br><span class="line">edu.elementary &lt;- unique(temp[complete.cases(temp),])</span><br><span class="line">edu.elementary$Students = as.numeric(edu.elementary$Students)</span><br></pre></td></tr></table></figure></p>
+<p>학생과 교실수 선생님수를 뽑아본다.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; data_for_plot = data.frame(edu.elementary$Students, edu.elementary$Rooms, edu.elementary$Teachers)</span><br><span class="line">&gt; colnames(data_for_plot) &lt;- c(<span class="string">"Students"</span>, <span class="string">"Rooms"</span>, <span class="string">"Teachers"</span>)</span><br><span class="line">&gt; head(data_for_plot)</span><br><span class="line">  Students Rooms Teachers</span><br><span class="line"><span class="number">1</span>      <span class="number">982</span>     <span class="number">7</span>       <span class="number">13</span></span><br><span class="line"><span class="number">2</span>      <span class="number">882</span>    <span class="number">22</span>       <span class="number">31</span></span><br><span class="line"><span class="number">3</span>      <span class="number">773</span>     <span class="number">6</span>        <span class="number">9</span></span><br><span class="line"><span class="number">4</span>     <span class="number">1117</span>    <span class="number">31</span>       <span class="number">45</span></span><br><span class="line"><span class="number">5</span>      <span class="number">771</span>    <span class="number">19</span>       <span class="number">32</span></span><br><span class="line"><span class="number">6</span>     <span class="number">1070</span>     <span class="number">6</span>       <span class="number">10</span></span><br></pre></td></tr></table></figure></p>
+<img src="/2016/04/05/data-mining-ex-feature-2/feature_02_01.png" alt="산점도" title="산점도">
+<p>다음과 같이 바로 PCA를 해보면 Students의 값이 크게 나오고 아마도 단위가 크기 때문인 것 같다.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt; pc_edu = prcomp(as.matrix(edu.elementary[,<span class="number">13</span>:<span class="number">15</span>]))</span><br><span class="line">&gt; pc_edu</span><br><span class="line">Standard deviations:</span><br><span class="line">[<span class="number">1</span>] <span class="number">346.526739</span>  <span class="number">23.649026</span>   <span class="number">1.647658</span></span><br><span class="line"></span><br><span class="line">Rotation:</span><br><span class="line">                 PC1          PC2           PC3</span><br><span class="line">Rooms    <span class="number">0.002333427</span> -<span class="number">0.569054269</span> -<span class="number">0.8222966585</span></span><br><span class="line">Students <span class="number">0.999990932</span>  <span class="number">0.004257316</span> -<span class="number">0.0001085232</span></span><br><span class="line">Teachers <span class="number">0.003562532</span> -<span class="number">0.822288948</span>  <span class="number">0.5690590423</span></span><br><span class="line">&gt; summary(pc_edu)</span><br><span class="line">Importance of components:</span><br><span class="line">                            PC1      PC2     PC3</span><br><span class="line">Standard deviation     <span class="number">346.5267</span> <span class="number">23.64903</span> <span class="number">1.64766</span></span><br><span class="line">Proportion of Variance   <span class="number">0.9953</span>  <span class="number">0.00464</span> <span class="number">0.00002</span></span><br><span class="line">Cumulative Proportion    <span class="number">0.9953</span>  <span class="number">0.99998</span> <span class="number">1.00000</span></span><br></pre></td></tr></table></figure>
+<p>PCA를 위해서는 먼저 표준화(standardization)을 해야 하나보다.</p>
+<blockquote>
+<p><a href="http://rfriend.tistory.com/61" target="_blank" rel="external">http://rfriend.tistory.com/61</a></p>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt; data_for_plot = data.frame(edu.elementary$Students, edu.elementary$Rooms, edu.elementary$Teachers)</span><br><span class="line">&gt; data_for_plot = scale(data_for_plot)</span><br><span class="line">&gt; colnames(data_for_plot) &lt;- c(<span class="string">"Students"</span>, <span class="string">"Rooms"</span>, <span class="string">"Teachers"</span>)</span><br><span class="line">&gt; head(data_for_plot)</span><br><span class="line">       Students       Rooms   Teachers</span><br><span class="line">[<span class="number">1</span>,] <span class="number">0.68287923</span> -<span class="number">0.90044886</span> -<span class="number">0.8310046</span></span><br><span class="line">[<span class="number">2</span>,] <span class="number">0.39429860</span>  <span class="number">0.20658203</span>  <span class="number">0.0916926</span></span><br><span class="line">[<span class="number">3</span>,] <span class="number">0.07974572</span> -<span class="number">0.97425092</span> -<span class="number">1.0360485</span></span><br><span class="line">[<span class="number">4</span>,] <span class="number">1.07246307</span>  <span class="number">0.87080057</span>  <span class="number">0.8093460</span></span><br><span class="line">[<span class="number">5</span>,] <span class="number">0.07397411</span> -<span class="number">0.01482415</span>  <span class="number">0.1429536</span></span><br><span class="line">[<span class="number">6</span>,] <span class="number">0.93683018</span> -<span class="number">0.97425092</span> -<span class="number">0.9847875</span></span><br></pre></td></tr></table></figure>
+<img src="/2016/04/05/data-mining-ex-feature-2/feature_02_02.png" alt="표준화" title="표준화">
+<p>다음과 같이 나온다.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt; pc_edu_std = prcomp(data_for_plot)</span><br><span class="line">&gt; pc_edu_std</span><br><span class="line">Standard deviations:</span><br><span class="line">[<span class="number">1</span>] <span class="number">1.4129902</span> <span class="number">0.9962390</span> <span class="number">0.1047217</span></span><br><span class="line"></span><br><span class="line">Rotation:</span><br><span class="line">                PC1         PC2         PC3</span><br><span class="line">Students <span class="number">0.08651085</span>  <span class="number">0.99624755</span> -<span class="number">0.00258743</span></span><br><span class="line">Rooms    <span class="number">0.70437723</span> -<span class="number">0.06300206</span> -<span class="number">0.70702437</span></span><br><span class="line">Teachers <span class="number">0.70453431</span> -<span class="number">0.05934276</span>  <span class="number">0.70718445</span></span><br><span class="line">&gt; summary(pc_edu_std)</span><br><span class="line">Importance of components:</span><br><span class="line">                          PC1    PC2     PC3</span><br><span class="line">Standard deviation     <span class="number">1.4130</span> <span class="number">0.9962</span> <span class="number">0.10472</span></span><br><span class="line">Proportion of Variance <span class="number">0.6655</span> <span class="number">0.3308</span> <span class="number">0.00366</span></span><br><span class="line">Cumulative Proportion  <span class="number">0.6655</span> <span class="number">0.9963</span> <span class="number">1.00000</span></span><br></pre></td></tr></table></figure></p>
+<img src="/2016/04/05/data-mining-ex-feature-2/feature_02_03.png" alt="plot(pc_edu_std)" title="plot(pc_edu_std)">
+<img src="/2016/04/05/data-mining-ex-feature-2/feature_02_04.png" alt="plot(pc_edu_std$x)" title="plot(pc_edu_std$x)">
+<img src="/2016/04/05/data-mining-ex-feature-2/feature_02_06.png" alt="biplot(pc_edu_std, col = c('grey', 'red'))" title="biplot(pc_edu_std, col = c('grey', 'red'))">
+<p>교실수(Rooms)와 선생님수(Teachers)가 주성분1(PC1)에 기여하고, 학생수(Students)는 주성분2(PC2)에 기여한다.<br>PC2 까지의 누적기여율(0.9963)을 확인한다</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/R-data-mining/">R, data mining</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/04/05/data-mining-ex-feature-2/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/04/04/data-mining-ex-feature/" title="Feature" itemprop="url">Feature</a>
   </h1>
   <p class="article-author">By
@@ -1006,71 +1080,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/01/21/lodash/" title="lodash" itemprop="url">lodash</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SwForge" target="_blank" itemprop="author">SwForge</a>
-		
-  <p class="article-time">
-    <time datetime="2016-01-21T12:32:49.000Z" itemprop="datePublished"> Published 2016-01-21</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="forEachRight-꺼꾸로-돌려-준다"><a href="#forEachRight-꺼꾸로-돌려-준다" class="headerlink" title="forEachRight: 꺼꾸로 돌려 준다"></a>forEachRight: 꺼꾸로 돌려 준다</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line"><span class="string">'Carl'</span>,</span><br><span class="line"><span class="string">'Lisa'</span>,</span><br><span class="line"><span class="string">'Raymond'</span>,</span><br><span class="line"><span class="string">'Rita'</span></span><br><span class="line">];</span><br><span class="line"><span class="keyword">var</span> result = [];</span><br><span class="line">_.forEachRight(collection, <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  result.push(name);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="sortBy-아무거나-정렬"><a href="#sortBy-아무거나-정렬" class="headerlink" title="sortBy: 아무거나 정렬"></a>sortBy: 아무거나 정렬</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">_.sortBy(<span class="string">'cba'</span>).join(<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  &#123; name: <span class="string">'Moe'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Seymour'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Harold'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Willie'</span> &#125;</span><br><span class="line">];</span><br><span class="line">_.sortBy(collection, <span class="string">'name'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 헐 두개도 된다...</span></span><br><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  &#123; name: <span class="string">'Clancy'</span>, age: <span class="number">43</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Edna'</span>, age: <span class="number">32</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Lisa'</span>, age: <span class="number">10</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Philip'</span>, age: <span class="number">10</span> &#125;</span><br><span class="line">];</span><br><span class="line">_.sortBy(collection, [ <span class="string">'age'</span>, <span class="string">'name'</span> ]);</span><br></pre></td></tr></table></figure>
-<h2 id="sortedIndex-너는-어디-즈음이냐"><a href="#sortedIndex-너는-어디-즈음이냐" class="headerlink" title="sortedIndex: 너는 어디 즈음이냐?"></a>sortedIndex: 너는 어디 즈음이냐?</h2><p>정렬해서 넣어주기…<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  <span class="string">'Carl'</span>,</span><br><span class="line">  <span class="string">'Gary'</span>,</span><br><span class="line">  <span class="string">'Luigi'</span>,</span><br><span class="line">  <span class="string">'Otto'</span></span><br><span class="line">];</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'Luke'</span>;</span><br><span class="line">collection.splice(_.sortedIndex(collection, name), <span class="number">0</span>, name);</span><br></pre></td></tr></table></figure></p>
-<h2 id="where-filter-reject-find-findLast-findKey-걸러-내자"><a href="#where-filter-reject-find-findLast-findKey-걸러-내자" class="headerlink" title="where,filter,reject,find,findLast,findKey: 걸러 내자"></a>where,filter,reject,find,findLast,findKey: 걸러 내자</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  &#123; name: <span class="string">'Moe'</span>, age: <span class="number">47</span>, gender: <span class="string">'m'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Sarah'</span>, age: <span class="number">32</span>, gender: <span class="string">'f'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Melissa'</span>, age: <span class="number">32</span>, gender: <span class="string">'f'</span> &#125;,</span><br><span class="line">  &#123; name: <span class="string">'Dave'</span>, age: <span class="number">32</span>, gender: <span class="string">'m'</span> &#125;</span><br><span class="line">];</span><br><span class="line">_.where(collection, &#123; age: <span class="number">32</span>, gender: <span class="string">'f'</span> &#125;);</span><br></pre></td></tr></table></figure>
-<p>filter는 함수도 된다.<br>reject는 여집합<br>find,findLast는 하나만 찾는다</p>
-<h2 id="take-takeRight-chunk-잘라내기"><a href="#take-takeRight-chunk-잘라내기" class="headerlink" title="take,takeRight,chunk: 잘라내기"></a>take,takeRight,chunk: 잘라내기</h2><p>50개 씩 잘라내<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">process</span>(<span class="params">chunks, index</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> chunk = chunks[index];</span><br><span class="line">  <span class="keyword">if</span> (_.isUndefined(chunk)) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'doing expensive work '</span> + _.last(chunk));</span><br><span class="line">  _.defer(_.partial(process, chunks, ++index));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> collection = _.range(<span class="number">10000</span>),</span><br><span class="line">chunks = _.chunk(collection, <span class="number">50</span>);</span><br><span class="line">process(chunks, <span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
-<h2 id="uniq-배열을-set-만들기"><a href="#uniq-배열을-set-만들기" class="headerlink" title="uniq: 배열을 set 만들기"></a>uniq: 배열을 set 만들기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> collection = [</span><br><span class="line">  <span class="string">'Walter'</span>,</span><br><span class="line">  <span class="string">'Brenda'</span>,</span><br><span class="line">  <span class="string">'Arthur'</span>,</span><br><span class="line">  <span class="string">'Walter'</span></span><br><span class="line">];</span><br><span class="line">_.uniq(collection);</span><br></pre></td></tr></table></figure>
-<h2 id="groupBy-모으자…"><a href="#groupBy-모으자…" class="headerlink" title="groupBy: 모으자…"></a>groupBy: 모으자…</h2><h2 id="max-min-최대-최소"><a href="#max-min-최대-최소" class="headerlink" title="max, min: 최대 최소"></a>max, min: 최대 최소</h2><h2 id="flatten-plunk-compact"><a href="#flatten-plunk-compact" class="headerlink" title="flatten,plunk,compact"></a>flatten,plunk,compact</h2><h2 id="every-some-검사"><a href="#every-some-검사" class="headerlink" title="every,some: 검사"></a>every,some: 검사</h2><h2 id="union-intersection-xor-집합-연산"><a href="#union-intersection-xor-집합-연산" class="headerlink" title="union,intersection,xor: 집합 연산"></a>union,intersection,xor: 집합 연산</h2><h2 id="assign-extend-merge-합치"><a href="#assign-extend-merge-합치" class="headerlink" title="assign(extend),merge: 합치"></a>assign(extend),merge: 합치</h2><h2 id="forOwn-forIn-돌려라"><a href="#forOwn-forIn-돌려라" class="headerlink" title="forOwn,forIn: 돌려라~"></a>forOwn,forIn: 돌려라~</h2><h2 id="keys-values-at-Key-값"><a href="#keys-values-at-Key-값" class="headerlink" title="keys,values,at: Key/값"></a>keys,values,at: Key/값</h2><h2 id="pick-omit-뽑기"><a href="#pick-omit-뽑기" class="headerlink" title="pick,omit: 뽑기"></a>pick,omit: 뽑기</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object1 = &#123;</span><br><span class="line">    name: <span class="string">'Kevin Moore'</span>,</span><br><span class="line">    occupation: <span class="string">'Programmer'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  object2 = &#123;</span><br><span class="line">    specialty: <span class="string">'Python'</span>,</span><br><span class="line">    employer: <span class="string">'Acme'</span></span><br><span class="line">  &#125;;</span><br><span class="line">_.assign(object1, _.pick(object2, <span class="string">'specialty'</span>));</span><br><span class="line"><span class="keyword">var</span> object1 = &#123;</span><br><span class="line">    name: <span class="string">'Kevin Moore'</span>,</span><br><span class="line">    occupation: <span class="string">'Programmer'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  object2 = &#123;</span><br><span class="line">    specialty: <span class="string">'Python'</span>,</span><br><span class="line">    employer: <span class="string">'Acme'</span></span><br><span class="line">  &#125;;</span><br><span class="line">_.assign(object1, _.omit(object2, <span class="string">'employer'</span>));</span><br></pre></td></tr></table></figure>
-<h2 id="clone-복사"><a href="#clone-복사" class="headerlink" title="clone: 복사"></a>clone: 복사</h2><h2 id="bind-bindAll-bindKey"><a href="#bind-bindAll-bindKey" class="headerlink" title="bind,bindAll,bindKey"></a>bind,bindAll,bindKey</h2><h2 id="after-delay-defer-있다가-실행"><a href="#after-delay-defer-있다가-실행" class="headerlink" title="after,delay,defer: 있다가 실행"></a>after,delay,defer: 있다가 실행</h2><h2 id="throttle-debouncing-호출-제어"><a href="#throttle-debouncing-호출-제어" class="headerlink" title="throttle,debouncing: 호출 제어"></a>throttle,debouncing: 호출 제어</h2>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/lodash/">lodash</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/01/21/lodash/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
@@ -1106,23 +1115,7 @@
 			
 		
 			
-				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/tech/" title="tech">tech<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/smashingmagazine/" title="smashingmagazine">smashingmagazine<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
 			
 		
 			
@@ -1130,11 +1123,31 @@
 			
 		
 			
+				<li><a href="/tags/css/" title="css">css<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/devops/" title="devops">devops<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/docker/" title="docker">docker<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/data-mining/" title="data mining">data mining<sup>1</sup></a></li>
 			
 		
 			
+				<li><a href="/tags/smashingmagazine/" title="smashingmagazine">smashingmagazine<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/monitoring/" title="monitoring">monitoring<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/lodash/" title="lodash">lodash<sup>1</sup></a></li>
 			
 		
 		</ul>
