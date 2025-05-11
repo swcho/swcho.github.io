@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002F","\u002Fblogs\u002F2021-09-30-scatterchart","\u002Fblogs\u002F2021-10-08-animation","\u002Fblogs\u002F2021-10-31-interaction"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

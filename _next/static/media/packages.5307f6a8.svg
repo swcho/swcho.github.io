@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="352px" preserveAspectRatio="none" style="width:5659px;height:352px;background:#FFFFFF;" version="1.1" viewBox="0 0 5659 352" width="5659px" zoomAndPan="magnify"><defs/><g><!--MD5=[abcd9a09e72460b38235c78f45fe8400]
+cluster rrweb-snapshot--><g id="cluster_rrweb-snapshot"><path d="M1266,248 L1365,248 A3.75,3.75 0 0 1 1367.5,250.5 L1374.5,270.24 L5080,270.24 A2.5,2.5 0 0 1 5082.5,272.74 L5082.5,342.5 A2.5,2.5 0 0 1 5080,345 L1266,345 A2.5,2.5 0 0 1 1263.5,342.5 L1263.5,250.5 A2.5,2.5 0 0 1 1266,248 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="1263.5" x2="1374.5" y1="270.24" y2="270.24"/><text fill="#000000" font-family="D2Coding" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="98" x="1267.5" y="263.02">rrweb-snapshot</text></g><!--MD5=[56aba44e378d06e04ed1b7a156a22c27]
+cluster rrweb-types--><g id="cluster_rrweb-types"><path d="M177,127 L255,127 A3.75,3.75 0 0 1 257.5,129.5 L264.5,149.24 L2298,149.24 A2.5,2.5 0 0 1 2300.5,151.74 L2300.5,221.5 A2.5,2.5 0 0 1 2298,224 L177,224 A2.5,2.5 0 0 1 174.5,221.5 L174.5,129.5 A2.5,2.5 0 0 1 177,127 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="174.5" x2="264.5" y1="149.24" y2="149.24"/><text fill="#000000" font-family="D2Coding" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="77" x="178.5" y="142.02">rrweb-types</text></g><!--MD5=[ffe585cf68d10ea7c91893fdc5024969]
+cluster rrdom--><g id="cluster_rrdom"><path d="M470,6 L506,6 A3.75,3.75 0 0 1 508.5,8.5 L515.5,28.24 L718,28.24 A2.5,2.5 0 0 1 720.5,30.74 L720.5,100.5 A2.5,2.5 0 0 1 718,103 L470,103 A2.5,2.5 0 0 1 467.5,100.5 L467.5,8.5 A2.5,2.5 0 0 1 470,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="467.5" x2="515.5" y1="28.24" y2="28.24"/><text fill="#000000" font-family="D2Coding" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="35" x="471.5" y="21.02">rrdom</text></g><!--MD5=[ead3ebc2f859187a98b3ce2f80acd220]
+cluster rrweb--><g id="cluster_rrweb"><path d="M2916,127 L2952,127 A3.75,3.75 0 0 1 2954.5,129.5 L2961.5,149.24 L3482,149.24 A2.5,2.5 0 0 1 3484.5,151.74 L3484.5,221.5 A2.5,2.5 0 0 1 3482,224 L2916,224 A2.5,2.5 0 0 1 2913.5,221.5 L2913.5,129.5 A2.5,2.5 0 0 1 2916,127 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="2913.5" x2="2961.5" y1="149.24" y2="149.24"/><text fill="#000000" font-family="D2Coding" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="35" x="2917.5" y="142.02">rrweb</text></g><!--MD5=[eef99cb82cb7c7c6073fddcd011e6201]
+cluster rrdom-nodejs--><g id="cluster_rrdom-nodejs"><path d="M3794,6 L3879,6 A3.75,3.75 0 0 1 3881.5,8.5 L3888.5,28.24 L3931,28.24 A2.5,2.5 0 0 1 3933.5,30.74 L3933.5,100.5 A2.5,2.5 0 0 1 3931,103 L3794,103 A2.5,2.5 0 0 1 3791.5,100.5 L3791.5,8.5 A2.5,2.5 0 0 1 3794,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="3791.5" x2="3888.5" y1="28.24" y2="28.24"/><text fill="#000000" font-family="D2Coding" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="84" x="3795.5" y="21.02">rrdom-nodejs</text></g><!--MD5=[bc28b870ae56da9fc24d398fbc094472]
+cluster rrweb-player--><g id="cluster_rrweb-player"><path d="M4658,6 L4743,6 A3.75,3.75 0 0 1 4745.5,8.5 L4752.5,28.24 L4767,28.24 A2.5,2.5 0 0 1 4769.5,30.74 L4769.5,100.5 A2.5,2.5 0 0 1 4767,103 L4658,103 A2.5,2.5 0 0 1 4655.5,100.5 L4655.5,8.5 A2.5,2.5 0 0 1 4658,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="4655.5" x2="4752.5" y1="28.24" y2="28.24"/><text fill="#000000" font-family="D2Coding" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="84" x="4659.5" y="21.02">rrweb-player</text></g><!--MD5=[f51aa7a60d400d87eefdb10789214909]
+entity snapshot--><g id="elem_snapshot"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="96" x="4970.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="5046.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="5044.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="5044.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="56" x="4985.5" y="316.02">snapshot</text></g><!--MD5=[f8b40838889795cea72b1af7b66e8ba6]
+entity rebuild--><g id="elem_rebuild"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="89" x="2615" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="2684" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2682" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2682" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="49" x="2630" y="316.02">rebuild</text></g><!--MD5=[1a0ccbbfce1d327335e9497c3b949f30]
+entity serializedNodeWithId--><g id="elem_serializedNodeWithId"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="180" x="1715.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="1875.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1873.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1873.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="140" x="1730.5" y="316.02">serializedNodeWithId</text></g><!--MD5=[625e78e112f3cf76a4bbe1c41551531d]
+entity Mirror--><g id="elem_Mirror"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="82" x="2061.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="2123.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2121.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2121.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="42" x="2076.5" y="316.02">Mirror</text></g><!--MD5=[f03948b41ab35359ef5bec3a163c0a34]
+entity INode--><g id="elem_INode"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="75" x="1432" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="1487" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1485" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1485" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="35" x="1447" y="316.02">INode</text></g><!--MD5=[8c93f730a0e8a64a350763538a4a108e]
+entity DataURLOptions--><g id="elem_DataURLOptions"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="138" x="1542.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="1660.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1658.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1658.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="98" x="1557.5" y="316.02">DataURLOptions</text></g><!--MD5=[f2706cb04c852ef03ad73c1bfd00f640]
+entity NodeType--><g id="elem_NodeType"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="96" x="1930.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="2006.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2004.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2004.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="56" x="1945.5" y="316.02">NodeType</text></g><!--MD5=[317df65065e0c1a77cd23a93f545b9d0]
+entity elementNode--><g id="elem_elementNode"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="117" x="1280" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="1377" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1375" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1375" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="77" x="1295" y="316.02">elementNode</text></g><!--MD5=[bffbe613ff1d0de05d9c2388d3c011a5]
+entity genId--><g id="elem_genId"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="75" x="2179" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="2234" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2232" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2232" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="35" x="2194" y="316.02">genId</text></g><!--MD5=[7f49dda200b97b9fa890ccd2e7bde93d]
+entity MaskInputOptions--><g id="elem_MaskInputOptions"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="152" x="4783.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="4915.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4913.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4913.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="112" x="4798.5" y="316.02">MaskInputOptions</text></g><!--MD5=[14966ac05bba051d76dc5adb870067b4]
+entity SlimDOMOptions--><g id="elem_SlimDOMOptions"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="138" x="4610.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="4728.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4726.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4726.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="98" x="4625.5" y="316.02">SlimDOMOptions</text></g><!--MD5=[f65910875029605fd7306d84172af4f1]
+entity createMirror--><g id="elem_createMirror"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="3751.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="3855.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3853.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3853.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="84" x="3766.5" y="316.02">createMirror</text></g><!--MD5=[6e32d68de6dba82a58fc31505308f0a2]
+entity transformAttribute--><g id="elem_transformAttribute"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="4409.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="4555.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4553.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4553.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="126" x="4424.5" y="316.02">transformAttribute</text></g><!--MD5=[91131928c4180015f124eaee7f19dbd2]
+entity IGNORED_NODE--><g id="elem_IGNORED_NODE"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="4250.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="4354.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4352.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4352.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="84" x="4265.5" y="316.02">IGNORED_NODE</text></g><!--MD5=[38f010ee62142e5eda4360ce79100662]
+entity ignoreAttribute--><g id="elem_ignoreAttribute"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="145" x="4070" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="4195" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4193" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4193" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="105" x="4085" y="316.02">ignoreAttribute</text></g><!--MD5=[87fc66fa928b58ff0b03010d99594887]
+entity isShadowRoot--><g id="elem_isShadowRoot"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="3910.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="4014.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4012.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4012.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="84" x="3925.5" y="316.02">isShadowRoot</text></g><!--MD5=[130bfe365884788910697d938961346d]
+entity needMaskingText--><g id="elem_needMaskingText"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="145" x="3571" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="3696" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3694" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3694" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="105" x="3586" y="316.02">needMaskingText</text></g><!--MD5=[06ee5904db7a03b2652c280eabca2cb9]
+entity maskInputValue--><g id="elem_maskInputValue"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="138" x="3397.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="3515.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3513.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3513.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="98" x="3412.5" y="316.02">maskInputValue</text></g><!--MD5=[65a07295bc86a91af310422b3b9fdcdd]
+entity isNativeShadowDom--><g id="elem_isNativeShadowDom"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="3203" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="3342" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3340" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3340" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="119" x="3218" y="316.02">isNativeShadowDom</text></g><!--MD5=[c7873ae99d88020a88ad185825eeaefb]
+entity getInputType--><g id="elem_getInputType"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="3043.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="3147.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3145.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3145.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="84" x="3058.5" y="316.02">getInputType</text></g><!--MD5=[45cefb05c57fc38a2ac08cc0db0592a7]
+entity toLowerCase--><g id="elem_toLowerCase"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="117" x="2891" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="2988" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2986" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2986" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="77" x="2906" y="316.02">toLowerCase</text></g><!--MD5=[aa5025eacf7e168910cc3811f3d4ddd8]
+entity buildNodeWithSN--><g id="elem_buildNodeWithSN"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="145" x="2435" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="2560" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2558" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2558" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="105" x="2450" y="316.02">buildNodeWithSN</text></g><!--MD5=[88e4306cf4f372ab2e25eca2f149dd91]
+entity BuildCache--><g id="elem_BuildCache"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="110" x="2289.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="2379.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2377.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2377.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="70" x="2304.5" y="316.02">BuildCache</text></g><!--MD5=[2fb81cfe689f6913437f72d7f547d5c5]
+entity createCache--><g id="elem_createCache"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="117" x="2739" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="2836" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2834" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2834" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="77" x="2754" y="316.02">createCache</text></g><!--MD5=[b23a544b254aeaaf9c762cbd629b4552]
+entity fullSnapshotEvent--><g id="elem_fullSnapshotEvent"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="1966" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="2105" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2103" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2103" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="119" x="1981" y="195.02">fullSnapshotEvent</text></g><!--MD5=[c596ac48fe5fad1a94645ef35210d521]
+entity addedNodeMutation--><g id="elem_addedNodeMutation"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="159" x="1772" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="1911" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1909" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1909" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="119" x="1787" y="195.02">addedNodeMutation</text></g><!--MD5=[6cc1c48be176d45962f6f983de4044d1]
+entity RecordPlugin--><g id="elem_RecordPlugin"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="2160.5" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="2264.5" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2262.5" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="2262.5" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="84" x="2175.5" y="195.02">RecordPlugin</text></g><!--MD5=[58460bad4d69df51e3462412e1b33028]
+entity DeprecatedMirror--><g id="elem_DeprecatedMirror"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="152" x="1299.5" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="1431.5" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1429.5" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1429.5" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="112" x="1314.5" y="195.02">DeprecatedMirror</text></g><!--MD5=[42c9309ec1f93a5151ebc48569eef505]
+entity ImageBitmapDataURLWorkerParams--><g id="elem_ImageBitmapDataURLWorkerParams"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="250" x="1486.5" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="1716.5" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1714.5" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1714.5" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="210" x="1501.5" y="195.02">ImageBitmapDataURLWorkerParams</text></g><!--MD5=[27c7f452c3e8ef774d51ca6443edb6f4]
+entity canvasMutationData--><g id="elem_canvasMutationData"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="537.5" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="683.5" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="681.5" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="681.5" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="126" x="552.5" y="195.02">canvasMutationData</text></g><!--MD5=[b9730db538823d9c03c31e857653500d]
+entity canvasEventWithTime--><g id="elem_canvasEventWithTime"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="173" x="329" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="482" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="480" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="480" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="133" x="344" y="195.02">canvasEventWithTime</text></g><!--MD5=[e19220920448f2f9806c166787b7ac84]
+entity inputData--><g id="elem_inputData"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="103" x="191" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="274" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="272" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="272" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="63" x="206" y="195.02">inputData</text></g><!--MD5=[724759066d4143b11b060b849b071fd4]
+entity scrollData--><g id="elem_scrollData"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="110" x="1154.5" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="1244.5" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1242.5" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1242.5" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="70" x="1169.5" y="195.02">scrollData</text></g><!--MD5=[41048f2af56f3baffe6922e55831d324]
+entity styleDeclarationData--><g id="elem_styleDeclarationData"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="180" x="939.5" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="1099.5" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1097.5" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="1097.5" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="140" x="954.5" y="195.02">styleDeclarationData</text></g><!--MD5=[3bbb9810960f33f39a1c865fe8799dc1]
+entity styleSheetRuleData--><g id="elem_styleSheetRuleData"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="738.5" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="884.5" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="882.5" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="882.5" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="126" x="753.5" y="195.02">styleSheetRuleData</text></g><!--MD5=[e278f5acc31fee48244c19a58b4ea127]
+entity diff--><g id="elem_diff"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="68" x="483.5" y="41"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="531.5" y="46"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="529.5" y="48"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="529.5" y="52"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="28" x="498.5" y="74.02">diff</text></g><!--MD5=[60cd05414d4964c05f0a93972d96d889]
+entity IRRDocument--><g id="elem_IRRDocument"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="117" x="587" y="41"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="684" y="46"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="682" y="48"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="682" y="52"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="77" x="602" y="74.02">IRRDocument</text></g><!--MD5=[ca3f8f4d862ad46b8171d41df0b895d7]
+entity IframeManager--><g id="elem_IframeManager"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="131" x="2930" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="3041" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3039" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3039" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="91" x="2945" y="195.02">IframeManager</text></g><!--MD5=[daaa7d3e9f52f3578c4c5321e338a7fb]
+entity MutationBuffer--><g id="elem_MutationBuffer"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="138" x="3213.5" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="3331.5" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3329.5" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3329.5" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="98" x="3228.5" y="195.02">MutationBuffer</text></g><!--MD5=[31c65988e6b88005c19c6d437dad5ea7]
+entity record--><g id="elem_record"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="82" x="3386.5" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="3448.5" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3446.5" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3446.5" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="42" x="3401.5" y="195.02">record</text></g><!--MD5=[bddee3244a7db9752d524b1fcd891264]
+entity replay--><g id="elem_replay"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="82" x="3096.5" y="162"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="3158.5" y="167"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3156.5" y="169"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3156.5" y="173"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="42" x="3111.5" y="195.02">replay</text></g><!--MD5=[a3a323b60625dc957acc43fd13808bf4]
+entity RRDocument--><g id="elem_RRDocument"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="110" x="3807.5" y="41"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="3897.5" y="46"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3895.5" y="48"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="3895.5" y="52"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="70" x="3822.5" y="74.02">RRDocument</text></g><!--MD5=[de2effd8dc5bf946a609466312d0f75f]
+entity Player--><g id="elem_Player"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="82" x="4671.5" y="41"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="4733.5" y="46"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4731.5" y="48"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="4731.5" y="52"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="42" x="4686.5" y="74.02">Player</text></g><!--MD5=[4c41a3c8bcf0ce0fa5b3862fa07f99fa]
+entity serializeNodeWithId--><g id="elem_serializeNodeWithId"><ellipse cx="5585.5" cy="306" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="133" x="5519" y="336.02">serializeNodeWithId</text></g><!--MD5=[4254e7a00a1b46432f99dc4afce120a7]
+entity attributes--><g id="elem_attributes"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="110" x="5101.5" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="5191.5" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="5189.5" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="5189.5" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="70" x="5116.5" y="316.02">attributes</text></g><!--MD5=[c990a76dc83eba31c1b3f4bdebf19ddc]
+entity serializedElementNodeWithId--><g id="elem_serializedElementNodeWithId"><rect fill="#F1F1F1" height="46.24" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="229" x="5247" y="283"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="5456" y="288"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="5454" y="290"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="5454" y="294"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="189" x="5262" y="316.02">serializedElementNodeWithId</text></g><!--MD5=[411b65a17e535fef555ddf349328d2df]
+entity IRRDocuemnt--><g id="elem_IRRDocuemnt"><ellipse cx="3862.5" cy="185" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="77" x="3824" y="215.02">IRRDocuemnt</text></g><!--MD5=[4dc69fb0f8919471658ce3f300f6310f]
+entity Plaery--><g id="elem_Plaery"><ellipse cx="4607.5" cy="64" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="42" x="4586.5" y="94.02">Plaery</text></g><!--MD5=[08c5d4d75e0e8ba1270de68bec049aa0]
+entity Replayer--><g id="elem_Replayer"><ellipse cx="4609.5" cy="185" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="56" x="4581.5" y="215.02">Replayer</text></g><!--MD5=[ce6c3f645c8aec4915456c978c48f6f1]
+entity unpack--><g id="elem_unpack"><ellipse cx="4711.5" cy="185" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="42" x="4690.5" y="215.02">unpack</text></g><!--MD5=[9d3a2ab53b7e0f01f6a723408981af31]
+link fullSnapshotEvent to serializedNodeWithId--><g id="link_fullSnapshotEvent_serializedNodeWithId"><path d="M2003.36,208.44 C1986.63,216.7 1966.99,225.59 1948.5,232 C1933.42,237.23 1928.3,234.03 1913.5,240 C1888.34,250.14 1862.23,265.7 1841.99,279.05 " fill="none" id="fullSnapshotEvent-to-serializedNodeWithId" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1837.97,281.73,1847.6773,280.0659,1842.1303,278.9565,1843.2397,273.4095,1837.97,281.73" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[6806a266894566cc5664df9681fb3799]
+link addedNodeMutation to serializedNodeWithId--><g id="link_addedNodeMutation_serializedNodeWithId"><path d="M1842.84,208.38 C1835.36,227.75 1824.5,255.84 1816.42,276.75 " fill="none" id="addedNodeMutation-to-serializedNodeWithId" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1814.66,281.31,1821.6356,274.3573,1816.4626,276.6462,1814.1736,271.4732,1814.66,281.31" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[005582efff95f6ef48d1a9687f2290d1]
+link RecordPlugin to Mirror--><g id="link_RecordPlugin_Mirror"><path d="M2196.11,208.25 C2185.15,217.77 2172.47,229.17 2161.5,240 C2149.24,252.1 2136.31,266.18 2125.69,278.14 " fill="none" id="RecordPlugin-to-Mirror" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2122.59,281.65,2131.5512,277.5638,2125.9047,277.9067,2125.5618,272.2602,2122.59,281.65" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[7bf896881071426e2471fd897fa76473]
+link DeprecatedMirror to INode--><g id="link_DeprecatedMirror_INode"><path d="M1393.18,208.38 C1408.74,228.08 1431.43,256.81 1448.03,277.82 " fill="none" id="DeprecatedMirror-to-INode" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1450.96,281.53,1448.525,271.9869,1447.8627,277.6049,1442.2448,276.9426,1450.96,281.53" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[d7da2db6bb4340c0a66ca43c2eb4e32c]
+link ImageBitmapDataURLWorkerParams to DataURLOptions--><g id="link_ImageBitmapDataURLWorkerParams_DataURLOptions"><path d="M1611.5,208.38 C1611.5,227.58 1611.5,255.36 1611.5,276.21 " fill="none" id="ImageBitmapDataURLWorkerParams-to-DataURLOptions" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1611.5,281.2,1615.5,272.2,1611.5,276.2,1607.5,272.2,1611.5,281.2" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[4897bdae4ce089a900d708d750a419b9]
+link diff to NodeType--><g id="link_diff_NodeType"><path d="M483.27,67.01 C389.87,72.83 135.92,91.12 111.5,119 C78.41,156.78 76.06,196.41 111.5,232 C129.15,249.74 1890.39,230.37 1913.5,240 C1931.99,247.71 1947.99,263.5 1959.48,277.58 " fill="none" id="diff-to-NodeType" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1962.57,281.49,1960.135,271.9469,1959.4727,277.5649,1953.8548,276.9026,1962.57,281.49" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[18defa3eb4a249a8ec01190329e2b39f]
+link diff to Mirror--><g id="link_diff_Mirror"><path d="M483.14,65.02 C404.27,65.87 214.01,72.78 174.5,119 C141.86,157.17 139.06,196.41 174.5,232 C192.82,250.4 2020.82,229.33 2044.5,240 C2061.81,247.8 2076.1,263.59 2086.16,277.65 " fill="none" id="diff-to-Mirror" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2088.81,281.49,2086.9846,271.8118,2085.9677,277.3765,2080.403,276.3595,2088.81,281.49" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[ddbe6357448a8da6fdff1b853a8f2387]
+link diff to elementNode--><g id="link_diff_elementNode"><path d="M483.05,66.3 C378.46,70.61 69.96,86.02 40.5,119 C7.04,156.46 6,195.5 40.5,232 C83.26,277.24 1016.61,298.73 1273.54,303.8 " fill="none" id="diff-to-elementNode" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1278.33,303.89,1269.4118,299.7108,1273.331,303.79,1269.2518,307.7092,1278.33,303.89" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e18ba968f325dd6a966dc28bee2e486a]
+link diff to canvasMutationData--><g id="link_diff_canvasMutationData"><path d="M536.87,87.38 C553.92,107.08 578.79,135.81 596.97,156.82 " fill="none" id="diff-to-canvasMutationData" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="600.22,160.57,597.3619,151.145,596.9508,156.7868,591.3089,156.3757,600.22,160.57" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[25c8933ed150c136e94a6c092ddde67b]
+link diff to canvasEventWithTime--><g id="link_diff_canvasEventWithTime"><path d="M498.31,87.38 C481.43,107.08 456.8,135.81 438.79,156.82 " fill="none" id="diff-to-canvasEventWithTime" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="435.58,160.57,444.482,156.3564,438.841,156.7798,438.4177,151.1388,435.58,160.57" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[bed3965e2297993bd0a475a172464725]
+link diff to inputData--><g id="link_diff_inputData"><path d="M483.11,68.72 C440.56,74.48 366.96,88.27 311.5,119 C294.06,128.66 277.68,143.73 265.25,156.93 " fill="none" id="diff-to-inputData" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="261.89,160.58,270.9318,156.6755,265.2796,156.9043,265.0508,151.2521,261.89,160.58" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e60da6fc7867076daa89df121fad0d95]
+link diff to scrollData--><g id="link_diff_scrollData"><path d="M535.92,87.18 C544.97,96.38 556.68,106.04 569.5,111 C628.26,133.74 1077.77,96.17 1136.5,119 C1156.53,126.79 1174.61,142.79 1187.77,156.96 " fill="none" id="diff-to-scrollData" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1191.02,160.56,1187.9725,151.1945,1187.6752,156.8435,1182.0261,156.5462,1191.02,160.56" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b0943f639b45d9e8da37791452020a57]
+link diff to styleDeclarationData--><g id="link_diff_styleDeclarationData"><path d="M535.94,87.13 C544.99,96.32 556.7,105.99 569.5,111 C605.92,125.27 883.92,108.1 921.5,119 C948.7,126.89 976,143.42 996.35,157.83 " fill="none" id="diff-to-styleDeclarationData" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1000.41,160.75,995.4339,152.2507,996.3491,157.833,990.7667,158.7481,1000.41,160.75" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[271015615d40b7d78d419c306cb85a80]
+link diff to styleSheetRuleData--><g id="link_diff_styleSheetRuleData"><path d="M536.49,87.44 C545.49,96.44 557,105.89 569.5,111 C600.59,123.73 688.52,108.67 720.5,119 C745.89,127.2 771.13,143.44 790.03,157.64 " fill="none" id="diff-to-styleSheetRuleData" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="793.99,160.66,789.2787,152.0111,790.021,157.619,784.4131,158.3614,793.99,160.66" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[cd079550f55ef980402c37e28c017249]
+link IRRDocument to NodeType--><g id="link_IRRDocument_NodeType"><path d="M704.11,64.66 C991.9,63.25 2243.89,60.52 2300.5,119 C2335.43,155.09 2335.45,195.94 2300.5,232 C2290.59,242.22 2057.58,234.4 2044.5,240 C2026.06,247.89 2009.93,263.52 1998.23,277.47 " fill="none" id="IRRDocument-to-NodeType" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1995.08,281.34,2003.8598,276.8773,1998.233,277.4594,1997.6509,271.8326,1995.08,281.34" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e9fb52e3b7e944fbf1f3ea62c97abb93]
+link IframeManager to Mirror--><g id="link_IframeManager_Mirror"><path d="M2929.58,191.52 C2814.69,200.98 2570.27,220.38 2363.5,232 C2341.07,233.26 2181.85,230.5 2161.5,240 C2144.28,248.04 2129.83,263.66 2119.55,277.58 " fill="none" id="IframeManager-to-Mirror" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2116.83,281.38,2125.3177,276.3842,2119.7375,277.3123,2118.8094,271.7321,2116.83,281.38" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[cfeb3c1e5f5861c02c969568470bf6f7]
+link IframeManager to serializedNodeWithId--><g id="link_IframeManager_serializedNodeWithId"><path d="M2929.91,191.34 C2806.7,201.15 2532.15,221.94 2300.5,232 C2257.53,233.87 1954.82,228.06 1913.5,240 C1886.28,247.86 1858.98,264.39 1838.63,278.81 " fill="none" id="IframeManager-to-serializedNodeWithId" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1834.58,281.73,1844.2186,279.7058,1838.6341,278.8036,1839.5363,273.2191,1834.58,281.73" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5eed0157298397c768a1e12acbf22b96]
+link IframeManager to genId--><g id="link_IframeManager_genId"><path d="M2929.8,190.74 C2752.3,203.58 2276.15,238.16 2272.5,240 C2256.18,248.23 2242.64,263.51 2232.96,277.18 " fill="none" id="IframeManager-to-genId" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2230.17,281.27,2238.5444,276.0864,2232.9862,277.1386,2231.9341,271.5804,2230.17,281.27" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[71b898f820eff267d6438427d47ce346]
+link IframeManager to NodeType--><g id="link_IframeManager_NodeType"><path d="M2929.59,191.83 C2814.73,201.77 2570.35,221.88 2363.5,232 C2345.79,232.87 2060.81,233.07 2044.5,240 C2025.74,247.96 2009.39,263.96 1997.65,278.09 " fill="none" id="IframeManager-to-NodeType" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1994.8,281.62,2003.5699,277.1379,1997.9443,277.7324,1997.3498,272.1069,1994.8,281.62" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[3306c776c34b5415d1dd4956a826534d]
+link record to snapshot--><g id="link_record_snapshot"><path d="M3468.91,192.72 C3537.45,203.47 3678.87,224.15 3799.5,232 C3831.49,234.08 4923.92,227.63 4953.5,240 C4971.99,247.73 4987.98,263.52 4999.47,277.6 " fill="none" id="record-to-snapshot" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="5002.56,281.5,5000.125,271.9569,4999.4627,277.5749,4993.8448,276.9126,5002.56,281.5" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[ed8559caecfb0965528c1e3158c2848c]
+link record to MaskInputOptions--><g id="link_record_MaskInputOptions"><path d="M3468.91,192.7 C3537.45,203.43 3678.88,224.07 3799.5,232 C3826.3,233.76 4740.91,231.83 4766.5,240 C4790.68,247.72 4814.09,264.15 4831.37,278.55 " fill="none" id="record-to-MaskInputOptions" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="4834.92,281.57,4830.6348,272.7023,4831.1036,278.3396,4825.4662,278.8085,4834.92,281.57" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[3da708a434dd2f54f98bd20df095bb09]
+link record to SlimDOMOptions--><g id="link_record_SlimDOMOptions"><path d="M3468.91,192.67 C3537.45,203.37 3678.89,223.96 3799.5,232 C3821.5,233.47 4572.62,232.88 4593.5,240 C4616.13,247.72 4637.6,263.93 4653.42,278.23 " fill="none" id="record-to-SlimDOMOptions" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="4657.03,281.56,4653.1445,272.51,4653.3615,278.1627,4647.7088,278.3796,4657.03,281.56" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[6c08b78aa992d3cf477c844380a323eb]
+link record to createMirror--><g id="link_record_createMirror"><path d="M3468.79,186.77 C3529.45,189.32 3645.05,199.6 3733.5,240 C3753.71,249.23 3773.13,264.8 3787.78,278.38 " fill="none" id="record-to-createMirror" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="3791.06,281.49,3787.2477,272.4089,3787.419,278.0632,3781.7647,278.2345,3791.06,281.49" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[0a1547907c161ed079c3fda03d545bcd]
+link MutationBuffer to serializeNodeWithId--><g id="link_MutationBuffer_serializeNodeWithId"><path d="M3315.66,208.4 C3331.28,217.64 3350.6,227.27 3369.5,232 C3426.73,246.31 5437.3,222.03 5493.5,240 C5526.25,250.47 5557.4,277.22 5573.71,292.94 " fill="none" id="MutationBuffer-to-serializeNodeWithId" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="5577.2,296.38,5573.6088,287.2092,5573.6431,292.866,5567.9864,292.9002,5577.2,296.38" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e5410db9b87099e4f1b164429d19b25a]
+link MutationBuffer to transformAttribute--><g id="link_MutationBuffer_transformAttribute"><path d="M3315.67,208.36 C3331.29,217.59 3350.61,227.24 3369.5,232 C3424.61,245.9 4338.07,223.63 4392.5,240 C4418.05,247.68 4443.22,264.11 4461.92,278.52 " fill="none" id="MutationBuffer-to-transformAttribute" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="4465.82,281.59,4461.1977,272.8932,4461.8825,278.5085,4456.2672,279.1932,4465.82,281.59" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[c79ebcb80492d466e7c4d7a2a01792b6]
+link MutationBuffer to IGNORED_NODE--><g id="link_MutationBuffer_IGNORED_NODE"><path d="M3315.68,208.35 C3331.3,217.58 3350.61,227.22 3369.5,232 C3415.98,243.76 4187.39,223.75 4232.5,240 C4254.01,247.75 4273.98,263.96 4288.58,278.25 " fill="none" id="MutationBuffer-to-IGNORED_NODE" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="4291.87,281.54,4288.353,272.3405,4288.3416,277.9973,4282.6848,277.9859,4291.87,281.54" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[70c7d15a21a8f84440faf6ae915a9ad3]
+link MutationBuffer to ignoreAttribute--><g id="link_MutationBuffer_ignoreAttribute"><path d="M3315.68,208.33 C3331.3,217.55 3350.62,227.2 3369.5,232 C3406.27,241.35 4016.46,228.11 4052.5,240 C4076.09,247.78 4098.74,264.2 4115.41,278.59 " fill="none" id="MutationBuffer-to-ignoreAttribute" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="4118.82,281.59,4114.6976,272.6454,4115.0633,278.2904,4109.4183,278.6561,4118.82,281.59" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[a6961073f73b69483fbe076e97fdd945]
+link MutationBuffer to isShadowRoot--><g id="link_MutationBuffer_isShadowRoot"><path d="M3315.69,208.3 C3331.31,217.52 3350.63,227.17 3369.5,232 C3425.9,246.45 3838.84,219.93 3893.5,240 C3914.8,247.82 3934.52,264.03 3948.93,278.3 " fill="none" id="MutationBuffer-to-isShadowRoot" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="3952.16,281.58,3948.6802,272.3664,3948.646,278.0231,3942.9892,277.9888,3952.16,281.58" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[da298ac171fbafab596ce737b3896048]
+link MutationBuffer to needMaskingText--><g id="link_MutationBuffer_needMaskingText"><path d="M3316.17,208.29 C3331.73,217.39 3350.86,226.95 3369.5,232 C3409,242.72 3514.84,226.56 3553.5,240 C3576.79,248.1 3599.29,264.34 3615.96,278.56 " fill="none" id="MutationBuffer-to-needMaskingText" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="3619.36,281.52,3615.2016,272.5921,3615.59,278.2356,3609.9465,278.624,3619.36,281.52" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[245d1827b13f34dc6424b0ad2bce2ad6]
+link MutationBuffer to maskInputValue--><g id="link_MutationBuffer_maskInputValue"><path d="M3325.72,208.45 C3342.77,217.73 3362.35,228.89 3379.5,240 C3398,251.98 3417.74,266.58 3433.74,278.9 " fill="none" id="MutationBuffer-to-maskInputValue" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="3437.38,281.72,3432.7033,273.0523,3433.4233,278.6632,3427.8124,279.3831,3437.38,281.72" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[efa1b8d24482b1e80e6f45c54bf6aec2]
+link MutationBuffer to Mirror--><g id="link_MutationBuffer_Mirror"><path d="M3249.74,208.36 C3234.3,217.59 3215.2,227.23 3196.5,232 C3168.64,239.1 2187.74,228.26 2161.5,240 C2144.03,247.82 2129.5,263.61 2119.23,277.66 " fill="none" id="MutationBuffer-to-Mirror" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2116.52,281.51,2124.9794,276.4663,2119.4045,277.426,2118.4449,271.8511,2116.52,281.51" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[125bd65eb8393c7f7ef60f39b939ac65]
+link MutationBuffer to isNativeShadowDom--><g id="link_MutationBuffer_isNativeShadowDom"><path d="M3282.5,208.38 C3282.5,227.58 3282.5,255.36 3282.5,276.21 " fill="none" id="MutationBuffer-to-isNativeShadowDom" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="3282.5,281.2,3286.5,272.2,3282.5,276.2,3278.5,272.2,3282.5,281.2" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[9cf6bf1898ba1a3769afa5d3ba40bc76]
+link MutationBuffer to getInputType--><g id="link_MutationBuffer_getInputType"><path d="M3238.56,208.36 C3221.58,217.53 3202.25,228.65 3185.5,240 C3168.19,251.72 3150.02,266.27 3135.38,278.64 " fill="none" id="MutationBuffer-to-getInputType" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="3131.71,281.76,3141.1587,278.981,3135.5204,278.5226,3135.9788,272.8843,3131.71,281.76" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[245b2f72ea80a47474f8eb81b67422db]
+link MutationBuffer to toLowerCase--><g id="link_MutationBuffer_toLowerCase"><path d="M3249.24,208.26 C3233.86,217.35 3214.94,226.91 3196.5,232 C3160.04,242.05 3061.7,226.18 3026.5,240 C3005.84,248.11 2986.74,264.15 2972.73,278.26 " fill="none" id="MutationBuffer-to-toLowerCase" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2969.61,281.48,2978.7366,277.7779,2973.0807,277.8808,2972.9778,272.2249,2969.61,281.48" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[546d0103396bcd8a671c600603491868]
+link replay to rebuild--><g id="link_replay_rebuild"><path d="M3115.78,208.41 C3105.44,217.53 3092.32,227.07 3078.5,232 C3041.12,245.32 2757.79,223.98 2721.5,240 C2703.58,247.91 2688.32,263.7 2677.43,277.74 " fill="none" id="replay-to-rebuild" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2674.52,281.6,2683.1282,276.8148,2677.5269,277.6052,2676.7365,272.0038,2674.52,281.6" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[ed290698e7d148f4884fbf44e549afbb]
+link replay to buildNodeWithSN--><g id="link_replay_buildNodeWithSN"><path d="M3115.79,208.45 C3105.45,217.58 3092.34,227.11 3078.5,232 C3028.09,249.8 2648.22,223.13 2597.5,240 C2573.92,247.84 2551.28,264.26 2534.6,278.63 " fill="none" id="replay-to-buildNodeWithSN" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2531.19,281.63,2540.5917,278.6961,2534.9467,278.3304,2535.3124,272.6854,2531.19,281.63" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[5cdb7d5a91756e2534068da91ca06c1c]
+link replay to NodeType--><g id="link_replay_NodeType"><path d="M3116.08,208.27 C3105.71,217.48 3092.48,227.13 3078.5,232 C3024.24,250.89 2097.57,218.01 2044.5,240 C2025.67,247.8 2009.32,263.79 1997.6,277.97 " fill="none" id="replay-to-NodeType" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1994.75,281.51,2003.5118,277.0122,1997.8874,277.6168,1997.2827,271.9924,1994.75,281.51" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[f778b813f44b6e389f48ca73adb54fb1]
+link replay to BuildCache--><g id="link_replay_BuildCache"><path d="M3115.8,208.48 C3105.47,217.61 3092.35,227.14 3078.5,232 C3043.84,244.15 2451.74,226.73 2417.5,240 C2397.45,247.77 2379.37,263.77 2366.22,277.95 " fill="none" id="replay-to-BuildCache" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2362.96,281.55,2371.97,277.5726,2366.3198,277.8471,2366.0453,272.1969,2362.96,281.55" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[660d041c17b7ad40b9d8097a864118a8]
+link replay to createCache--><g id="link_replay_createCache"><path d="M3115.74,208.31 C3105.39,217.41 3092.28,226.96 3078.5,232 C3035.68,247.66 2915.95,223.37 2873.5,240 C2853.16,247.96 2834.46,263.79 2820.7,277.84 " fill="none" id="replay-to-createCache" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2817.27,281.42,2826.3816,277.6811,2820.7261,277.8068,2820.6004,272.1513,2817.27,281.42" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[ae2f17573030cd05286739f1587fcf14]
+link replay to Mirror--><g id="link_replay_Mirror"><path d="M3116.08,208.26 C3105.71,217.47 3092.48,227.13 3078.5,232 C3030.39,248.77 2207.99,219.17 2161.5,240 C2144.03,247.83 2129.5,263.61 2119.23,277.67 " fill="none" id="replay-to-Mirror" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2116.52,281.52,2124.9794,276.4763,2119.4045,277.436,2118.4449,271.8611,2116.52,281.52" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[e9de521dab568f7dc26696f80a5c1c0d]
+link replay to createMirror--><g id="link_replay_createMirror"><path d="M3159.2,208.46 C3169.53,217.59 3182.65,227.13 3196.5,232 C3252.78,251.82 3677.41,219.62 3733.5,240 C3754.99,247.81 3774.96,264.02 3789.57,278.3 " fill="none" id="replay-to-createMirror" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="3792.86,281.58,3789.343,272.3805,3789.3316,278.0373,3783.6748,278.0259,3792.86,281.58" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[f2bbcd795b82db459d2705515ded766b]
+link replay to attributes--><g id="link_replay_attributes"><path d="M3158.9,208.29 C3169.27,217.51 3182.5,227.16 3196.5,232 C3246,249.14 5033.51,221.42 5082.5,240 C5102.75,247.68 5121.08,263.68 5134.43,277.88 " fill="none" id="replay-to-attributes" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="5137.74,281.49,5134.5973,272.156,5134.3575,277.8078,5128.7057,277.568,5137.74,281.49" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[6ad61dbd55688516717f374c5bc761fc]
+link replay to serializedElementNodeWithId--><g id="link_replay_serializedElementNodeWithId"><path d="M3158.9,208.29 C3169.27,217.51 3182.5,227.16 3196.5,232 C3249.87,250.46 5174.52,227.08 5229.5,240 C5262.21,247.69 5296.16,264.64 5321.43,279.3 " fill="none" id="replay-to-serializedElementNodeWithId" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="5325.71,281.82,5319.9876,273.8041,5321.4025,279.2812,5315.9255,280.6961,5325.71,281.82" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[67505f810cd00936a5bc95d928fcee14]
+link replay to toLowerCase--><g id="link_replay_toLowerCase"><path d="M3114.61,208.3 C3104.35,217.05 3091.61,226.34 3078.5,232 C3057.03,241.27 3047.78,230.32 3026.5,240 C3006.75,248.98 2988.07,264.51 2974.06,278.14 " fill="none" id="replay-to-toLowerCase" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2970.56,281.61,2979.7666,278.1117,2974.1098,278.0888,2974.1327,272.432,2970.56,281.61" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[f0201d81506701bce696c121d3d2a038]
+link RRDocument to IRRDocuemnt--><g id="link_RRDocument_IRRDocuemnt"><path d="M3862.5,87.38 C3862.5,111.47 3862.5,149.08 3862.5,169.55 " fill="none" id="RRDocument-to-IRRDocuemnt" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="3862.5,174.51,3866.5,165.51,3862.5,169.51,3858.5,165.51,3862.5,174.51" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[bf7248c349203a7933a3c964b34d8e41]
+link Plaery to Replayer--><g id="link_Plaery_Replayer"><path d="M4607.63,72.81 C4607.96,92.47 4608.83,144.26 4609.25,169.61 " fill="none" id="Plaery-to-Replayer" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="4609.34,174.49,4613.211,165.4338,4609.2686,169.4905,4605.2118,165.5481,4609.34,174.49" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[148b32f4c2c90cf3adb7ceba182cd989]
+link Plaery to unpack--><g id="link_Plaery_unpack"><path d="M4615.85,72.98 C4630.93,87.41 4661.36,116.56 4663.5,119 C4678.39,135.98 4693.53,157.31 4702.72,170.81 " fill="none" id="Plaery-to-unpack" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="4705.43,174.82,4703.7428,165.1167,4702.6466,170.6663,4697.097,169.5701,4705.43,174.82" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[7da490196c942539689549f54e7ccd00]
+link Player to Replayer--><g id="link_Player_Replayer"><path d="M4693.03,87.31 C4684.56,97.03 4674.53,108.57 4665.5,119 C4649.66,137.29 4631.37,158.54 4620.12,171.63 " fill="none" id="Player-to-Replayer" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="4617.02,175.24,4625.9141,171.0099,4620.274,171.4437,4619.8401,165.8035,4617.02,175.24" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[c1097372f88eb831a91cf51d1ef8fbee]
+link Player to unpack--><g id="link_Player_unpack"><path d="M4712.31,87.38 C4712.11,111.47 4711.79,149.08 4711.62,169.55 " fill="none" id="Player-to-unpack" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="4711.58,174.51,4715.657,165.5446,4711.6229,169.5102,4707.6573,165.476,4711.58,174.51" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[0372e7b22109789e05636717af63d353]
+@startuml packages
+
+skinparam defaultFontName D2Coding
+
+package "rrweb-snapshot" {
+  [snapshot]
+  [rebuild]
+  [serializedNodeWithId]
+  [Mirror]
+  [INode]
+  [DataURLOptions]
+  [NodeType]
+  [elementNode]
+  [genId]
+  [MaskInputOptions]
+  [SlimDOMOptions]
+  [createMirror]
+
+  [transformAttribute]
+  [IGNORED_NODE]
+  [ignoreAttribute]
+  [isShadowRoot]
+  [needMaskingText]
+  [maskInputValue]
+  [isNativeShadowDom]
+  [getInputType]
+  [toLowerCase]
+
+  [buildNodeWithSN]
+  [BuildCache]
+  [createCache]
+}
+
+package "rrweb-types" {
+  [fullSnapshotEvent]
+  [addedNodeMutation]
+  [RecordPlugin]
+  [DeprecatedMirror]
+  [ImageBitmapDataURLWorkerParams]
+
+  [canvasMutationData]
+  [canvasEventWithTime]
+  [inputData]
+  [scrollData]
+  [styleDeclarationData]
+  [styleSheetRuleData]
+}
+
+[fullSnapshotEvent] - -> [serializedNodeWithId]
+[addedNodeMutation] - -> [serializedNodeWithId]
+[RecordPlugin] - -> [Mirror]
+[DeprecatedMirror] - -> [INode]
+[ImageBitmapDataURLWorkerParams] - -> [DataURLOptions]
+
+package "rrdom" {
+  [diff]
+  [IRRDocument]
+}
+
+' from rrweb-types
+diff - -> NodeType
+diff - -> Mirror
+diff - -> elementNode
+
+' from rrweb-snapshot
+diff - -> [canvasMutationData]
+diff - -> [canvasEventWithTime]
+diff - -> [inputData]
+diff - -> [scrollData]
+diff - -> [styleDeclarationData]
+diff - -> [styleSheetRuleData]
+
+IRRDocument - -> NodeType
+
+package "rrweb" {
+  [IframeManager]
+  [MutationBuffer]
+  [record]
+  [replay]
+}
+
+IframeManager - -> Mirror
+IframeManager - -> serializedNodeWithId
+IframeManager - -> genId
+IframeManager - -> NodeType
+
+record - -> snapshot
+record - -> MaskInputOptions
+record - -> SlimDOMOptions
+record - -> createMirror
+
+MutationBuffer - -> serializeNodeWithId
+MutationBuffer - -> transformAttribute
+MutationBuffer - -> IGNORED_NODE
+MutationBuffer - -> ignoreAttribute
+MutationBuffer - -> isShadowRoot
+MutationBuffer - -> needMaskingText
+MutationBuffer - -> maskInputValue
+MutationBuffer - -> Mirror
+MutationBuffer - -> isNativeShadowDom
+MutationBuffer - -> getInputType
+MutationBuffer - -> toLowerCase
+
+replay - -> [rebuild]
+replay - -> [buildNodeWithSN]
+replay - -> [NodeType]
+replay - -> [BuildCache]
+replay - -> [createCache]
+replay - -> [Mirror]
+replay - -> [createMirror]
+replay - -> [attributes]
+replay - -> [serializedElementNodeWithId]
+replay - -> [toLowerCase]
+
+package "rrdom-nodejs" {
+  [RRDocument]
+}
+
+RRDocument - -> IRRDocuemnt
+
+package "rrweb-player" {
+  [Player]
+}
+
+Plaery - -> Replayer
+Plaery - -> unpack
+
+[Player] - -> Replayer
+[Player] - -> unpack
+
+@enduml
+
+@startuml packages
+
+skinparam defaultFontName D2Coding
+
+package "rrweb-snapshot" {
+  [snapshot]
+  [rebuild]
+  [serializedNodeWithId]
+  [Mirror]
+  [INode]
+  [DataURLOptions]
+  [NodeType]
+  [elementNode]
+  [genId]
+  [MaskInputOptions]
+  [SlimDOMOptions]
+  [createMirror]
+
+  [transformAttribute]
+  [IGNORED_NODE]
+  [ignoreAttribute]
+  [isShadowRoot]
+  [needMaskingText]
+  [maskInputValue]
+  [isNativeShadowDom]
+  [getInputType]
+  [toLowerCase]
+
+  [buildNodeWithSN]
+  [BuildCache]
+  [createCache]
+}
+
+package "rrweb-types" {
+  [fullSnapshotEvent]
+  [addedNodeMutation]
+  [RecordPlugin]
+  [DeprecatedMirror]
+  [ImageBitmapDataURLWorkerParams]
+
+  [canvasMutationData]
+  [canvasEventWithTime]
+  [inputData]
+  [scrollData]
+  [styleDeclarationData]
+  [styleSheetRuleData]
+}
+
+[fullSnapshotEvent] - -> [serializedNodeWithId]
+[addedNodeMutation] - -> [serializedNodeWithId]
+[RecordPlugin] - -> [Mirror]
+[DeprecatedMirror] - -> [INode]
+[ImageBitmapDataURLWorkerParams] - -> [DataURLOptions]
+
+package "rrdom" {
+  [diff]
+  [IRRDocument]
+}
+
+diff - -> NodeType
+diff - -> Mirror
+diff - -> elementNode
+
+diff - -> [canvasMutationData]
+diff - -> [canvasEventWithTime]
+diff - -> [inputData]
+diff - -> [scrollData]
+diff - -> [styleDeclarationData]
+diff - -> [styleSheetRuleData]
+
+IRRDocument - -> NodeType
+
+package "rrweb" {
+  [IframeManager]
+  [MutationBuffer]
+  [record]
+  [replay]
+}
+
+IframeManager - -> Mirror
+IframeManager - -> serializedNodeWithId
+IframeManager - -> genId
+IframeManager - -> NodeType
+
+record - -> snapshot
+record - -> MaskInputOptions
+record - -> SlimDOMOptions
+record - -> createMirror
+
+MutationBuffer - -> serializeNodeWithId
+MutationBuffer - -> transformAttribute
+MutationBuffer - -> IGNORED_NODE
+MutationBuffer - -> ignoreAttribute
+MutationBuffer - -> isShadowRoot
+MutationBuffer - -> needMaskingText
+MutationBuffer - -> maskInputValue
+MutationBuffer - -> Mirror
+MutationBuffer - -> isNativeShadowDom
+MutationBuffer - -> getInputType
+MutationBuffer - -> toLowerCase
+
+replay - -> [rebuild]
+replay - -> [buildNodeWithSN]
+replay - -> [NodeType]
+replay - -> [BuildCache]
+replay - -> [createCache]
+replay - -> [Mirror]
+replay - -> [createMirror]
+replay - -> [attributes]
+replay - -> [serializedElementNodeWithId]
+replay - -> [toLowerCase]
+
+package "rrdom-nodejs" {
+  [RRDocument]
+}
+
+RRDocument - -> IRRDocuemnt
+
+package "rrweb-player" {
+  [Player]
+}
+
+Plaery - -> Replayer
+Plaery - -> unpack
+
+[Player] - -> Replayer
+[Player] - -> unpack
+
+@enduml
+
+PlantUML version 1.2022.7(Tue Aug 23 02:01:30 KST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: ko
+Country: KR
+--></g></svg>

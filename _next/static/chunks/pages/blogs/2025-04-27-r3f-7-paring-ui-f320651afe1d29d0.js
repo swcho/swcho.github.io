@@ -1,0 +1,85 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[2705],{92324:function(e,t,r){"use strict";r.d(t,{j:function(){return o}});var n=r(87462),s=r(67294),i=r(99477),a=r(48407);let l={uniforms:{tDiffuse:{value:null},h:{value:1/512}},vertexShader:`
+      varying vec2 vUv;
+
+      void main() {
+
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+
+      }
+  `,fragmentShader:`
+    uniform sampler2D tDiffuse;
+    uniform float h;
+
+    varying vec2 vUv;
+
+    void main() {
+
+    	vec4 sum = vec4( 0.0 );
+
+    	sum += texture2D( tDiffuse, vec2( vUv.x - 4.0 * h, vUv.y ) ) * 0.051;
+    	sum += texture2D( tDiffuse, vec2( vUv.x - 3.0 * h, vUv.y ) ) * 0.0918;
+    	sum += texture2D( tDiffuse, vec2( vUv.x - 2.0 * h, vUv.y ) ) * 0.12245;
+    	sum += texture2D( tDiffuse, vec2( vUv.x - 1.0 * h, vUv.y ) ) * 0.1531;
+    	sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y ) ) * 0.1633;
+    	sum += texture2D( tDiffuse, vec2( vUv.x + 1.0 * h, vUv.y ) ) * 0.1531;
+    	sum += texture2D( tDiffuse, vec2( vUv.x + 2.0 * h, vUv.y ) ) * 0.12245;
+    	sum += texture2D( tDiffuse, vec2( vUv.x + 3.0 * h, vUv.y ) ) * 0.0918;
+    	sum += texture2D( tDiffuse, vec2( vUv.x + 4.0 * h, vUv.y ) ) * 0.051;
+
+    	gl_FragColor = sum;
+
+    }
+  `},u={uniforms:{tDiffuse:{value:null},v:{value:1/512}},vertexShader:`
+    varying vec2 vUv;
+
+    void main() {
+
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+
+    }
+  `,fragmentShader:`
+
+  uniform sampler2D tDiffuse;
+  uniform float v;
+
+  varying vec2 vUv;
+
+  void main() {
+
+    vec4 sum = vec4( 0.0 );
+
+    sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y - 4.0 * v ) ) * 0.051;
+    sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y - 3.0 * v ) ) * 0.0918;
+    sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y - 2.0 * v ) ) * 0.12245;
+    sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y - 1.0 * v ) ) * 0.1531;
+    sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y ) ) * 0.1633;
+    sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y + 1.0 * v ) ) * 0.1531;
+    sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y + 2.0 * v ) ) * 0.12245;
+    sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y + 3.0 * v ) ) * 0.0918;
+    sum += texture2D( tDiffuse, vec2( vUv.x, vUv.y + 4.0 * v ) ) * 0.051;
+
+    gl_FragColor = sum;
+
+  }
+  `},o=s.forwardRef(({scale:e=10,frames:t=1/0,opacity:r=1,width:o=1,height:c=1,blur:d=1,near:v=0,far:f=10,resolution:h=512,smooth:m=!0,color:x="#000000",depthWrite:p=!1,renderOrder:g,...j},b)=>{let y,w;let D=s.useRef(null),U=(0,a.A)(e=>e.scene),S=(0,a.A)(e=>e.gl),E=s.useRef(null);o*=Array.isArray(e)?e[0]:e||1,c*=Array.isArray(e)?e[1]:e||1;let[N,T,M,k,C,I,O]=s.useMemo(()=>{let e=new i.WebGLRenderTarget(h,h),t=new i.WebGLRenderTarget(h,h);t.texture.generateMipmaps=e.texture.generateMipmaps=!1;let r=new i.PlaneGeometry(o,c).rotateX(Math.PI/2),n=new i.Mesh(r),s=new i.MeshDepthMaterial;s.depthTest=s.depthWrite=!1,s.onBeforeCompile=e=>{e.uniforms={...e.uniforms,ucolor:{value:new i.Color(x)}},e.fragmentShader=e.fragmentShader.replace("void main() {",`uniform vec3 ucolor;
+           void main() {
+          `),e.fragmentShader=e.fragmentShader.replace("vec4( vec3( 1.0 - fragCoordZ ), opacity );","vec4( ucolor * fragCoordZ * 2.0, ( 1.0 - fragCoordZ ) * 1.0 );")};let a=new i.ShaderMaterial(l),d=new i.ShaderMaterial(u);return d.depthTest=a.depthTest=!1,[e,r,s,n,a,d,t]},[h,o,c,e,x]),P=e=>{k.visible=!0,k.material=C,C.uniforms.tDiffuse.value=N.texture,C.uniforms.h.value=1*e/256,S.setRenderTarget(O),S.render(k,E.current),k.material=I,I.uniforms.tDiffuse.value=O.texture,I.uniforms.v.value=1*e/256,S.setRenderTarget(N),S.render(k,E.current),k.visible=!1},R=0;return(0,a.C)(()=>{E.current&&(t===1/0||R<t)&&(R++,y=U.background,w=U.overrideMaterial,D.current.visible=!1,U.background=null,U.overrideMaterial=M,S.setRenderTarget(N),S.render(U,E.current),P(d),m&&P(.4*d),S.setRenderTarget(null),D.current.visible=!0,U.overrideMaterial=w,U.background=y)}),s.useImperativeHandle(b,()=>D.current,[]),s.createElement("group",(0,n.Z)({"rotation-x":Math.PI/2},j,{ref:D}),s.createElement("mesh",{renderOrder:g,geometry:T,scale:[1,-1,1],rotation:[-Math.PI/2,0,0]},s.createElement("meshBasicMaterial",{transparent:!0,map:N.texture,opacity:r,depthWrite:p})),s.createElement("orthographicCamera",{ref:E,args:[-o/2,o/2,c/2,-c/2,v,f]}))})},70796:function(e,t,r){(window.__NEXT_P=window.__NEXT_P||[]).push(["/blogs/2025-04-27-r3f-7-paring-ui",function(){return r(87943)}])},57598:function(e,t,r){"use strict";r.d(t,{Z:function(){return d}});var n=r(85893),s=r(77869),i=r.n(s),a=r(67294),l=r(39850),u=r(49041),o=r(46037),c=r(23489);function d(e){let{children:t,meta:r,staticProps:s}=e;return a.useEffect(()=>{i().highlightAll()},[]),(0,n.jsx)(n.Fragment,{children:(0,n.jsxs)(c.Z,{title:r.title,children:[(0,n.jsx)(o.Z,{meta:r,isBlogPost:!0}),(0,n.jsx)(u.s,{staticProps:s,children:(0,n.jsx)("article",{className:"markdown",children:t})}),(0,n.jsx)(l.ZP,{repo:"swcho/blog-comments",type:"pathname",label:"utterances",theme:"github-light"})]})})}},49041:function(e,t,r){"use strict";r.d(t,{X:function(){return l},s:function(){return a}});var n=r(85893),s=r(67294);let i=s.createContext({});function a(e){let{staticProps:t,children:r}=e;return(0,n.jsx)(i.Provider,{value:t,children:r})}function l(){return s.useContext(i)}},46037:function(e,t,r){"use strict";var n=r(85893);r(67294),t.Z=e=>{let{meta:t,isBlogPost:r}=e;return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)("h1",{className:"font-bold text-gray-800 mb-4 ".concat(r?"text-5xl mt-8 mb-8":"text-lg"),children:t.title}),(0,n.jsxs)("div",{className:"details",children:[(0,n.jsx)("p",{className:"text-gray-500",children:t.description}),(0,n.jsx)("p",{className:"text-gray-400 text-right -mt-1",children:(0,n.jsx)("span",{className:"mr-4",children:t.date})})]})]})}},23489:function(e,t,r){"use strict";r.d(t,{Z:function(){return h}});var n=r(85893),s=r(9008),i=r.n(s),a=r(67294);let l=a.memo(()=>(0,n.jsx)(n.Fragment,{}));var u=r(90387),o=r(41664),c=r.n(o);let d=[{link:"/",text:"Home"}],v=a.memo(()=>{let e=(0,u.useRouter)(),[t,r]=a.useState(!1);return(0,n.jsxs)("nav",{className:"w-full",children:[(0,n.jsx)("div",{id:"progress",className:"top-0 z-20 h-1",style:{background:"linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0)"}}),(0,n.jsxs)("div",{className:"flex flex-wrap items-center justify-between w-full py-3 mx-auto mt-0 md:max-w-4xl",children:[(0,n.jsx)("div",{className:"pl-4",children:(0,n.jsx)(c(),{legacyBehavior:!0,className:"text-xl font-extrabold text-gray-900 no-underline hover:no-underline",href:"/",children:"lifetime trails"})}),(0,n.jsx)("div",{className:"block pr-4 lg:hidden",children:(0,n.jsx)("button",{id:"nav-toggle",type:"button",className:"flex items-center px-3 py-2 text-gray-500 appearance-none hover:text-gray-900 hover:border-teal-500 focus:outline-none",onMouseDown:e=>e.preventDefault(),onClick:()=>r(!t),onBlur:()=>r(!1),children:(0,n.jsxs)("svg",{className:"w-3 h-3 fill-current",viewBox:"0 0 20 20",xmlns:"http://www.w3.org/2000/svg",children:[(0,n.jsx)("title",{children:"Menu"}),(0,n.jsx)("path",{d:"M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"})]})})}),(0,n.jsx)("div",{id:"nav-content",className:"bg-gray-100 border-b flex-grow lg:border-none lg:flex lg:items-center lg:mt-0 lg:shadow-none lg:w-auto md:bg-transparent mt-2 shadow w-full z-20 ".concat(t?"block":"hidden"),children:(0,n.jsx)("ul",{className:"items-center justify-end flex-1 list-reset lg:flex",children:d.map(t=>{let{link:r,text:s}=t;return(0,n.jsx)("li",{className:"mr-3",children:(0,n.jsx)(c(),{legacyBehavior:!0,className:e.pathname===r?"inline-block py-2 px-4 text-gray-900 font-bold no-underline":"inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4",href:r,children:s})},r)})})})]})]})}),f=a.memo(e=>{let{children:t,title:r="This is the default title"}=e;return(0,n.jsxs)("div",{className:"leading-normal tracking-normal bg-gray-100 min-h-screen",children:[(0,n.jsxs)(i(),{children:[(0,n.jsx)("title",{children:r}),(0,n.jsx)("meta",{charSet:"utf-8"}),(0,n.jsx)("meta",{name:"viewport",content:"initial-scale=1.0, width=device-width"})]}),(0,n.jsx)(v,{}),(0,n.jsx)("div",{className:"container w-full px-4 pb-10 mx-auto md:max-w-3xl",children:t}),(0,n.jsx)(l,{})]})});var h=f},87943:function(e,t,r){"use strict";r.r(t),r.d(t,{default:function(){return y},meta:function(){return g}});var n=r(85893),s=r(11151),i=r(57598),a=r(67294),l=r(23787),u=r(85470),o=r(15029),c=r(44370),d=a.memo(function(e){let{url:t,...r}=e,s=a.useDeferredValue(t),{scene:i,...l}=(0,c.L)(s);return console.log("Model",{restGltf:l}),(0,n.jsx)("primitive",{object:i,...r})}),v=r(92324),f=r(30398);let h={Beech:"https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/tree-beech/model.gltf",Lime:"https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/tree-lime/model.gltf",Spruce:"https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/tree-spruce/model.gltf"},m=Object.keys(h),x=(0,u.Z)();var p=a.memo(function(e){let{}=e,{model:t}=(0,l.M4)({model:{value:m[0],options:m}});return(0,n.jsxs)("div",{style:{widows:"100%",height:"200px",marginBottom:"4rem"},children:[(0,n.jsxs)("header",{children:[(0,n.jsx)("p",{children:t}),(0,n.jsx)(x.Out,{})]}),(0,n.jsxs)(o.Xz,{camera:{position:[-10,10,40],fov:50},children:[(0,n.jsx)("hemisphereLight",{intensity:.75,color:"white",groundColor:"blue"}),(0,n.jsx)("spotLight",{position:[50,50,10],angle:.15,penumbra:1}),(0,n.jsxs)("group",{position:[0,-10,0],children:[(0,n.jsx)(a.Suspense,{fallback:(0,n.jsx)(x.In,{children:"Loading..."}),children:(0,n.jsx)(d,{position:[0,.25,0],url:h[t]})}),(0,n.jsx)(v.j,{scale:20,blur:10,far:20})]}),(0,n.jsxs)("mesh",{children:[(0,n.jsx)("boxGeometry",{args:[1,1,1]}),(0,n.jsx)("meshStandardMaterial",{color:"orange"})]}),(0,n.jsx)(f.z,{})]})]})});let g={title:"R3f: Pairing Three.js to UI",description:"react-three-fiber에서 leva와 tunnel-rat을 사용한 UI 연동 예제를 살펴 봅니다.",date:"2025-04-27",readTime:5},j=e=>{let{children:t}=e;return(0,n.jsx)(i.Z,{meta:g,children:t})};function b(e){let t=Object.assign({h1:"h1",p:"p",blockquote:"blockquote",a:"a",code:"code",pre:"pre"},(0,s.ah)(),e.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(t.h1,{children:"Pairing Three.js to UI"}),"\n",(0,n.jsx)(t.p,{children:"다음 R3F 예제를 살펴봅니다."}),"\n",(0,n.jsxs)(t.blockquote,{children:["\n",(0,n.jsx)(t.p,{children:(0,n.jsx)(t.a,{href:"https://codesandbox.io/s/wlz1o0",children:"Pairing Three.js to UI"})}),"\n"]}),"\n",(0,n.jsx)(p,{}),"\n",(0,n.jsxs)(t.p,{children:["이 예제는 ",(0,n.jsx)(t.a,{href:"https://github.com/pmndrs/leva",children:"pmndrs/leva"})," UI를 통해 렌더링할 GLTF 모델을 선택합니다."]}),"\n",(0,n.jsxs)(t.p,{children:["선택한 GLTF 모델에 따라 GLTF 파일이 있는 url을 ",(0,n.jsx)(t.a,{href:"https://drei.docs.pmnd.rs/loaders/gltf-use-gltf",children:"useGLTF"})," hook으로 전달합니다."]}),"\n",(0,n.jsxs)(t.p,{children:[(0,n.jsx)(t.code,{children:"useGLTF"})," 파일 변경이 이루어지면 비동기 파일 로딩이 이루어지면서 해당 컴포넌트를 suspend 합니다."]}),"\n",(0,n.jsxs)(t.p,{children:["따라서 ",(0,n.jsx)(t.code,{children:"React.Suspend"})," 컴포넌트로 fallback 처리를 해 줍니다."]}),"\n",(0,n.jsxs)(t.p,{children:["이 과정에서  ",(0,n.jsx)(t.a,{href:"https://github.com/pmndrs/tunnel-rat",children:"pmndrs/tunnel-rat: \uD83D\uDC00 Non gratum anus rodentum"})," 패키지를 사용합니다."]}),"\n",(0,n.jsxs)(t.p,{children:[(0,n.jsx)(t.code,{children:"tunnel-rat"}),"은 ",(0,n.jsx)(t.code,{children:"<Tunnel.In />"})," 컴포넌트 태그 안에서 랜더링한 컴포넌트를 ",(0,n.jsx)(t.code,{children:"<Tunnel.Out />"})," 컴포넌트 태그 안에 표시하는 기능입니다."]}),"\n",(0,n.jsx)(t.p,{children:"초기화는 다음과 같이 합니다."}),"\n",(0,n.jsx)(t.pre,{children:(0,n.jsx)(t.code,{className:"language-tsx",children:"import tunnel from 'tunnel-rat'\nconst t = tunnel()\n"})}),"\n",(0,n.jsxs)(t.p,{children:["특정 위치에 ",(0,n.jsx)(t.code,{children:"tunnel-rat"}),"을 사용해서 컴포넌트를 표시할 위치에 다음과 같이 ",(0,n.jsx)(t.code,{children:"Out"})," 컴포넌트를 배치 합니다."]}),"\n",(0,n.jsx)(t.pre,{children:(0,n.jsx)(t.code,{className:"language-tsx",children:"<t.out />\n"})}),"\n",(0,n.jsxs)(t.p,{children:["이후 다음과 같은 컴포넌트를 마운트하면 ",(0,n.jsx)(t.code,{children:"In"})," 컴포넌트 안에 있는 내용을 ",(0,n.jsx)(t.code,{children:"Out"}),"으로 출력합니다."]}),"\n",(0,n.jsx)(t.pre,{children:(0,n.jsx)(t.code,{className:"language-tsx",children:"<t.In>\n  <h1>tunnel-rat</h1>\n  <p>이 내용을 `t.Out` 컴포넌트에 표시합니다.</p>\n</t.In>\n"})}),"\n",(0,n.jsxs)(t.p,{children:["three.js 컴포넌트에서 UI 메시지나 디버그 용으로 html tag를 구성해서 마운트 하면 ",(0,n.jsx)(t.code,{children:"<Canvas />"})," 객체 밖에 배치한 ",(0,n.jsx)(t.code,{children:"Out"})," 컴포넌트에 표시할 수 있습니다."]})]})}var y=function(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return(0,n.jsx)(j,Object.assign({},e,{children:(0,n.jsx)(b,e)}))}},85470:function(e,t,r){"use strict";r.d(t,{Z:function(){return x}});var n,s,i=r(67294);let a=e=>{let t;let r=new Set,n=(e,n)=>{let s="function"==typeof e?e(t):e;if(!Object.is(s,t)){let e=t;t=(null!=n?n:"object"!=typeof s||null===s)?s:Object.assign({},t,s),r.forEach(r=>r(t,e))}},s=()=>t,i={setState:n,getState:s,getInitialState:()=>a,subscribe:e=>(r.add(e),()=>r.delete(e)),destroy:()=>{console.warn("[DEPRECATED] The `destroy` method will be unsupported in a future version. Instead use unsubscribe function returned by subscribe. Everything will be garbage-collected if store is garbage-collected."),r.clear()}},a=t=e(n,s,i);return i},l=e=>e?a(e):a;var u=r(52798);let{useDebugValue:o}=i,{useSyncExternalStoreWithSelector:c}=u,d=!1,v=e=>e,f=e=>{"function"!=typeof e&&console.warn("[DEPRECATED] Passing a vanilla store will be unsupported in a future version. Instead use `import { useStore } from 'zustand'`.");let t="function"==typeof e?l(e):e,r=(e,r)=>(function(e,t=v,r){r&&!d&&(console.warn("[DEPRECATED] Use `createWithEqualityFn` instead of `create` or use `useStoreWithEqualityFn` instead of `useStore`. They can be imported from 'zustand/traditional'. https://github.com/pmndrs/zustand/discussions/1937"),d=!0);let n=c(e.subscribe,e.getState,e.getServerState||e.getInitialState,t,r);return o(n),n})(t,e,r);return Object.assign(r,t),r},h=e=>e?f(e):f,m="undefined"!=typeof window&&(null!=(n=window.document)&&n.createElement||(null==(s=window.navigator)?void 0:s.product)==="ReactNative")?i.useLayoutEffect:i.useEffect;function x(){let e=h(e=>({current:[],version:0,set:e}));return{In:({children:t})=>{let r=e(e=>e.set),n=e(e=>e.version);return m(()=>{r(e=>({version:e.version+1}))},[]),m(()=>(r(({current:e})=>({current:[...e,t]})),()=>r(({current:e})=>({current:e.filter(e=>e!==t)}))),[t,n]),null},Out:()=>{let t=e(e=>e.current);return i.createElement(i.Fragment,null,t)}}}},53250:function(e,t,r){"use strict";/**
+ * @license React
+ * use-sync-external-store-shim.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */var n=r(67294),s="function"==typeof Object.is?Object.is:function(e,t){return e===t&&(0!==e||1/e==1/t)||e!=e&&t!=t},i=n.useState,a=n.useEffect,l=n.useLayoutEffect,u=n.useDebugValue;function o(e){var t=e.getSnapshot;e=e.value;try{var r=t();return!s(e,r)}catch(e){return!0}}var c="undefined"==typeof window||void 0===window.document||void 0===window.document.createElement?function(e,t){return t()}:function(e,t){var r=t(),n=i({inst:{value:r,getSnapshot:t}}),s=n[0].inst,c=n[1];return l(function(){s.value=r,s.getSnapshot=t,o(s)&&c({inst:s})},[e,r,t]),a(function(){return o(s)&&c({inst:s}),e(function(){o(s)&&c({inst:s})})},[e]),u(r),r};t.useSyncExternalStore=void 0!==n.useSyncExternalStore?n.useSyncExternalStore:c},50139:function(e,t,r){"use strict";/**
+ * @license React
+ * use-sync-external-store-shim/with-selector.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */var n=r(67294),s=r(61688),i="function"==typeof Object.is?Object.is:function(e,t){return e===t&&(0!==e||1/e==1/t)||e!=e&&t!=t},a=s.useSyncExternalStore,l=n.useRef,u=n.useEffect,o=n.useMemo,c=n.useDebugValue;t.useSyncExternalStoreWithSelector=function(e,t,r,n,s){var d=l(null);if(null===d.current){var v={hasValue:!1,value:null};d.current=v}else v=d.current;d=o(function(){function e(e){if(!u){if(u=!0,a=e,e=n(e),void 0!==s&&v.hasValue){var t=v.value;if(s(t,e))return l=t}return l=e}if(t=l,i(a,e))return t;var r=n(e);return void 0!==s&&s(t,r)?t:(a=e,l=r)}var a,l,u=!1,o=void 0===r?null:r;return[function(){return e(t())},null===o?void 0:function(){return e(o())}]},[t,r,n,s]);var f=a(e,d[0],d[1]);return u(function(){v.hasValue=!0,v.value=f},[f]),c(f),f}},61688:function(e,t,r){"use strict";e.exports=r(53250)},52798:function(e,t,r){"use strict";e.exports=r(50139)}},function(e){e.O(0,[3737,3996,8049,398,4751,9159,4370,9774,2888,179],function(){return e(e.s=70796)}),_N_E=e.O()}]);
+//# sourceMappingURL=2025-04-27-r3f-7-paring-ui-f320651afe1d29d0.js.map
