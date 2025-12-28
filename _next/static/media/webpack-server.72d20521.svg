@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1143px" preserveAspectRatio="none" style="width:2346px;height:1143px;background:#FFFFFF;" version="1.1" viewBox="0 0 2346 1143" width="2346px" zoomAndPan="magnify"><defs/><g><rect fill="#DDDDDD" height="1131.9141" style="stroke:#181818;stroke-width:0.5;" width="213.5" x="268" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="94" x="327.75" y="18.5684">@remotion/cli</text><rect fill="#DDDDDD" height="1131.9141" style="stroke:#181818;stroke-width:0.5;" width="1713.5" x="483.5" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="139" x="1270.75" y="18.5684">@remotion/renderer</text><rect fill="#FFFFFF" height="894.0059" style="stroke:#181818;stroke-width:1.0;" width="10" x="301.5" y="112.7988"/><rect fill="#FFFFFF" height="864.6953" style="stroke:#181818;stroke-width:1.0;" width="10" x="434.5" y="142.1094"/><rect fill="#FFFFFF" height="776.7637" style="stroke:#181818;stroke-width:1.0;" width="10" x="689.5" y="230.041"/><rect fill="#FFFFFF" height="684.5215" style="stroke:#181818;stroke-width:1.0;" width="10" x="879.5" y="259.3516"/><rect fill="#FFFFFF" height="647.2109" style="stroke:#181818;stroke-width:1.0;" width="10" x="884.5" y="296.6621"/><rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="1037" y="389.5938"/><rect fill="#FFFFFF" height="378.416" style="stroke:#181818;stroke-width:1.0;" width="10" x="1234.5" y="565.457"/><rect fill="#FFFFFF" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="1632" y="448.2148"/><rect fill="#FFFFFF" height="172.5527" style="stroke:#181818;stroke-width:1.0;" width="10" x="1742" y="712.0098"/><rect fill="#FFFFFF" height="135.2422" style="stroke:#181818;stroke-width:1.0;" width="10" x="1747" y="749.3203"/><rect fill="#FFFFFF" height="92.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="1752" y="791.6309"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1742" y="913.873"/><rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="2123" y="330.9727"/><rect fill="#FFFFFF" height="58.6211" style="stroke:#181818;stroke-width:1.0;" width="10" x="2123" y="825.9414"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="23" x2="23" y1="81.4883" y2="1058.4258"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="306" x2="306" y1="81.4883" y2="1058.4258"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="439.5" x2="439.5" y1="81.4883" y2="1058.4258"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="554.5" x2="554.5" y1="81.4883" y2="1058.4258"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="694.5" x2="694.5" y1="81.4883" y2="1058.4258"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="884" x2="884" y1="81.4883" y2="1058.4258"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1042" x2="1042" y1="81.4883" y2="1058.4258"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1239" x2="1239" y1="81.4883" y2="1058.4258"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1449" x2="1449" y1="81.4883" y2="1058.4258"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1637" x2="1637" y1="81.4883" y2="1058.4258"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1747" x2="1747" y1="81.4883" y2="1058.4258"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="2128" x2="2128" y1="81.4883" y2="1058.4258"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="2224" x2="2224" y1="81.4883" y2="1058.4258"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="2305.5" x2="2305.5" y1="81.4883" y2="1058.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="5" y="78.5352">User</text><ellipse cx="23.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M23.5,21.5 L23.5,48.5 M10.5,29.5 L36.5,29.5 M23.5,48.5 L10.5,63.5 M23.5,48.5 L36.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="5" y="1070.9609">User</text><ellipse cx="23.5" cy="1082.4141" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M23.5,1090.4141 L23.5,1117.4141 M10.5,1098.4141 L36.5,1098.4141 M23.5,1117.4141 L10.5,1132.4141 M23.5,1117.4141 L36.5,1132.4141 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="69" x="272" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="279" y="70.5352">index.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="69" x="272" y="1057.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="279" y="1077.9609">index.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="76" x="401.5" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="408.5" y="70.5352">render.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="76" x="401.5" y="1057.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="408.5" y="1077.9609">render.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="134" x="487.5" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="494.5" y="70.5352">prepare-server.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="134" x="487.5" y="1057.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="494.5" y="1077.9609">prepare-server.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="126" x="631.5" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="638.5" y="70.5352">render-media.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="126" x="631.5" y="1057.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="638.5" y="1077.9609">render-media.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="131" x="819" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="826" y="70.5352">render-frames.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="131" x="819" y="1057.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="826" y="1077.9609">render-frames.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="164" x="960" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="967" y="70.5352">set-props-and-env.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="164" x="960" y="1057.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="967" y="1077.9609">set-props-and-env.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="211" x="1134" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="197" x="1141" y="70.5352">take-frame-and-compose.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="211" x="1134" y="1057.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="197" x="1141" y="1077.9609">take-frame-and-compose.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="189" x="1355" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="1362" y="70.5352">stitch-frames-to-video.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="189" x="1355" y="1057.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="1362" y="1077.9609">stitch-frames-to-video.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="1554" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="1561" y="70.5352">puppeteer-evaluate.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="1554" y="1057.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="1561" y="1077.9609">puppeteer-evaluate.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="34" x="1730" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="20" x="1737" y="70.5352">etc</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="34" x="1730" y="1057.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="20" x="1737" y="1077.9609">etc</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="130" x="2063" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="2070" y="70.5352">HeadlessBrowser</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="130" x="2063" y="1057.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="2070" y="1077.9609">HeadlessBrowser</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="42" x="2203" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="28" x="2210" y="70.5352">http</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="42" x="2203" y="1057.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="28" x="2210" y="1077.9609">http</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="69" x="2271.5" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="2278.5" y="70.5352">Chrome</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="69" x="2271.5" y="1057.4258"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="2278.5" y="1077.9609">Chrome</text><rect fill="#FFFFFF" height="894.0059" style="stroke:#181818;stroke-width:1.0;" width="10" x="301.5" y="112.7988"/><rect fill="#FFFFFF" height="864.6953" style="stroke:#181818;stroke-width:1.0;" width="10" x="434.5" y="142.1094"/><rect fill="#FFFFFF" height="776.7637" style="stroke:#181818;stroke-width:1.0;" width="10" x="689.5" y="230.041"/><rect fill="#FFFFFF" height="684.5215" style="stroke:#181818;stroke-width:1.0;" width="10" x="879.5" y="259.3516"/><rect fill="#FFFFFF" height="647.2109" style="stroke:#181818;stroke-width:1.0;" width="10" x="884.5" y="296.6621"/><rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="1037" y="389.5938"/><rect fill="#FFFFFF" height="378.416" style="stroke:#181818;stroke-width:1.0;" width="10" x="1234.5" y="565.457"/><rect fill="#FFFFFF" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="1632" y="448.2148"/><rect fill="#FFFFFF" height="172.5527" style="stroke:#181818;stroke-width:1.0;" width="10" x="1742" y="712.0098"/><rect fill="#FFFFFF" height="135.2422" style="stroke:#181818;stroke-width:1.0;" width="10" x="1747" y="749.3203"/><rect fill="#FFFFFF" height="92.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="1752" y="791.6309"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1742" y="913.873"/><rect fill="#FFFFFF" height="29.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="2123" y="330.9727"/><rect fill="#FFFFFF" height="58.6211" style="stroke:#181818;stroke-width:1.0;" width="10" x="2123" y="825.9414"/><polygon fill="#181818" points="289.5,108.7988,299.5,112.7988,289.5,116.7988,293.5,112.7988" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="23.5" x2="295.5" y1="112.7988" y2="112.7988"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="259" x="30.5" y="108.0566">remotion render react-svg --log verbose</text><polygon fill="#181818" points="422.5,138.1094,432.5,142.1094,422.5,146.1094,426.5,142.1094" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="311.5" x2="428.5" y1="142.1094" y2="142.1094"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104" x="318.5" y="137.3672">renderVideoFlow</text><polygon fill="#181818" points="542.5,167.4199,552.5,171.4199,542.5,175.4199,546.5,171.4199" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="444.5" x2="548.5" y1="171.4199" y2="171.4199"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="85" x="451.5" y="166.6777">prepareServer</text><polygon fill="#181818" points="2212,196.7305,2222,200.7305,2212,204.7305,2216,200.7305" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="554.5" x2="2218" y1="200.7305" y2="200.7305"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="101" x="561.5" y="195.9883">createServer(url)</text><polygon fill="#181818" points="677.5,226.041,687.5,230.041,677.5,234.041,681.5,230.041" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="444.5" x2="683.5" y1="230.041" y2="230.041"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="153" x="451.5" y="225.2988">internalRenderMediaRaw</text><polygon fill="#181818" points="867.5,255.3516,877.5,259.3516,867.5,263.3516,871.5,259.3516" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="699.5" x2="873.5" y1="259.3516" y2="259.3516"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="161" x="706.5" y="254.6094">internalRenderFramesRaw</text><line style="stroke:#181818;stroke-width:1.0;" x1="889.5" x2="936.5" y1="283.6621" y2="283.6621"/><line style="stroke:#181818;stroke-width:1.0;" x1="936.5" x2="936.5" y1="283.6621" y2="296.6621"/><line style="stroke:#181818;stroke-width:1.0;" x1="895.5" x2="936.5" y1="296.6621" y2="296.6621"/><polygon fill="#181818" points="905.5,292.6621,895.5,296.6621,905.5,300.6621,901.5,296.6621" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="120" x="901.5" y="278.9199">innerRenderFrames</text><polygon fill="#181818" points="2111,326.9727,2121,330.9727,2111,334.9727,2115,330.9727" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="894.5" x2="2117" y1="330.9727" y2="330.9727"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="79" x="901.5" y="326.2305">newPage(url)</text><polygon fill="#181818" points="905.5,356.2832,895.5,360.2832,905.5,364.2832,901.5,360.2832" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="899.5" x2="2127" y1="360.2832" y2="360.2832"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="911.5" y="355.541">page</text><polygon fill="#181818" points="1025,385.5938,1035,389.5938,1025,393.5938,1029,389.5938" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="894.5" x2="1031" y1="389.5938" y2="389.5938"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="101" x="901.5" y="384.8516">setPropsAndEnv</text><polygon fill="#181818" points="2116,414.9043,2126,418.9043,2116,422.9043,2120,418.9043" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1042" x2="2122" y1="418.9043" y2="418.9043"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="196" x="1049" y="414.1621">page.evaluateOnNewDocument</text><polygon fill="#181818" points="1620,444.2148,1630,448.2148,1620,452.2148,1624,448.2148" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="894.5" x2="1626" y1="448.2148" y2="448.2148"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="901.5" y="443.4727">puppeteerEvaluateWithCatch</text><polygon fill="#181818" points="2116,473.5254,2126,477.5254,2116,481.5254,2120,477.5254" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1642" x2="2122" y1="477.5254" y2="477.5254"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="235" x="1649" y="472.7832">page.mainFrame().executionContext()</text><polygon fill="#181818" points="2116,502.8359,2126,506.8359,2116,510.8359,2120,506.8359" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1642" x2="2122" y1="506.8359" y2="506.8359"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="283" x="1649" y="502.0938">page._client().send('Runtime.callFunctionOn')</text><polygon fill="#181818" points="2294,532.1465,2304,536.1465,2294,540.1465,2298,536.1465" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1637" x2="2300" y1="536.1465" y2="536.1465"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="211" x="1644" y="531.4043">window.remotion_setBundleMode</text><polygon fill="#181818" points="1222.5,561.457,1232.5,565.457,1222.5,569.457,1226.5,565.457" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="894.5" x2="1228.5" y1="565.457" y2="565.457"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="149" x="901.5" y="560.7148">takeFrameAndCompose</text><polygon fill="#181818" points="1625,590.7676,1635,594.7676,1625,598.7676,1629,594.7676" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1244.5" x2="1631" y1="594.7676" y2="594.7676"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="1251.5" y="590.0254">puppeteerEvaluateWithCatch</text><polygon fill="#181818" points="2294,620.0781,2304,624.0781,2294,628.0781,2298,624.0781" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1637" x2="2300" y1="624.0781" y2="624.0781"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="204" x="1644" y="619.3359">window.remotion_getClipRegion</text><polygon fill="#181818" points="1625,649.3887,1635,653.3887,1625,657.3887,1629,653.3887" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1244.5" x2="1631" y1="653.3887" y2="653.3887"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="1251.5" y="648.6465">puppeteerEvaluateWithCatch</text><polygon fill="#181818" points="2294,678.6992,2304,682.6992,2294,686.6992,2298,682.6992" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1637" x2="2300" y1="682.6992" y2="682.6992"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="200" x="1644" y="677.957">window.remotion_collectAssets</text><polygon fill="#181818" points="1730,708.0098,1740,712.0098,1730,716.0098,1734,712.0098" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1244.5" x2="1736" y1="712.0098" y2="712.0098"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="1251.5" y="707.2676">provideScreenshot</text><line style="stroke:#181818;stroke-width:1.0;" x1="1752" x2="1799" y1="736.3203" y2="736.3203"/><line style="stroke:#181818;stroke-width:1.0;" x1="1799" x2="1799" y1="736.3203" y2="749.3203"/><line style="stroke:#181818;stroke-width:1.0;" x1="1758" x2="1799" y1="749.3203" y2="749.3203"/><polygon fill="#181818" points="1768,745.3203,1758,749.3203,1768,753.3203,1764,749.3203" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="150" x="1764" y="731.5781">screenshotDOMElement</text><line style="stroke:#181818;stroke-width:1.0;" x1="1757" x2="1804" y1="778.6309" y2="778.6309"/><line style="stroke:#181818;stroke-width:1.0;" x1="1804" x2="1804" y1="778.6309" y2="791.6309"/><line style="stroke:#181818;stroke-width:1.0;" x1="1763" x2="1804" y1="791.6309" y2="791.6309"/><polygon fill="#181818" points="1773,787.6309,1763,791.6309,1773,795.6309,1769,791.6309" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="1769" y="773.8887">screenshot</text><polygon fill="#181818" points="2111,821.9414,2121,825.9414,2111,829.9414,2115,825.9414" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1762" x2="2117" y1="825.9414" y2="825.9414"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="342" x="1769" y="821.1992">page.screenshotTaskQueue.postTask(screenshotTask)</text><polygon fill="#181818" points="2294,851.252,2304,855.252,2294,859.252,2298,855.252" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="2133" x2="2300" y1="855.252" y2="855.252"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="2140" y="850.5098">Target.activateTarget</text><polygon fill="#181818" points="2294,880.5625,2304,884.5625,2294,888.5625,2298,884.5625" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="2128" x2="2300" y1="884.5625" y2="884.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="149" x="2135" y="879.8203">Page.captureScreenshot</text><polygon fill="#181818" points="1730,909.873,1740,913.873,1730,917.873,1734,913.873" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1244.5" x2="1736" y1="913.873" y2="913.873"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="1251.5" y="909.1309">compose</text><polygon fill="#181818" points="1437.5,1002.8047,1447.5,1006.8047,1437.5,1010.8047,1441.5,1006.8047" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="694.5" x2="1443.5" y1="1006.8047" y2="1006.8047"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="701.5" y="1002.0625">internalStitchFramesToVideo</text><path d="M1454,956.873 L1454,1042.873 L2150,1042.873 L2150,966.873 L2140,956.873 L1454,956.873 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M2140,956.873 L2140,966.873 L2150,966.873 L2140,956.873 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="352" x="1460" y="974.4414">ffmpeg -r 60 -f image2 -s 1920x1080 -start_number 0</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="675" x="1460" y="989.752">-i /var/folders/_z/xp2c6j8d0w34xldhwpjhz8gr0000gp/T/react-motion-render3jU3ga/element-%03d.jpeg</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="633" x="1460" y="1005.0625">-c:v libx264 -pix_fmt yuv420p -crf 18 -movflags faststart -c:a libfdk_aac -b:a 320k -cutoff 18000</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="443" x="1460" y="1020.373">-map_metadata -1 -metadata comment=Made with Remotion 4.0.119</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="330" x="1460" y="1035.6836">-y remotion/packages/example/out/react-svg.mp4</text><!--MD5=[9d978ce0d05c25da94977785d71a4347]
+@startuml webpack-server
+
+actor User
+
+box "@remotion/cli"
+  participant "index.ts" as cli_index
+  participant "render.ts" as cli_render
+end box
+
+box "@remotion/renderer"
+  participant "prepare-server.ts" as prepare_server
+  participant "render-media.ts" as render_media
+  participant "render-frames.ts" as render_frames
+  participant "set-props-and-env.ts" as set_props
+  participant "take-frame-and-compose.ts" as take_frame
+  participant "stitch-frames-to-video.ts" as stitch
+  participant "puppeteer-evaluate.ts" as puppet_eval
+  participant "etc" as etc
+  participant HeadlessBrowser
+end box
+
+participant http
+participant Chrome
+
+User -> cli_index: remotion render react-svg - -log verbose
+activate cli_index
+  cli_index -> cli_render: renderVideoFlow
+    activate cli_render
+      
+      ' 여기서 부터 나눌 수 있다
+      cli_render -> prepare_server: prepareServer
+      prepare_server -> http: createServer(url)
+      
+      cli_render -> render_media: internalRenderMediaRaw
+      activate render_media
+        render_media -> render_frames: internalRenderFramesRaw
+        activate render_frames
+          render_frames -> render_frames: innerRenderFrames
+          activate render_frames
+            render_frames -> HeadlessBrowser: newPage(url)
+            activate HeadlessBrowser
+            return page
+            render_frames -> set_props: setPropsAndEnv
+            activate set_props
+              set_props -> HeadlessBrowser: page.evaluateOnNewDocument
+            deactivate set_props
+            render_frames -> puppet_eval: puppeteerEvaluateWithCatch
+            activate puppet_eval
+              puppet_eval -> HeadlessBrowser: page.mainFrame().executionContext()
+              puppet_eval -> HeadlessBrowser: page._client().send('Runtime.callFunctionOn')
+              puppet_eval - -> Chrome: window.remotion_setBundleMode
+            deactivate puppet_eval
+
+            render_frames -> take_frame: takeFrameAndCompose
+            activate take_frame
+              take_frame ->  puppet_eval: puppeteerEvaluateWithCatch
+              puppet_eval - -> Chrome: window.remotion_getClipRegion
+              take_frame ->  puppet_eval: puppeteerEvaluateWithCatch
+              puppet_eval - -> Chrome: window.remotion_collectAssets
+              take_frame -> etc: provideScreenshot
+              activate etc
+                etc -> etc: screenshotDOMElement
+                activate etc
+                  etc -> etc: screenshot
+                  activate etc
+                    etc -> HeadlessBrowser: page.screenshotTaskQueue.postTask(screenshotTask)
+                    activate HeadlessBrowser
+                      HeadlessBrowser - -> Chrome: Target.activateTarget
+                      HeadlessBrowser - -> Chrome: Page.captureScreenshot
+                    deactivate HeadlessBrowser
+                  deactivate etc
+                deactivate etc
+              deactivate etc
+              take_frame -> etc: compose
+              activate etc
+              deactivate etc
+            deactivate take_frame
+          deactivate render_frames
+        deactivate render_frames
+        render_media -> stitch: internalStitchFramesToVideo
+        note right
+          ffmpeg -r 60 -f image2 -s 1920x1080 -start_number 0 
+          -i /var/folders/_z/xp2c6j8d0w34xldhwpjhz8gr0000gp/T/react-motion-render3jU3ga/element-%03d.jpeg
+          -c:v libx264 -pix_fmt yuv420p -crf 18 -movflags faststart -c:a libfdk_aac -b:a 320k -cutoff 18000
+          -map_metadata -1 -metadata comment=Made with Remotion 4.0.119
+          -y remotion/packages/example/out/react-svg.mp4
+        end note
+      deactivate render_media
+    deactivate cli_render
+deactivate cli_index
+
+
+@enduml
+
+@startuml webpack-server
+
+actor User
+
+box "@remotion/cli"
+  participant "index.ts" as cli_index
+  participant "render.ts" as cli_render
+end box
+
+box "@remotion/renderer"
+  participant "prepare-server.ts" as prepare_server
+  participant "render-media.ts" as render_media
+  participant "render-frames.ts" as render_frames
+  participant "set-props-and-env.ts" as set_props
+  participant "take-frame-and-compose.ts" as take_frame
+  participant "stitch-frames-to-video.ts" as stitch
+  participant "puppeteer-evaluate.ts" as puppet_eval
+  participant "etc" as etc
+  participant HeadlessBrowser
+end box
+
+participant http
+participant Chrome
+
+User -> cli_index: remotion render react-svg - -log verbose
+activate cli_index
+  cli_index -> cli_render: renderVideoFlow
+    activate cli_render
+      
+      cli_render -> prepare_server: prepareServer
+      prepare_server -> http: createServer(url)
+      
+      cli_render -> render_media: internalRenderMediaRaw
+      activate render_media
+        render_media -> render_frames: internalRenderFramesRaw
+        activate render_frames
+          render_frames -> render_frames: innerRenderFrames
+          activate render_frames
+            render_frames -> HeadlessBrowser: newPage(url)
+            activate HeadlessBrowser
+            return page
+            render_frames -> set_props: setPropsAndEnv
+            activate set_props
+              set_props -> HeadlessBrowser: page.evaluateOnNewDocument
+            deactivate set_props
+            render_frames -> puppet_eval: puppeteerEvaluateWithCatch
+            activate puppet_eval
+              puppet_eval -> HeadlessBrowser: page.mainFrame().executionContext()
+              puppet_eval -> HeadlessBrowser: page._client().send('Runtime.callFunctionOn')
+              puppet_eval - -> Chrome: window.remotion_setBundleMode
+            deactivate puppet_eval
+
+            render_frames -> take_frame: takeFrameAndCompose
+            activate take_frame
+              take_frame ->  puppet_eval: puppeteerEvaluateWithCatch
+              puppet_eval - -> Chrome: window.remotion_getClipRegion
+              take_frame ->  puppet_eval: puppeteerEvaluateWithCatch
+              puppet_eval - -> Chrome: window.remotion_collectAssets
+              take_frame -> etc: provideScreenshot
+              activate etc
+                etc -> etc: screenshotDOMElement
+                activate etc
+                  etc -> etc: screenshot
+                  activate etc
+                    etc -> HeadlessBrowser: page.screenshotTaskQueue.postTask(screenshotTask)
+                    activate HeadlessBrowser
+                      HeadlessBrowser - -> Chrome: Target.activateTarget
+                      HeadlessBrowser - -> Chrome: Page.captureScreenshot
+                    deactivate HeadlessBrowser
+                  deactivate etc
+                deactivate etc
+              deactivate etc
+              take_frame -> etc: compose
+              activate etc
+              deactivate etc
+            deactivate take_frame
+          deactivate render_frames
+        deactivate render_frames
+        render_media -> stitch: internalStitchFramesToVideo
+        note right
+          ffmpeg -r 60 -f image2 -s 1920x1080 -start_number 0 
+          -i /var/folders/_z/xp2c6j8d0w34xldhwpjhz8gr0000gp/T/react-motion-render3jU3ga/element-%03d.jpeg
+          -c:v libx264 -pix_fmt yuv420p -crf 18 -movflags faststart -c:a libfdk_aac -b:a 320k -cutoff 18000
+          -map_metadata -1 -metadata comment=Made with Remotion 4.0.119
+          -y remotion/packages/example/out/react-svg.mp4
+        end note
+      deactivate render_media
+    deactivate cli_render
+deactivate cli_index
+
+
+@enduml
+
+PlantUML version 1.2022.7(Tue Aug 23 02:01:30 KST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: ko
+Country: KR
+--></g></svg>

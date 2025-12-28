@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="761px" preserveAspectRatio="none" style="width:1354px;height:761px;background:#FFFFFF;" version="1.1" viewBox="0 0 1354 761" width="1354px" zoomAndPan="magnify"><defs/><g><rect fill="#DDDDDD" height="749.7891" style="stroke:#181818;stroke-width:0.5;" width="143" x="806" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="137" x="809" y="18.5684">@aws-sdk/client-s3</text><rect fill="#DDDDDD" height="749.7891" style="stroke:#181818;stroke-width:0.5;" width="282" x="951" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="276" x="954" y="18.5684">microsoft-cognitiveservices-speech-sdk</text><rect fill="#FFFFFF" height="474.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="353.5" y="183.5977"/><rect fill="#FFFFFF" height="100.1094" style="stroke:#181818;stroke-width:1.0;" width="10" x="502.5" y="255.2188"/><rect fill="#FFFFFF" height="273.6621" style="stroke:#181818;stroke-width:1.0;" width="10" x="502.5" y="384.6387"/><rect fill="#FFFFFF" height="63.6211" style="stroke:#181818;stroke-width:1.0;" width="10" x="507.5" y="565.3691"/><rect fill="#FFFFFF" height="43.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="1087" y="455.4375"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="23" x2="23" y1="81.4883" y2="676.3008"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="221" x2="221" y1="81.4883" y2="676.3008"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="358.5" x2="358.5" y1="151.543" y2="676.3008"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="507" x2="507" y1="81.4883" y2="676.3008"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="712" x2="712" y1="81.4883" y2="676.3008"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="877" x2="877" y1="293.9629" y2="676.3008"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1092" x2="1092" y1="423.3828" y2="676.3008"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1261" x2="1261" y1="81.4883" y2="676.3008"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1320" x2="1320" y1="81.4883" y2="676.3008"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="5" y="78.5352">User</text><ellipse cx="23.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M23.5,21.5 L23.5,48.5 M10.5,29.5 L36.5,29.5 M23.5,48.5 L10.5,63.5 M23.5,48.5 L36.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="5" y="688.8359">User</text><ellipse cx="23.5" cy="700.2891" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M23.5,708.2891 L23.5,735.2891 M10.5,716.2891 L36.5,716.2891 M23.5,735.2891 L10.5,750.2891 M23.5,735.2891 L36.5,750.2891 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="77" x="183" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="190" y="70.5352">remotion</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="77" x="183" y="675.3008"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="190" y="695.8359">remotion</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="302.5" y="675.3008"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="309.5" y="695.8359">RemotionRoot</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="47" x="484" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="33" x="491" y="70.5352">tts.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="47" x="484" y="675.3008"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="33" x="491" y="695.8359">tts.ts</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="175" x="625" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161" x="632" y="70.5352">@remotion/media-utils</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="175" x="625" y="675.3008"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161" x="632" y="695.8359">@remotion/media-utils</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="71" x="842" y="675.3008"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="849" y="695.8359">S3Client</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="142" x="1021" y="675.3008"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="1028" y="695.8359">SpeechSynthesizer</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="44" x="1239" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="1246" y="70.5352">AWS</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="44" x="1239" y="675.3008"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="1246" y="695.8359">AWS</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="55" x="1293" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="1300" y="70.5352">Azure</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="55" x="1293" y="675.3008"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="1300" y="695.8359">Azure</text><rect fill="#FFFFFF" height="474.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="353.5" y="183.5977"/><rect fill="#FFFFFF" height="100.1094" style="stroke:#181818;stroke-width:1.0;" width="10" x="502.5" y="255.2188"/><rect fill="#FFFFFF" height="273.6621" style="stroke:#181818;stroke-width:1.0;" width="10" x="502.5" y="384.6387"/><rect fill="#FFFFFF" height="63.6211" style="stroke:#181818;stroke-width:1.0;" width="10" x="507.5" y="565.3691"/><rect fill="#FFFFFF" height="43.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="1087" y="455.4375"/><polygon fill="#181818" points="209.5,108.7988,219.5,112.7988,209.5,116.7988,213.5,112.7988" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="23.5" x2="215.5" y1="112.7988" y2="112.7988"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="174" x="30.5" y="108.0566">registerRoot(RemotionRoot)</text><polygon fill="#181818" points="290.5,122.7988,300.5,126.7988,290.5,130.7988,294.5,126.7988" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="221.5" x2="296.5" y1="126.7988" y2="126.7988"/><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="302.5" y="120.7988"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="309.5" y="141.334">RemotionRoot</text><polygon fill="#181818" points="341.5,179.5977,351.5,183.5977,341.5,187.5977,345.5,183.5977" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="221.5" x2="347.5" y1="183.5977" y2="183.5977"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="113" x="228.5" y="178.8555">calculateMetadata</text><line style="stroke:#181818;stroke-width:1.0;" x1="363.5" x2="405.5" y1="212.9082" y2="212.9082"/><line style="stroke:#181818;stroke-width:1.0;" x1="405.5" x2="405.5" y1="212.9082" y2="225.9082"/><line style="stroke:#181818;stroke-width:1.0;" x1="364.5" x2="405.5" y1="225.9082" y2="225.9082"/><polygon fill="#181818" points="374.5,221.9082,364.5,225.9082,374.5,229.9082,370.5,225.9082" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="370.5" y="208.166">waitForNoInput</text><polygon fill="#181818" points="490.5,251.2188,500.5,255.2188,490.5,259.2188,494.5,255.2188" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="363.5" x2="496.5" y1="255.2188" y2="255.2188"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="120" x="370.5" y="250.4766">audioAlreadyExists</text><polygon fill="#181818" points="830,265.2188,840,269.2188,830,273.2188,834,269.2188" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="512.5" x2="836" y1="269.2188" y2="269.2188"/><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="71" x="842" y="263.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="849" y="283.7539">S3Client</text><polygon fill="#181818" points="865.5,322.0176,875.5,326.0176,865.5,330.0176,869.5,326.0176" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="512.5" x2="871.5" y1="326.0176" y2="326.0176"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="175" x="519.5" y="321.2754">send(HeadObjectCommand)</text><polygon fill="#181818" points="1249,351.3281,1259,355.3281,1249,359.3281,1253,355.3281" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="877.5" x2="1255" y1="355.3281" y2="355.3281"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="884.5" y="350.5859">HEAD</text><polygon fill="#181818" points="490.5,380.6387,500.5,384.6387,490.5,388.6387,494.5,384.6387" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="363.5" x2="496.5" y1="384.6387" y2="384.6387"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="370.5" y="379.8965">synthesizeSpeech</text><polygon fill="#181818" points="1009,409.9492,1019,413.9492,1009,417.9492,1013,413.9492" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="512.5" x2="1015" y1="413.9492" y2="413.9492"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="519.5" y="409.207">(speachConfig, audioConfig)</text><rect fill="#E2E2F0" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="142" x="1021" y="392.6387"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="1028" y="413.1738">SpeechSynthesizer</text><polygon fill="#181818" points="1075,451.4375,1085,455.4375,1075,459.4375,1079,455.4375" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="512.5" x2="1081" y1="455.4375" y2="455.4375"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="105" x="519.5" y="450.6953">speakSsmlAsync</text><polygon fill="#181818" points="1308.5,465.4375,1318.5,469.4375,1308.5,473.4375,1312.5,469.4375" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1097" x2="1314.5" y1="469.4375" y2="469.4375"/><polygon fill="#181818" points="523.5,494.748,513.5,498.748,523.5,502.748,519.5,498.748" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="517.5" x2="1091" y1="498.748" y2="498.748"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="143" x="529.5" y="494.0059">SpeechSynthesisResult</text><polygon fill="#181818" points="1080,524.0586,1090,528.0586,1080,532.0586,1084,528.0586" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="512.5" x2="1086" y1="528.0586" y2="528.0586"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="519.5" y="523.3164">close</text><line style="stroke:#A80036;stroke-width:2.0;" x1="1083" x2="1101" y1="519.0586" y2="537.0586"/><line style="stroke:#A80036;stroke-width:2.0;" x1="1083" x2="1101" y1="537.0586" y2="519.0586"/><line style="stroke:#181818;stroke-width:1.0;" x1="512.5" x2="559.5" y1="552.3691" y2="552.3691"/><line style="stroke:#181818;stroke-width:1.0;" x1="559.5" x2="559.5" y1="552.3691" y2="565.3691"/><line style="stroke:#181818;stroke-width:1.0;" x1="518.5" x2="559.5" y1="565.3691" y2="565.3691"/><polygon fill="#181818" points="528.5,561.3691,518.5,565.3691,528.5,569.3691,524.5,565.3691" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="524.5" y="547.627">uploadTtsToS3</text><polygon fill="#181818" points="865.5,595.6797,875.5,599.6797,865.5,603.6797,869.5,599.6797" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="517.5" x2="871.5" y1="599.6797" y2="599.6797"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="163" x="524.5" y="594.9375">send(PutObjectCommand)</text><polygon fill="#181818" points="1249,624.9902,1259,628.9902,1249,632.9902,1253,628.9902" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="877.5" x2="1255" y1="628.9902" y2="628.9902"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="884.5" y="624.248">PUT</text><polygon fill="#181818" points="700.5,654.3008,710.5,658.3008,700.5,662.3008,704.5,658.3008" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="507.5" x2="706.5" y1="658.3008" y2="658.3008"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="176" x="514.5" y="653.5586">getAudioDurationInSeconds</text><!--MD5=[043a4b8cfc046260dcb627a92442fba2]
+@startuml calculateMetadata
+
+actor User
+participant remotion
+participant RemotionRoot
+participant "tts.ts" as tts
+participant "@remotion/media-utils" as media_utils
+
+box "@aws-sdk/client-s3"
+  participant S3Client
+end box
+box "microsoft-cognitiveservices-speech-sdk"
+' participant SpeechConfig
+' participant AudioOutputStream
+' participant AudioConfig
+participant SpeechSynthesizer
+end box
+participant AWS
+participant Azure
+
+User -> remotion: registerRoot(RemotionRoot)
+remotion -> RemotionRoot**
+remotion -> RemotionRoot: calculateMetadata
+activate RemotionRoot
+  RemotionRoot -> RemotionRoot: waitForNoInput
+  RemotionRoot -> tts: audioAlreadyExists
+  activate tts
+    tts -> S3Client**
+    tts -> S3Client: send(HeadObjectCommand)
+    S3Client - -> AWS: HEAD
+  deactivate tts
+
+  RemotionRoot -> tts: synthesizeSpeech
+  activate tts
+    ' tts -> SpeechConfig: fromSubscription
+    ' activate SpeechConfig
+    ' return speechConfig
+    ' tts -> AudioOutputStream: createPullStream
+    ' tts -> AudioConfig: fromStreamOutput
+    ' activate AudioConfig
+    ' return audioConfig
+    tts -> SpeechSynthesizer**: (speachConfig, audioConfig)
+    tts -> SpeechSynthesizer: speakSsmlAsync
+    activate SpeechSynthesizer
+    SpeechSynthesizer - -> Azure
+    return SpeechSynthesisResult
+    tts -> SpeechSynthesizer: close
+    destroy SpeechSynthesizer
+    tts -> tts: uploadTtsToS3
+    activate tts
+      tts -> S3Client: send(PutObjectCommand)
+      S3Client - -> AWS: PUT
+
+    deactivate tts
+    tts -> media_utils: getAudioDurationInSeconds
+  deactivate tts
+
+deactivate RemotionRoot
+
+
+
+@enduml
+
+@startuml calculateMetadata
+
+actor User
+participant remotion
+participant RemotionRoot
+participant "tts.ts" as tts
+participant "@remotion/media-utils" as media_utils
+
+box "@aws-sdk/client-s3"
+  participant S3Client
+end box
+box "microsoft-cognitiveservices-speech-sdk"
+participant SpeechSynthesizer
+end box
+participant AWS
+participant Azure
+
+User -> remotion: registerRoot(RemotionRoot)
+remotion -> RemotionRoot**
+remotion -> RemotionRoot: calculateMetadata
+activate RemotionRoot
+  RemotionRoot -> RemotionRoot: waitForNoInput
+  RemotionRoot -> tts: audioAlreadyExists
+  activate tts
+    tts -> S3Client**
+    tts -> S3Client: send(HeadObjectCommand)
+    S3Client - -> AWS: HEAD
+  deactivate tts
+
+  RemotionRoot -> tts: synthesizeSpeech
+  activate tts
+    tts -> SpeechSynthesizer**: (speachConfig, audioConfig)
+    tts -> SpeechSynthesizer: speakSsmlAsync
+    activate SpeechSynthesizer
+    SpeechSynthesizer - -> Azure
+    return SpeechSynthesisResult
+    tts -> SpeechSynthesizer: close
+    destroy SpeechSynthesizer
+    tts -> tts: uploadTtsToS3
+    activate tts
+      tts -> S3Client: send(PutObjectCommand)
+      S3Client - -> AWS: PUT
+
+    deactivate tts
+    tts -> media_utils: getAudioDurationInSeconds
+  deactivate tts
+
+deactivate RemotionRoot
+
+
+
+@enduml
+
+PlantUML version 1.2022.7(Tue Aug 23 02:01:30 KST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: ko
+Country: KR
+--></g></svg>

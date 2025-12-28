@@ -1,0 +1,130 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="initial-scale=1.0, width=device-width" data-next-head=""/><title data-next-head="">빠르고 쉬운 Recoil.js 상태 관리</title><link rel="preload" href="/_next/static/css/d20c50ed748cd26f.css" as="style"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><link rel="stylesheet" href="/_next/static/css/d20c50ed748cd26f.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" noModule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/_next/static/chunks/webpack-0b9df2340104f8e1.js" defer=""></script><script src="/_next/static/chunks/framework-80cff53c93df8ff7.js" defer=""></script><script src="/_next/static/chunks/main-beade485850481f6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-5b36dff9503cb490.js" defer=""></script><script src="/_next/static/chunks/5695-9c01eff236121af5.js" defer=""></script><script src="/_next/static/chunks/pages/blogs/2021-03-20-recoiljs-fc63fd1626a61d32.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_buildManifest.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_ssgManifest.js" defer=""></script><style id="__jsx-4134105190">.markdown html{font:118.75%/1.58 'Roboto',serif;box-sizing:border-box;overflow-y:scroll;}.markdown *{box-sizing:inherit;}.markdown *:before{box-sizing:inherit;}.markdown *:after{box-sizing:inherit;}.markdown body{color:hsla(0,0%,0%,0.73);font-family:'Roboto',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}.markdown img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}.markdown h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}.markdown h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}.markdown h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}.markdown h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}.markdown h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}.markdown hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown ul{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown ol{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.85rem;line-height:1.58rem;}.markdown table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:1rem;line-height:1.58rem;border-collapse:collapse;width:100%;}.markdown fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown blockquote{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.94737rem;line-height:1.58rem;border-left:0.5925rem solid #017698;color:hsla(0,0%,0%,0.65);background-color:hsla(0,0%,0%,0.1);padding:0.29625rem 0.9875rem;font-style:italic;}.markdown form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.58rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}.markdown address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown b{font-weight:700;}.markdown strong{font-weight:700;}.markdown dt{font-weight:700;}.markdown th{font-weight:700;}.markdown li{margin-bottom:calc(1.58rem / 2);}.markdown ol li{padding-left:0;}.markdown ul li{padding-left:0;}.markdown li > ol{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown li > ul{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown blockquote *:last-child{margin-bottom:0;}.markdown li *:last-child{margin-bottom:0;}.markdown p *:last-child{margin-bottom:0;}.markdown li > p{margin-bottom:calc(1.58rem / 2);}.markdown code{font-size:0.85rem;line-height:1.58rem;}.markdown kbd{font-size:0.85rem;line-height:1.58rem;}.markdown samp{font-size:0.85rem;line-height:1.58rem;}.markdown abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}.markdown thead{text-align:left;}.markdown td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.05333rem;padding-right:1.05333rem;padding-top:0.79rem;padding-bottom:calc(0.79rem - 1px);}.markdown th:first-child,td:first-child{padding-left:0;}.markdown th:last-child,td:last-child{padding-right:0;}.markdown a{color:#017698;text-decoration:none;background-image:linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, #017698 1px, #017698 2px, rgba(0, 0, 0, 0) 2px);}.markdown a:hover,a:active{text-shadow:none;background-image:none;}.markdown h1,h2,h3,h4,h5,h6{margin-top:3.16rem;}.markdown li>ol,li>ul{margin-left:20px;margin-bottom:0;}.markdown blockquote > :last-child{margin-bottom:0;}.markdown blockquote cite{font-size:1rem;line-height:1.58rem;color:hsla(0,0%,0%,0.73);font-style:normal;font-weight:400;}.markdown blockquote cite:before{content:"— ";}.markdown @media only screen and (max-width:480px){html{font-size:106.25%;line-height:28px;}blockquote{border-left:0.29625rem solid #017698;color:hsla(0,0%,0%,0.59);padding-left:0.88875rem;font-style:italic;margin-left:-1.185rem;margin-right:0;}} .markdown{color:#3d3d3d}.markdown ul li{list-style-type:disc}.markdown ol{list-style-type:decimal}:not(pre) code{background-color:rgb(203 208 218);border-radius:3px;font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:.2rem .3rem;margin:0 .2rem}.markdown * code{font-size:inherit}.markdown code[class*="language-"]{font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:1rem;background-color:#2d2d2d}</style></head><body><div id="__next"><div class="leading-normal tracking-normal bg-gray-100 min-h-screen"><nav class="w-full"><div id="progress" class="top-0 z-20 h-1" style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0)"></div><div class="flex flex-wrap items-center justify-between w-full py-3 mx-auto mt-0 md:max-w-4xl"><div class="pl-4"><a class="text-xl font-extrabold text-gray-900 no-underline hover:no-underline" href="/">lifetime trails</a></div><div class="block pr-4 lg:hidden"><button id="nav-toggle" type="button" class="flex items-center px-3 py-2 text-gray-500 appearance-none hover:text-gray-900 hover:border-teal-500 focus:outline-none"><svg class="w-3 h-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg></button></div><div id="nav-content" class="bg-gray-100 border-b flex-grow lg:border-none lg:flex lg:items-center lg:mt-0 lg:shadow-none lg:w-auto md:bg-transparent mt-2 shadow w-full z-20 hidden"><ul class="items-center justify-end flex-1 list-reset lg:flex"><li class="mr-3"><a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4" href="/">Home</a></li></ul></div></div></nav><div class="container w-full px-4 pb-10 mx-auto md:max-w-3xl"><h1 class="font-bold text-gray-800 mb-4 text-5xl mt-8 mb-8">빠르고 쉬운 Recoil.js 상태 관리</h1><div class="details"><p class="text-gray-500">그간 recoil.js를 사용하면서 느낀점과 경험을 공유합니다.</p><p class="text-gray-400 text-right -mt-1"><span class="mr-4">2021-02-22</span></p></div><article class="markdown"><h1>상태 관리 회고</h1>
+<p>여러 단계의 parent/child 컴포넌트로 이루어진 애플리케이션을 만들다보면 상태 관리와 전달을 고민하게 됩니다.</p>
+<p>애플리케이션 전체에서 공통으로 참조하고 변경하는 상태를 흔히 <strong>application level state</strong> 라고 합니다.</p>
+<p>Redux가 없었을 때에는 event emitter 등으로 <strong>application level state</strong>를 컴포넌트간에 전달하고 <code>forceUpdate</code> 같은 것을 호출 했을 겁니다.</p>
+<p>Redux는 상태 관리를 action, reducer, connect 등으로 패턴화 하였습니다.</p>
+<p>네 Redux는 일종의 코드를 이렇게 작성하자는 약속과 패턴의 영역이라고 생각합니다.</p>
+<p>그러다 보니, redux 방식은 생각보다 많은 코드를 작성해야 합니다.</p>
+<p>또한 reducer라는 것은 컴포넌트 단에 드러나지 않아 코드를 이해하고 결과를 예측하기 위해 여러 파일을 추적해야 합니다.</p>
+<p>그래서 저는 reducer에서 별도의 변환 로직을 넣지 않고 오로지 새로운 객체에 값을 복사하는 방식으로만 사용하는 편 입니다.</p>
+<p>솔직히 딱히 다른 대안이 없기에 redux 패턴을 사용했습니다.</p>
+<p>하지만, 하나의 상태를 추가히기 위해 action을 정의하고 connect하는 과정은 지루한 작업입니다.</p>
+<p>막연하게 무언가 부족하다고 느껴질 때 즈음 recoil.js를 만나게 됩니다.</p>
+<p>action 대신 <code>atom</code>을 사용하고, reducer 대신 <code>selector</code>를 사용하여 reactive한 프로그래밍을 할 수 있습니다.</p>
+<h1><code>atom</code> - 컴포넌트간 상태 공유</h1>
+<p>컴포넌트사이의 상태 공유는 간단히 <code>atom</code>을 정의하면 됩니다.</p>
+<p>값만을 사용할 때에는 <code>useRecoilValue</code>를 변경까지 할 경우에는 <code>useRecoilState</code>를 사용합니다.</p>
+<p>너무 간단해서 더 설명할 것이 없습니다.</p>
+<p>참조: <a href="https://recoiljs.org/docs/basic-tutorial/atoms">Atoms | Recoil</a></p>
+<h1><code>selector</code> - reactive programminig</h1>
+<p>흔히들 엑셀의 동작과 비교하는 reactive programming 기법이 있습니다.</p>
+<p>엑셀의 <code>SUM</code> 함수를 사용하면 여러 셀의 값을 더하여 그 결과를 표시합니다.</p>
+<p>이후 <code>SUM</code> 함수로 지정한 셀 중의 하나를 수정하면 바로 합산 결과를 보여줍니다.</p>
+<p>애플리케이션 사용자는 이러한 방식의 동작을 기대합니다.</p>
+<p><code>selector</code>는 recoil state를 <code>get</code>이라는 함수로 참조하는 것으로 observe할 수 있습니다.</p>
+<p>참조: <a href="https://recoiljs.org/docs/basic-tutorial/selectors">Selectors | Recoil</a></p>
+<p>Event emitter나 observer 같은 방식보다 직관적인 코드로 derives한 값을 정의할 수 있습니다.</p>
+<h1>async API 호출</h1>
+<p>로그인 사용자 정보는 다양한 컴포넌트에서 필요합니다.</p>
+<p>여러 곳에서 사용하더라도 API 호출을 한번만 하고 싶습니다.</p>
+<p>먼저 <code>selector</code>로 promise를 반환하도록 아래와 같이 작성합니다.</p>
+<pre><code class="language-tsx">const userState = selector({
+  key: &#x27;userState&#x27;,
+  get: async () =&gt; axios.get&lt;UserInfo&gt;(&#x27;/login-user-info&#x27;).then((r) =&gt; r.data),
+});
+</code></pre>
+<p><code>Header</code>에서도 사용하고</p>
+<pre><code class="language-tsx">function Header() {
+  const userInfo = useRecoilValue(userState)
+
+  return (
+    ...
+  )
+}
+</code></pre>
+<p><code>UserInfoPage</code> 컴포넌트에서도 사용합니다.</p>
+<pre><code class="language-tsx">function UserInfoPage() {
+  const userInfo = useRecoilValue(userState)
+
+  return (
+    ...
+  )
+}
+</code></pre>
+<p>한 화면에 <code>Header</code>, <code>UserInfoPage</code> 컴포넌트를 동시에 mount해도 한번의 API만 호출합니다.</p>
+<h1>Reactive programming</h1>
+<p>Reactive programming은 어떻게 구현할 수 있는지 보겠습니다.</p>
+<pre><code class="language-tsx">// 현재 화면에 표시할 post의 id
+const currentPostIdState = atom({
+  key: &#x27;currentPostIdState&#x27;,
+  default: 0,
+});
+
+// post 정보
+const currentPostState = selector({
+  key: &#x27;currentPostState&#x27;,
+  get: async ({ get }) =&gt; {
+    const currentPostId = get(currentPostIdState);
+    return axios.get&lt;Post&gt;(`/posts/${currentPostId}`).then((r) =&gt; r.data);
+  },
+});
+
+// post에 달린 comment 목록
+const currenPostCommentsState = selector({
+  key: &#x27;currenPostCommentsState&#x27;,
+  get: async ({ get }) =&gt; {
+    const currentPostId = get(currentPostIdState);
+    return axios.get&lt;Comment[]&gt;(`/posts/${currentPostId}/comments`).then((r) =&gt; r.data);
+  },
+});
+</code></pre>
+<p>위의 코드는 <code>currentPostIdState</code>를 변경할 경우 <code>currentPostState</code>, <code>currenPostCommentsState</code>를 새로운 API 호출과 함께 갱신합니다.</p>
+<p><code>on</code> 함수를 사용한 callback 처리나 observe를 사용한 chaining function 없이도 매우 직관적이고 간결한 코드로 reactive programming을 할 수 있습니다.</p>
+<p>조금 복잡하지만 매우 유용한 예제를 살펴 보겠습니다.</p>
+<p><code>Comment</code>가 10개 일지라도 작성자는 2명일 수 있습니다.</p>
+<p>그리고 여러분은 작성자 정보를 가져오는 API 호출 횟수를 줄이고 싶을 겁니다.</p>
+<p>먼저 <code>Comment</code>의 <code>userId</code>에 따른 <code>UserInfo</code>값을 가지는 <code>ResolvedComment</code>를 다음과 같이 정의합니다.</p>
+<pre><code class="language-tsx">type Comment = {
+  userId: string; // 커멘트 작성자
+  comment: string; // 커멘트 내용
+};
+
+type ResolvedComment = Comment &amp; {
+  user: UserInfo; // `userId`로 부터 가져온 사용자 정보
+};
+</code></pre>
+<p><code>selectorFamily</code>를 사용하면 파라미터를 받을 수 있는 state를 정의할 수 있습니다.</p>
+<p>파라미터는 serializable 즉 JSON.stringify 가능해야 합니다.</p>
+<p>아마도 recoil.js 내부에서 캐쉬 key로 사용할 것 같습니다.</p>
+<p><code>waitForAll</code>과 함께 사용하면 마법과 같은 코딩을 할 수 있습니다.</p>
+<pre><code class="language-tsx">// userId 값으로 사용자 정보를 가져옵니다.
+const userFamilyState = selectorFamily({
+  key: &#x27;userFamilyState&#x27;,
+  get: (userId: string) =&gt; async () =&gt; {
+    return axios.get&lt;UserInfo&gt;(`/user/${userId}`);
+  },
+});
+
+// 커멘트 목록 정보를 업데이트하면 커멘트 작성자 정보와 함께 업데이트 합니다.
+const currentResolvedCommentsState = selector({
+  key: &#x27;currentResolvedCommentsState&#x27;,
+  get: ({ get }) =&gt; {
+    const comments = get(currenPostCommentsState);
+
+    // 각 comment의 작성자 정보를 매번 가져오는 것 같지만, selectorFamily로 인해 중복 호출을 하지 않습니다.
+    const users = get(waitForAll(comments.map(({ userId }) =&gt; userFamilyState(userId))));
+    return comments.map((comment) =&gt; ({
+      ...comment,
+      user: findItem(users, &#x27;id&#x27;, comment.useId),
+    }));
+  },
+});
+</code></pre>
+<p>이제 <code>currentPostIdState</code> 만 변경하면 중복 호출 없이 각 커멘트의 작성자 정보까지 업데이트하는 간결하고 직관적인 라이브러리를 확보하였습니다.</p>
+<p>원하는 recoil state를 원하는 컴포넌트에 <code>useRecoilValue</code>로 hook하면 끝 입니다.</p>
+<h1>마치며</h1>
+<p>무언가를 완벽히 알고 사용하기 보다는, 필요한 것을 찾아 사용하는 편 입니다.</p>
+<p>그래서 아직 recoil.js의 기능을 모두 아는 것은 아닙니다.</p>
+<p>하지만, 다양한 요구사항에 대한 해결 방법을 고민했을 때, <code>atom</code>과 <code>selector</code>라는 이 간단한 개념들이 얼마만큼 확장가능한지 매번 놀라고 있습니다.</p>
+<p>이런 새로운 개념으로 인해 금방이라도 legacy가 되어 버릴 redux나 mobx 기반의 코드 작성을 잠시 멈추시고, recoil.js를 사용해 보시는 것 어떨까요?</p>
+<p>추천 드립니다.</p></article><div class="react-utterences"><div>Loading script...</div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/blogs/2021-03-20-recoiljs","query":{},"buildId":"qfjDRDkI7hbaUN0YCN0K0","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>

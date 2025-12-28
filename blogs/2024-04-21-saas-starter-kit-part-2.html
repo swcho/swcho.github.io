@@ -1,0 +1,121 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="initial-scale=1.0, width=device-width" data-next-head=""/><title data-next-head="">saas-starter-kit과 SAML</title><link rel="preload" href="/_next/static/css/d20c50ed748cd26f.css" as="style"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><link rel="stylesheet" href="/_next/static/css/d20c50ed748cd26f.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" noModule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/_next/static/chunks/webpack-0b9df2340104f8e1.js" defer=""></script><script src="/_next/static/chunks/framework-80cff53c93df8ff7.js" defer=""></script><script src="/_next/static/chunks/main-beade485850481f6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-5b36dff9503cb490.js" defer=""></script><script src="/_next/static/chunks/5695-9c01eff236121af5.js" defer=""></script><script src="/_next/static/chunks/pages/blogs/2024-04-21-saas-starter-kit-part-2-700677d9e688f456.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_buildManifest.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_ssgManifest.js" defer=""></script><style id="__jsx-4134105190">.markdown html{font:118.75%/1.58 'Roboto',serif;box-sizing:border-box;overflow-y:scroll;}.markdown *{box-sizing:inherit;}.markdown *:before{box-sizing:inherit;}.markdown *:after{box-sizing:inherit;}.markdown body{color:hsla(0,0%,0%,0.73);font-family:'Roboto',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}.markdown img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}.markdown h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}.markdown h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}.markdown h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}.markdown h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}.markdown h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}.markdown hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown ul{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown ol{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.85rem;line-height:1.58rem;}.markdown table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:1rem;line-height:1.58rem;border-collapse:collapse;width:100%;}.markdown fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown blockquote{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.94737rem;line-height:1.58rem;border-left:0.5925rem solid #017698;color:hsla(0,0%,0%,0.65);background-color:hsla(0,0%,0%,0.1);padding:0.29625rem 0.9875rem;font-style:italic;}.markdown form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.58rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}.markdown address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown b{font-weight:700;}.markdown strong{font-weight:700;}.markdown dt{font-weight:700;}.markdown th{font-weight:700;}.markdown li{margin-bottom:calc(1.58rem / 2);}.markdown ol li{padding-left:0;}.markdown ul li{padding-left:0;}.markdown li > ol{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown li > ul{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown blockquote *:last-child{margin-bottom:0;}.markdown li *:last-child{margin-bottom:0;}.markdown p *:last-child{margin-bottom:0;}.markdown li > p{margin-bottom:calc(1.58rem / 2);}.markdown code{font-size:0.85rem;line-height:1.58rem;}.markdown kbd{font-size:0.85rem;line-height:1.58rem;}.markdown samp{font-size:0.85rem;line-height:1.58rem;}.markdown abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}.markdown thead{text-align:left;}.markdown td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.05333rem;padding-right:1.05333rem;padding-top:0.79rem;padding-bottom:calc(0.79rem - 1px);}.markdown th:first-child,td:first-child{padding-left:0;}.markdown th:last-child,td:last-child{padding-right:0;}.markdown a{color:#017698;text-decoration:none;background-image:linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, #017698 1px, #017698 2px, rgba(0, 0, 0, 0) 2px);}.markdown a:hover,a:active{text-shadow:none;background-image:none;}.markdown h1,h2,h3,h4,h5,h6{margin-top:3.16rem;}.markdown li>ol,li>ul{margin-left:20px;margin-bottom:0;}.markdown blockquote > :last-child{margin-bottom:0;}.markdown blockquote cite{font-size:1rem;line-height:1.58rem;color:hsla(0,0%,0%,0.73);font-style:normal;font-weight:400;}.markdown blockquote cite:before{content:"— ";}.markdown @media only screen and (max-width:480px){html{font-size:106.25%;line-height:28px;}blockquote{border-left:0.29625rem solid #017698;color:hsla(0,0%,0%,0.59);padding-left:0.88875rem;font-style:italic;margin-left:-1.185rem;margin-right:0;}} .markdown{color:#3d3d3d}.markdown ul li{list-style-type:disc}.markdown ol{list-style-type:decimal}:not(pre) code{background-color:rgb(203 208 218);border-radius:3px;font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:.2rem .3rem;margin:0 .2rem}.markdown * code{font-size:inherit}.markdown code[class*="language-"]{font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:1rem;background-color:#2d2d2d}</style></head><body><div id="__next"><div class="leading-normal tracking-normal bg-gray-100 min-h-screen"><nav class="w-full"><div id="progress" class="top-0 z-20 h-1" style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0)"></div><div class="flex flex-wrap items-center justify-between w-full py-3 mx-auto mt-0 md:max-w-4xl"><div class="pl-4"><a class="text-xl font-extrabold text-gray-900 no-underline hover:no-underline" href="/">lifetime trails</a></div><div class="block pr-4 lg:hidden"><button id="nav-toggle" type="button" class="flex items-center px-3 py-2 text-gray-500 appearance-none hover:text-gray-900 hover:border-teal-500 focus:outline-none"><svg class="w-3 h-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg></button></div><div id="nav-content" class="bg-gray-100 border-b flex-grow lg:border-none lg:flex lg:items-center lg:mt-0 lg:shadow-none lg:w-auto md:bg-transparent mt-2 shadow w-full z-20 hidden"><ul class="items-center justify-end flex-1 list-reset lg:flex"><li class="mr-3"><a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4" href="/">Home</a></li></ul></div></div></nav><div class="container w-full px-4 pb-10 mx-auto md:max-w-3xl"><h1 class="font-bold text-gray-800 mb-4 text-5xl mt-8 mb-8">saas-starter-kit과 SAML</h1><div class="details"><p class="text-gray-500">지난 시간에 이어 saas-starter-kit에서 제공하는 SAML 인증 기능을 살펴 보고 그 의미를 짚어봅니다.</p><p class="text-gray-400 text-right -mt-1"><span class="mr-4">2024-04-21</span></p></div><article class="markdown"><h1>BoxyHQ</h1>
+<p>이쯤에서 BoxyHQ는 어떤 솔루션을 제공하는 회사인지 알아 봅니다.</p>
+<p>BoxyHQ는 <a href="https://github.com/boxyhq/jackson">jackson</a>이라는 오픈소스를 만들고 있습니다.
+jackson에 대해서는 다음 영상에서 상세하게 설명하고 있습니다.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nvsD4-GQw4A?si=ZqoL1VpvlShA_k6D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<p>여러 IdP로 부터 단일한 인증 방식을 제공합니다.
+만일 한 회사에서 여러 IdP를 사용하여 인증이나 조직 관리를 할 경우 jackson을 사용하여 단일한 인증 방식을 제공할 수 있습니다.</p>
+<p>또한 접근 제어를 위한 directory sync, 접근에 따른 audit log 기능도 제공합니다.</p>
+<p>인증, 접근제어, 감사로그 까지 한 회사에서 필요한 보안 요구사항을 처리할 수 있는 솔루션 입니다.</p>
+<h1>jackson</h1>
+<p><code>jackson</code> 역시 데이터베이스 설정이 필요합니다.
+TypeORM을 사용하여 SQL 처리를 하며 다양한 데이터베이스를 지원합니다.
+<code>saas-starter-kit</code>에서 사용하는 postgres를 그대로 사영하기 위해서는 다음과 같이 <code>.env</code>에 설정해 줍니다.</p>
+<pre><code class="language-bash">DB_URL=postgresql://admin:admin@127.0.0.1:5432/saas-starter-kit
+NEXTAUTH_ADMIN_CREDENTIALS=admin@example.com:password
+</code></pre>
+<p>초기 구동시 TypeORM에 의해 <code>jackson_store</code>, <code>jackson_index</code>, <code>jackson_ttl</code> 3개의 테이블을 생성합니다.</p>
+<p>환경 변수에 설정한 어드민 로그인 정보를 사용하여 로그인합니다.</p>
+<p><img alt="jackson-login" loading="lazy" width="750" height="924" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-1.a3a7aa49.png"/></p>
+<p>다음과 같이 <code>Enterprise SSO</code> 화면이 나옵니다.</p>
+<p><img alt="initial-page" loading="lazy" width="1726" height="1240" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-2.da695565.png"/></p>
+<p>다음과 같이 SAML 연결 설정이 가능합니다.</p>
+<p><img alt="saml-creation" loading="lazy" width="1258" height="1636" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-3.efb32a1a.png"/></p>
+<p>하지만 분석하고자 하는 시나리오에서 위 과정은 필요하지 않습니다.
+<code>saas-starter-kit</code>에서 이를 대신하게 때문입니다.</p>
+<h1>SAML 연동</h1>
+<p><code>saas-starter-kit</code>은 BoxyHQ의 제품군과 연동하는 레퍼런스 boilerplate 입니다.
+따라서 SAML 연동을 직접해보고 관련 과정을 살펴보도록 하겠습니다.</p>
+<p>먼저 BoxyHQ는 손쉬운 개발 및 PoC 진행을 위해 다음과 같은 Mock SAML 서비스를 제공합니다.</p>
+<p><a href="https://mocksaml.com/">Mock SAML - A free SAML 2.0 Identity Provider for testing SAML SSO integrations.</a></p>
+<p>일종의 더미 IdP를 제공함으로서 SAML 연동에 필요한 솔루션이나 설정이 정상동작하는지 확인하기에 유용합니다.
+물론 실제로 로그인에 사용하면 안되겠죠.</p>
+<p>metadata는 https://mocksaml.com/api/saml/metadata 위치에서 확인할 수 있습니다.</p>
+<pre><code class="language-xml">&lt;md:EntityDescriptor xmlns:md=&quot;urn:oasis:names:tc:SAML:2.0:metadata&quot;
+	entityID=&quot;https://saml.example.com/entityid&quot; validUntil=&quot;2034-04-07T04:25:18.870Z&quot;&gt;
+	&lt;script /&gt;
+	&lt;md:IDPSSODescriptor WantAuthnRequestsSigned=&quot;true&quot;
+		protocolSupportEnumeration=&quot;urn:oasis:names:tc:SAML:2.0:protocol&quot;&gt;
+		&lt;md:KeyDescriptor use=&quot;signing&quot;&gt;
+			&lt;ds:KeyInfo xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;
+				&lt;ds:X509Data&gt;
+					&lt;ds:X509Certificate&gt;MIIC4jCCAcoCCQC33wnybT5QZDANBgkqhkiG9w0BAQsFADAyMQswCQYDVQQGEwJV
+						SzEPMA0GA1UECgwGQm94eUhRMRIwEAYDVQQDDAlNb2NrIFNBTUwwIBcNMjIwMjI4
+						MjE0NjM4WhgPMzAyMTA3MDEyMTQ2MzhaMDIxCzAJBgNVBAYTAlVLMQ8wDQYDVQQK
+						DAZCb3h5SFExEjAQBgNVBAMMCU1vY2sgU0FNTDCCASIwDQYJKoZIhvcNAQEBBQAD
+						ggEPADCCAQoCggEBALGfYettMsct1T6tVUwTudNJH5Pnb9GGnkXi9Zw/e6x45DD0
+						RuRONbFlJ2T4RjAE/uG+AjXxXQ8o2SZfb9+GgmCHuTJFNgHoZ1nFVXCmb/Hg8Hpd
+						4vOAGXndixaReOiq3EH5XvpMjMkJ3+8+9VYMzMZOjkgQtAqO36eAFFfNKX7dTj3V
+						pwLkvz6/KFCq8OAwY+AUi4eZm5J57D31GzjHwfjH9WTeX0MyndmnNB1qV75qQR3b
+						2/W5sGHRv+9AarggJkF+ptUkXoLtVA51wcfYm6hILptpde5FQC8RWY1YrswBWAEZ
+						NfyrR4JeSweElNHg4NVOs4TwGjOPwWGqzTfgTlECAwEAATANBgkqhkiG9w0BAQsF
+						AAOCAQEAAYRlYflSXAWoZpFfwNiCQVE5d9zZ0DPzNdWhAybXcTyMf0z5mDf6FWBW
+						5Gyoi9u3EMEDnzLcJNkwJAAc39Apa4I2/tml+Jy29dk8bTyX6m93ngmCgdLh5Za4
+						khuU3AM3L63g7VexCuO7kwkjh/+LqdcIXsVGO6XDfu2QOs1Xpe9zIzLpwm/RNYeX
+						UjbSj5ce/jekpAw7qyVVL4xOyh8AtUW1ek3wIw1MJvEgEPt0d16oshWJpoS1OT8L
+						r/22SvYEo3EmSGdTVGgk3x3s+A0qWAqTcyjr7Q4s/GKYRFfomGwz0TZ4Iw1ZN99M
+						m0eo2USlSRTVl7QHRTuiuSThHpLKQQ==&lt;/ds:X509Certificate&gt;
+				&lt;/ds:X509Data&gt;
+			&lt;/ds:KeyInfo&gt;
+		&lt;/md:KeyDescriptor&gt;
+		&lt;md:NameIDFormat&gt;urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress&lt;/md:NameIDFormat&gt;
+		&lt;md:SingleSignOnService Binding=&quot;urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect&quot;
+			Location=&quot;https://mocksaml.com/api/saml/sso&quot; /&gt;
+		&lt;md:SingleSignOnService Binding=&quot;urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST&quot;
+			Location=&quot;https://mocksaml.com/api/saml/sso&quot; /&gt;
+	&lt;/md:IDPSSODescriptor&gt;
+&lt;/md:EntityDescriptor&gt;
+</code></pre>
+<p>SSO 설정탭에서 SAML single sign on 설정을 할 수 있습니다.
+<code>@boxyhq/react-ui</code> 패키지에 있는 <code>ConnectionsWrapper</code> 컴포넌트를 사용합니다.</p>
+<p><img alt="sso-settings" loading="lazy" width="1270" height="966" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image.d6a53a26.png"/></p>
+<p>화면 중간에 <code>fetch failed</code>라는 문구가 나옵니다.
+이는 앞서 말한 jackson과 연동하여 sso 처리를 하기 때문입니다.
+Youtube에서 소개한 비디오에 따르면 <code>saas-starter-kit</code> 자체적으로 SAML 처리가 가능했던 것으로 보입니다.
+지금은 테스트를 위해서 로컬에 jackson도 구동해 주어야 합니다.
+jackson은 앞에 설명한 바와 같이 미리 실행해 줍니다.</p>
+<p><code>New Connection</code> 버튼을 누르면 SSO 연결 생성 화면이 다음과 같이 나옵니다.
+<code>saas-starter-kit</code> 소개 비디오에 나온바와 같이 <a href="https://mocksaml.com/">Mock SAML</a>을 활용하여 설정을 해 봅니다.</p>
+<p><img alt="create-connection" loading="lazy" width="1256" height="710" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-4.5548facf.png"/></p>
+<p>이 과정을 분석해 보면 다음과 같은 흐름을 가지고 있습니다.</p>
+<p><img alt="" loading="lazy" width="1546" height="336" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/saml-integration.ae9255af.svg"/></p>
+<p>생성을 위한 폼 UI는 <code>@boxyhq/react-ui</code> 패키지의 컴포넌트를 사용합니다.
+해당 소스는 찾을 수 없었습니다.
+아마도 boxyhq에서 핵심이 되는 jackson을 공개하는 대신 이를 활용하는 솔루션을 closed source로 제공하여 헤게모니를 가져가는 비지니지스 모델을 가지고 있는 것 같습니다.</p>
+<p>이렇게 <code>saas-starter-kit</code>에서 backend 단에 SSO 생성요청을 하면 다시 jackson의 endpoint로 SSO 설정 생성을 요청하여 처리합니다.</p>
+<p><code>saas-starter-kit</code>에서 jackson 설정은 다음과 같이 <code>.env</code> 설정을 통해 할 수 있습니다.</p>
+<pre><code class="language-shell"># Jackson
+JACKSON_URL=http://localhost:5225
+JACKSON_API_KEY=secret
+JACKSON_PRODUCT_ID=boxyhq
+JACKSON_WEBHOOK_SECRET=your-webhook-secret
+</code></pre>
+<p>여기서 <code>JACKSON_URL</code> 값을 채워주지 않으면 <code>saas-starter-kit</code>에서 직접 <code>@boxyhq/saml-jackson</code> 패키지를 사용하여 동작합니다.
+따라서 테스트 시에 로컬에 jackson을 띄울 필요는 없어집니다.
+그럼에도 불구하고 hosted 방식의 이점은 사내에 하나의 jackson 인스턴스만 띄워 여러개의 <code>saas-starter-kit</code>과 같은 SAAS 애플리케이션을 운영할 수 있기 때문입니다.</p>
+<p>이렇게 Mock SAML을 활용하여 IdP 하나를 설정하고나면 각 프로젝트 별로 IdP에 로그인을 위임할 수 있습니다.</p>
+<p>이를 위해선 다음과 같이 환경 설정이 필요합니다.</p>
+<pre><code class="language-bash"># Enable Auth providers (comma separated)
+# Supported providers: github, google, saml, email, credentials, idp-initiated
+AUTH_PROVIDERS=github,saml,credentials
+</code></pre>
+<p><code>AUTH_PROVIDERS</code> 값에 <code>saml</code> provider를 추가해야 합니다.</p>
+<p>이후 다음과 같이 하단에 <code>Continue with SSO</code> 버튼을 확인할 수 있습니다.</p>
+<p><img alt="login-with-saml" loading="lazy" width="490" height="766" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-5.b9df0563.png"/></p>
+<p>SSO 설정을 추가한 team의 slug 값을 입력합니다.</p>
+<p><img alt="sign-in-with-saml" loading="lazy" width="470" height="568" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-6.85125c6e.png"/></p>
+<p>Mock SAML의 로그인 페이지로 리다이렉트 합니다.
+먼저 admin으로 로그인해 봅니다.
+Mock SAML에서는 모든 password를 옳바른 값으로 처리하기 때문에 <code>saas-starter-kit</code>에서 설정한 암호를 입력할 필요가 없습니다.</p>
+<p><img alt="login-as-admin" loading="lazy" width="1422" height="994" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-9.9f3bc8bb.png"/></p>
+<p>다음 화면처럼 정상적으로 admin 화면으로 callback 합니다.</p>
+<p><img alt="admin-page" loading="lazy" width="1708" height="654" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-10.ae5a0f0d.png"/></p>
+<p>이제는 <code>unknown</code>이라는 알 수 없는 사용자로 로그인을 시도해 봅니다.</p>
+<p><img alt="login-as-unknown" loading="lazy" width="1446" height="990" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-11.bf247d6b.png"/></p>
+<p>새로운 팀원으로 추가를 하면서 Role에 맞추어 화면을 표시합니다.</p>
+<p><img alt="unknown-page" loading="lazy" width="1726" height="594" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-12.87a952c7.png"/></p>
+<h1>마치며</h1>
+<p><code>saas-starter-kit</code>의 핵심 기능인 SAML SSO의 동작 방식을 살펴보고 그 의미를 살펴 보았습니다.</p>
+<p>사내 platform engineering을 하다 보면, 다양한 솔루션을 만드는데 있어서 중복 개발이 따르는 부분 중 하나가 인증 입니다.
+<code>boxyhq</code>의 <code>jackson</code> 이를 다양한 구성으로 해결할 수 있는 솔루션을 제공하며 <code>saas-starter-kit</code>을 통해 어떻게 하나의 애플리케이션을 만들 수 있는지 레퍼런스를 제공합니다.</p>
+<p>아이디어를 빠르게 구현하고 검증하는데 많은 도움이 될 것 같습니다.</p></article><div class="react-utterences"><div>Loading script...</div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/blogs/2024-04-21-saas-starter-kit-part-2","query":{},"buildId":"qfjDRDkI7hbaUN0YCN0K0","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="initial-scale=1.0, width=device-width" data-next-head=""/><title data-next-head="">Auth.js</title><link rel="preload" href="/_next/static/css/d20c50ed748cd26f.css" as="style"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><link rel="stylesheet" href="/_next/static/css/d20c50ed748cd26f.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" noModule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/_next/static/chunks/webpack-0b9df2340104f8e1.js" defer=""></script><script src="/_next/static/chunks/framework-80cff53c93df8ff7.js" defer=""></script><script src="/_next/static/chunks/main-beade485850481f6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-5b36dff9503cb490.js" defer=""></script><script src="/_next/static/chunks/5695-9c01eff236121af5.js" defer=""></script><script src="/_next/static/chunks/pages/blogs/2023-03-03-auth.js-8dc90eaad84f0e28.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_buildManifest.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_ssgManifest.js" defer=""></script><style id="__jsx-4134105190">.markdown html{font:118.75%/1.58 'Roboto',serif;box-sizing:border-box;overflow-y:scroll;}.markdown *{box-sizing:inherit;}.markdown *:before{box-sizing:inherit;}.markdown *:after{box-sizing:inherit;}.markdown body{color:hsla(0,0%,0%,0.73);font-family:'Roboto',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}.markdown img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}.markdown h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}.markdown h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}.markdown h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}.markdown h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}.markdown h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}.markdown hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown ul{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown ol{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.85rem;line-height:1.58rem;}.markdown table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:1rem;line-height:1.58rem;border-collapse:collapse;width:100%;}.markdown fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown blockquote{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.94737rem;line-height:1.58rem;border-left:0.5925rem solid #017698;color:hsla(0,0%,0%,0.65);background-color:hsla(0,0%,0%,0.1);padding:0.29625rem 0.9875rem;font-style:italic;}.markdown form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.58rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}.markdown address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown b{font-weight:700;}.markdown strong{font-weight:700;}.markdown dt{font-weight:700;}.markdown th{font-weight:700;}.markdown li{margin-bottom:calc(1.58rem / 2);}.markdown ol li{padding-left:0;}.markdown ul li{padding-left:0;}.markdown li > ol{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown li > ul{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown blockquote *:last-child{margin-bottom:0;}.markdown li *:last-child{margin-bottom:0;}.markdown p *:last-child{margin-bottom:0;}.markdown li > p{margin-bottom:calc(1.58rem / 2);}.markdown code{font-size:0.85rem;line-height:1.58rem;}.markdown kbd{font-size:0.85rem;line-height:1.58rem;}.markdown samp{font-size:0.85rem;line-height:1.58rem;}.markdown abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}.markdown thead{text-align:left;}.markdown td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.05333rem;padding-right:1.05333rem;padding-top:0.79rem;padding-bottom:calc(0.79rem - 1px);}.markdown th:first-child,td:first-child{padding-left:0;}.markdown th:last-child,td:last-child{padding-right:0;}.markdown a{color:#017698;text-decoration:none;background-image:linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, #017698 1px, #017698 2px, rgba(0, 0, 0, 0) 2px);}.markdown a:hover,a:active{text-shadow:none;background-image:none;}.markdown h1,h2,h3,h4,h5,h6{margin-top:3.16rem;}.markdown li>ol,li>ul{margin-left:20px;margin-bottom:0;}.markdown blockquote > :last-child{margin-bottom:0;}.markdown blockquote cite{font-size:1rem;line-height:1.58rem;color:hsla(0,0%,0%,0.73);font-style:normal;font-weight:400;}.markdown blockquote cite:before{content:"— ";}.markdown @media only screen and (max-width:480px){html{font-size:106.25%;line-height:28px;}blockquote{border-left:0.29625rem solid #017698;color:hsla(0,0%,0%,0.59);padding-left:0.88875rem;font-style:italic;margin-left:-1.185rem;margin-right:0;}} .markdown{color:#3d3d3d}.markdown ul li{list-style-type:disc}.markdown ol{list-style-type:decimal}:not(pre) code{background-color:rgb(203 208 218);border-radius:3px;font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:.2rem .3rem;margin:0 .2rem}.markdown * code{font-size:inherit}.markdown code[class*="language-"]{font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:1rem;background-color:#2d2d2d}</style></head><body><link rel="preload" as="image" href="/_next/static/media/sequence.455970e8.png"/><div id="__next"><div class="leading-normal tracking-normal bg-gray-100 min-h-screen"><nav class="w-full"><div id="progress" class="top-0 z-20 h-1" style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0)"></div><div class="flex flex-wrap items-center justify-between w-full py-3 mx-auto mt-0 md:max-w-4xl"><div class="pl-4"><a class="text-xl font-extrabold text-gray-900 no-underline hover:no-underline" href="/">lifetime trails</a></div><div class="block pr-4 lg:hidden"><button id="nav-toggle" type="button" class="flex items-center px-3 py-2 text-gray-500 appearance-none hover:text-gray-900 hover:border-teal-500 focus:outline-none"><svg class="w-3 h-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg></button></div><div id="nav-content" class="bg-gray-100 border-b flex-grow lg:border-none lg:flex lg:items-center lg:mt-0 lg:shadow-none lg:w-auto md:bg-transparent mt-2 shadow w-full z-20 hidden"><ul class="items-center justify-end flex-1 list-reset lg:flex"><li class="mr-3"><a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4" href="/">Home</a></li></ul></div></div></nav><div class="container w-full px-4 pb-10 mx-auto md:max-w-3xl"><h1 class="font-bold text-gray-800 mb-4 text-5xl mt-8 mb-8">Auth.js</h1><div class="details"><p class="text-gray-500">Auth.js에 대해서 알아 봅니다.</p><p class="text-gray-400 text-right -mt-1"><span class="mr-4">2023-03-03</span></p></div><article class="markdown"><h1>Auth.js</h1>
+<h2>배경</h2>
+<p>Vercel은 next.js 인증 처리 패키지 <code>next-auth</code>를 다른 메타 프레임워크에서 사용할 수 있도록 auth.js라는 이름으로 제공하고 있습니다.</p>
+<blockquote>
+<p><a href="https://nextjs.org/docs/authentication">Authentication | Next.js</a></p>
+</blockquote>
+<p>다음과 같은 인증 방식을 지원합니다.</p>
+<ul>
+<li>OAuth: github, google, facebook 등 OAuth 인증 서비스를 사용하여 로그인</li>
+<li>Email: magic link를 사용자 이메일로 전송하여 로그인</li>
+<li>Credential: 아이디/암호 방식의 로그인</li>
+</ul>
+<h2>빌드</h2>
+<p><code>src</code> 폴더에 있는 ts 파일의 컴파일 결과를 패키지 루트에 생성합니다.
+<code>pnpm build</code> 명령 후에도 이를 바로 눈치챌 수 없었는데.
+<code>.vscode/settings.json</code> 파일에서 산출물을 <code>files.exclude</code>처리 했기 때문입니다.
+관련 설정을 수정하면 산출물을 확인할 수 있습니다.</p>
+<h2><code>next-auth/react</code></h2>
+<p>auth.js라는 범용적인 이름을 가졌지만 패키지 이름은 <code>next-auth</code> 입니다.
+이중 가장 많이 사용하는 형태는 아무래도 <code>next-auth/react</code> 이겠죠.</p>
+<h2>OAuth tutorial</h2>
+<blockquote>
+<p>참고: <a href="https://authjs.dev/getting-started/oauth-tutorial">OAuth authentication | Auth.js</a></p>
+</blockquote>
+<p>Github를 사용하는 OAuth tutorial을 실펴 봅니다.</p>
+<ul>
+<li><code>next-auth/react</code>는 FE단 라이브러리 입니다. 로그인, 로그아웃, 세션 관리를 수행합니다.</li>
+<li><code>next-auth/next</code>는 next.js 기반의 서버단 라이브러리 입니다. <code>session</code>, <code>signin</code>, <code>callback</code> 등의 라우트를 처리합니다.</li>
+</ul>
+<p>next.js의 BE 코드를 작성하는 <code>pages/api</code> 폴더를 통해 auth.js가 라우트를 처리하도록 코드를 작성합니다.
+이떄, Github OAuth 앱의 client id, secret 등을 설정합니다.</p>
+<p>FE에서는 <code>SessionProvider</code>로 애플리케이션에 세션 정보 켄텍스트를 제공하고 <code>useSession</code>으로 사용합니다.
+<code>signin</code>, <code>singout</code>과 같은 라이브러리를 사용하여 사용자 엑션에 따라 로그인, 로그아웃을 구현합니다.</p>
+<p><code>SessionProvider</code>는 세션 정보를 하위 컴포넌트에 전달합니다.
+<code>/api/auth/session</code> API 요청을 mount와 동시에 요청합니다.
+다음과 같은 경우 세션 정보를 업데이트 합니다.</p>
+<ul>
+<li>새로운 탭을 열 경우</li>
+<li>다른 탭에서 로그아웃</li>
+<li>사용자가 페이지를 foreground로 활성화(visibilitychange 이벤트)</li>
+</ul>
+<img src="/_next/static/media/sequence.455970e8.png"/>
+<blockquote>
+<p>참고: <a href="https://codevang.tistory.com/282">Spring Security_CSRF Token의 개념과 사용 방법</a></p>
+</blockquote>
+<p>주요 절차 입니다.</p>
+<ul>
+<li><code>SessionProvider</code>는 <code>/api/auth/session</code> 요청으로 사용자 정보를 가져옵니다.</li>
+<li><code>next-auth.csrf-token</code>을 쿠키로 설정하여 요청에 대한 CSRF 위협을 회피합니다.</li>
+<li><code>signin</code> 함수를 호출하면 <code>/api/auth/signin</code> 요청으로 로그인 페이지를 보여 줍니다.</li>
+<li>로그인 페이지에서 사용자가 액션을 하면, form submit으로 POST <code>/api/auth/signin/github</code> 요청을 합니다.</li>
+<li>github 인증 URL을 생성하여 브라우저 redirect를 유도합니다.<!-- -->
+<ul>
+<li><code>https://github.com/login/oauth/authorize?client_id={CLIENT ID}&amp;scope=read%3Auser%20user%3Aemail&amp;response_type=code&amp;redirect_uri={CALLBACK URL}&amp;state={STATE}</code></li>
+</ul>
+</li>
+<li>github에서는 인증 처리 후, callback 파라미터로 넘겨진 값을 기준으로 다시 redirect 합니다.</li>
+<li><code>next-auth.session</code>을 쿠키로 설정하여 사용자 정보를 저장합니다.</li>
+</ul>
+<h2>takeaway: literial code assist</h2>
+<p>Well known literal type의 code assist를 지원하면서, <code>string</code> 형식도 지원하는 definition util.</p>
+<pre><code class="language-ts">/**
+ * Util type that matches some strings literally, but allows any other string as well.
+ * @source https://github.com/microsoft/TypeScript/issues/29729#issuecomment-832522611
+ */
+export type LiteralUnion&lt;T extends U, U = string&gt; = T | (U &amp; Record&lt;never, never&gt;);
+</code></pre>
+<h2>takeaway: <a href="https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams">URLSearchParams - Web APIs | MDN</a></h2>
+<p>표준 <code>URLSearchParams</code> API를 사용하여 URL을 처리합니다.</p>
+<ul>
+<li>Duplicated search parameter는 <code>getAll</code>로 가져올 수 있습니다.</li>
+<li>Base url을 파싱하지 않으니 <code>new Url(&#x27;...&#x27;).search</code>의 값을 사용합니다.</li>
+<li>플러스(<code>+</code>)를 공백(<code> </code>)으로 변환합니다. Query parameter value가 <code>+</code>를 포함할 가능성이 있을 경우 <code>btoa</code>로 변환하고, 복호할 때는 <code>atob</code>를 사용합니다.</li>
+</ul>
+<h2>takeaway: Session storage take away</h2>
+<blockquote>
+<p><a href="https://ko.javascript.info/localstorage">localStorage와 sessionStorage</a></p>
+</blockquote>
+<p>http 요청 시, 항상 쿠키를 포함하기 때문에 데이터가 커지면 대역폭을 점유합니다.</p>
+<p><code>sessionStorage</code>는 현재 떠 있는 탭 내에서만 유지합니다.
+<code>iframe</code>은 같은 값을 공유합니다.
+새로고침을 해도 유지하지만, 탭을 닫으면 사라집니다.</p>
+<p><code>localStorage</code>, <code>sessionStorage</code> 변경 시, <code>storage</code>를 생성합니다.</p>
+<p>auth.js이 기능을 이용해서 <code>BroadcastChannel</code> poliyfill을 사용합니다.
+<code>BroadcastChannel</code> API를 사용하여 tab 간에 다음과 같은 이벤트를 전달합니다.</p>
+<ul>
+<li><code>getSession</code>: <code>/api/auth/session</code> API 요청을 사용하여 session 정보를 업데이트 하는 이벤트<!-- -->
+<ul>
+<li>여러 탭 중에서 세션 정보 갱신이 이루어지면, 이벤트를 발생하고, 각 탭은 이를 받아서 각자 <code>/api/auth/session</code> API 요청을 하여 세션 정보를 업데이트 합니다.</li>
+</ul>
+</li>
+<li><code>signout</code>: sign out 완료 이벤트<!-- -->
+<ul>
+<li>여러 탭 중에서 sing out을 하면, 이를 각 탭에서 처리할 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+<h2>takeaway: CSRF token 관리</h2>
+<p><code>next-auth.csrf-token</code> 쿠키 값을 사용합니다.</p>
+<p><code>next-auth.csrf-token</code> 쿠키에 값이 없을 경우 새로운 값을 생성합니다.
+32 바이트 랜덤 변수의 hex 값 스트링을 토큰 값으로 사용합니다.
+설정을 통해 제공하는 별도의 secret 값(<code>NEXTAUTH_SECRET</code> 환경 변수로 설정)과 함께 <code>sha256</code>으로 인코딩합니다.
+<code>|</code>를 구분자를 사용하여 <code>${csrfToken}|${csrfTokenHash}</code> 형식으로 쿠키값을 설정합니다.</p>
+<p><code>next-auth.csrf-token</code> 쿠키에 값이 존재하는 경우 검증을 합니다.
+<code>|</code>로 스플릿 한뒤, <code>csrfToken</code>, <code>csrfTokenHash</code> 값을 확보합니다.
+쿠키에 설정되어 있는 <code>csrfToken</code> 값을 사용하여 secret 값과함께 hash를 만들어 <code>csrfTokenHash</code> 값과 일치하는지 확인합니다.</p>
+<p>POST 메소드는 token 검증이 된 경우에만 허용하는 방식입니다.</p>
+<h2>takeaway: 요청 URL 알아내기</h2>
+<p>full request url을 header의 <code>x-forwarded-proto</code>, <code>x-forwarded-host</code> 값을 사용하여 알아냅니다.</p></article><div class="react-utterences"><div>Loading script...</div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/blogs/2023-03-03-auth.js","query":{},"buildId":"qfjDRDkI7hbaUN0YCN0K0","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="initial-scale=1.0, width=device-width" data-next-head=""/><title data-next-head="">Temporal Execution Platform 리뷰 #1</title><link rel="preload" href="/_next/static/css/d20c50ed748cd26f.css" as="style"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><link rel="stylesheet" href="/_next/static/css/d20c50ed748cd26f.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" noModule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/_next/static/chunks/webpack-0b9df2340104f8e1.js" defer=""></script><script src="/_next/static/chunks/framework-80cff53c93df8ff7.js" defer=""></script><script src="/_next/static/chunks/main-beade485850481f6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-5b36dff9503cb490.js" defer=""></script><script src="/_next/static/chunks/5695-9c01eff236121af5.js" defer=""></script><script src="/_next/static/chunks/pages/blogs/2023-12-03-temporal-1-8d254bcaf0128f55.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_buildManifest.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_ssgManifest.js" defer=""></script><style id="__jsx-4134105190">.markdown html{font:118.75%/1.58 'Roboto',serif;box-sizing:border-box;overflow-y:scroll;}.markdown *{box-sizing:inherit;}.markdown *:before{box-sizing:inherit;}.markdown *:after{box-sizing:inherit;}.markdown body{color:hsla(0,0%,0%,0.73);font-family:'Roboto',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}.markdown img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}.markdown h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}.markdown h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}.markdown h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}.markdown h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}.markdown h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}.markdown hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown ul{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown ol{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.85rem;line-height:1.58rem;}.markdown table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:1rem;line-height:1.58rem;border-collapse:collapse;width:100%;}.markdown fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown blockquote{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.94737rem;line-height:1.58rem;border-left:0.5925rem solid #017698;color:hsla(0,0%,0%,0.65);background-color:hsla(0,0%,0%,0.1);padding:0.29625rem 0.9875rem;font-style:italic;}.markdown form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.58rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}.markdown address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown b{font-weight:700;}.markdown strong{font-weight:700;}.markdown dt{font-weight:700;}.markdown th{font-weight:700;}.markdown li{margin-bottom:calc(1.58rem / 2);}.markdown ol li{padding-left:0;}.markdown ul li{padding-left:0;}.markdown li > ol{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown li > ul{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown blockquote *:last-child{margin-bottom:0;}.markdown li *:last-child{margin-bottom:0;}.markdown p *:last-child{margin-bottom:0;}.markdown li > p{margin-bottom:calc(1.58rem / 2);}.markdown code{font-size:0.85rem;line-height:1.58rem;}.markdown kbd{font-size:0.85rem;line-height:1.58rem;}.markdown samp{font-size:0.85rem;line-height:1.58rem;}.markdown abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}.markdown thead{text-align:left;}.markdown td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.05333rem;padding-right:1.05333rem;padding-top:0.79rem;padding-bottom:calc(0.79rem - 1px);}.markdown th:first-child,td:first-child{padding-left:0;}.markdown th:last-child,td:last-child{padding-right:0;}.markdown a{color:#017698;text-decoration:none;background-image:linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, #017698 1px, #017698 2px, rgba(0, 0, 0, 0) 2px);}.markdown a:hover,a:active{text-shadow:none;background-image:none;}.markdown h1,h2,h3,h4,h5,h6{margin-top:3.16rem;}.markdown li>ol,li>ul{margin-left:20px;margin-bottom:0;}.markdown blockquote > :last-child{margin-bottom:0;}.markdown blockquote cite{font-size:1rem;line-height:1.58rem;color:hsla(0,0%,0%,0.73);font-style:normal;font-weight:400;}.markdown blockquote cite:before{content:"— ";}.markdown @media only screen and (max-width:480px){html{font-size:106.25%;line-height:28px;}blockquote{border-left:0.29625rem solid #017698;color:hsla(0,0%,0%,0.59);padding-left:0.88875rem;font-style:italic;margin-left:-1.185rem;margin-right:0;}} .markdown{color:#3d3d3d}.markdown ul li{list-style-type:disc}.markdown ol{list-style-type:decimal}:not(pre) code{background-color:rgb(203 208 218);border-radius:3px;font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:.2rem .3rem;margin:0 .2rem}.markdown * code{font-size:inherit}.markdown code[class*="language-"]{font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:1rem;background-color:#2d2d2d}</style></head><body><div id="__next"><div class="leading-normal tracking-normal bg-gray-100 min-h-screen"><nav class="w-full"><div id="progress" class="top-0 z-20 h-1" style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0)"></div><div class="flex flex-wrap items-center justify-between w-full py-3 mx-auto mt-0 md:max-w-4xl"><div class="pl-4"><a class="text-xl font-extrabold text-gray-900 no-underline hover:no-underline" href="/">lifetime trails</a></div><div class="block pr-4 lg:hidden"><button id="nav-toggle" type="button" class="flex items-center px-3 py-2 text-gray-500 appearance-none hover:text-gray-900 hover:border-teal-500 focus:outline-none"><svg class="w-3 h-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg></button></div><div id="nav-content" class="bg-gray-100 border-b flex-grow lg:border-none lg:flex lg:items-center lg:mt-0 lg:shadow-none lg:w-auto md:bg-transparent mt-2 shadow w-full z-20 hidden"><ul class="items-center justify-end flex-1 list-reset lg:flex"><li class="mr-3"><a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4" href="/">Home</a></li></ul></div></div></nav><div class="container w-full px-4 pb-10 mx-auto md:max-w-3xl"><h1 class="font-bold text-gray-800 mb-4 text-5xl mt-8 mb-8">Temporal Execution Platform 리뷰 #1</h1><div class="details"><p class="text-gray-500">오픈소스 Execution 플렛폼인 Temporal에 대해 소개하고 workflow 동작 방삭에 대해 살펴 봅니다.</p><p class="text-gray-400 text-right -mt-1"><span class="mr-4">2023-12-03</span></p></div><article class="markdown"><h1>소개</h1>
+<p>서비스 아키텍쳐는 시대에 따라 많은 변화를 겪어 왔습니다.
+단순 모놀리딕 코드베이스와 배포 패키지에서 MSA로 변화하였고 API 기반의 동작에서 CQRS와 같은 이벤트 드리븐 방식으로 변화를 해 가는 중 입니다.</p>
+<p>제가 구지 <code>발전</code>이라는 단어대신 <code>변화</code>라고 이야기한 이유는 혹자는 이러한 <code>변화</code>를 불편해하거나 흐름에 편승하여 <code>변화</code>를 선택하고 후회하는 경우도 봤기 때문입니다.
+우리는 확증편향 못지 않게 <a href="https://en.wikipedia.org/wiki/Social_proof">소셜 프루프 인식 편향(Social Proof Bias)</a>의 영향아래 살고 있습니다.
+아시다 싶이 개발자들은 자신이 보유한 기술이 언제 쓸모없게되지는 않을까 불안해 하거나 남들보다 앞서 defacto 기술을 찾아내어 선점 효과를 누리고자 하는 초조함 속에 살고있습니다.
+온라인 커뮤니티나 대형 기업이 주관하는 컨퍼런스에서 전달하는 키워드들은 진정한 가치에 기반하는지 포장만 살짝 바꾼 마케팅 용어에 불가한지 판단하기도 전에 기업과 조직내에서 도그마로 자리잡습니다.</p>
+<p>프로그래밍 멘탈 모델의 경우 procedural, object oriented, declarative, event driven, stream reactive 등의 트렌드가 우리를 초조하게 만들었습니다.
+그러다 불현듯 다시 functional이라는 procedural한 트렌드로 회귀하는 듯한 보습이 보입니다.
+어찌보면, 우리가 처음 적용한 멘탈 모델이 사실은 가장 이해하기 쉽고 직관에 기반한 것이 아날까라는 생각을 하는 중에 놀라운 오픈소스 프로젝트를 발견하게 됩니다.</p>
+<p>소프트웨어 아키텍팅에서도 MSA, Event driven과 같이 손에 잡힐듯 말듯한 방법론에서 procedural한 방식으로 회귀하는 모습을 찾을 수 있는 오픈소스가 나왔는데 그것이 Temporal입니다.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pfArIYRVsbo?si=AdTS0lJrDkO65c0j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+<p>Temporal이 제공하는 솔루션이 새로운 만큼 이를 정의하는 적절한 용어를 찾기는 쉽지 않습니다.
+저는 temporal이 제공하는 솔루션을 workflow runtime이라 부르기로 했습니다.</p>
+<p>당장 실무에 적용하기에는 정치적 기술적 어려움이 따르겠으나 workflow runtime이라는 새로운 솔루션은 충분히 주목할만한 가치가 있다고 생각합니다.</p>
+<h1>Tech stack</h1>
+<p>Workflow runtime은 Go 언어로 작성하였습니다.</p>
+<p>통신은 protobuf를 사용합니다.</p>
+<p><code>make start-dependencies</code>를 수행하면 필요한 오픈소스를 docker compose를 사용하여 설치합니다.
+grafana, elasticsearch, cassandra, postgresql, prometheus, mysql 등을 사용합니다.</p>
+<p><img alt="start dependencies" loading="lazy" width="1694" height="334" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image.b5e4f4b1.png"/></p>
+<p><code>make install-schema</code> 명령으로 cassandra 스키마를 생성합니다.</p>
+<p><code>executions</code>, <code>tasks</code>, <code>task_queue_user_data</code>, <code>namespaces</code>, <code>queues</code> 등의 테이블을 생성합니다.</p>
+<p><code>make start</code>로 서버를 띄운뒤 <code>http://localhost:8080/</code>로 접근을 하면 다음과 같은 화면이 나옵니다.</p>
+<p><img alt="Alt text" loading="lazy" width="1712" height="1446" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-1.c10ecf0b.png"/></p>
+<h2><code>@temporalio/core-bridge</code></h2>
+<p>Rust SDK 바인딩</p>
+<h2><code>@temporalio/proto</code></h2>
+<ul>
+<li><a href="https://protobufjs.github.io/protobuf.js/">protobuf.js</a>: Temporal 서버와의 통신 프로토콜</li>
+</ul>
+<h2><code>@temporal/worker</code></h2>
+<ul>
+<li><a href="https://github.com/streamich/memfs">memfs</a>: JavaScript file system utility</li>
+<li><a href="https://github.com/streamich/unionfs#readme">unionfs</a>: 복수의 file system을 동시에 사용하도록 하는 유틸</li>
+<li><a href="https://github.com/mozilla/source-map">mozilla/source-map</a>: workflow 코드의 소스맵 생성에 사용</li>
+<li><a href="https://rxjs.dev/">RxJS</a>: worker의 이벤트 로직 처리에 사용</li>
+</ul>
+<h1><a href="https://learn.temporal.io/getting_started/typescript/">Get started with Temporal and TypeScript | Learn Temporal</a></h1>
+<p>해당 예제는 <code>default</code> namespace가 존재한다는 전제하에 설명하고 있습니다.</p>
+<p>반면, Local에서 직접 실행할 경우 <code>default</code> namespace는 존재하지 않습니다.</p>
+<blockquote>
+<p>참고: <a href="https://docs.temporal.io/namespaces">What is a Temporal Namespace? | Temporal Documentation</a></p>
+</blockquote>
+<p>따라서 가이드에 맞춰 <code>temporal</code> CLI로 dev 서버를 다음과 같이 동작 시켜 봅니다.</p>
+<pre><code class="language-sh">temporal server start-dev
+</code></pre>
+<p>http://localhost:8233/ 에 접속하면 다음과 같이 Temporal UI를 확인할 수 있습니다.</p>
+<p><img alt="Alt text" loading="lazy" width="1728" height="1226" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-2.66bf2f21.png"/></p>
+<p>영속성을 위해 다음과 같이 sqlite db를 명시적으로 생성합니다.</p>
+<pre><code class="language-sh">temporal server start-dev --db-filename temporal.sqlite
+</code></pre>
+<p>먼저 worker 프로세스를 실행합니다.</p>
+<pre><code class="language-bash">npm run worker
+</code></pre>
+<p>다음 명령으로 workflow를 실행합니다.</p>
+<pre><code class="language-bash">npm run client
+</code></pre>
+<p>이제 하나의 workflow 실행 이력을 확인할 수 있으며
+<img alt="Alt text" loading="lazy" width="3246" height="590" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-3.ed3bf84e.png"/></p>
+<p>activity 수행 이벤트를 확인할 수 있습니다.
+<img alt="Alt text" loading="lazy" width="3278" height="1546" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-4.5484514c.png"/></p>
+<h2>Worker</h2>
+<p>Worker는 temporal 서버에 접속해서 workflow와 activity를 수행하는 역할을 합니다.
+node.js, TypeScript, RxJs 등으로 구현하였고 rust로 작성한 sdk를 바인딩하여 서버와 통신합니다.</p>
+<p>다음은 초기화 과정을 보여줍니다.</p>
+<p><img alt="initial" loading="lazy" width="931" height="726" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/initial.4467123c.svg"/></p>
+<p><code>WorkflowCodeBundler</code>는 workflow를 작성한 코드를 임포트할 수 있는 코드를 동적으로 작성하고 webpack을 사용하여 번들링합니다.</p>
+<p>Bundling하는 템플릿은 대략 다음과 같습니다.</p>
+<pre><code class="language-javascript">const api = require(&#x27;@temporalio/workflow/lib/worker-interface.js&#x27;);
+
+api.overrideGlobals();
+
+exports.api = api;
+
+exports.importWorkflows = function importWorkflows() {
+  return require(/* webpackMode: &quot;eager&quot; */ `${JSON.stringify(this.workflowsPath)}`);
+};
+
+exports.importInterceptors = function importInterceptors() {
+  return [require(/* webpackMode: &quot;eager&quot; */ `${interceptorImports}`)];
+};
+</code></pre>
+<p>분석 당시의 코드는 다음과 같습니다.</p>
+<pre><code class="language-javascript">const api = require(&#x27;@temporalio/workflow/lib/worker-interface.js&#x27;);
+
+api.overrideGlobals();
+
+exports.api = api;
+
+exports.importWorkflows = function importWorkflows() {
+  return require(/* webpackMode: &quot;eager&quot; */ &#x27;/{your project root}/money-transfer-project-example/lib/workflows.js&#x27;);
+};
+
+exports.importInterceptors = function importInterceptors() {
+  return [
+    require(/* webpackMode: &quot;eager&quot; */ &#x27;/{your project root}/sdk-typescript/packages/worker/lib/workflow-log-interceptor.js&#x27;),
+  ];
+};
+</code></pre>
+<p><code>overrideGlobals</code>은 nodejs의 <code>Date</code>, <code>setTimeout</code> 등 런타임 API를 몽키패칭합니다.</p>
+<p>Worker의 주요 함수들은 rxjs 기반으로 구현하였습니다.
+다양한 소스로 부터의 이벤트에서 복잡한 로직을 처리하기 위해 채택한 것으로 보입니다.</p>
+<p><code>run</code> 함수역시 rxjs로 구현하였습니다. 다음과 같은 흐름으로 workflow, activity observable 객체를 처리합니다.</p>
+<p><img alt="" loading="lazy" width="780" height="434" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/worker.run.76fa3bb2.svg"/></p>
+<p><code>stateSubject</code>는 다음과 같은 상태를 가집니다.</p>
+<p><img alt="" loading="lazy" width="671" height="709" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/state.ce45af7b.svg"/></p>
+<p>workflow는 다음과 같은 흐름으로 처러합니다.</p>
+<p><img alt="" loading="lazy" width="1535" height="626" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/workflow.085e4c4c.svg"/></p>
+<p>activity는 다음과 같은 흐름으로 처리합니다.</p>
+<p><img alt="" loading="lazy" width="784" height="473" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/activity.2cd01979.svg"/></p>
+<h2>Workflow VM</h2>
+<p><img alt="" loading="lazy" width="1579" height="902" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/workflow-vm.1bac7c6a.svg"/></p>
+<p>Worker의 node.js main thread는 서버와 통신하는 Rust 라이브러리 바인딩을 통해 workflow 실행 이벤트를 처리합니다.</p>
+<p>Main thread는 Protobuf 형식의 바이너리 정보를 JSON 형식으로 시리얼라이즈 하고 실제 수행은 별도의 node.js web worker로 요청합니다.</p>
+<p><code>initRuntime</code> 함수에서 <code>importInterceptors</code>와 <code>importWorkflows</code>를 차례로 호출하여 worker 생성시 전달한 workflow 디렉터리 경로에 있는 workflow 구현체들을 로드 합니다.</p>
+<h1>마치며</h1>
+<p>사용자는 worker와 client로 나누어 코드를 실행해야 합니다.</p>
+<p>worker는 workflow 경로에 있는 사용자 구현체를 intercepting할 수 있는 코드를 동적으로 생성하고 webpack으로 번들링 합니다.
+Temporal 서버와 연결하여 workflow 실행 이벤트를 받아 실제로 수행하고 각 과정(activity)에서 발생한 입력과 결과를 서버에 전달합니다.</p>
+<p>client는 workflow를 수행하지만 실제로는 client 프로세스내에서 동작하지 않습니다.
+workflow 구현체를 호출하면 Temporal 서버에 workflow의 실행을 알리고 각 파라미터를 전달합니다.</p>
+<p>이번 포스트에는 workflow의 초기화 위주로 리뷰를 해 보았습니다.</p>
+<p>Workflow에 속한 activity는 client에서 invoke 하지만 Temporal 서버의 중계와 로깅을 거쳐 worker에서 수행합니다.
+다음 시간에는 activity의 동작 방식에 대해서 다루어 보도록 하겠습니다.</p></article><div class="react-utterences"><div>Loading script...</div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/blogs/2023-12-03-temporal-1","query":{},"buildId":"qfjDRDkI7hbaUN0YCN0K0","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="initial-scale=1.0, width=device-width" data-next-head=""/><title data-next-head="">Supabase: RLS로 Todo 삭제 권한 관리하기</title><link rel="preload" href="/_next/static/css/d20c50ed748cd26f.css" as="style"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><link rel="stylesheet" href="/_next/static/css/d20c50ed748cd26f.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" noModule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/_next/static/chunks/webpack-0b9df2340104f8e1.js" defer=""></script><script src="/_next/static/chunks/framework-80cff53c93df8ff7.js" defer=""></script><script src="/_next/static/chunks/main-beade485850481f6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-5b36dff9503cb490.js" defer=""></script><script src="/_next/static/chunks/5695-9c01eff236121af5.js" defer=""></script><script src="/_next/static/chunks/pages/blogs/2025-01-12-supabase-todo-app-row-level-fcdc04ea2ef21b69.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_buildManifest.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_ssgManifest.js" defer=""></script><style id="__jsx-4134105190">.markdown html{font:118.75%/1.58 'Roboto',serif;box-sizing:border-box;overflow-y:scroll;}.markdown *{box-sizing:inherit;}.markdown *:before{box-sizing:inherit;}.markdown *:after{box-sizing:inherit;}.markdown body{color:hsla(0,0%,0%,0.73);font-family:'Roboto',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}.markdown img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}.markdown h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}.markdown h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}.markdown h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}.markdown h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}.markdown h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}.markdown hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown ul{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown ol{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.85rem;line-height:1.58rem;}.markdown table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:1rem;line-height:1.58rem;border-collapse:collapse;width:100%;}.markdown fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown blockquote{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.94737rem;line-height:1.58rem;border-left:0.5925rem solid #017698;color:hsla(0,0%,0%,0.65);background-color:hsla(0,0%,0%,0.1);padding:0.29625rem 0.9875rem;font-style:italic;}.markdown form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.58rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}.markdown address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown b{font-weight:700;}.markdown strong{font-weight:700;}.markdown dt{font-weight:700;}.markdown th{font-weight:700;}.markdown li{margin-bottom:calc(1.58rem / 2);}.markdown ol li{padding-left:0;}.markdown ul li{padding-left:0;}.markdown li > ol{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown li > ul{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown blockquote *:last-child{margin-bottom:0;}.markdown li *:last-child{margin-bottom:0;}.markdown p *:last-child{margin-bottom:0;}.markdown li > p{margin-bottom:calc(1.58rem / 2);}.markdown code{font-size:0.85rem;line-height:1.58rem;}.markdown kbd{font-size:0.85rem;line-height:1.58rem;}.markdown samp{font-size:0.85rem;line-height:1.58rem;}.markdown abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}.markdown thead{text-align:left;}.markdown td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.05333rem;padding-right:1.05333rem;padding-top:0.79rem;padding-bottom:calc(0.79rem - 1px);}.markdown th:first-child,td:first-child{padding-left:0;}.markdown th:last-child,td:last-child{padding-right:0;}.markdown a{color:#017698;text-decoration:none;background-image:linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, #017698 1px, #017698 2px, rgba(0, 0, 0, 0) 2px);}.markdown a:hover,a:active{text-shadow:none;background-image:none;}.markdown h1,h2,h3,h4,h5,h6{margin-top:3.16rem;}.markdown li>ol,li>ul{margin-left:20px;margin-bottom:0;}.markdown blockquote > :last-child{margin-bottom:0;}.markdown blockquote cite{font-size:1rem;line-height:1.58rem;color:hsla(0,0%,0%,0.73);font-style:normal;font-weight:400;}.markdown blockquote cite:before{content:"— ";}.markdown @media only screen and (max-width:480px){html{font-size:106.25%;line-height:28px;}blockquote{border-left:0.29625rem solid #017698;color:hsla(0,0%,0%,0.59);padding-left:0.88875rem;font-style:italic;margin-left:-1.185rem;margin-right:0;}} .markdown{color:#3d3d3d}.markdown ul li{list-style-type:disc}.markdown ol{list-style-type:decimal}:not(pre) code{background-color:rgb(203 208 218);border-radius:3px;font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:.2rem .3rem;margin:0 .2rem}.markdown * code{font-size:inherit}.markdown code[class*="language-"]{font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:1rem;background-color:#2d2d2d}</style></head><body><div id="__next"><div class="leading-normal tracking-normal bg-gray-100 min-h-screen"><nav class="w-full"><div id="progress" class="top-0 z-20 h-1" style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0)"></div><div class="flex flex-wrap items-center justify-between w-full py-3 mx-auto mt-0 md:max-w-4xl"><div class="pl-4"><a class="text-xl font-extrabold text-gray-900 no-underline hover:no-underline" href="/">lifetime trails</a></div><div class="block pr-4 lg:hidden"><button id="nav-toggle" type="button" class="flex items-center px-3 py-2 text-gray-500 appearance-none hover:text-gray-900 hover:border-teal-500 focus:outline-none"><svg class="w-3 h-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg></button></div><div id="nav-content" class="bg-gray-100 border-b flex-grow lg:border-none lg:flex lg:items-center lg:mt-0 lg:shadow-none lg:w-auto md:bg-transparent mt-2 shadow w-full z-20 hidden"><ul class="items-center justify-end flex-1 list-reset lg:flex"><li class="mr-3"><a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4" href="/">Home</a></li></ul></div></div></nav><div class="container w-full px-4 pb-10 mx-auto md:max-w-3xl"><h1 class="font-bold text-gray-800 mb-4 text-5xl mt-8 mb-8">Supabase: RLS로 Todo 삭제 권한 관리하기</h1><div class="details"><p class="text-gray-500">
+Todo 앱에 Supabase의 Row Level Security를 적용하여 사용자별 Todo 삭제 권한을 관리하는 방법과 테스트 방법을 설명합니다.
+Next.js와 Supabase를 사용한 실제 구현 예제를 통해 데이터베이스 수준의 보안 정책을 구현하는 방법을 알아봅니다.</p><p class="text-gray-400 text-right -mt-1"><span class="mr-4">2025-01-12</span></p></div><article class="markdown"><h1>소개</h1>
+<blockquote>
+<p><a href="https://swcho.github.io/blogs/2025-01-05-supabase-todo-app">Supabase: Todo 예제로 알아보기</a></p>
+</blockquote>
+<p>지난 포스트에 이어 supabase todo 예제를 통해 RLS(Row Level Security) 기능을 살펴 봅니다.</p>
+<h1>RLS(Row Level Security) 란</h1>
+<blockquote>
+<p><a href="https://supabase.com/docs/guides/database/postgres/row-level-security">Row Level Security | Supabase Docs</a></p>
+</blockquote>
+<p>Row Level Security (RLS)는 데이터베이스 수준에서 행(row) 단위의 접근 제어를 가능하게 하는 보안 기능입니다.
+BaaS인 Supabase는 별도의 back end 프로그램 없이 PostgreSQL의 RLS 기능을 활용하여 비지니스 로직을 구현합니다.</p>
+<p>먼저 공개 접근이 가능한 end point와 리버스 엔지니어링으로 유출 가능한 <code>anon</code>로 접근하는 Supabase인 점을 생각해 봅니다.
+다시말해 누구든 Postgres에 있는 데이터에 접근이 가능하고 CRUD 작업을 할 수 있게 됩니다.
+Todo 서비스의 경우 Todo를 만든 사용자의 기준으로 목록이 보여지고 수정 및 삭제가 가능해야 할 것 입니다.
+이를 위해 먼저 Supabase는 Authentication이라는 기능을 기본으로 지원하여 사용자 식별을 합니다.
+그뒤 로그인한 사용자 정보를 바탕으로 RLS 정책을 생성하도록 합니다.</p>
+<p>따라서 별도의 backend 프로그램 개발, 배포, 운영 없이도 비지니스 로직을 구현할 수 있습니다.
+추가로 데이터 베이스 수준의 보안이 이루어 짐으로 서비스의 신뢰성도 높아 집니다.</p>
+<h1>Todo 삭제 정책 설계</h1>
+<p>이전 프로그램은 Todo를 작성한 사용자가 자신의 Todo 아이템을 삭제할 수 있습니다.</p>
+<p>삭제에 있어서 다음과 같은 RLS 정책을 추가해 볼 수 있을 것 입니다.</p>
+<h2>특정 시간이 지난 후에만 삭제 가능하도록</h2>
+<pre><code class="language-sql">create policy &quot;Can only delete todos after 24 hours&quot; on todos for
+    delete using (
+        auth.uid() = user_id and
+        (now() - inserted_at) &gt; interval &#x27;24 hours&#x27;
+    );
+</code></pre>
+<h2>완료한 todo만 삭제 가능하도록</h2>
+<pre><code class="language-sql">create policy &quot;Can only delete completed todos&quot; on todos for
+    delete using (
+        auth.uid() = user_id and
+        is_complete = true
+    );
+</code></pre>
+<h2>하루에 삭제할 수 있는 수를 제한</h2>
+<pre><code class="language-sql">create policy &quot;Can only delete 5 todos per day&quot; on todos for
+    delete using (
+        auth.uid() = user_id and
+        (
+            select count(*)
+            from todos
+            where user_id = auth.uid()
+            and deleted_at &gt;= date_trunc(&#x27;day&#x27;, now())
+        ) &lt; 5
+    );
+</code></pre>
+<h2>특정 조건의 todo만 삭제 가능하도록</h2>
+<pre><code class="language-sql">create policy &quot;Can only delete short todos&quot; on todos for
+    delete using (
+        auth.uid() = user_id and
+        char_length(task) &lt;= 100
+    );
+</code></pre>
+<h1>완료한 todo만 삭제 가능하도록 Todo 삭제 정책 추가하기</h1>
+<p>위의 여러 기능 중 완료한 todo만 삭제 가능하도록 정책 설정을 해 보겠습니다.</p>
+<p>먼저 <code>npm i -D supabase</code> 명령으로 CLI 패키지를 인스톨합니다.</p>
+<p>이는 supabase CLI 툴이며, <code>npx supabase --help</code>로 자세한 명령세트를 확인할 수 있습니다.</p>
+<p><code>npx supabase link</code> 명령을 사용하면 supabase 프로젝트와 연동할 수 있습니다. 이때 <code>supabase/config.toml</code>를 업데이트 하라는 메시지가 나오며, 필요에 따라 직접 수정해 줍니다.</p>
+<p>예제의 초기 migration 파일은 다음과 같습니다.</p>
+<pre><code class="language-sql">create table todos (
+  id bigint generated by default as identity primary key,
+  user_id uuid references auth.users not null, -- auth schema에 있는 users 테이블과 연관을 맺습니다.
+  task text check (char_length(task) &gt; 3), -- 3 글자 이상이어야 합니다.
+  is_complete boolean default false,
+  inserted_at timestamp with time zone default timezone(&#x27;utc&#x27;::text, now()) not null
+);
+alter table todos enable row level security;
+create policy &quot;Individuals can create todos.&quot; on todos for
+    insert with check (auth.uid() = user_id);
+create policy &quot;Individuals can view their own todos. &quot; on todos for
+    select using (auth.uid() = user_id);
+create policy &quot;Individuals can update their own todos.&quot; on todos for
+    update using (auth.uid() = user_id);
+create policy &quot;Individuals can delete their own todos.&quot; on todos for
+    delete using (auth.uid() = user_id);
+</code></pre>
+<p>위의 SQL은 초기 deploy 과정에서 실행한 상태이며, <code>Authentication &gt; Policies</code> 화면에서 다음과 같이 확인할 수 있습니다.</p>
+<p><img alt="RLS 목록" loading="lazy" width="962" height="492" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image.5764851f.png"/></p>
+<p>이제 완료한 경우에만 삭제가 가능하도록 변경해 주어야 합니다.</p>
+<pre><code class="language-sql">create policy &quot;Can only delete completed todos&quot; on todos for
+    delete using (
+        auth.uid() = user_id and
+        is_complete = true
+    );
+</code></pre>
+<p>다음과 같이 RLS 정책을 UI를 통해 생성할 수도 있습니다.</p>
+<p><img alt="RLS 생성" loading="lazy" width="594" height="618" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-1.20e17903.png"/></p>
+<p>하지만 이 경우, 데이터 베이스의 수정 사항을 기록에 남겨 혹시있을 재설치 및 트러블 슈팅이 어려울 수 있습니다.</p>
+<p>따라서 테이블 및 RLS 정책 생성 등 DB에 가해지는 변경이 필요할 경우, UI를 사용하는 것 보다는 migration 기능을 활용하는 것이 좋습니다.</p>
+<p>먼저 <code>npx supabase migration new add_delete_policy_for_todos</code> 명령으로 빈 migration 파일을 생성합니다.</p>
+<p>Supabase CLI는 <code>{프로젝트 root}/supabase/migrations/{timestamp}_add_delete_policy_for_todos.sql</code>와 같은 형식으로 파일을 생성해 줍니다.</p>
+<p>이 곳에 RLS 정책을 설정하는 SQL 구문을 작성합니다.</p>
+<pre><code class="language-sql">-- 기존 정책 삭제
+drop policy if exists &quot;Individuals can delete their own todos.&quot; on todos;
+
+-- 새로운 정책 추가
+create policy &quot;Can only delete completed todos&quot; on todos for
+    delete using (
+        auth.uid() = user_id and
+        is_complete = true
+    );
+</code></pre>
+<p><code>npx supabase db push</code> 명령을 수행하여 새로 추가한 migration 파일의 SQL 구문을 DB에 적용합니다.</p>
+<p>대쉬보드의 <code>Database &gt; Migrations</code> 화면에서 다음과 같이 확인할 수도 있습니다.</p>
+<p><img alt="migrations 목록" loading="lazy" width="2008" height="580" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-2.5ff736fb.png"/></p>
+<blockquote>
+<p><a href="https://github.com/swcho/supabase-nextjs-todo-list/commit/bee1598f77b3bf1a9fbd7b06c1a578c070ec6600">feat: RLS: 완료 했을 경우에만 삭제 가능 · swcho/supabase-nextjs-todo-list@bee1598</a></p>
+</blockquote>
+<h1>테스트 케이스</h1>
+<p>Supabase의 비지니스 로직은 사실상 RLS와 함수 등으로 구현하기 때문에 자주 변경이 이루어질 수 밖에 없습니다.</p>
+<p>특별히 비지니스 로직은 여러 사용자가 있는 시나리오에 대해서 세심하게 설계하고 충분히 검증해야 합니다.</p>
+<p>따라서, 비지니스 로직 자체를 문서화 하고 검증할 수 있는 test case를 가져가는 것이 best practice가 될 것입니다.</p>
+<h2>vitest</h2>
+<p>먼저 vitest를 설정 합니다.</p>
+<p><code>npm i -D vitest @vitejs/plugin-react vite-tsconfig-paths dotenv @testing-library/jest-dom</code></p>
+<p><a href="https://github.com/swcho/supabase-nextjs-todo-list/commit/d7ac383e62797bec80ab8a38b7225157be68b12c#diff-2988e37334fe90f690078d3a20744a1aaae079bd9bb1ce557a3add080dd89141">vitest.config.mts</a> 파일을 생성하고,
+<a href="https://github.com/swcho/supabase-nextjs-todo-list/commit/d7ac383e62797bec80ab8a38b7225157be68b12c#diff-d28a461c46dd3d6440988800fbf174825ddbec8b60488095df612d33f1cad4df">test/setup.ts</a>을 통해 Supabase의 end point와 anon 키 정보를 가지는 환경 변수를 로드 합니다.</p>
+<h2>테스트 계정 생성</h2>
+<p>테스트 코드 수행에 사용할 테스트 계정을 별도로 생성해 줍니다.</p>
+<p><img alt="test users" loading="lazy" width="1528" height="494" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-3.c08595e6.png"/></p>
+<p>사용자는 <code>Add user -&gt; Create a new user</code> 기능을 활용해 UI 상에서 직접 생성할 수 있습니다.</p>
+<p><img alt="add user" loading="lazy" width="1966" height="236" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-4.108c5737.png"/></p>
+<h2>테스트 코드</h2>
+<p><a href="https://github.com/swcho/supabase-nextjs-todo-list/commit/d7ac383e62797bec80ab8a38b7225157be68b12c#diff-1fdd58ef177848a07b04ecd51b55eb8a22328387ea5b08c5267c9588d1c184c6">테스트 코드</a>는 다음과 같습니다.</p>
+<ol>
+<li>사용자 로그인</li>
+<li>Todo 생성</li>
+<li>삭제 시도 후 오류 확인</li>
+<li>Todo complete 설정</li>
+<li>삭제 시도 후 정상 동작 확인</li>
+</ol>
+<h1>마치며</h1>
+<p>Supabase의 RLS 기능을 실제로 todo 삭제 시나리오에 적용해 보고 그 과정을 학습해 보았습니다.</p>
+<p>또한 앞으로 있을 RLS 기능의 업데이트에 따른 비지니스 로직의 동작 검증을 위한 테스트 코드도 짜 보았습니다.</p>
+<p>별도의 서버 구현없이 비지니스 로직을 구현하고 서비스에 적용할 수 있는 점에서 Supabase의 독특함과 매력을 느낄 수 있었습니다.</p></article><div class="react-utterences"><div>Loading script...</div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/blogs/2025-01-12-supabase-todo-app-row-level","query":{},"buildId":"qfjDRDkI7hbaUN0YCN0K0","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>

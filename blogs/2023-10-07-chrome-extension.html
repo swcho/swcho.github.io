@@ -1,0 +1,199 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="initial-scale=1.0, width=device-width" data-next-head=""/><title data-next-head="">Chrome extension API 정리</title><link rel="preload" href="/_next/static/css/d20c50ed748cd26f.css" as="style"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><link rel="stylesheet" href="/_next/static/css/d20c50ed748cd26f.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" noModule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/_next/static/chunks/webpack-0b9df2340104f8e1.js" defer=""></script><script src="/_next/static/chunks/framework-80cff53c93df8ff7.js" defer=""></script><script src="/_next/static/chunks/main-beade485850481f6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-5b36dff9503cb490.js" defer=""></script><script src="/_next/static/chunks/5695-9c01eff236121af5.js" defer=""></script><script src="/_next/static/chunks/pages/blogs/2023-10-07-chrome-extension-6169a5c26562d53f.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_buildManifest.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_ssgManifest.js" defer=""></script><style id="__jsx-4134105190">.markdown html{font:118.75%/1.58 'Roboto',serif;box-sizing:border-box;overflow-y:scroll;}.markdown *{box-sizing:inherit;}.markdown *:before{box-sizing:inherit;}.markdown *:after{box-sizing:inherit;}.markdown body{color:hsla(0,0%,0%,0.73);font-family:'Roboto',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}.markdown img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}.markdown h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}.markdown h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}.markdown h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}.markdown h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}.markdown h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}.markdown hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown ul{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown ol{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.85rem;line-height:1.58rem;}.markdown table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:1rem;line-height:1.58rem;border-collapse:collapse;width:100%;}.markdown fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown blockquote{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.94737rem;line-height:1.58rem;border-left:0.5925rem solid #017698;color:hsla(0,0%,0%,0.65);background-color:hsla(0,0%,0%,0.1);padding:0.29625rem 0.9875rem;font-style:italic;}.markdown form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.58rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}.markdown address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown b{font-weight:700;}.markdown strong{font-weight:700;}.markdown dt{font-weight:700;}.markdown th{font-weight:700;}.markdown li{margin-bottom:calc(1.58rem / 2);}.markdown ol li{padding-left:0;}.markdown ul li{padding-left:0;}.markdown li > ol{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown li > ul{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown blockquote *:last-child{margin-bottom:0;}.markdown li *:last-child{margin-bottom:0;}.markdown p *:last-child{margin-bottom:0;}.markdown li > p{margin-bottom:calc(1.58rem / 2);}.markdown code{font-size:0.85rem;line-height:1.58rem;}.markdown kbd{font-size:0.85rem;line-height:1.58rem;}.markdown samp{font-size:0.85rem;line-height:1.58rem;}.markdown abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}.markdown thead{text-align:left;}.markdown td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.05333rem;padding-right:1.05333rem;padding-top:0.79rem;padding-bottom:calc(0.79rem - 1px);}.markdown th:first-child,td:first-child{padding-left:0;}.markdown th:last-child,td:last-child{padding-right:0;}.markdown a{color:#017698;text-decoration:none;background-image:linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, #017698 1px, #017698 2px, rgba(0, 0, 0, 0) 2px);}.markdown a:hover,a:active{text-shadow:none;background-image:none;}.markdown h1,h2,h3,h4,h5,h6{margin-top:3.16rem;}.markdown li>ol,li>ul{margin-left:20px;margin-bottom:0;}.markdown blockquote > :last-child{margin-bottom:0;}.markdown blockquote cite{font-size:1rem;line-height:1.58rem;color:hsla(0,0%,0%,0.73);font-style:normal;font-weight:400;}.markdown blockquote cite:before{content:"— ";}.markdown @media only screen and (max-width:480px){html{font-size:106.25%;line-height:28px;}blockquote{border-left:0.29625rem solid #017698;color:hsla(0,0%,0%,0.59);padding-left:0.88875rem;font-style:italic;margin-left:-1.185rem;margin-right:0;}} .markdown{color:#3d3d3d}.markdown ul li{list-style-type:disc}.markdown ol{list-style-type:decimal}:not(pre) code{background-color:rgb(203 208 218);border-radius:3px;font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:.2rem .3rem;margin:0 .2rem}.markdown * code{font-size:inherit}.markdown code[class*="language-"]{font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:1rem;background-color:#2d2d2d}</style></head><body><div id="__next"><div class="leading-normal tracking-normal bg-gray-100 min-h-screen"><nav class="w-full"><div id="progress" class="top-0 z-20 h-1" style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0)"></div><div class="flex flex-wrap items-center justify-between w-full py-3 mx-auto mt-0 md:max-w-4xl"><div class="pl-4"><a class="text-xl font-extrabold text-gray-900 no-underline hover:no-underline" href="/">lifetime trails</a></div><div class="block pr-4 lg:hidden"><button id="nav-toggle" type="button" class="flex items-center px-3 py-2 text-gray-500 appearance-none hover:text-gray-900 hover:border-teal-500 focus:outline-none"><svg class="w-3 h-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg></button></div><div id="nav-content" class="bg-gray-100 border-b flex-grow lg:border-none lg:flex lg:items-center lg:mt-0 lg:shadow-none lg:w-auto md:bg-transparent mt-2 shadow w-full z-20 hidden"><ul class="items-center justify-end flex-1 list-reset lg:flex"><li class="mr-3"><a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4" href="/">Home</a></li></ul></div></div></nav><div class="container w-full px-4 pb-10 mx-auto md:max-w-3xl"><h1 class="font-bold text-gray-800 mb-4 text-5xl mt-8 mb-8">Chrome extension API 정리</h1><div class="details"><p class="text-gray-500">Chrome extension 예제에서 다루는 API를 살펴 봅니다.</p><p class="text-gray-400 text-right -mt-1"><span class="mr-4">2023-10-07</span></p></div><article class="markdown"><h1>시작하며</h1>
+<p>본 글은 아래 예제를 참조하여 정리하였습니다.</p>
+<blockquote>
+<p><a href="https://github.com/GoogleChrome/chrome-extensions-samples">GoogleChrome/chrome-extensions-samples: Chrome Extensions Samples</a></p>
+</blockquote>
+<h1>chrome-extensions-samples</h1>
+<h2><code>chrome.action</code></h2>
+<p><img alt="Alt text" loading="lazy" width="453" height="279" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image.0a84a9e4.png"/></p>
+<ul>
+<li>Pinned 한 확장 아이콘의 enable/disable</li>
+<li>확장 아이콘 클릭 시 나타나는 pop up 설정 및 동적 변경</li>
+<li>하단에 표시하는 badge 표시 (색상, 배경색)</li>
+<li>확장 아이콘의 설정 및 동적 변경</li>
+<li>확장 아이콘 hover text</li>
+</ul>
+<h2><code>chrome.alarms</code></h2>
+<ul>
+<li>알람 설정, 이벤트 등록, 취소</li>
+</ul>
+<h2><code>chrome.bookmarks</code></h2>
+<ul>
+<li>북마크 추가/삭제/수정</li>
+</ul>
+<h2><code>chrome.browsingData</code></h2>
+<ul>
+<li>방문기록 삭제</li>
+</ul>
+<h2><code>chrome.contentSettings</code></h2>
+<p>다음 저장 기록 불러오기, 설정하기</p>
+<pre><code class="language-js">let types = [
+  &#x27;cookies&#x27;,
+  &#x27;images&#x27;,
+  &#x27;javascript&#x27;,
+  &#x27;location&#x27;,
+  &#x27;popups&#x27;,
+  &#x27;notifications&#x27;,
+  &#x27;microphone&#x27;,
+  &#x27;camera&#x27;,
+  &#x27;automaticDownloads&#x27;,
+];
+</code></pre>
+<h2><code>chrome.contextMenus</code></h2>
+<p>컨텍스트 메뉴 생성, 삭제</p>
+<pre><code class="language-js">let contexts = [&#x27;page&#x27;, &#x27;selection&#x27;, &#x27;link&#x27;, &#x27;editable&#x27;, &#x27;image&#x27;, &#x27;video&#x27;, &#x27;audio&#x27;];
+</code></pre>
+<h2><code>chrome.cookies</code></h2>
+<p>쿠키 정보 가져오기, 삭제</p>
+<h2><code>chrome.debugger</code></h2>
+<p>네트워크 정보</p>
+<h2><code>chrome.declarativeNetRequest</code></h2>
+<p>선언적 네트워크 수정</p>
+<h2><code>chrome.commands</code></h2>
+<p>먼저 <code>manifest.json</code>에 다음과 같이 custom command를 선언합니다.</p>
+<pre><code class="language-json">  &quot;commands&quot;: {
+    &quot;flip-tabs-forward&quot;: {
+      &quot;suggested_key&quot;: {
+        &quot;default&quot;: &quot;Ctrl+Shift+Right&quot;,
+        &quot;mac&quot;: &quot;Command+Shift+Right&quot;
+      },
+      &quot;description&quot;: &quot;Flip tabs forward&quot;
+    },
+    &quot;flip-tabs-backwards&quot;: {
+      &quot;suggested_key&quot;: {
+        &quot;default&quot;: &quot;Ctrl+Shift+Left&quot;,
+        &quot;mac&quot;: &quot;Command+Shift+Left&quot;
+      },
+      &quot;description&quot;: &quot;Flip tabs backwards&quot;
+    }
+  },
+</code></pre>
+<p><code>chrome.commands.onCommand.addListener</code>에 콜백함수를 등록하여 각 명령을 처리할 수 있습니다.</p>
+<h2><code>chrome.devtools</code></h2>
+<p>다음과 같이 <code>manifest.json</code>에 devtools의 확장 패키지 내에 있는 entry 페이지를 기술합니다.</p>
+<pre><code class="language-json">  &quot;devtools_page&quot;: &quot;devtools.html&quot;
+</code></pre>
+<p><code>chrome.devtools.panels.create</code>로 패널을 등록할 수 있습니다.</p>
+<p><a href="https://developer.chrome.com/docs/extensions/reference/devtools_inspectedWindow/">chrome.devtools.inspectedWindow</a>에 접근하여 js 주입 및 리소스 정보를 얻어올 수 있습니다.</p>
+<p><a href="https://runebook.dev/ko/docs/web_extensions/api/devtools/panels/elementspanel/createsidebarpane">devtools.panels.ElementsPanel.createSidebarPane()</a>을 사용하여 sidebar 영역을 생성할 수 있습니다.
+<img alt="Alt text" loading="lazy" width="856" height="580" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-1.f53b2546.png"/></p>
+<h2>favicon</h2>
+<p>특정 사이트의 favicon을 가져옵니다.</p>
+<p><a href="https://developer.chrome.com/docs/extensions/mv3/favicon/">Fetching favicons in Chrome extensions - Chrome for Developers</a></p>
+<h2><code>chrome.fontSettings</code></h2>
+<p>브라우저 폰트 설정</p>
+<h2>history</h2>
+<p>방문 목록 페이지를 커스텀 할 수 있습니다.</p>
+<pre><code class="language-json">  &quot;chrome_url_overrides&quot;: {
+    &quot;history&quot;: &quot;history.html&quot;
+  },
+</code></pre>
+<p><img alt="history override" loading="lazy" width="1714" height="370" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-2.95666be3.png"/></p>
+<h2><a href="https://developer.chrome.com/docs/extensions/reference/idle/">chrome.idle</a></h2>
+<p><img alt="idle detection" loading="lazy" width="706" height="592" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-3.0c04af4c.png"/></p>
+<p>특정 시간 동안 마우스나 키보드등의 동작이 없을 경우 상태 변화를 전달합니다.</p>
+<h2>i18n</h2>
+<p>확장 패키지의 <code>_locales</code> 폴더에 언어별로 폴더를 만들고 각 번역어를 <code>messages.json</code>에 저장합니다.
+이 후 js 파일에서 <code>chrome.i18n.getMessage</code> API로 값을 가져올 수 있습니다.</p>
+<h2>omnibox</h2>
+<p><img alt="omnibox" loading="lazy" width="906" height="990" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-4.06f9bfb4.png"/></p>
+<p>다음과 같이 <code>manifest.json</code>에 키워드를 등록하면 검색창 입력을 크롬 확장과 연동할 수 있습니다.</p>
+<pre><code class="language-json">  &quot;omnibox&quot;: { &quot;keyword&quot;: &quot;newTab&quot; },
+</code></pre>
+<p>검색창 입력은 <code>chrome.omnibox.onInputEntered.addListener</code> API에 콜백을 등록하여 처리할 수 있습니다.</p>
+<h2><code>chrome_url_overrides</code></h2>
+<p><img alt="blank new tab" loading="lazy" width="984" height="662" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-5.38b37ad1.png"/></p>
+<p>새로운 탭은 <code>chrome://newtab</code>으로 맵핑되어 있습니다. <code>manifest.json</code>에서 다음과 같이 수정하여 <code>newtab</code>의 엔트리를 패키지의 html 문서로 변경할 수 있습니다.</p>
+<pre><code class="language-json">  &quot;chrome_url_overrides&quot;: {
+    &quot;newtab&quot;: &quot;blank.html&quot;
+  },
+</code></pre>
+<p><code>bookmarks</code>, <code>history</code>, <code>newtab</code>등을 변경할 수 있습니다.</p>
+<h2><code>chrome.printing</code></h2>
+<p><img alt="printing`" loading="lazy" width="932" height="542" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-6.2bc69af5.png"/></p>
+<p>프린터의 상세 정보를 얻고 프린트 요청을 제어할 수 있습니다.</p>
+<ul>
+<li><code>chrome.printing.submitJob</code>: 프린트 요청</li>
+<li><code>chrome.printing.cancelJob</code>: 프린트 요청 취소</li>
+<li><code>chrome.printing.getPrinters</code>: 프린터 정보 가져오기</li>
+<li><code>chrome.printing.onJobStatusChanged</code>: 프린트 상태 변경 콜백 등록</li>
+</ul>
+<h2>Privacy</h2>
+<p><code>chrome.privacy.services</code> API를 사용하여 보안 설정을 제어할 수 있습니다.
+현재는 <code>autofillEnabled</code>만 제공하는 것으로 보입니다.</p>
+<blockquote>
+<p><a href="https://developer.chrome.com/docs/extensions/reference/privacy/">chrome.privacy - Chrome for Developers</a></p>
+</blockquote>
+<p><code>privacy</code> 권한이 필요합니다.</p>
+<pre><code class="language-json">  &quot;permissions&quot;: [&quot;privacy&quot;],
+</code></pre>
+<h2><code>chrome.notifications</code></h2>
+<p><code>chrome.notifications.create</code> API로 운영체제에서 제공하는 notification 배지를 생성합니다.</p>
+<p><img alt="basic notification" loading="lazy" width="668" height="136" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-7.91919df5.png"/></p>
+<p><code>notifications</code> 권한이 필요합니다.</p>
+<h2>sandbox</h2>
+<p>확장 html 문서 내에서 <code>&lt;iframe/&gt;</code> 테그를 사용하여 임베드하고자 할 경우 사용합니다.</p>
+<p><img alt="sandbox" loading="lazy" width="626" height="130" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-8.bfd1f010.png"/></p>
+<pre><code class="language-json">  &quot;sandbox&quot;: {
+    &quot;pages&quot;: [&quot;sandbox.html&quot;]
+  },
+</code></pre>
+<p>다음과 같은 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content Security Policy</a>를 기본으로 적용합니다.</p>
+<pre><code>sandbox allow-scripts allow-forms allow-popups allow-modals; script-src &#x27;self&#x27; &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27;; child-src &#x27;self&#x27;;
+</code></pre>
+<p>이 설정은 inline script와 <code>eval</code> 함수 사용을 허용합니다. 대신 sandbox 페이지에서는 chrome 확장 API를 직접사용할 수 없고 <code>postMessage</code>를 사용하여 parent window와 통신해야 합니다.</p>
+<p><img alt="sandbox content" loading="lazy" width="794" height="478" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-9.11124389.png"/></p>
+<h2><code>chrome.scripting</code></h2>
+<p>확장 패키지에 포함한 스크립트를 주입할 수 있습니다.</p>
+<ul>
+<li><code>chrome.scripting.registerContentScripts</code>: 주입할 스크립트 등록</li>
+<li><code>chrome.scripting.executeScript</code>: 동적으로 스크립트 실행</li>
+<li><code>chrome.scripting.insertCSS</code>: 동적으로 CSS 주입</li>
+</ul>
+<p><img alt="scripting" loading="lazy" width="1032" height="812" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-10.82fc23d6.png"/></p>
+<h2><code>chrome.storage</code></h2>
+<p>확장 인스턴스내에서 데이터를 저장하고 공유할 수 있습니다.</p>
+<h2><code>chrome.tabCapture</code></h2>
+<p>특정 tab의 화면을 비디오로 캡쳐합니다.</p>
+<p><code>chrome.tabCapture.getMediaStreamId</code> API를 사용하여 얻어온 stream id를 <code>navigator.webkitGetUserMedia</code>를 사용하여 <code>&lt;video/&gt;</code> 테그에 사용할 수 있는 stream object를 얻어올 수 있습니다.</p>
+<h2><code>chrome.topSites</code></h2>
+<p>많이 방문한 사이트 목록을 반환합니다.</p>
+<h2><code>web-accessible-resources</code></h2>
+<p><img alt="web accessible resources" loading="lazy" width="1722" height="1698" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-11.fe0e5514.png"/></p>
+<p><code>&lt;iframe/&gt;</code> 테그를 사용하여 임베드한 페이지에서 리소스를 로딩할 수 있도록 설정 입니다.</p>
+<pre><code class="language-json">  &quot;content_scripts&quot;: [
+    {
+      &quot;matches&quot;: [
+        &quot;https://web-accessible-resources-1.glitch.me/*&quot;,
+        &quot;https://web-accessible-resources-2.glitch.me/*&quot;
+      ],
+      &quot;all_frames&quot;: true,
+      &quot;js&quot;: [&quot;content-script.js&quot;]
+    }
+  ],
+  &quot;web_accessible_resources&quot;: [
+    {
+      &quot;resources&quot;: [&quot;test1.png&quot;, &quot;test2.png&quot;],
+      &quot;matches&quot;: [&quot;https://web-accessible-resources-1.glitch.me/*&quot;]
+    },
+    {
+      &quot;resources&quot;: [&quot;test3.png&quot;, &quot;test4.png&quot;],
+      &quot;matches&quot;: [&quot;https://web-accessible-resources-2.glitch.me/*&quot;],
+      &quot;use_dynamic_url&quot;: true
+    }
+  ],
+</code></pre>
+<h2><code>chrome.webNavigation</code></h2>
+<p><code>chrome.webNavigation.onCompleted</code> API는 특정 페이지 로드를 완료하면 콜백을 수행합니다.</p>
+<p>자세한 API는 <a href="https://developer.chrome.com/docs/extensions/reference/webNavigation/">chrome.webNavigation</a>에서 확인 할 수 있습니다.</p>
+<h2><code>chrome.webRequest</code></h2>
+<p><code>chrome.webRequest.onAuthRequired</code> 이벤트는 http 인증 요청이 있을 경우 콜백을 실행합니다.</p>
+<p>https://httpbin.org/basic-auth/guest/guest 페이지를 열면 다음과 같이 인증을 챌린지 합니다.</p>
+<p><img alt="auth" loading="lazy" width="994" height="544" decoding="async" data-nimg="1" class="shadow" style="color:transparent;width:100%;height:auto" src="/_next/static/media/image-12.be17e571.png"/></p>
+<p>이는 http 해더의 <code>Access-Control-Allow-Credentials: true</code> 설정 때문인데 <code>chrome.webRequest.onAuthRequired</code>이 벤트에서 전달 받은 콜백 함수로 인증 정보를 전달할 수 있습니다.</p>
+<h2><code>chrome.windows</code></h2>
+<p>브라우저의 윈도우 정보를 가져오거나 제어할 수 있습니다.</p>
+<h1>마치며</h1>
+<p>예제에서 사용한 API를 중심으로 간단하게 어떤 기능을 제공하는 API가 있는지 확인해 보았습니다.</p>
+<p>다양한 서비스에서 차별화한 UX를 제공하기 위해 크롬 확장을 제공하는 경우가 있습니다.</p>
+<p>크롬 확장에서 어떠한 것이 가능한지 알아둔다면, 여러 UX를 고민할 때 조금더 다양한 아이디어를 찾아낼 수 있으리라 생각합니다.</p></article><div class="react-utterences"><div>Loading script...</div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/blogs/2023-10-07-chrome-extension","query":{},"buildId":"qfjDRDkI7hbaUN0YCN0K0","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>

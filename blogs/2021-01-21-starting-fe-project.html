@@ -1,0 +1,181 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="initial-scale=1.0, width=device-width" data-next-head=""/><title data-next-head="">Front End 개발전 고민해야할 것들</title><link rel="preload" href="/_next/static/css/d20c50ed748cd26f.css" as="style"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"/><link rel="stylesheet" href="/_next/static/css/d20c50ed748cd26f.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" noModule="" src="/_next/static/chunks/polyfills-42372ed130431b0a.js"></script><script src="/_next/static/chunks/webpack-0b9df2340104f8e1.js" defer=""></script><script src="/_next/static/chunks/framework-80cff53c93df8ff7.js" defer=""></script><script src="/_next/static/chunks/main-beade485850481f6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-5b36dff9503cb490.js" defer=""></script><script src="/_next/static/chunks/5695-9c01eff236121af5.js" defer=""></script><script src="/_next/static/chunks/pages/blogs/2021-01-21-starting-fe-project-93f04fbeae4e0077.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_buildManifest.js" defer=""></script><script src="/_next/static/qfjDRDkI7hbaUN0YCN0K0/_ssgManifest.js" defer=""></script><style id="__jsx-4134105190">.markdown html{font:118.75%/1.58 'Roboto',serif;box-sizing:border-box;overflow-y:scroll;}.markdown *{box-sizing:inherit;}.markdown *:before{box-sizing:inherit;}.markdown *:after{box-sizing:inherit;}.markdown body{color:hsla(0,0%,0%,0.73);font-family:'Roboto',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}.markdown img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}.markdown h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}.markdown h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}.markdown h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}.markdown h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}.markdown h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;color:hsla(0,0%,0%,0.9);font-family:'Roboto Slab',sans-serif;font-weight:700;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}.markdown hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown ul{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown ol{margin-left:1.58rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;list-style-position:outside;list-style-image:none;}.markdown dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.85rem;line-height:1.58rem;}.markdown table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:1rem;line-height:1.58rem;border-collapse:collapse;width:100%;}.markdown fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown blockquote{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;font-size:0.94737rem;line-height:1.58rem;border-left:0.5925rem solid #017698;color:hsla(0,0%,0%,0.65);background-color:hsla(0,0%,0%,0.1);padding:0.29625rem 0.9875rem;font-style:italic;}.markdown form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.58rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}.markdown address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.58rem;}.markdown b{font-weight:700;}.markdown strong{font-weight:700;}.markdown dt{font-weight:700;}.markdown th{font-weight:700;}.markdown li{margin-bottom:calc(1.58rem / 2);}.markdown ol li{padding-left:0;}.markdown ul li{padding-left:0;}.markdown li > ol{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown li > ul{margin-left:1.58rem;margin-bottom:calc(1.58rem / 2);margin-top:calc(1.58rem / 2);}.markdown blockquote *:last-child{margin-bottom:0;}.markdown li *:last-child{margin-bottom:0;}.markdown p *:last-child{margin-bottom:0;}.markdown li > p{margin-bottom:calc(1.58rem / 2);}.markdown code{font-size:0.85rem;line-height:1.58rem;}.markdown kbd{font-size:0.85rem;line-height:1.58rem;}.markdown samp{font-size:0.85rem;line-height:1.58rem;}.markdown abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}.markdown abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}.markdown thead{text-align:left;}.markdown td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.05333rem;padding-right:1.05333rem;padding-top:0.79rem;padding-bottom:calc(0.79rem - 1px);}.markdown th:first-child,td:first-child{padding-left:0;}.markdown th:last-child,td:last-child{padding-right:0;}.markdown a{color:#017698;text-decoration:none;background-image:linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, #017698 1px, #017698 2px, rgba(0, 0, 0, 0) 2px);}.markdown a:hover,a:active{text-shadow:none;background-image:none;}.markdown h1,h2,h3,h4,h5,h6{margin-top:3.16rem;}.markdown li>ol,li>ul{margin-left:20px;margin-bottom:0;}.markdown blockquote > :last-child{margin-bottom:0;}.markdown blockquote cite{font-size:1rem;line-height:1.58rem;color:hsla(0,0%,0%,0.73);font-style:normal;font-weight:400;}.markdown blockquote cite:before{content:"— ";}.markdown @media only screen and (max-width:480px){html{font-size:106.25%;line-height:28px;}blockquote{border-left:0.29625rem solid #017698;color:hsla(0,0%,0%,0.59);padding-left:0.88875rem;font-style:italic;margin-left:-1.185rem;margin-right:0;}} .markdown{color:#3d3d3d}.markdown ul li{list-style-type:disc}.markdown ol{list-style-type:decimal}:not(pre) code{background-color:rgb(203 208 218);border-radius:3px;font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:.2rem .3rem;margin:0 .2rem}.markdown * code{font-size:inherit}.markdown code[class*="language-"]{font-family:D2Coding,Consolas,"Roboto Mono","Liberation Mono",Menlo,Courier,monospace;padding:1rem;background-color:#2d2d2d}</style></head><body><div id="__next"><div class="leading-normal tracking-normal bg-gray-100 min-h-screen"><nav class="w-full"><div id="progress" class="top-0 z-20 h-1" style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0)"></div><div class="flex flex-wrap items-center justify-between w-full py-3 mx-auto mt-0 md:max-w-4xl"><div class="pl-4"><a class="text-xl font-extrabold text-gray-900 no-underline hover:no-underline" href="/">lifetime trails</a></div><div class="block pr-4 lg:hidden"><button id="nav-toggle" type="button" class="flex items-center px-3 py-2 text-gray-500 appearance-none hover:text-gray-900 hover:border-teal-500 focus:outline-none"><svg class="w-3 h-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg></button></div><div id="nav-content" class="bg-gray-100 border-b flex-grow lg:border-none lg:flex lg:items-center lg:mt-0 lg:shadow-none lg:w-auto md:bg-transparent mt-2 shadow w-full z-20 hidden"><ul class="items-center justify-end flex-1 list-reset lg:flex"><li class="mr-3"><a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4" href="/">Home</a></li></ul></div></div></nav><div class="container w-full px-4 pb-10 mx-auto md:max-w-3xl"><h1 class="font-bold text-gray-800 mb-4 text-5xl mt-8 mb-8">Front End 개발전 고민해야할 것들</h1><div class="details"><p class="text-gray-500">개발전 구성원들과 사전에 합의하고 고려할 것들을 정리해 봅니다.</p><p class="text-gray-400 text-right -mt-1"><span class="mr-4">2021-01-21</span></p></div><article class="markdown"><h1>Front End 프로젝트 시작하기</h1>
+<p>새로 FE 프로젝트를 시작하면서 고려해야 할 것을 공유해 봅니다.</p>
+<p>물론 미리 모든 것을 결정하고 답을 내릴 수 있다면 좋겠지만 그렇지 않은 것이 현실입니다.
+따라서, 모든 결론을 내리고 시작하려 하지말고 프로젝트 중간에 조정 및 폐기를 결정할 수 있다는 열린 마음이 필요합니다.</p>
+<p>또한 구성원들간에 합의를 이루는 과정은 때로는 발전적인 때로는 소모적인 논란을 가져옵니다.
+떄로는 논리적이고 수치를 기반으로한 결정이 옳아보이지만 사람은 감정의 동물이고 일은 사람이 하는 것임을 잊어서는 안됩니다.
+이해보다는 공감을 목표로 서로가 노력해야 합니다.</p>
+<h1>기획 툴 선정</h1>
+<p><a href="https://uxtools.co/survey-2020/">2020 Tools Survey Results</a>를 확인해 보면</p>
+<p>Figma가 단연 선두에 있습니다.
+Figma는 wireflame은 물론 디자인, 에니메이션등을 표현할 수 있습니다.
+또한, 여러 참여자들이 특정 위치의 디자인에 대하여 대화를 나눌 수 있습니다.</p>
+<p>초기 아이디어 논의 단계에서는 miru라는 툴을 활용하면 좋을 것 같습니다.
+하지만 이미 Figma를 사용하고 있다면,
+동시 편집과 같은 협업 기능으로 충분히 brainstorimg 및 design thinking 프레임워크를 시도해 볼 수 있습니다.</p>
+<h1>프로젝트 기획</h1>
+<p>기획이 무엇보다 중요하겠죠. 무엇을 만들지 모른다면 나머지 논쟁은 의미 없을 것 입니다.</p>
+<p>우선순위와 주요 시나리오를 파악하여, 최소한의 기능(MVP)으로 적절한 로드맵을 정하는 것이 좋습니다.</p>
+<p>주단위 혹은 2주 단위로 기획-프로토타입핑을 반복하여 빠르게 실패하면서 정답을 찾아간다고 생각해야 합니다.</p>
+<p>디테일은 지속적으로 가다듬는다는 생각으로 초기에 너무 지엽적인 문제에 시간을 허비하지 않도록 합니다.</p>
+<p>모든 것을 한번에 정의하려면 한잘자국도 못 가고 지쳐버릴 겁니다.</p>
+<p>따라서 1주 내지 격주 간격으로 적절한 산출물을 끌어낼 수 있는 정도의 기획이 필요합니다.</p>
+<p>다만 기획을 자주 변경하는 과정 속에서 서로가 지치거나 비난을 하는 상황이 올 수 있습니다.</p>
+<p>따라서 기획은 모두가 참여하되 사용자를 우선순위를 두고 서로의 의견을 존중하며 잦은 변경이 있을 수 있다는 공감대가 필요합니다.</p>
+<h1>기술 스텍</h1>
+<p>이제 본격적으로 기술적인 내용이 나오겠네요.</p>
+<p>react, vue, angular js 등 다양한 프레임워크 중 어느 것이 좋을지 결정해야 합니다.</p>
+<p>저는 next.js, typescript, recoil, tailwindcss 등을 선호합니다. (<a href="https://swcho.github.io/blogs/2021-01-09-what-im-betting-on">참조</a>)</p>
+<p>DB 인터페이싱이 필요하다면 prisma를 사용합니다.</p>
+<h2>REST API</h2>
+<p>REST API를 사용할 때에는 <a href="https://github.com/OAI/OpenAPI-Specification">OpenAPI Spec</a> 형식으로 사양을 정리합니다.</p>
+<p>정리한 사양은 <a href="https://github.com/OpenAPITools/openapi-generator">코드 생성기</a>를 통해서 만들 수 있습니다.</p>
+<p>참고로 저는 <a href="https://github.com/horiuchi/dtsgenerator">dtsgenerator</a>로 json schema로 부터 type 정보를 추출하고 실제 API는 손코딩을 하는 편 입니다.</p>
+<ul>
+<li>참고: https://app.swaggerhub.com/search</li>
+</ul>
+<p><a href="https://docs.nestjs.com/openapi/introduction">nest.js</a>를 사용하여 API 서버를 구현하고 swagger 문서를 생성하면 됩니다.</p>
+<p>사양을 미리 정하고 코드를 생성하는 방식도 가능합니다. (<a href="https://developer.ibm.com/languages/node-js/articles/cl-express-no-stress-generator/">참조</a>)</p>
+<h2>GraphQL</h2>
+<p>API endpoint가 많고 통신 방식이 REST, gRPC, thrift 등으로 다양하다면 이들을 중간에서 proxy 해주는 API 서버를 둘 수 있습니다.</p>
+<p>때로는 단순히 proxy를 넘어 각 endpoint의 응답을 상호 참조하고 join 하는 요청을 처리해야 할 수 있습니다.</p>
+<p>그리고 이러한 종류의 요청이 많아지고 endpoint가 계속 추가되고 조합이 더욱 다양해 질 수 있다면 GraphQL을 고민해야 합니다.</p>
+<p>때로는 이러한 종류의 요청이 매우 무거운 작업이라 cache등이 필요할 수 있습니다.</p>
+<p>GraphQL에서 cache의 구현은 어려운 주제가 될 수 있기에 실제로 구현하기 전에 고민이 필요합니다.</p>
+<h1>디자인 시스템</h1>
+<p>디자인 시스템을 직접 정의하고 개발하는 것은 또 다른 수준의 이야기 입니다.</p>
+<p>다행히 여러 분야의 회사에서 디자인 시스템을 만들고 오픈 소스로 공유하고 있습니다.</p>
+<p>https://adele.uxpin.com/</p>
+<p>각각의 지향점이 다른 만큼 프로젝트의 성격에 맞게 이들 중에서 선택하는 것도 좋을 것 같습니다.</p>
+<ul>
+<li><a href="https://www.carbondesignsystem.com/components/overview/">Carbon by IBM</a>
+<ul>
+<li>IBM 클라우드에서 사용</li>
+<li><a href="https://medium.com/@mats_44589/carbon-design-system-a-practical-example-8dcad5261ba5">Carbon Design System — A Practical Example | by Mats Gothe | Medium</a></li>
+<li>react, ng, vue, vanilla</li>
+</ul>
+</li>
+<li><a href="https://ant.design/components/overview/">Ant</a>
+<ul>
+<li>많이 쓰임</li>
+<li>react</li>
+</ul>
+</li>
+<li><a href="https://developer.microsoft.com/en-us/fluentui#/controls/web">Fluent UI by Microsoft</a>
+<ul>
+<li>react</li>
+</ul>
+</li>
+<li>[Material UI][https://material-ui.com/]<!-- -->
+<ul>
+<li>react</li>
+</ul>
+</li>
+<li><a href="https://experience.sap.com/fiori-design-web/explore/">Fiori by SAP</a>
+<ul>
+<li>SAP 엔터프라이즈 UI</li>
+</ul>
+</li>
+<li><a href="https://www.lightningdesignsystem.com/components/form-element/">lightning by sailsforce</a>
+<ul>
+<li>세일즈 포스의  B2B CRM UX에 사용, app 빌더는 사용자 dashboard 같은 거라 별도 리뷰 필요.</li>
+<li>css style</li>
+</ul>
+</li>
+<li><a href="https://feelix.myob.com/#/Components/Forms/Button">feelix</a>
+<ul>
+<li>자산관리 프로그램</li>
+<li>react</li>
+</ul>
+</li>
+<li><a href="http://uniform.hudl.com/components/design">uniform</a>
+<ul>
+<li>스포츠 팀 관리</li>
+</ul>
+</li>
+<li><a href="https://atlassian.design/components">Components - Atlassian Design System</a>
+<ul>
+<li>Jira, Confluence 등의 디자인 시스템</li>
+<li>경험상 사용자들의 UI 선호도가 높음</li>
+<li>react</li>
+</ul>
+</li>
+<li><a href="https://design.mixpanel.com/#mp-cohorts-query-builder">mixpanel / Mixpanel</a>
+<ul>
+<li>Analytics 툴인 mixpanel 사의 디자인 시스템, query builder 쪽으로 볼 필요 있음.</li>
+<li>web component</li>
+</ul>
+</li>
+<li><a href="https://polaris.shopify.com/components/forms/autocomplete#navigation">shopify</a>
+<ul>
+<li>이커머스 플렛폼</li>
+<li>react</li>
+</ul>
+</li>
+<li>https://www.familysearch.org/frontier/styleguide/#forms<!-- -->
+<ul>
+<li>심플한 UI</li>
+<li>css</li>
+</ul>
+</li>
+</ul>
+<h1>모니터링 툴</h1>
+<p>감각에 의지해 UX를 결정하는 시대는 지났습니다.</p>
+<p>Data driven 디자인을 통해 UX를 개선하고 검증해야 합니다.</p>
+<h2>오류</h2>
+<p>브라우저의 exception 등을 리포팅 해 줍니다</p>
+<ul>
+<li><a href="https://sentry.io/welcome/">Sentry</a></li>
+</ul>
+<h2>사용성</h2>
+<p>방문 사용자 정보를 통해 사용자들이 어느 경로를 통해서 페이지 이동을 하는지(Funnel) 측정 합니다.</p>
+<ul>
+<li><a href="https://analytics.google.com/analytics/web/#/">Google Analytics</a>: 사용자 segmentation 특화</li>
+<li><a href="https://mixpanel.com/">mixpenel</a>: 마케팅 특화</li>
+<li><a href="https://analytics.naver.com/">네이버 애널리틱스</a></li>
+</ul>
+<p><a href="https://docs.rudderstack.com/">Rudder stack</a>은 정보를 한곳에 모아 GA등에 전달하는 오픈소스 CDP(Customer Data Platform) 입니다.</p>
+<h2>feature flag, A/B 테스트</h2>
+<p>Feature flag를 통해 신규 기능을 on/off 할 수 있습니다.</p>
+<ul>
+<li><a href="https://unleash.github.io/docs/client_sdk">Client SDK · Unleash</a>: Feature flag, 동적 기능 온/오프</li>
+</ul>
+<p>신규 시나리오를 특정 조건의 사용자에게 노출하여 개선사항을 확인해 보고 싶다면, A/B 테스트 솔루션을 검토합니다.</p>
+<ul>
+<li><a href="https://mojito.mx/docs/home">Mojito framework overview · Mojito</a>: A/B 테스트</li>
+</ul>
+<h2>퍼포먼스</h2>
+<p>페이지가 느려지지 않았는지 관련 지표(CLS, FID, LCP)를 모니터링해야 합니다.</p>
+<p>퍼포먼스가 사용자 경험에 영향을 미치지지는 않는지 사용성 지표와 함께 수집함으로서 지속적으로 관찰합니다.</p>
+<p>라이브러리를 새로 추가할 때, bundling 크기와 함께 퍼포먼스 지표를 측정하여 사용성에 영향은 없는지 확인합니다.</p>
+<ul>
+<li>https://github.com/GoogleChrome/web-vitals</li>
+</ul>
+<p><a href="https://www.smashingmagazine.com/2021/01/front-end-performance-2021-free-pdf-checklist/">Front-End Performance Checklist 2021 — Smashing Magazine</a>를 참고하여 그 밖에 놓치고 있는 개선사항은 없는지 확인합니다.</p>
+<h3>Session recording</h3>
+<p>사용자 화면 전체를 레코딩 하는 툴 입니다.</p>
+<p>때로는 특정 사용자와 특정 경로의 조합으로만 발생하는 버그나 이슈가 있습니다.
+이럴때, 어떠한 경로를 통해 문제가 발생했는지 파악이 필요할 때가 있습니다.</p>
+<p>Session recording은 이러한 경우 유용합니다.</p>
+<p>다만 개인 정보 보호 이슈는 없는지 확인하고 적용합니다.</p>
+<ul>
+<li><a href="https://github.com/rrweb-io/rrweb">rrweb-io/rrweb: record and replay the web</a></li>
+<li><a href="https://www.fullstory.com/">FullStory: Build a More Perfect Digital Experience | FullStory</a></li>
+<li><a href="https://logrocket.com/">LogRocket | Logging and Session Replay for JavaScript Apps</a></li>
+</ul>
+<h1>테스트 방식 고민</h1>
+<p>테스트 자동화를 통해 테스트를 최소화 합니다. 아이러니 하죠.</p>
+<p>우리 개발자는 모두 게으릅니다. 하지만 책임감이 없는 것은 아니죠. 책임조차 자동화 하고 싶을 뿐 입니다.</p>
+<p>개인적으로는 storybook과 api mocking을 통해 edge case 시나리오를 재현하고 selenium을 통해 테스트 하는 것을 선호 합니다.</p>
+<p>물론 특정 알고리즘이나 비지니스 로직 라이브러리를 위해 유닛테스트를 수행해야 겠죠.</p>
+<p>그렇다고 사용자가 마주하게될 UX를 테스트 안할 수 없습니다.</p>
+<p>E2E 테스트는 독립적인 테스트 환경과 테스트 환경의 재현성이 보장되어야 의미 있습니다.</p>
+<p>또한 빠른 릴리즈를 위해 적정한 테스트 시간을 유지하는 것도 중요 합니다.</p>
+<p>storybook/api mocking/selunium 조합을 사용하여 API 서버를 제외한 모든 UX를 검증할 수 있습니다.</p>
+<h1>마치며...</h1>
+<p>위에 나열한 내용 말고 프로젝트 kick off 시 고민해야 할 것들이 많을 겁니다.</p>
+<p>생각나는 것이 있다면 피드백 부탁 드립니다.</p>
+<p>가장 힘든 것은 구성원 모두가 지식의 저주에 빠지지 않고 서로를 득하며,
+무작정 신기술과 유행하는 방법론을 쫓아 over engineering 하지 않고
+서로가 의견을 일치해 나가는 인내와 배려 입니다.</p>
+<p>모두가 만족하는 <code>적정 수준의 솔루션을 선택하는 것</code>이 중요합니다.</p></article><div class="react-utterences"><div>Loading script...</div></div></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/blogs/2021-01-21-starting-fe-project","query":{},"buildId":"qfjDRDkI7hbaUN0YCN0K0","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>

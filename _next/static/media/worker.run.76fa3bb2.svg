@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="434px" preserveAspectRatio="none" style="width:780px;height:434px;background:#FFFFFF;" version="1.1" viewBox="0 0 780 434" width="780px" zoomAndPan="magnify"><defs/><g><g id="elem_unexpectedErrorSubject"><rect fill="#F1F1F1" height="50.16" style="stroke:#181818;stroke-width:0.5;" width="168" x="227" y="271.64"/><text fill="#000000" font-family="D2Coding" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="284" y="282.8">«Subject»</text><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="154" x="234" y="300.58">unexpectedErrorSubject</text><line style="stroke:#181818;stroke-width:0.5;" x1="228" x2="394" y1="305.8" y2="305.8"/></g><g id="elem_stateSubject"><rect fill="#F1F1F1" height="50.16" style="stroke:#181818;stroke-width:0.5;" width="118" x="15" y="160.64"/><text fill="#000000" font-family="D2Coding" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="108" x="20" y="171.8">«BehaviourSubject»</text><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="84" x="32" y="189.58">stateSubject</text><line style="stroke:#181818;stroke-width:0.5;" x1="16" x2="132" y1="194.8" y2="194.8"/></g><g id="elem_forceShutdown"><rect fill="#F1F1F1" height="50.16" style="stroke:#181818;stroke-width:0.5;" width="105" x="501.5" y="271.64"/><text fill="#000000" font-family="D2Coding" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="72" x="518" y="282.8">«Observable»</text><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="91" x="508.5" y="300.58">forceShutdown</text><line style="stroke:#181818;stroke-width:0.5;" x1="502.5" x2="605.5" y1="305.8" y2="305.8"/></g><!--MD5=[ce7f13b9eb8d28de9adf55ff09c43579]
+entity filter1--><g id="elem_filter1"><path d="M173.5,172.64 L302.5,172.64 C307.5,172.64 307.5,185.76 307.5,185.76 C307.5,185.76 307.5,198.88 302.5,198.88 L173.5,198.88 C168.5,198.88 168.5,185.76 168.5,185.76 C168.5,185.76 168.5,172.64 173.5,172.64 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><path d="M302.5,172.64 C297.5,172.64 297.5,185.76 297.5,185.76 C297.5,198.88 302.5,198.88 302.5,198.88 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="119" x="173.5" y="190.66">filter('DRAINED')</text></g><!--MD5=[06596b78cb1c4252e348b862d44fe203]
+entity takeUntil01--><g id="elem_takeUntil01"><path d="M113.5,283.64 L186.5,283.64 C191.5,283.64 191.5,296.76 191.5,296.76 C191.5,296.76 191.5,309.88 186.5,309.88 L113.5,309.88 C108.5,309.88 108.5,296.76 108.5,296.76 C108.5,296.76 108.5,283.64 113.5,283.64 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><path d="M186.5,283.64 C181.5,283.64 181.5,296.76 181.5,296.76 C181.5,309.88 186.5,309.88 186.5,309.88 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="63" x="113.5" y="301.66">takeUntil</text></g><g id="elem_activityHeartbeat"><rect fill="#F1F1F1" height="50.16" style="stroke:#181818;stroke-width:0.5;" width="133" x="641.5" y="271.64"/><text fill="#000000" font-family="D2Coding" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="72" x="672" y="282.8">«Observable»</text><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="119" x="648.5" y="300.58">activityHeartbeat</text><line style="stroke:#181818;stroke-width:0.5;" x1="642.5" x2="773.5" y1="305.8" y2="305.8"/></g><g id="elem_workflow"><rect fill="#F1F1F1" height="50.16" style="stroke:#181818;stroke-width:0.5;" width="82" x="7" y="33.64"/><text fill="#000000" font-family="D2Coding" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="72" x="12" y="44.8">«Observable»</text><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="56" x="20" y="62.58">workflow</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="88" y1="67.8" y2="67.8"/></g><g id="elem_activity"><rect fill="#F1F1F1" height="50.16" style="stroke:#181818;stroke-width:0.5;" width="82" x="124" y="33.64"/><text fill="#000000" font-family="D2Coding" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="72" x="129" y="44.8">«Observable»</text><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="56" x="137" y="62.58">activity</text><line style="stroke:#181818;stroke-width:0.5;" x1="125" x2="205" y1="67.8" y2="67.8"/></g><!--MD5=[9963f831aaa9872bd8e7f2a581ba4848]
+entity merge01--><g id="elem_merge01"><ellipse cx="250" cy="58.64" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="35" x="232.5" y="88.66">merge</text></g><!--MD5=[fc4e39cd4238b57a3039d77c692bedc9]
+entity tap01--><g id="elem_tap01"><path d="M299.5,45.64 L330.5,45.64 C335.5,45.64 335.5,58.76 335.5,58.76 C335.5,58.76 335.5,71.88 330.5,71.88 L299.5,71.88 C294.5,71.88 294.5,58.76 294.5,58.76 C294.5,58.76 294.5,45.64 299.5,45.64 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><path d="M330.5,45.64 C325.5,45.64 325.5,58.76 325.5,58.76 C325.5,71.88 330.5,71.88 330.5,71.88 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="21" x="299.5" y="63.66">tap</text></g><!--MD5=[ec828d26e83ecd3818934ca1ece8e801]
+entity merge02--><g id="elem_merge02"><ellipse cx="501" cy="395.64" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="35" x="483.5" y="425.66">merge</text></g><!--MD5=[4e33587349e03a7a8130cd2517fb982f]
+entity lastValueFrom01--><g id="elem_lastValueFrom01"><path d="M550.5,382.64 L651.5,382.64 C656.5,382.64 656.5,395.76 656.5,395.76 C656.5,395.76 656.5,408.88 651.5,408.88 L550.5,408.88 C545.5,408.88 545.5,395.76 545.5,395.76 C545.5,395.76 545.5,382.64 550.5,382.64 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><path d="M651.5,382.64 C646.5,382.64 646.5,395.76 646.5,395.76 C646.5,408.88 651.5,408.88 651.5,408.88 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="D2Coding" font-size="14" lengthAdjust="spacing" textLength="91" x="550.5" y="400.66">lastValueFrom</text></g><!--MD5=[d292221c39d4c1d04543304af99c984a]
+link stateSubject to filter1--><g id="link_stateSubject_filter1"><path codeLine="13" d="M133.26,185.64 C142.77,185.64 152.28,185.64 161.79,185.64 " fill="none" id="stateSubject-to-filter1" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="166.52,185.64,157.52,181.64,161.52,185.64,157.52,189.64,166.52,185.64" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[caf41c9be88b247c760b21b0e40fe4a7]
+link filter1 to takeUntil01--><g id="link_filter1_takeUntil01"><path codeLine="14" d="M228.25,198.72 C212.67,218.02 182.11,255.87 164.13,278.13 " fill="none" id="filter1-to-takeUntil01" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="161.02,281.99,169.7899,277.5079,164.1643,278.1024,163.5698,272.4769,161.02,281.99" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[310cc10fc285e978bb67025349644684]
+link unexpectedErrorSubject to takeUntil01--><g id="link_unexpectedErrorSubject_takeUntil01"><path codeLine="16" d="M226.74,296.64 C217.19,296.64 207.64,296.64 198.1,296.64 " fill="none" id="unexpectedErrorSubject-to-takeUntil01" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="193.34,296.64,202.34,300.64,198.34,296.64,202.34,292.64,193.34,296.64" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[42b6612a8f83a317b0a155e918802c81]
+link workflow to merge01--><g id="link_workflow_merge01"><path codeLine="26" d="M87.28,33.22 C98.54,27.24 111.12,21.72 123.5,18.64 C158.87,9.85 171.32,6 205.5,18.64 C218.98,23.63 230.89,34.91 238.99,44.22 " fill="none" id="workflow-to-merge01" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="242.11,47.98,239.4247,38.5043,238.9105,44.1377,233.277,43.6235,242.11,47.98" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[97cc58daa4a1695895c190912bc3c9b6]
+link activity to merge01--><g id="link_activity_merge01"><path codeLine="27" d="M206.17,58.64 C215.54,58.64 224.9,58.64 234.27,58.64 " fill="none" id="activity-to-merge01" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="239.24,58.64,230.24,54.64,234.24,58.64,230.24,62.64,239.24,58.64" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[05aa0e7362badb0c0d6c146c84dadc16]
+link merge01 to tap01--><g id="link_merge01_tap01"><path codeLine="33" d="M259.39,58.64 C268.9,58.64 278.4,58.64 287.9,58.64 " fill="none" id="merge01-to-tap01" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="292.63,58.64,283.63,54.64,287.63,58.64,283.63,62.64,292.63,58.64" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[7a23eaa58d39e67e593ccd7812b0c212]
+link tap01 to stateSubject--><g id="link_tap01_stateSubject"><path codeLine="34" d="M295.76,71.94 C289.52,75.81 282.53,80.01 276,83.64 C227.96,110.36 171.95,138.11 131.11,157.74 " fill="none" id="tap01-to-stateSubject" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="127.07,159.68,136.9151,159.4087,131.5814,157.5242,133.4659,152.1905,127.07,159.68" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="D2Coding" font-size="13" lengthAdjust="spacing" textLength="133" x="217" y="126.73">DRAINED on complete</text></g><!--MD5=[c5ca7d38d5aecffeab3ea66d28c79f99]
+link takeUntil01 to merge02--><g id="link_takeUntil01_merge02"><path codeLine="40" d="M178.21,310.06 C187.86,314.06 198.8,318.31 209,321.64 C312.5,355.44 440.95,382.58 485.18,391.51 " fill="none" id="takeUntil01-to-merge02" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="490.05,392.49,482.0156,386.7936,485.1482,391.5039,480.4379,394.6365,490.05,392.49" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b07bbd348e22fca636e867eda3a53a37]
+link forceShutdown to merge02--><g id="link_forceShutdown_merge02"><path codeLine="41" d="M540.63,322.12 C530.45,340.75 516.81,365.7 508.48,380.95 " fill="none" id="forceShutdown-to-merge02" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="506.19,385.15,514.0194,379.1751,508.5903,380.7638,507.0015,375.3346,506.19,385.15" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[38f1dd653139c7fefcb0d90dc2525d02]
+link activityHeartbeat to merge02--><g id="link_activityHeartbeat_merge02"><path codeLine="42" d="M655.77,322.12 C609.47,343.81 544.88,374.08 515.99,387.61 " fill="none" id="activityHeartbeat-to-merge02" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="511.76,389.6,521.6072,389.4171,516.2906,387.4848,518.2228,382.1682,511.76,389.6" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[d9f17a985568532b33390d23d06d9838]
+link tap01 to merge02--><g id="link_tap01_merge02"><path codeLine="43" d="M326.3,71.92 C335.71,82.5 349.12,98.43 359,113.64 C421.85,210.45 477.63,338.74 495.24,380.71 " fill="none" id="tap01-to-merge02" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="497.06,385.08,497.28,375.2336,495.1319,380.4667,489.8987,378.3186,497.06,385.08" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[9f0e5ce64a1f873b76f4729822ee75a7]
+link merge02 to lastValueFrom01--><g id="link_merge02_lastValueFrom01"><path codeLine="49" d="M510.38,395.64 C519.77,395.64 529.17,395.64 538.56,395.64 " fill="none" id="merge02-to-lastValueFrom01" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="543.55,395.64,534.55,391.64,538.55,395.64,534.55,399.64,543.55,395.64" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[180ffbc210fe922265bb96edbe80a4e0]
+@startuml worker.run
+skinparam defaultFontName D2Coding
+object unexpectedErrorSubject <<Subject>>
+object stateSubject <<BehaviourSubject>>
+object forceShutdown <<Observable>>
+
+queue filter1 [
+  filter('DRAINED')
+]
+queue takeUntil01 [
+  takeUntil
+]
+
+stateSubject -> filter1
+filter1 - -> takeUntil01
+
+unexpectedErrorSubject -> takeUntil01
+
+object activityHeartbeat <<Observable>>
+
+object workflow <<Observable>>
+object activity <<Observable>>
+
+circle merge01 [
+  merge
+]
+workflow -> merge01
+activity -> merge01
+
+queue tap01 [
+  tap
+]
+
+merge01 -> tap01
+tap01 ..> stateSubject: DRAINED on complete
+
+circle merge02 [
+  merge
+]
+
+takeUntil01 - -> merge02
+forceShutdown - -> merge02
+activityHeartbeat - -> merge02
+tap01 - -> merge02
+
+queue lastValueFrom01 [
+  lastValueFrom
+]
+
+merge02 -> lastValueFrom01
+
+@enduml
+
+PlantUML version 1.2022.7(Tue Aug 23 02:01:30 KST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: ko
+Country: KR
+--></g></svg>
